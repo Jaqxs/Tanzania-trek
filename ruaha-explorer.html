@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruaha Explorer - Tanzania Trek</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            background: #f7f1e3;
+            color: #2c3e50;
+            overflow-x: hidden;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("images/background2.jpg");
+            opacity: 0.05;
+            z-index: -1;
+        }
+        nav {
+            background: rgba(241, 90, 36, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(241, 90, 36, 0.2);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+        nav.scrolled {
+            background: rgba(241, 90, 36, 0.95);
+            border-bottom: 1px solid #f1c40f;
+            box-shadow: 0 0 15px rgba(241, 90, 36, 0.5);
+        }
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+        }
+        .logo:hover {
+            transform: rotate(3deg) scale(1.05);
+            text-shadow: 0 0 15px rgba(241, 90, 36, 0.8);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .nav-links a, .nav-links .dropdown-btn {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .nav-links a:hover, .nav-links .dropdown-btn:hover {
+            background: rgba(241, 90, 36, 0.8);
+            box-shadow: 0 0 10px rgba(241, 90, 36, 0.5);
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #2c3e50;
+            min-width: 180px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            top: 100%;
+            left: 0;
+            z-index: 1;
+            animation: slideDown 0.3s ease-out;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .dropdown-content a {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            color: #fff;
+            padding: 0.75rem 1rem;
+            display: block;
+            font-size: 0.9rem;
+            text-transform: none;
+        }
+        .dropdown-content a:hover {
+            background: #d35400;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .cta-nav {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            background: linear-gradient(45deg, #f1c40f, #e67e22);
+            color: #2c3e50;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-nav::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+        .cta-nav:hover::after {
+            width: 200%;
+            height: 200%;
+        }
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .hamburger:hover {
+            animation: bounce 0.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .hero {
+            position: relative;
+            min-height: 60vh;
+            background: url("images/rhino.jpg") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero-text {
+            padding: 30px;
+            background: rgba(44, 62, 80, 0.5);
+            border-radius: 10px;
+            color: #fff;
+        }
+        .hero-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 48px;
+            color: #f1c40f;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+            margin: 0 0 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .hero-text p {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+            margin: 0;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            position: relative;
+        }
+        .itinerary-details {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+        .itinerary-details h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #e67e22;
+            font-size: 36px;
+            margin: 0 0 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .itinerary-details .overview {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            color: #2c3e50;
+            margin: 0 0 30px;
+        }
+        .itinerary-details h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            color: #f1c40f;
+            font-size: 24px;
+            margin: 20px 0 10px;
+        }
+        .daily-schedule {
+            margin-bottom: 30px;
+        }
+        .daily-schedule ul {
+            list-style: none;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #2c3e50;
+        }
+        .daily-schedule ul li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        .daily-schedule ul li:before {
+            content: '•';
+            color: #e67e22;
+            position: absolute;
+            left: 0;
+        }
+        .daily-schedule .day {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        .accommodation-options {
+            margin-bottom: 30px;
+        }
+        .accommodation-options ul {
+            list-style: none;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #2c3e50;
+        }
+        .accommodation-options ul li {
+            margin: 10px 0;
+        }
+        .accommodation-options .tier {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        .inclusions {
+            margin-bottom: 30px;
+        }
+        .inclusions ul {
+            list-style: none;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #2c3e50;
+        }
+        .inclusions ul li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        .inclusions ul li:before {
+            content: '✓';
+            color: #e67e22;
+            position: absolute;
+            left: 0;
+        }
+        .pricing {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #2c3e50;
+            margin: 0 0 20px;
+        }
+        .pricing span {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            color: #f1c40f;
+        }
+        .book-now-btn {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            background: #f1c40f;
+            color: #2c3e50;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .book-now-btn:hover {
+            background: #d35400;
+            transform: scale(1.05);
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #e67e22;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 50%;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 100;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        .back-to-top:hover {
+            background: #d35400;
+        }
+        .whatsapp-chat {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #e67e22;
+            color: #fff;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-chat:hover {
+            background: #d35400;
+            transform: scale(1.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 200;
+        }
+        .modal-content {
+            background: #fff;
+            margin: 10% auto;
+            padding: 2rem;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #2c3e50;
+        }
+        .modal-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #e67e22;
+            margin-bottom: 1.5rem;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        .modal-content form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .modal-content input, .modal-content textarea {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            padding: 0.75rem;
+            border: 1px solid #e67e22;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .modal-content textarea {
+            resize: vertical;
+        }
+        .modal-content button {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            background: #e67e22;
+            color: #fff;
+            border: none;
+            padding: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .modal-content button:hover {
+            background: #d35400;
+        }
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        footer a {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            color: #f1c40f;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .logo { font-size: 1.5rem; }
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 70%;
+                height: 100%;
+                background: #e67e22;
+                flex-direction: column;
+                padding: 4rem 2rem;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+            }
+            .nav-links.active {
+                display: flex;
+                transform: translateX(0);
+            }
+            .nav-links a, .nav-links .dropdown-btn {
+                font-size: 1.25rem;
+                padding: 1rem;
+                text-align: left;
+            }
+            .dropdown-content {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                background: #d35400;
+            }
+            .hamburger {
+                display: block;
+            }
+            .cta-nav {
+                width: 100%;
+                text-align: center;
+            }
+            .hero-text h1 { font-size: 36px; }
+            .hero-text p { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Tanzania Trek</div>
+            <div class="nav-links">
+                <div class="nav-item"><a href="index.html">Home</a></div>
+                <div class="dropdown">
+                    <a href="tours.html" class="dropdown-btn">Tours</a>
+                    <div class="dropdown-content">
+                        <a href="tours.html#serengeti-details">Serengeti Safari</a>
+                        <a href="tours.html#kilimanjaro-details">Kilimanjaro Quest</a>
+                        <a href="tours.html#zanzibar-details">Zanzibar Escape</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="itinerary.html" class="dropdown-btn">Itineraries</a>
+                    <div class="dropdown-content">
+                        <a href="serengeti-express.html">Serengeti Express</a>
+                        <a href="kilimanjaro-classic.html">Kilimanjaro Classic</a>
+                        <a href="zanzibar-retreat.html">Zanzibar Retreat</a>
+                        <a href="ngorongoro-quick.html">Ngorongoro Quick</a>
+                        <a href="tarangire-blitz.html">Tarangire Blitz</a>
+                        <a href="ruaha-explorer.html">Ruaha Explorer</a>
+                        <a href="selous-journey.html">Selous Journey</a>
+                        <a href="arusha-getaway.html">Arusha Getaway</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="about.html">About</a></div>
+                <div class="nav-item"><a href="Travel-guide.html">Travel-guide</a></div>
+                <div class="nav-item"><a href="contact.html">Contact</a></div>
+                <button class="cta-nav" onclick="openModal('')">Book Now</button>
+            </div>
+            <button class="hamburger">☰</button>
+        </nav>
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Ruaha Explorer</h1>
+                <p>5-Day Wilderness Safari</p>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="itinerary-details">
+            <h2>Ruaha Explorer</h2>
+            <p class="overview">Venture into Ruaha National Park, Tanzania’s untamed gem, on a 5-day safari filled with game drives and river walks—perfect for spotting rare sable antelopes and lions.</p>
+            <h3>Daily Schedule</h3>
+            <div class="daily-schedule">
+                <ul>
+                    <li><span class="day">Day 1: Arrival & Game Drive</span> - Arrive at Ruaha airstrip, afternoon drive for elephants, settle into camp.</li>
+                    <li><span class="day">Day 2: Full-Day Safari</span> - Explore the park’s vast plains, picnic lunch by the Ruaha River.</li>
+                    <li><span class="day">Day 3: Walking Safari</span> - Trek along the riverbanks with guides, track sable antelopes.</li>
+                    <li><span class="day">Day 4: Game Drive & Sunset</span> - Morning drive for lions and leopards, sunset over the bush.</li>
+                    <li><span class="day">Day 5: Departure</span> - Final morning drive, transfer to airstrip.</li>
+                </ul>
+            </div>
+            <h3>Accommodation Options</h3>
+            <div class="accommodation-options">
+                <ul>
+                    <li><span class="tier">Comfort:</span> Riverside lodge with en-suite tents and bush dining.</li>
+                    <li><span class="tier">Adventure:</span> Basic tents with shared facilities in the wild.</li>
+                </ul>
+            </div>
+            <h3>Inclusions</h3>
+            <div class="inclusions">
+                <ul>
+                    <li>4x4 safari vehicle</li>
+                    <li>Expert local guides</li>
+                    <li>All meals (breakfast, lunch, dinner)</li>
+                    <li>Ruaha National Park fees</li>
+                    <li>Accommodation as per selected tier</li>
+                    <li>Airport transfers from Ruaha airstrip</li>
+                </ul>
+            </div>
+            <p class="pricing">Pricing: <span>$1,200 per person (Comfort) / $1,000 per person (Adventure)</span> - Based on a minimum of 2 travelers</p>
+            <a href="#" class="book-now-btn" onclick="openModal('Ruaha Explorer')">Book Now</a>
+        </div>
+    </div>
+    <button class="back-to-top">↑ Top</button>
+    <a href="https://wa.me/255623474720" class="whatsapp-chat" target="_blank">💬</a>
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h2>Book Your Adventure</h2>
+            <form id="bookingForm">
+                <input type="text" id="fullName" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="text" id="tourName" placeholder="Itinerary Name" readonly value="Tarangire Blitz">
+                <input type="date" id="prefDate" placeholder="Preferred Date" required>
+                <textarea id="preferences" placeholder="Tell us your preferences (budget, group size, etc.)" rows="4"></textarea>
+                <button id="submitBtn">Submit Request</button>
+            </form>
+            </div>
+    </div>
+    <footer>
+        <p>© 2025 Tanzania Trek. All rights reserved. | <a href="contact.html">Get in Touch</a> | Follow us on Instagram @TanzaniaTrek</p>
+    </footer>
+    <script>
+        const nav = document.querySelector('nav');
+        const backToTop = document.querySelector('.back-to-top');
+        const navLinks = document.querySelector('.nav-links');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+                backToTop.classList.add('visible');
+            } else {
+                nav.classList.remove('scrolled');
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        function toggleMenu() {
+            navLinks.classList.toggle('active');
+        }
+
+        function openModal(tour) {
+            document.getElementById('bookModal').style.display = 'block';
+            document.getElementById('tourName').value = tour || 'Ruaha Explorer';
+        }
+
+        function closeModal() {
+            document.getElementById('bookModal').style.display = 'none';
+        }
+
+        document.getElementById('submitBtn').addEventListener('click', (e) => {
+    const fullName = document.getElementById('fullName').value;
+    const email = document.getElementById('email').value;
+    const tourName = document.getElementById('tourName').value;
+    const prefDate = document.getElementById('prefDate').value;
+    const preferences = document.getElementById('preferences').value;
+
+    if (!fullName || !email || !prefDate) {
+        alert("Yo, fill in the blanks first!");
+        return;
+    }
+
+    const message = `Yo Tanzania Trek! I’m ${fullName}. Booking ${tourName} for ${prefDate}. Email: ${email}. Preferences: ${preferences}. Let’s roll!`;
+    window.open(`https://wa.me/255623474720?text=${encodeURIComponent(message)}`, '_blank');
+
+    alert('WhatsApp’s up! Send it to seal the deal.');
+    closeModal();
+});
+
+    </script>
+</body>
+</html>

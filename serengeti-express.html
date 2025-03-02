@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO: Optimized Title -->
+    <title>Serengeti Express | 3-Day Tanzania Safari Itinerary | Tanzania Trek</title>
+    <!-- SEO: Meta Description -->
+    <meta name="description" content="Experience the Serengeti Express—a 3-day Tanzania safari itinerary chasing the Great Migration. Book your adventure with Tanzania Trek now!">
+    <!-- SEO: Keywords -->
+    <meta name="keywords" content="Serengeti safari itinerary, Tanzania safari tour, Great Migration tour, 3-day Serengeti tour, Tanzania Trek">
+    <!-- SEO: Preload Hero Image -->
+    <link rel="preload" href="images/tiger.jpg" as="image">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <!-- SEO: Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Serengeti Express",
+        "description": "A 3-day Tanzania safari itinerary chasing the Great Migration in Serengeti National Park with Tanzania Trek.",
+        "url": "https://tanzaniatrek.com/serengeti-express.html",
+        "image": "https://tanzaniatrek.com/images/tiger.jpg",
+        "brand": {
+            "@type": "Brand",
+            "name": "Tanzania Trek"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "800",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://tanzaniatrek.com/serengeti-express.html",
+            "seller": {
+                "@type": "Organization",
+                "name": "Tanzania Trek",
+                "telephone": "+255623474720",
+                "email": "info@tanzaniatrek.com"
+            }
+        }
+    }
+    </script>
+    <style>
+        /* Adapted from itinerary.html and tours.html */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Open Sans', sans-serif; 
+            line-height: 1.6; 
+            background: #f7f1e3; 
+            color: #2c3e50; 
+            overflow-x: hidden; 
+            position: relative; 
+        }
+        body::before { 
+            content: ''; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: url("images/background2.jpg"); 
+            opacity: 0.05; 
+            z-index: -1; 
+        }
+        nav {
+            background: rgba(241, 90, 36, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(241, 90, 36, 0.2);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+        nav.scrolled {
+            background: rgba(241, 90, 36, 0.95);
+            border-bottom: 1px solid #f1c40f;
+            box-shadow: 0 0 15px rgba(241, 90, 36, 0.5);
+        }
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+        }
+        .logo:hover {
+            transform: rotate(3deg) scale(1.05);
+            text-shadow: 0 0 15px rgba(241, 90, 36, 0.8);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .nav-links a, .nav-links .dropdown-btn {
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .nav-links a:hover, .nav-links .dropdown-btn:hover {
+            background: rgba(241, 90, 36, 0.8);
+            box-shadow: 0 0 10px rgba(241, 90, 36, 0.5);
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #2c3e50;
+            min-width: 180px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            top: 100%;
+            left: 0;
+            z-index: 1;
+            animation: slideDown 0.3s ease-out;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .dropdown-content a {
+            font-family: 'Open Sans', sans-serif;
+            color: #fff;
+            padding: 0.75rem 1rem;
+            display: block;
+            font-size: 0.9rem;
+            text-transform: none;
+        }
+        .dropdown-content a:hover {
+            background: #d35400;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .cta-nav {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(45deg, #f1c40f, #e67e22);
+            color: #2c3e50;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-nav::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+        .cta-nav:hover::after {
+            width: 200%;
+            height: 200%;
+        }
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .hamburger:hover {
+            animation: bounce 0.5s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .hero {
+            position: relative;
+            min-height: 80vh;
+            background: url("images/tiger.jpg") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero-text {
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            color: #fff;
+        }
+        .hero-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 60px;
+            color: #f1c40f;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+            margin: 0 0 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .hero-text p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 24px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+            margin: 0;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        .overview {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .overview h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #e67e22;
+            font-size: 36px;
+            margin: 0 0 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .overview p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18px;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .itinerary-details {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+        .itinerary-details h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #e67e22;
+            font-size: 36px;
+            margin: 0 0 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-align: center;
+        }
+        .daily-schedule {
+            margin-top: 20px;
+        }
+        .day {
+            margin-bottom: 20px;
+        }
+        .day h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #f1c40f;
+            font-size: 20px;
+            margin: 0 0 10px;
+            font-weight: 600;
+        }
+        .day p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: #666;
+            margin: 0;
+        }
+        .pricing {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .pricing h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #e67e22;
+            font-size: 36px;
+            margin: 0 0 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        .pricing p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18px;
+            color: #555;
+            margin: 0 0 20px;
+        }
+        .book-now-btn {
+            font-family: 'Montserrat', sans-serif;
+            background: #e67e22;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .book-now-btn:hover {
+            background: #d35400;
+            transform: scale(1.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 200;
+        }
+        .modal-content {
+            background: #fff;
+            margin: 10% auto;
+            padding: 2rem;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 1rem;
+            position: relative;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        .modal-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #e67e22;
+            margin-bottom: 1.5rem;
+        }
+        .modal-content form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .modal-content input, .modal-content textarea {
+            font-family: 'Open Sans', sans-serif;
+            padding: 0.75rem;
+            border: 2px solid #e67e22;
+            border-radius: 0.5rem;
+        }
+        .modal-content button {
+            font-family: 'Montserrat', sans-serif;
+            background: #e67e22;
+            color: #fff;
+            border: none;
+            padding: 1rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .modal-content button:hover {
+            background: #d35400;
+        }
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto 2rem;
+            text-align: left;
+        }
+        .footer-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #f1c40f;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .footer-section p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+        .footer-section a {
+            font-family: 'Open Sans', sans-serif;
+            color: #f1c40f;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-section a:hover {
+            color: #fff;
+        }
+        .footer-section.links ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-section.links li {
+            margin: 0.5rem 0;
+        }
+        .footer-section.newsletter form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .footer-section.newsletter input {
+            font-family: 'Open Sans', sans-serif;
+            padding: 0.75rem;
+            border: 2px solid #e67e22;
+            border-radius: 0.5rem;
+            flex: 1;
+        }
+        .footer-section.newsletter button {
+            font-family: 'Montserrat', sans-serif;
+            background: #e67e22;
+            color: #fff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .footer-section.newsletter button:hover {
+            background: #d35400;
+        }
+        .footer-bottom {
+            border-top: 1px solid #f1c40f;
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .footer-bottom p {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        .social-icon {
+            font-family: 'Open Sans', sans-serif;
+            color: #f1c40f;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.2);
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .logo { font-size: 1.5rem; }
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 70%;
+                height: 100%;
+                background: #e67e22;
+                flex-direction: column;
+                padding: 4rem 2rem;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+            }
+            .nav-links.active {
+                display: flex;
+                transform: translateX(0);
+            }
+            .nav-links a, .nav-links .dropdown-btn {
+                font-size: 1.25rem;
+                padding: 1rem;
+                text-align: left;
+            }
+            .dropdown-content {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                background: #d35400;
+            }
+            .hamburger { display: block; }
+            .cta-nav { width: 100%; text-align: center; }
+            .hero-text h1 { font-size: 40px; }
+            .hero-text p { font-size: 18px; }
+            .content { padding: 40px 15px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Tanzania Trek</div>
+            <div class="nav-links">
+                <div class="nav-item"><a href="index.html">Home</a></div>
+                <div class="dropdown">
+                    <a href="tours.html" class="dropdown-btn">Tours</a>
+                    <div class="dropdown-content">
+                        <a href="tours.html#serengeti-details">Serengeti Safari</a>
+                        <a href="tours.html#kilimanjaro-details">Kilimanjaro Quest</a>
+                        <a href="tours.html#zanzibar-details">Zanzibar Escape</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="itinerary.html" class="dropdown-btn">Itineraries</a>
+                    <div class="dropdown-content">
+                        <a href="serengeti-express.html">Serengeti Express</a>
+                        <a href="kilimanjaro-classic.html">Kilimanjaro Classic</a>
+                        <a href="zanzibar-retreat.html">Zanzibar Retreat</a>
+                        <a href="ngorongoro-quick.html">Ngorongoro Quick</a>
+                        <a href="tarangire-blitz.html">Tarangire Blitz</a>
+                        <a href="ruaha-explorer.html">Ruaha Explorer</a>
+                        <a href="selous-journey.html">Selous Journey</a>
+                        <a href="arusha-getaway.html">Arusha Getaway</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="about.html">About</a></div>
+                <div class="nav-item"><a href="Travel-guide.html">Travel-guide</a></div>
+                <div class="nav-item"><a href="contact.html">Contact</a></div>
+                <button class="cta-nav" onclick="openModal('Serengeti Express')">Book Now</button>
+            </div>
+            <button class="hamburger">☰</button>
+        </nav>
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Serengeti Express</h1>
+                <p>3-Day Tanzania Safari Itinerary</p>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="overview">
+            <h2>Serengeti Safari Itinerary Overview</h2>
+            <p>The Serengeti Express is a thrilling 3-day *Serengeti safari itinerary* plunging you into Tanzania’s iconic plains. Chase the Great Migration, spot the Big Five, and camp under starlit skies with Tanzania Trek’s expert Maasai guides. This *Tanzania safari tour* blends raw adventure and authentic vibes—perfect for wildlife lovers craving the ultimate *Great Migration tour*. <a href="tours.html#serengeti-details">See all tours</a>.</p>
+        </div>
+        <div class="itinerary-details">
+            <h2>Serengeti Express Daily Schedule</h2>
+            <div class="daily-schedule">
+                <div class="day">
+                    <h3>Day 1: Arrival & First Safari</h3>
+                    <p>Land in Arusha, transfer to Serengeti National Park, and kick off your *Serengeti safari itinerary* with an afternoon game drive. Spot lions, zebras, and giraffes before settling into your eco-camp for a fireside dinner.</p>
+                </div>
+                <div class="day">
+                    <h3>Day 2: Great Migration Chase</h3>
+                    <p>Rise early for a full-day *Great Migration tour*—track millions of wildebeest and zebras thundering across the plains. Picnic lunch in the bush, sunset drive, and overnight at camp with tales from your Maasai guide.</p>
+                </div>
+                <div class="day">
+                    <h3>Day 3: Morning Safari & Departure</h3>
+                    <p>Start with a sunrise game drive—catch elephants and cheetahs in action. After breakfast, transfer back to Arusha, ending your *Tanzania safari tour* with memories of Serengeti’s wild heart.</p>
+                </div>
+            </div>
+        </div>
+        <div class="pricing">
+            <h2>Pricing & Booking</h2>
+            <p><strong>$800 per person</strong> (based on 2+ travelers). Includes accommodation, meals, Maasai guides, park fees, and transfers. Ready for your *Serengeti safari itinerary*? Book now with Tanzania Trek!</p>
+            <a href="#" class="book-now-btn" onclick="openModal('Serengeti Express')">Book Your Serengeti Tour</a>
+        </div>
+    </div>
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h2>Book Your Serengeti Safari Tour</h2>
+            <form id="bookingForm">
+                <input type="text" id="fullName" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="text" id="tourName" placeholder="Itinerary Name" readonly value="Serengeti Express">
+                <input type="date" id="prefDate" placeholder="Preferred Date" required>
+                <textarea id="preferences" placeholder="Tell us your preferences (budget, group size, etc.)" rows="4"></textarea>
+                <button id="submitBtn">Submit Request</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Tanzania Trek</h3>
+                <p>Your trusted partner for *Serengeti safari itineraries* and *custom Tanzania tours* since 2020.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="/cdn-cgi/l/email-protection#f19c9b939ab1c59a9fc29d9691c9cf9896db969a98"><span class="__cf_email__" data-cfemail="f0989f979eb084999c809f94938b8d9a94d9989496">[email protected]</span></a></p>
+                <p>Phone: <a href="https://wa.me/255623474720">+255 623 474 720</a></p>
+                <p>Office: Plot 45, Mbezi Beach, Dar es Salaam</p>
+            </div>
+            <div class="footer-section newsletter">
+                <h3>Stay Updated</h3>
+                <p>Get the latest *Tanzania safari tour* updates.</p>
+                <form id="newsletterForm">
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Tanzania Trek. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://instagram.com/tanzaniatrek" target="_blank" class="social-icon">📷</a>
+                <a href="https://twitter.com/tanztrek" target="_blank" class="social-icon">🐦</a>
+                <a href="https://wa.me/255623474720" target="_blank" class="social-icon">💬</a>
+            </div>
+        </div>
+    </footer>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+        function openModal(tour) {
+            document.getElementById('bookModal').style.display = 'block';
+            document.getElementById('tourName').value = tour;
+        }
+        function closeModal() {
+            document.getElementById('bookModal').style.display = 'none';
+        }
+        document.getElementById('submitBtn').addEventListener('click', (e) => {
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const tourName = document.getElementById('tourName').value;
+            const prefDate = document.getElementById('prefDate').value;
+            const preferences = document.getElementById('preferences').value;
+            if (!fullName || !email || !prefDate) {
+                alert("Yo, fill in the blanks first!");
+                return;
+            }
+            const message = `Yo Tanzania Trek! I’m ${fullName}. Booking ${tourName} for ${prefDate}. Email: ${email}. Preferences: ${preferences}. Let’s roll!`;
+            window.open(`https://wa.me/255623474720?text=${encodeURIComponent(message)}`, '_blank');
+            alert('WhatsApp’s up! Send it to seal the deal.');
+            closeModal();
+        });
+        document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thanks for subscribing! Stay tuned for Tanzania Trek updates.');
+            e.target.reset();
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9197e2c6483b6740',t:'MTc0MDgyNDA0OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
