@@ -3,17 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO: Optimized Title -->
     <title>Tanzania Safari Tours | Custom Adventures | Tanzania Trek</title>
-    <!-- SEO: Meta Description -->
     <meta name="description" content="Discover custom Tanzania safari tours—Serengeti, Kilimanjaro, Zanzibar & more. Book your adventure with Tanzania Trek today!">
-    <!-- SEO: Keywords -->
     <meta name="keywords" content="Tanzania safari tours, custom Tanzania tours, Serengeti safari tour, Kilimanjaro trek tour, Tanzania Trek">
-    <!-- SEO: Preload Hero Image -->
     <link rel="preload" href="images/giraffes.jpg" as="image">
-    <!-- Original Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
-    <!-- SEO: Schema Markup -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -52,7 +46,6 @@
     }
     </script>
     <style>
-        /* Original CSS unchanged */
         * {
             margin: 0;
             padding: 0;
@@ -73,7 +66,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url(images/usiku.jpg) center/cover no-repeat;
+            background: url(images/suunset.jpg) center/cover no-repeat;
             opacity: 0.05;
             z-index: -1;
         }
@@ -87,14 +80,11 @@
             width: 100%;
             position: sticky;
             top: 0;
-            border-bottom: 1px solid rgba(241, 90, 36, 0.2);
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
             z-index: 100;
+            transition: background 0.3s ease;
         }
         nav.scrolled {
             background: rgba(241, 90, 36, 0.95);
-            border-bottom: 1px solid #f1c40f;
             box-shadow: 0 0 15px rgba(241, 90, 36, 0.5);
         }
         .logo {
@@ -110,10 +100,20 @@
             transform: scale(1.05);
             text-shadow: 0 0 15px rgba(241, 90, 36, 0.8);
         }
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
         .nav-links {
             display: flex;
             align-items: center;
             gap: 1.5rem;
+            transition: right 0.3s ease-in-out;
         }
         .nav-links a {
             font-family: 'Montserrat', sans-serif;
@@ -285,7 +285,7 @@
             background-position: center;
             border-radius: 8px;
             overflow: hidden;
-            transition: all 0.4s ease;
+            transition: all 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
             opacity: 0;
             transform: translateY(20px);
             animation: cardFadeIn 0.6s ease forwards;
@@ -297,11 +297,11 @@
         .tour-card:nth-child(1) { animation-delay: 0.1s; background-image: url(images/tiger.jpg); }
         .tour-card:nth-child(2) { animation-delay: 0.2s; background-image: url(images/mlima.jpg); }
         .tour-card:nth-child(3) { animation-delay: 0.3s; background-image: url(images/lion.jpg); }
-        .tour-card:nth-child(4) { animation-delay: 0.4s; background-image: url(images/tall tree.jpg); }
+        .tour-card:nth-child(4) { animation-delay: 0.4s; background-image: url(images/tall\ tree.jpg); }
         .tour-card:nth-child(5) { animation-delay: 0.5s; background-image: url(images/pori.jpg); }
         .tour-card:nth-child(6) { animation-delay: 0.6s; background-image: url(images/rhino.jpg); }
         .tour-card:nth-child(7) { animation-delay: 0.7s; background-image: url(images/backround.jpg); }
-        .tour-card:nth-child(8) { animation-delay: 0.8s; background-image: url(images/zebra (2).jpg); }
+        .tour-card:nth-child(8) { animation-delay: 0.8s; background-image: url(images/zebra\ \(2\).jpg); }
         .tour-card .tour-info {
             position: absolute;
             bottom: 0;
@@ -416,9 +416,9 @@
             transform: scale(1.02);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-        .destination-card:nth-child(1) { animation-delay: 0.1s; background-image: url(images/serengeti.jpg); }
+        .destination-card:nth-child(1) { animation-delay: 0.1s; background-image: url(images/elephant\ \(2\).jpg); }
         .destination-card:nth-child(2) { animation-delay: 0.2s; background-image: url(images/mlima.jpg); }
-        .destination-card:nth-child(3) { animation-delay: 0.3s; background-image: url(images/zanzibar (2).jpg); }
+        .destination-card:nth-child(3) { animation-delay: 0.3s; background-image: url(images/zebra\ \(2\).jpg); }
         .destination-card:nth-child(4) { animation-delay: 0.4s; background-image: url(images/olga-budko-bFmjyv5uiAU-unsplash.jpg); }
         .destination-card:nth-child(5) { animation-delay: 0.5s; background-image: url(images/Tarangire.jpg); }
         .destination-card .dest-info {
@@ -440,7 +440,7 @@
             font-family: 'Open Sans', sans-serif;
             font-size: 14px;
             margin: 0 0 15px;
-            text-shadow: 1px 1            px 3px rgba(0, 0, 0, 0.8);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
         }
         .destination-card .explore-btn {
             font-family: 'Montserrat', sans-serif;
@@ -692,35 +692,42 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        @media(max-width: 768px) {
-            nav {
-                padding: 1rem 1.5rem;
+        @media (max-width: 1024px) {
+            .tours-grid, .destinations-grid, .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-            .logo {
-                font-size: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
             }
             .nav-links {
-                position: absolute;
+                position: fixed;
                 top: 0;
-                right: -250px;
-                width: 250px;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
                 height: 100vh;
-                background: #e67e22;
-                padding: 4rem 2rem;
+                background: rgba(241, 90, 36, 0.95);
                 flex-direction: column;
-                align-items: start;
-                gap: 2rem;
-                transform: translateX(0);
-                transition: transform 0.3s ease-in-out;
+                align-items: flex-start;
+                padding: 4rem 2rem;
+                z-index: 101;
             }
             .nav-links.active {
-                transform: translateX(-250px);
+                right: 0;
             }
             .nav-links a {
                 font-size: 1.25rem;
+                width: 100%;
+                text-align: left;
             }
-            .hamburger {
-                display: block;
+            .nav-search {
+                width: 100%;
+                margin-top: 1rem;
+            }
+            body.nav-open {
+                overflow: hidden;
             }
             .hero-text h1 {
                 font-size: 36px;
@@ -736,23 +743,35 @@
                 gap: 10px;
                 position: static;
             }
-            .tours-grid {
+            .tours-grid, .destinations-grid, .testimonial-grid {
                 grid-template-columns: 1fr;
             }
-            .tour-card {
-                width: 100%;
-                height: 450px;
-            }
-            .destinations-grid {
-                grid-template-columns: 1fr;
-            }
-            .destination-card {
-                width: 100%;
+            .tour-card, .destination-card {
                 height: 450px;
             }
             .modal-content {
                 width: 95%;
                 padding: 1.5rem;
+            }
+        }
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.75rem 1rem;
+            }
+            .logo {
+                font-size: 1.25rem;
+            }
+            .hamburger {
+                font-size: 1.5rem;
+            }
+            .hero-text h1 {
+                font-size: 28px;
+            }
+            .hero-text p {
+                font-size: 14px;
+            }
+            .intro-text h2, .destinations-header h2, .testimonials h2, .whats-next h2 {
+                font-size: 28px;
             }
         }
     </style>
@@ -768,7 +787,7 @@
             <div class="nav-item"><a href="contact.html">Contact</a></div>
             <input type="text" class="nav-search" placeholder="Find your tour">
         </div>
-        <button class="hamburger">☰</button>
+        <button class="hamburger" aria-label="Toggle navigation">☰</button>
     </nav>
 
     <div class="hero">
@@ -978,19 +997,20 @@
                 <div class="modal-actions">
                     <button type="submit">Submit</button>
                     <a href="https://wa.me/255623474720?text=Hi%20Tanzania%20Trek,%20I’m%20interested%20in%20a%20tour" id="whatsappLink" class="whatsapp-btn" target="_blank">WhatsApp</a>
-                    <a href="/cdn-cgi/l/email-protection#50393e363f1064393662393e36636136387f323e3c" id="emailLink" class="email-btn">Email</a>
+                    <a href="mailto:info@tanzaniatrek.com" id="emailLink" class="email-btn">Email</a>
                 </div>
             </form>
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         const nav = document.querySelector('nav');
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const tourCards = document.querySelectorAll('.tour-card');
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const tourCards = document.querySelectorAll('.tour-card');
 
+        // Navigation Scroll Effect
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
                 nav.classList.add('scrolled');
@@ -999,23 +1019,30 @@
             }
         });
 
-        window.addEventListener('load', () => {
-            tourCards.forEach(card => {
-                card.classList.add('visible');
-            });
-        });
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-            });
-        });
-
+        // Hamburger Menu
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            document.body.classList.toggle('nav-open');
+            hamburger.textContent = navLinks.classList.contains('active') ? '×' : '☰';
         });
 
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !hamburger.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                document.body.classList.remove('nav-open');
+                hamburger.textContent = '☰';
+            }
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                document.body.classList.remove('nav-open');
+                hamburger.textContent = '☰';
+            });
+        });
+
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1025,6 +1052,56 @@
             });
         });
 
+        // Filter Buttons
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filterType = button.getAttribute('data-filter');
+                const filterValue = button.textContent.toLowerCase();
+
+                tourCards.forEach(card => {
+                    let shouldShow = false;
+
+                    if (filterType === 'all') {
+                        shouldShow = true;
+                    } else if (filterType === 'duration') {
+                        const duration = parseInt(card.getAttribute('data-duration'));
+                        if (filterValue === '2-3 days') {
+                            shouldShow = duration >= 2 && duration <= 3;
+                        } else if (filterValue === '4-6 days') {
+                            shouldShow = duration >= 4 && duration <= 6;
+                        }
+                    } else if (filterType === 'difficulty') {
+                        const difficulty = card.getAttribute('data-difficulty');
+                        shouldShow = difficulty === filterValue;
+                    } else if (filterType === 'price') {
+                        shouldShow = true;
+                        const sortedCards = Array.from(tourCards).sort((a, b) => 
+                            parseInt(a.getAttribute('data-price')) - parseInt(b.getAttribute('data-price'))
+                        );
+                        tourCards.forEach(card => card.style.order = 'initial');
+                        sortedCards.forEach((card, index) => card.style.order = index);
+                    }
+
+                    if (shouldShow) {
+                        card.style.display = 'block';
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => card.style.display = 'none', 300);
+                    }
+                });
+            });
+        });
+
+        // Modal Functions
         function openModal(tourName) {
             const modal = document.getElementById('bookModal');
             modal.style.display = 'block';
