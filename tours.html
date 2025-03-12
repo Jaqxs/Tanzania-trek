@@ -109,6 +109,9 @@
             cursor: pointer;
             transition: transform 0.3s ease;
         }
+        .hamburger:focus {
+            outline: 2px solid #f1c40f;
+        }
         .nav-links {
             display: flex;
             align-items: center;
@@ -125,10 +128,11 @@
             border-radius: 25px;
             transition: all 0.3s ease;
         }
-        .nav-links a:hover {
+        .nav-links a:hover, .nav-links a:focus {
             background: #f1c40f;
             color: #2c3e50;
             transform: scale(1.05);
+            outline: none;
         }
         .nav-search {
             font-family: 'Open Sans', sans-serif;
@@ -214,8 +218,9 @@
             text-decoration: none;
             font-weight: 700;
         }
-        .sustainability-text a:hover {
+        .sustainability-text a:hover, .sustainability-text a:focus {
             text-decoration: underline;
+            outline: none;
         }
         .plan-trip-cta {
             text-align: center;
@@ -235,10 +240,11 @@
             transition: all 0.3s ease;
             cursor: pointer;
         }
-        .plan-trip-btn:hover {
+        .plan-trip-btn:hover, .plan-trip-btn:focus {
             background: #e67e22;
             color: #fff;
             transform: scale(1.05);
+            outline: none;
         }
         .filter-bar {
             display: flex;
@@ -265,10 +271,12 @@
             transition: all 0.3s ease;
         }
         .filter-btn:hover,
-        .filter-btn.active {
+        .filter-btn.active,
+        .filter-btn:focus {
             background: #e67e22;
             color: #fff;
             animation: pulse 1.5s infinite;
+            outline: none;
         }
         .tours-grid {
             display: grid;
@@ -301,7 +309,7 @@
         .tour-card:nth-child(5) { animation-delay: 0.5s; background-image: url(images/pori.jpg); }
         .tour-card:nth-child(6) { animation-delay: 0.6s; background-image: url(images/rhino.jpg); }
         .tour-card:nth-child(7) { animation-delay: 0.7s; background-image: url(images/backround.jpg); }
-        .tour-card:nth-child(8) { animation-delay: 0.8s; background-image: url(images/zebra\ \(2\).jpg); }
+        .tour-card:nth-child(8) { animation-delay: 0.8s; background-image: url(images/zanzibar\ \(2\).jpg); }
         .tour-card .tour-info {
             position: absolute;
             bottom: 0;
@@ -376,9 +384,10 @@
             white-space: nowrap;
             animation: btnPulse 2s infinite;
         }
-        .tour-card:hover .btn-book {
+        .tour-card .btn-book:hover, .tour-card .btn-book:focus {
             transform: scale(1.1);
             animation: none;
+            outline: none;
         }
         .destinations-header {
             text-align: center;
@@ -416,9 +425,9 @@
             transform: scale(1.02);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
-        .destination-card:nth-child(1) { animation-delay: 0.1s; background-image: url(images/elephant\ \(2\).jpg); }
-        .destination-card:nth-child(2) { animation-delay: 0.2s; background-image: url(images/mlima.jpg); }
-        .destination-card:nth-child(3) { animation-delay: 0.3s; background-image: url(images/zebra\ \(2\).jpg); }
+        .destination-card:nth-child(1) { animation-delay: 0.1s; background-image: url(images/serengeti.jpg); }
+        .destination-card:nth-child(2) { animation-delay: 0.2s; background-image: url(images/kilimanjaro.jpg); }
+        .destination-card:nth-child(3) { animation-delay: 0.3s; background-image: url(images/zanzibar\ \(2\).jpg); }
         .destination-card:nth-child(4) { animation-delay: 0.4s; background-image: url(images/olga-budko-bFmjyv5uiAU-unsplash.jpg); }
         .destination-card:nth-child(5) { animation-delay: 0.5s; background-image: url(images/Tarangire.jpg); }
         .destination-card .dest-info {
@@ -452,9 +461,10 @@
             font-weight: bold;
             transition: all 0.3s ease;
         }
-        .destination-card .explore-btn:hover {
+        .destination-card .explore-btn:hover, .destination-card .explore-btn:focus {
             background: #d35400;
             transform: scale(1.1);
+            outline: none;
         }
         .testimonials {
             text-align: center;
@@ -523,9 +533,10 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        .whats-next-cta:hover {
+        .whats-next-cta:hover, .whats-next-cta:focus {
             background: #d4a60d;
             transform: scale(1.05);
+            outline: none;
         }
         .modal {
             display: none;
@@ -571,8 +582,9 @@
             z-index: 1;
             transition: color 0.3s ease;
         }
-        .close:hover {
+        .close:hover, .close:focus {
             color: #e67e22;
+            outline: none;
         }
         .modal-content h2 {
             font-family: 'Montserrat', sans-serif;
@@ -582,16 +594,22 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             z-index: 1;
+            position: relative;
         }
         .modal-content form {
             display: flex;
             flex-direction: column;
             gap: 1.2rem;
             z-index: 1;
+            position: relative;
+        }
+        .modal-content label {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            color: #2c3e50;
         }
         .modal-content input,
-        .modal-content textarea,
-        .modal-content select {
+        .modal-content textarea {
             padding: 0.9rem;
             border: 2px solid #e67e22;
             border-radius: 8px;
@@ -600,14 +618,16 @@
             transition: border-color 0.3s ease;
         }
         .modal-content input:focus,
-        .modal-content textarea:focus,
-        .modal-content select:focus {
+        .modal-content textarea:focus {
             border-color: #f1c40f;
             outline: none;
         }
         .modal-content textarea {
             resize: vertical;
             min-height: 100px;
+        }
+        .modal-content input:invalid:focus {
+            border-color: #e74c3c;
         }
         .modal-actions {
             display: flex;
@@ -635,21 +655,30 @@
         }
         .modal-content button:hover,
         .modal-content .whatsapp-btn:hover,
-        .modal-content .email-btn:hover {
+        .modal-content .email-btn:hover,
+        .modal-content button:focus,
+        .modal-content .whatsapp-btn:focus,
+        .modal-content .email-btn:focus {
             background: #d35400;
             transform: scale(1.05);
+            outline: none;
+        }
+        .modal-content button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
         }
         .modal-content .whatsapp-btn {
             background: #25D366;
         }
-        .modal-content .whatsapp-btn:hover {
+        .modal-content .whatsapp-btn:hover, .modal-content .whatsapp-btn:focus {
             background: #20b858;
         }
         .modal-content .email-btn {
             background: #f1c40f;
             color: #2c3e50;
         }
-        .modal-content .email-btn:hover {
+        .modal-content .email-btn:hover, .modal-content .email-btn:focus {
             background: #d4a60d;
         }
         footer {
@@ -671,8 +700,9 @@
             font-weight: 600;
             transition: color 0.3s ease;
         }
-        footer a:hover {
+        footer a:hover, footer a:focus {
             color: #fff;
+            outline: none;
         }
         @keyframes pulse {
             0% { transform: scale(1); }
@@ -779,15 +809,15 @@
 <body>
     <nav>
         <div class="logo">Tanzania Trek</div>
-        <div class="nav-links">
+        <div class="nav-links" id="navLinks">
             <div class="nav-item"><a href="index.html">Home</a></div>
             <div class="nav-item"><a href="tours.html">Tours</a></div>
             <div class="nav-item"><a href="itinerary.html">Itineraries</a></div>
             <div class="nav-item"><a href="about.html">About</a></div>
             <div class="nav-item"><a href="contact.html">Contact</a></div>
-            <input type="text" class="nav-search" placeholder="Find your tour">
+            <input type="text" class="nav-search" placeholder="Find your tour" aria-label="Search tours">
         </div>
-        <button class="hamburger" aria-label="Toggle navigation">☰</button>
+        <button class="hamburger" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false">☰</button>
     </nav>
 
     <div class="hero">
@@ -982,20 +1012,42 @@
         <p>© 2025 Tanzania Trek. All rights reserved. | <a href="contact.html">Book Your Tanzania Tour</a> | Follow us on Instagram @TanzaniaTrek</p>
     </footer>
 
-    <div id="bookModal" class="modal">
+    <div id="bookModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()">×</span>
-            <h2>Book Your Tanzania Safari Tour</h2>
+            <span class="close" onclick="closeModal()" aria-label="Close modal">×</span>
+            <h2 id="modalTitle">Book Your Tanzania Safari Tour</h2>
             <form id="planTripForm">
-                <input type="text" id="fullName" placeholder="Full Name" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="tel" id="phone" placeholder="Phone Number" required>
-                <input type="text" id="tourName" placeholder="Tour Name" readonly required>
-                <input type="date" id="startDate" placeholder="Start Date" required>
-                <input type="number" id="groupSize" placeholder="Group Size" min="1" required>
-                <textarea id="preferences" placeholder="Preferences (budget, interests, etc.)" rows="4"></textarea>
+                <div>
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required aria-required="true">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required aria-required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter a valid email address">
+                </div>
+                <div>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required aria-required="true" pattern="\+?[0-9]{9,15}" title="Enter a valid phone number (9-15 digits)">
+                </div>
+                <div>
+                    <label for="tourName">Tour Name</label>
+                    <input type="text" id="tourName" readonly aria-readonly="true">
+                </div>
+                <div>
+                    <label for="startDate">Start Date</label>
+                    <input type="date" id="startDate" required aria-required="true">
+                </div>
+                <div>
+                    <label for="groupSize">Group Size</label>
+                    <input type="number" id="groupSize" min="1" required aria-required="true">
+                </div>
+                <div>
+                    <label for="preferences">Preferences (budget, interests, etc.)</label>
+                    <textarea id="preferences" rows="4" aria-describedby="preferencesHint"></textarea>
+                    <small id="preferencesHint" class="sr-only">Optional field for additional preferences</small>
+                </div>
                 <div class="modal-actions">
-                    <button type="submit">Submit</button>
+                    <button type="submit" id="submitBtn">Submit</button>
                     <a href="https://wa.me/255623474720?text=Hi%20Tanzania%20Trek,%20I’m%20interested%20in%20a%20tour" id="whatsappLink" class="whatsapp-btn" target="_blank">WhatsApp</a>
                     <a href="mailto:info@tanzaniatrek.com" id="emailLink" class="email-btn">Email</a>
                 </div>
@@ -1009,14 +1061,14 @@
         const navLinks = document.querySelector('.nav-links');
         const filterButtons = document.querySelectorAll('.filter-btn');
         const tourCards = document.querySelectorAll('.tour-card');
+        const modal = document.getElementById('bookModal');
+        const closeBtn = modal.querySelector('.close');
+        const form = document.getElementById('planTripForm');
+        const submitBtn = document.getElementById('submitBtn');
 
         // Navigation Scroll Effect
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
+            nav.classList.toggle('scrolled', window.scrollY > 100);
         });
 
         // Hamburger Menu
@@ -1024,6 +1076,7 @@
             navLinks.classList.toggle('active');
             document.body.classList.toggle('nav-open');
             hamburger.textContent = navLinks.classList.contains('active') ? '×' : '☰';
+            hamburger.setAttribute('aria-expanded', navLinks.classList.contains('active'));
         });
 
         document.addEventListener('click', (e) => {
@@ -1031,6 +1084,7 @@
                 navLinks.classList.remove('active');
                 document.body.classList.remove('nav-open');
                 hamburger.textContent = '☰';
+                hamburger.setAttribute('aria-expanded', 'false');
             }
         });
 
@@ -1039,6 +1093,7 @@
                 navLinks.classList.remove('active');
                 document.body.classList.remove('nav-open');
                 hamburger.textContent = '☰';
+                hamburger.setAttribute('aria-expanded', 'false');
             });
         });
 
@@ -1101,17 +1156,40 @@
             });
         });
 
-        // Modal Functions
+        // Modal Functions with Accessibility
         function openModal(tourName) {
-            const modal = document.getElementById('bookModal');
             modal.style.display = 'block';
             document.getElementById('tourName').value = tourName;
-            document.getElementById('planTripForm').addEventListener('input', updateLinks);
+            document.getElementById('fullName').focus();
+            trapFocus(modal);
+            document.body.classList.add('nav-open'); // Prevent background scroll
         }
 
         function closeModal() {
-            const modal = document.getElementById('bookModal');
             modal.style.display = 'none';
+            document.body.classList.remove('nav-open');
+            hamburger.focus(); // Return focus to trigger
+            form.removeEventListener('input', updateLinks); // Clean up
+        }
+
+        function trapFocus(element) {
+            const focusable = element.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+
+            element.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab') {
+                    if (e.shiftKey && document.activeElement === first) {
+                        e.preventDefault();
+                        last.focus();
+                    } else if (!e.shiftKey && document.activeElement === last) {
+                        e.preventDefault();
+                        first.focus();
+                    }
+                } else if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
         }
 
         function updateLinks() {
@@ -1131,11 +1209,36 @@
             document.getElementById('emailLink').href = `mailto:info@tanzaniatrek.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
         }
 
-        document.getElementById('planTripForm').addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            alert('Request submitted! We’ll get back to you soon.');
-            closeModal();
+
+            // Validation
+            const email = document.getElementById('email');
+            const phone = document.getElementById('phone');
+            if (!email.checkValidity() || !phone.checkValidity()) {
+                alert('Please correct the errors in the form.');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            // Simulate API call (replace with real fetch)
+            try {
+                await new Promise(resolve => setTimeout(resolve, 1500)); // Mock delay
+                alert('Booking request submitted successfully! We’ll contact you soon.');
+                form.reset();
+                closeModal();
+            } catch (error) {
+                alert('Submission failed. Please try again later.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit';
+            }
         });
+
+        // Add input listener for dynamic links
+        modal.addEventListener('input', updateLinks);
     </script>
 </body>
 </html>
