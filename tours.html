@@ -342,7 +342,7 @@
         }
         .tour-card:nth-child(1) .tour-card-front { animation-delay: 0.1s; background-image: url(images/tiger.jpg); }
         .tour-card:nth-child(2) .tour-card-front { animation-delay: 0.2s; background-image: url(images/mlima.jpg); }
-        .tour-card:nth-child(3) .tour-card-front { animation-delay: 0.3s; background-image: url(images/lion.jpg); }
+        .tour-card:nth-child(3) .tour-card-front { animation-delay: 0.3s; background-image: url(images/simba.jpg); }
         .tour-card:nth-child(4) .tour-card-front { animation-delay: 0.4s; background-image: url(images/bird.jpg); }
         .tour-card:nth-child(5) .tour-card-front { animation-delay: 0.5s; background-image: url(images/pori.jpg); }
         .tour-card:nth-child(6) .tour-card-front { animation-delay: 0.6s; background-image: url(images/rhino.jpg); }
@@ -675,36 +675,37 @@
             z-index: 200;
             animation: modalFade 0.5s ease-in;
             backdrop-filter: blur(5px);
+            overflow-y: auto;
         }
         .modal-content {
             background: linear-gradient(135deg, #1a2a44 0%, #ff8c00 100%);
             border-radius: 25px;
             box-shadow: 0 20px 50px rgba(255, 140, 0, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.2);
             margin: 5% auto;
-            padding: 3rem;
+            padding: 2rem;
             width: 90%;
             max-width: 700px;
-            min-height: 600px;
+            min-height: 500px;
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
             transform: translateY(-100vh);
             animation: flyIn 0.7s ease-out forwards;
             border: 2px solid #ff8c00;
+            box-sizing: border-box;
         }
         .close {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 2.5rem;
+            top: 15px;
+            right: 15px;
+            font-size: 2rem;
             cursor: pointer;
             color: #fff;
-            z-index: 1;
             transition: all 0.4s ease;
             background: rgba(255, 140, 0, 0.8);
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -720,17 +721,17 @@
         .modal-content h2 {
             font-family: 'Adventure', sans-serif;
             color: #fff;
-            margin-bottom: 2.5rem;
-            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-size: 2rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-align: center;
             text-shadow: 3px 3px 10px rgba(255, 140, 0, 0.8);
             animation: glowText 2s infinite alternate;
         }
         .adventure-form {
             display: grid;
-            gap: 2rem;
+            gap: 1.5rem;
             position: relative;
             z-index: 1;
         }
@@ -741,20 +742,21 @@
         .form-field input,
         .form-field textarea {
             width: 100%;
-            padding: 1.2rem 1.5rem;
+            padding: 1rem;
             border: none;
-            border-radius: 15px;
-            font-size: 1.1rem;
+            border-radius: 12px;
+            font-size: 1rem;
             background: rgba(255, 255, 255, 0.9);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), inset 0 0 5px rgba(255, 140, 0, 0.5);
             transition: all 0.4s ease;
             font-family: 'Poppins', sans-serif;
             color: #1a2a44;
+            box-sizing: border-box;
         }
         .form-field input:focus,
         .form-field textarea:focus {
             box-shadow: 0 0 20px rgba(255, 140, 0, 1), inset 0 0 5px rgba(255, 140, 0, 0.7);
-            transform: scale(1.03);
+            transform: scale(1.02);
             background: #fff;
             outline: none;
         }
@@ -763,7 +765,7 @@
         }
         .form-field textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 80px;
         }
         .form-field input[readonly] {
             background: rgba(200, 200, 200, 0.8);
@@ -773,49 +775,49 @@
         .form-field label {
             position: absolute;
             top: 50%;
-            left: 1.5rem;
+            left: 1rem;
             transform: translateY(-50%);
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             color: #1a2a44;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             pointer-events: none;
             transition: all 0.3s ease;
             background: linear-gradient(to top, transparent 50%, rgba(255, 255, 255, 0.9) 50%);
-            padding: 0 5px;
+            padding: 0 4px;
         }
         .form-field input:focus + label,
         .form-field textarea:focus + label,
         .form-field input:not(:placeholder-shown) + label,
         .form-field textarea:not(:placeholder-shown) + label {
-            top: -10px;
-            left: 1rem;
-            font-size: 0.9rem;
+            top: -8px;
+            left: 0.8rem;
+            font-size: 0.75rem;
             color: #ff8c00;
             text-shadow: 0 0 5px rgba(255, 140, 0, 0.8);
         }
         .form-actions {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
-            padding-top: 2rem;
+            padding-top: 1.5rem;
         }
         .adventure-btn,
         .social-btn {
             font-family: 'Adventure', sans-serif;
-            padding: 1.2rem 3rem;
-            border-radius: 50px;
+            padding: 1rem 2rem;
+            border-radius: 40px;
             cursor: pointer;
             font-weight: 700;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             text-transform: uppercase;
             transition: all 0.4s ease;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
         .adventure-btn {
             background: linear-gradient(135deg, #ff8c00, #e67e22);
@@ -838,13 +840,13 @@
         }
         .adventure-btn:hover::after,
         .adventure-btn:focus::after {
-            width: 300px;
-            height: 300px;
+            width: 250px;
+            height: 250px;
         }
         .adventure-btn:hover,
         .adventure-btn:focus {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(255, 140, 0, 0.7);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 25px rgba(255, 140, 0, 0.7);
             outline: none;
         }
         .adventure-btn:disabled {
@@ -854,10 +856,10 @@
             box-shadow: none;
         }
         .social-btn {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             padding: 0;
-           border-radius: 50%;
+            border-radius: 50%;
             background: #fff;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
@@ -868,20 +870,20 @@
             background: linear-gradient(135deg, #f1c40f, #d4a60d);
         }
         .social-btn svg {
-            width: 30px;
-            height: 30px;
+            width: 25px;
+            height: 25px;
             fill: #fff;
             transition: transform 0.4s ease;
         }
         .social-btn:hover,
         .social-btn:focus {
-            transform: scale(1.15) rotate(10deg);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
             outline: none;
         }
         .social-btn:hover svg,
         .social-btn:focus svg {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
         footer {
             background: #2c3e50;
@@ -962,6 +964,26 @@
             .tours-grid, .destinations-grid, .testimonial-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .modal-content {
+                padding: 1.5rem;
+                min-height: 450px;
+            }
+            .modal-content h2 {
+                font-size: 1.75rem;
+            }
+            .adventure-btn,
+            .social-btn {
+                padding: 0.9rem 1.8rem;
+                font-size: 1rem;
+            }
+            .social-btn {
+                width: 45px;
+                height: 45px;
+            }
+            .social-btn svg {
+                width: 22px;
+                height: 22px;
+            }
         }
         @media (max-width: 768px) {
             .hamburger {
@@ -1023,7 +1045,48 @@
             }
             .modal-content {
                 width: 95%;
-                padding: 1.5rem;
+                padding: 1.25rem;
+                min-height: 400px;
+                border-radius: 20px;
+            }
+            .modal-content h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            .adventure-form {
+                gap: 1rem;
+            }
+            .form-field input,
+            .form-field textarea {
+                padding: 0.8rem;
+                font-size: 0.9rem;
+                border-radius: 10px;
+            }
+            .form-field label {
+                font-size: 0.85rem;
+            }
+            .form-field input:focus + label,
+            .form-field textarea:focus + label,
+            .form-field input:not(:placeholder-shown) + label,
+            .form-field textarea:not(:placeholder-shown) + label {
+                top: -6px;
+                font-size: 0.7rem;
+            }
+            .form-actions {
+                gap: 0.75rem;
+                padding-top: 1rem;
+            }
+            .adventure-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            .social-btn {
+                width: 40px;
+                height: 40px;
+            }
+            .social-btn svg {
+                width: 20px;
+                height: 20px;
             }
         }
         @media (max-width: 480px) {
@@ -1055,18 +1118,63 @@
                 font-size: 14px;
                 padding: 8px 16px;
             }
+            .modal-content {
+                padding: 1rem;
+                min-height: 350px;
+                margin: 2% auto;
+            }
             .modal-content h2 {
-                font-size: 24px;
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
             }
-            .modal-content input,
-            .modal-content textarea {
-                padding: 0.8rem;
-                font-size: 0.9rem;
+            .close {
+                top: 10px;
+                right: 10px;
+                width: 35px;
+                height: 35px;
+                font-size: 1.5rem;
             }
-            .adventure-btn,
+            .adventure-form {
+                gap: 0.75rem;
+            }
+            .form-field input,
+            .form-field textarea {
+                padding: 0.6rem;
+                font-size: 0.85rem;
+                border-radius: 8px;
+            }
+            .form-field label {
+                font-size: 0.8rem;
+                left: 0.8rem;
+            }
+            .form-field input:focus + label,
+            .form-field textarea:focus + label,
+            .form-field input:not(:placeholder-shown) + label,
+            .form-field textarea:not(:placeholder-shown) + label {
+                top: -5px;
+                font-size: 0.65rem;
+                left: 0.6rem;
+            }
+            .form-field textarea {
+                min-height: 60px;
+            }
+            .form-actions {
+                flex-direction: column;
+                gap: 0.5rem;
+                padding-top: 0.75rem;
+            }
+            .adventure-btn {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.85rem;
+                width: 100%;
+            }
             .social-btn {
-                padding: 0.8rem 2rem;
-                font-size: 1rem;
+                width: 35px;
+                height: 35px;
+            }
+            .social-btn svg {
+                width: 18px;
+                height: 18px;
             }
         }
     </style>
@@ -1474,10 +1582,10 @@
                 <div class="form-actions">
                     <button type="submit" id="submitBtn" class="adventure-btn">Launch Adventure</button>
                     <a href="https://wa.me/255623474720" id="whatsappLink" class="social-btn whatsapp-btn" target="_blank">
-                        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-10 10c0 2.2.7 4.2 1.9 5.9L2 22l4.2-1.9A10 10 0 0 0 12 22a10 10 0 0 0 0-20zm3.6 14.6c-.2.6-.8 1-1.4 1-.4 0-.9-.2-2.5-1-1.2-.6-2.2-1.5-2.8-2.6-.6-1-.9-2.2-.9-3.4 0-.6.2-1.2.6-1.6.4-.4.8-.6 1.2-.6h.4c.3 0 .6.2.8.6.2.4.6 1.2.8 1.6.2.4.2.8 0 1.2-.2.4-.4.6-.8.8-.4.2-.8.4-.8 1 0 .6.4 1.2 1 1.8.8.8 1.6 1.2 2.6 1.6.4.2.8.2 1.2 0 .4-.2.8-.6 1-1 .2-.4.4-.6.6-.6h.4c.4 0 .6.2.6.6z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.174.198-.347.223-.524.074-.173-.149-.757-.548-1.474-1.747-.716-1.198-1.193-2.148-1.342-2.347-.148-.198-.019-.347.136-.496.156-.149.698-.737.94-.986.242-.248.484-.496.67-.347.173.149 2.03 1.015 2.03 2.462 0 1.446-1.193 2.595-1.342 2.744-.149.149-2.074 3.213-5.06 4.407-2.986 1.193-2.595-.744-3.064-1.342-.471-.595-1.868-1.015-2.595-1.015-.727 0-1.015-.074-1.342.223-.322.297-1.193 1.342-1.193 2.595 0 1.252 1.015 2.347 1.193 2.595.173.248 2.074 3.957 5.655 5.803 3.58 1.845 6.645 1.446 7.668.595.996-.845 1.868-2.744 1.868-4.655 0-1.911-.845-3.064-1.015-3.361-.173-.297-.471-.446-.744-.446zM12 0C5.373 0 0 5.373 0 12c0 2.144.573 4.223 1.645 6.045L0 24l6.045-1.645C7.867 23.427 9.946 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
                     </a>
-                    <a href="mailto:info@tanzaniatrek.com" id="emailLink" class="social-btn email-btn" target="_blank">
-                        <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm-1 2l-7 5-7-5h14zM4 18V8l8 5 8-5v10H4z"/></svg>
+                    <a href="mailto:info@tanzaniatrek.com" id="emailLink" class="social-btn email-btn">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2l-8 5-8-5h16zm-16 12V8l8 5 8-5v10H4z"/></svg>
                     </a>
                 </div>
             </form>
@@ -1485,162 +1593,143 @@
     </div>
 
     <script>
-    
-    const nav = document.querySelector('nav');
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const tourCards = document.querySelectorAll('.tour-card');
-    const modal = document.getElementById('bookModal');
-    const closeBtn = modal.querySelector('.close');
-    const form = document.getElementById('planTripForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const tourNameInput = document.getElementById('tourName');
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const nav = document.querySelector('nav');
+        const modal = document.getElementById('bookModal');
+        const closeBtn = modal.querySelector('.close');
+        const form = document.getElementById('planTripForm');
+        const tourNameInput = document.getElementById('tourName');
+        const submitBtn = document.getElementById('submitBtn');
+        const whatsappLink = document.getElementById('whatsappLink');
+        const emailLink = document.getElementById('emailLink');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const tourCards = document.querySelectorAll('.tour-card');
 
-    // Navigation Scroll Effect
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
-        }
-    });
-
-    // Hamburger Menu Toggle
-    hamburger.addEventListener('click', () => {
-        const isOpen = navLinks.classList.toggle('active');
-        hamburger.setAttribute('aria-expanded', isOpen);
-        document.body.classList.toggle('nav-open');
-        hamburger.textContent = isOpen ? '✖' : '☰';
-    });
-
-    // Close mobile menu when a link is clicked
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            hamburger.setAttribute('aria-expanded', 'false');
-            document.body.classList.remove('nav-open');
-            hamburger.textContent = '☰';
+        hamburger.addEventListener('click', () => {
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('nav-open');
+            hamburger.textContent = isExpanded ? '☰' : '✖';
         });
-    });
 
-    // Filter Tours
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const filterType = button.getAttribute('data-filter');
-            const filterValue = button.textContent.toLowerCase();
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
 
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
+        window.openModal = function(tourName) {
+            tourNameInput.value = tourName;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                const modalContent = modal.querySelector('.modal-content');
+                modalContent.focus();
+                modalContent.setAttribute('tabindex', '-1');
+            }, 100);
+        };
 
-            tourCards.forEach(card => {
-                let showCard = false;
-                if (filterType === 'all') {
-                    showCard = true;
-                } else if (filterType === 'duration') {
-                    const duration = parseInt(card.getAttribute('data-duration'));
-                    if (filterValue === '2-3 days' && duration <= 3) showCard = true;
-                    if (filterValue === '4-6 days' && duration >= 4 && duration <= 6) showCard = true;
-                } else if (filterType === 'difficulty') {
-                    const difficulty = card.getAttribute('data-difficulty');
-                    if (filterValue === difficulty) showCard = true;
-                } else if (filterType === 'price') {
-                    const price = parseInt(card.getAttribute('data-price'));
-                    tourCards.forEach(c => c.style.display = 'block'); // Reset display
-                    const sortedCards = Array.from(tourCards).sort((a, b) => 
-                        parseInt(a.getAttribute('data-price')) - parseInt(b.getAttribute('data-price'))
-                    );
-                    const toursGrid = document.querySelector('.tours-grid');
-                    toursGrid.innerHTML = '';
-                    sortedCards.forEach(c => toursGrid.appendChild(c));
-                    return; // Exit after sorting
-                }
+        function closeModal() {
+            modal.style.animation = 'flyOut 0.5s ease-in forwards';
+            setTimeout(() => {
+                modal.style.display = 'none';
+                modal.style.animation = 'flyIn 0.7s ease-out forwards';
+                document.body.style.overflow = 'auto';
+            }, 500);
+        }
 
-                card.style.display = showCard ? 'block' : 'none';
-                if (showCard) {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        card.style.transition = 'all 0.6s ease';
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, 50);
-                }
+        closeBtn.addEventListener('click', closeModal);
+        closeBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            closeModal();
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Launching...';
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            const whatsappMessage = `New Booking Request:%0AName: ${data.fullName}%0ATour: ${data.tourName}%0AEmail: ${data.email}%0APhone: ${data.phone}%0AStart Date: ${data.startDate}%0AGroup Size: ${data.groupSize}%0APreferences: ${data.preferences || 'None'}`;
+            const emailSubject = `New Booking: ${data.tourName}`;
+            const emailBody = `Name: ${data.fullName}\nTour: ${data.tourName}\nEmail: ${data.email}\nPhone: ${data.phone}\nStart Date: ${data.startDate}\nGroup Size: ${data.groupSize}\nPreferences: ${data.preferences || 'None'}`;
+
+            whatsappLink.href = `https://wa.me/255623474720?text=${encodeURIComponent(whatsappMessage)}`;
+            emailLink.href = `mailto:info@tanzaniatrek.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+            setTimeout(() => {
+                whatsappLink.click();
+                submitBtn.textContent = 'Adventure Launched!';
+                setTimeout(() => {
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Launch Adventure';
+                    closeModal();
+                }, 2000);
+            }, 1000);
+        });
+
+        tourCards.forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
             });
         });
-    });
 
-    // Card Flip on Double Click
-    tourCards.forEach(card => {
-        card.addEventListener('dblclick', () => {
-            card.classList.toggle('flipped');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const filter = button.getAttribute('data-filter');
+                const filterValue = button.textContent.toLowerCase();
+
+                tourCards.forEach(card => {
+                    const duration = card.getAttribute('data-duration');
+                    const difficulty = card.getAttribute('data-difficulty');
+                    const price = parseInt(card.getAttribute('data-price'));
+
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                    } else if (filter === 'duration') {
+                        const [min, max] = filterValue.includes('-') ? filterValue.split('-').map(Number) : [Number(filterValue), Number(filterValue)];
+                        card.style.display = (duration >= min && duration <= max) ? 'block' : 'none';
+                    } else if (filter === 'difficulty') {
+                        card.style.display = difficulty === filterValue ? 'block' : 'none';
+                    } else if (filter === 'price') {
+                        card.style.display = price <= 1000 ? 'block' : 'none';
+                    }
+                });
+            });
         });
-    });
 
-    // Open Modal
-    window.openModal = function(tourName) {
-        tourNameInput.value = tourName;
-        modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-        setTimeout(() => {
-            modal.querySelector('.modal-content').focus();
-        }, 100);
-    };
+        // Enhanced touch support for modal close
+        closeBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            closeModal();
+        });
 
-    // Close Modal
-    function closeModal() {
-        const modalContent = modal.querySelector('.modal-content');
-        modalContent.style.animation = 'flyOut 0.7s ease-in forwards';
-        setTimeout(() => {
-            modal.style.display = 'none';
-            modalContent.style.animation = 'flyIn 0.7s ease-out forwards';
-            document.body.style.overflow = 'auto';
-            form.reset();
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Launch Adventure';
-        }, 700);
-    }
+        // Adjust modal height dynamically on resize
+        window.addEventListener('resize', () => {
+            if (modal.style.display === 'block') {
+                const modalContent = modal.querySelector('.modal-content');
+                modalContent.style.maxHeight = `${window.innerHeight * 0.9}px`;
+            }
+        });
 
-    closeBtn.addEventListener('click', closeModal);
-
-    // Close Modal on Outside Click
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-    });
-
-    // Close Modal with Escape Key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
-    });
-
-    // Form Submission
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (!form.checkValidity()) {
-            form.reportValidity();
-            return;
-        }
-
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Launching...';
-        submitBtn.style.animation = 'pulseLaunch 0.5s infinite';
-
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-
-        // Simulate form submission (replace with actual API call)
-        setTimeout(() => {
-            console.log('Booking Data:', data);
-            submitBtn.textContent = 'Adventure Launched!';
-            submitBtn.style.animation = 'none';
-            setTimeout(closeModal, 1500);
-        }, 2000);
-    });
-
-    // Set Minimum Date for Start Date Input
-    const startDateInput = document.getElementById('startDate');
-    const today = new Date().toISOString().split('T')[0];
-    startDateInput.setAttribute('min', today);
-</script>
+        // Prevent pinch zoom on form inputs for better usability on mobile
+        document.querySelectorAll('.form-field input, .form-field textarea').forEach(input => {
+            input.addEventListener('touchstart', (e) => {
+                if (e.touches.length > 1) e.preventDefault();
+            }, { passive: false });
+        });
+    </script>
 </body>
 </html>
