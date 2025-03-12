@@ -3,17 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO: Optimized Title -->
     <title>About Tanzania Trek | Trusted Tanzania Safari Company</title>
-    <!-- SEO: Meta Description -->
     <meta name="description" content="Learn about Tanzania Trek—a trusted Tanzania safari company crafting authentic adventures since 2020. Explore our story and mission!">
-    <!-- SEO: Keywords -->
     <meta name="keywords" content="about Tanzania Trek, Tanzania safari company, custom Tanzania tours, authentic Tanzania adventures, Tanzania Trek story">
-    <!-- SEO: Preload Hero Image -->
-    <link rel="preload" href="images/logo1.svg" as="image">
+    <link rel="preload" href="images/logo6.svg" as="image">
     <link rel="preload" href="images/zebra (2).jpg" as="image">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
-    <!-- SEO: Schema Markup -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&family=Poppins:wght@400;600;700&family=Adventure:wght@400;700&display=swap" rel="stylesheet">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -21,178 +16,279 @@
         "name": "Tanzania Trek",
         "description": "A trusted Tanzania safari company offering custom tours since 2020—Serengeti, Kilimanjaro, Zanzibar, and more.",
         "url": "https://tanzaniatrek.com/about.html",
-        "logo": "https://tanzaniatrek.com/images/logo.png",
+        "logo": "https://tanzaniatrek.com/images/logo6.svg",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Plot 45, Mbezi Beach",
-            "addressLocality": "Dar es Salaam", 
+            "addressLocality": "Dar es Salaam",
             "addressCountry": "TZ"
         },
         "telephone": "+255623474720",
         "email": "info@tanzaniatrek.com",
-        "foundingDate": "2020",
-        "founder": {
-            "@type": "Person",
-            "name": "Jackx"
-        }
+        "foundingDate": "2020"
     }
     </script>
     <style>
-        /* Original CSS unchanged */
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        body { 
-            font-family: 'Open Sans', sans-serif; 
-            line-height: 1.6; 
-            background: #f7f1e3; 
-            color: #2c3e50; 
-            overflow-x: hidden; 
-            position: relative; 
+        body {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            background: #f7f1e3;
+            color: #2c3e50;
+            overflow-x: hidden;
+            position: relative;
         }
-        body::before { 
-            content: ''; 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            background: url("images/background3.jpg"); 
-            opacity: 0.05; 
-            z-index: -1; 
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("images/background3.jpg") center/cover no-repeat;
+            opacity: 0.05;
+            z-index: -1;
         }
         nav {
-    background: rgba(0, 0, 0, 0.1); /* Ultra transparent */
-    backdrop-filter: blur(20px); /* Sharper blur for clarity */
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    transition: all 0.3s ease;
-}
-nav.scrolled {
-    background: rgba(241, 90, 36, 0.7); /* Lighter orange on scroll */
-    box-shadow: 0 0 20px rgba(241, 90, 36, 0.4);
-}
-.logo {
-    display: flex;
-    align-items: center;
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-.logo a {
-    display: block; /* Fully clickable */
-    text-decoration: none;
-}
-.logo img {
-    height: 100px; /* Bigger logo */
-    width: auto;
-    max-width: 200px; /* Wider cap */
-    filter: drop-shadow(0 0 5px rgba(241, 196, 15, 0.7));
-    transition: transform 0.3s ease;
-}
-.logo:hover img {
-    transform: rotate(5deg) scale(1.1);
-    filter: drop-shadow(0 0 10px rgba(241, 196, 15, 0.9));
-}
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-.nav-links a, .nav-links .dropdown-btn {
-    font-family: 'Montserrat', sans-serif;
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-    padding: 0.6rem 1.2rem;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-.nav-links a:hover, .nav-links .dropdown-btn:hover {
-    background: rgba(241, 90, 36, 0.8);
-    box-shadow: 0 0 10px rgba(241, 90, 36, 0.5);
-}
-.dropdown {
-    position: relative;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: #2c3e50;
-    min-width: 180px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    border-radius: 10px;
-    top: 100%;
-    left: 0;
-    z-index: 1;
-    animation: slideDown 0.3s ease-out;
-}
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-.dropdown-content a {
-    font-family: 'Open Sans', sans-serif;
-    color: #fff;
-    padding: 0.75rem 1rem;
-    display: block;
-    font-size: 0.9rem;
-    text-transform: none;
-}
-.dropdown-content a:hover {
-    background: #d35400;
-}
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-.hamburger {
-    display: none;
-    font-size: 1.5rem;
-    color: #fff;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-.hamburger:hover {
-    animation: bounce 0.5s infinite;
-}
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-}
-@media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .logo img { height: 60px; max-width: 150px; }
-    .nav-links {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 70%;
-        height: 100%;
-        background: #e67e22;
-        flex-direction: column;
-        padding: 4rem 2rem;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-    }
-    .nav-links.active {
-        display: flex;
-        transform: translateX(0);
-    }
-    .hamburger { display: block; }
-}
+            background: rgba(241, 90, 36, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: background 0.3s ease;
+        }
+        nav.scrolled {
+            background: rgba(241, 90, 36, 0.95);
+            box-shadow: 0 0 15px rgba(241, 90, 36, 0.5);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo a {
+            text-decoration: none;
+        }
+        .logo img {
+            height: 100px;
+            width: auto;
+            max-width: 200px;
+            filter: drop-shadow(0 0 5px rgba(241, 196, 15, 0.7));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .logo:hover img {
+            transform: rotate(5deg) scale(1.1);
+            filter: drop-shadow(0 0 10px rgba(241, 196, 15, 0.9));
+        }
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .hamburger:focus {
+            outline: 2px solid #f1c40f;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: right 0.3s ease-in-out;
+        }
+        .nav-links a, .nav-links .dropdown-btn {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .nav-links a:hover, .nav-links .dropdown-btn:hover {
+            background: #f1c40f;
+            color: #2c3e50;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #2c3e50;
+            min-width: 200px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            top: 100%;
+            left: 0;
+            z-index: 10;
+            animation: slideDown 0.3s ease-out;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            font-family: 'Open Sans', sans-serif;
+            color: #fff;
+            padding: 0.75rem 1rem;
+            display: block;
+            font-size: 0.9rem;
+            text-transform: none;
+            transition: background 0.3s ease;
+        }
+        .dropdown-content a:hover {
+            background: #d35400;
+        }
+        .hero {
+            position: relative;
+            min-height: 80vh;
+            background: url("images/zebra (2).jpg") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero-text {
+            padding: 30px;
+            background: rgba(44, 62, 80, 0.5);
+            border-radius: 10px;
+            color: #fff;
+        }
+        .hero-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: #f1c40f;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+            margin: 0 0 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .hero-text p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+            margin: 0;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        .story, .mission {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+        .story h2, .mission h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #e67e22;
+            font-size: 36px;
+            margin: 0 0 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-align: center;
+        }
+        .story-segment, .mission-segment {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .story-segment.reverse, .mission-segment.reverse {
+            flex-direction: row-reverse;
+        }
+        .story-segment .text, .mission-segment .text {
+            flex: 1;
+            font-size: 16px;
+            color: #666;
+        }
+        .story-segment .image-wrapper, .mission-segment .image-wrapper {
+            flex: 1;
+            max-width: 400px;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 3px solid #e67e22;
+            transition: transform 0.3s ease;
+        }
+        .story-segment .image-wrapper:hover, .mission-segment .image-wrapper:hover {
+            transform: scale(1.05);
+        }
+        .story-segment img, .mission-segment img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+        .value-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .value-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #e67e22;
+            font-size: 24px;
+            margin: 0 0 15px;
+            font-weight: 700;
+        }
+        .value-card p {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #e67e22;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 50%;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 100;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        .back-to-top:hover {
+            background: #d35400;
+            transform: scale(1.1);
+        }
         .modal {
             display: none;
             position: fixed;
@@ -200,293 +296,439 @@ nav.scrolled {
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.8);
             z-index: 200;
+            animation: modalFade 0.5s ease-in;
+            backdrop-filter: blur(5px);
+            overflow-y: auto;
         }
         .modal-content {
-            background: #fff;
-            margin: 10% auto;
+            background: linear-gradient(135deg, #1a2a44 0%, #ff8c00 100%);
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(255, 140, 0, 0.5);
+            margin: 5% auto;
             padding: 2rem;
             width: 90%;
-            max-width: 500px;
-            border-radius: 1rem;
+            max-width: 700px;
+            min-height: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
             position: relative;
+            transform: translateY(-100vh);
+            animation: flyIn 0.7s ease-out forwards;
+            border: 2px solid #ff8c00;
         }
         .close {
             position: absolute;
-            top: 10px;
-            right: 20px;
+            top: 15px;
+            right: 15px;
             font-size: 2rem;
             cursor: pointer;
+            color: #fff;
+            background: rgba(255, 140, 0, 0.8);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+        }
+        .close:hover, .close:focus {
+            color: #1a2a44;
+            transform: rotate(180deg) scale(1.1);
+            background: #fff;
+            outline: none;
         }
         .modal-content h2 {
-            font-family: 'Montserrat', sans-serif;
-            color: #e67e22;
-            margin-bottom: 1.5rem;
+            font-family: 'Adventure', sans-serif;
+            color: #fff;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            text-shadow: 3px 3px 10px rgba(255, 140, 0, 0.8);
+            animation: glowText 2s infinite alternate;
         }
-        .modal-content form {
+        .adventure-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+        .form-field {
+            position: relative;
+            width: 100%;
+        }
+        .form-field input,
+        .form-field textarea {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
+            font-family: 'Poppins', sans-serif;
+            color: #1a2a44;
+        }
+        .form-field input:focus,
+        .form-field textarea:focus {
+            box-shadow: 0 0 20px rgba(255, 140, 0, 1);
+            transform: scale(1.02);
+            background: #fff;
+            outline: none;
+        }
+        .form-field input:invalid:focus {
+            box-shadow: 0 0 20px rgba(231, 76, 60, 1);
+        }
+        .form-field textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .form-field input[readonly] {
+            background: rgba(200, 200, 200, 0.8);
+            cursor: not-allowed;
+            color: #7f8c8d;
+        }
+        .form-field label {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #1a2a44;
+            font-size: 0.9rem;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            background: linear-gradient(to top, transparent 50%, rgba(255, 255, 255, 0.9) 50%);
+            padding: 0 4px;
+        }
+        .form-field input:focus + label,
+        .form-field textarea:focus + label,
+        .form-field input:not(:placeholder-shown) + label,
+        .form-field textarea:not(:placeholder-shown) + label {
+            top: -8px;
+            left: 0.8rem;
+            font-size: 0.75rem;
+            color: #ff8c00;
+            text-shadow: 0 0 5px rgba(255, 140, 0, 0.8);
+        }
+        .form-actions {
             display: flex;
-            flex-direction: column;
             gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding-top: 1.5rem;
         }
-        .modal-content input {
-            font-family: 'Open Sans', sans-serif;
-            padding: 0.75rem;
-            border: 2px solid #e67e22;
-            border-radius: 0.5rem;
+        .adventure-btn,
+        .social-btn {
+            font-family: 'Adventure', sans-serif;
+            padding: 1rem 2rem;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
-        .modal-content button {
+        .adventure-btn {
+            background: linear-gradient(135deg, #ff8c00, #e67e22);
+            color: #fff;
+            border: none;
+        }
+        .adventure-btn:hover,
+        .adventure-btn:focus {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 25px rgba(255, 140, 0, 0.7);
+            outline: none;
+        }
+        .adventure-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            padding: 0;
+            border-radius: 50%;
+            background: #fff;
+        }
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366, #20b858);
+        }
+        .email-btn {
+            background: linear-gradient(135deg, #f1c40f, #d4a60d);
+        }
+        .social-btn svg {
+            width: 25px;
+            height: 25px;
+            fill: #fff;
+            transition: transform 0.4s ease;
+        }
+        .social-btn:hover,
+        .social-btn:focus {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            outline: none;
+        }
+        footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+            color: #fff;
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto 3rem;
+            text-align: left;
+        }
+        .footer-section h3 {
             font-family: 'Montserrat', sans-serif;
+            color: #f1c40f;
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-section p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0.6rem 0;
+            color: #ecf0f1;
+        }
+        .footer-section a {
+            color: #f1c40f;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-section a:hover {
+            color: #fff;
+        }
+        .footer-section.links ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-section.links li {
+            margin: 0.8rem 0;
+        }
+        .footer-section.newsletter form {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+        .footer-section.newsletter input {
+            padding: 0.8rem;
+            border: 2px solid #e67e22;
+            border-radius: 25px;
+            flex: 1;
+            font-size: 0.9rem;
+            background: #fff;
+            color: #2c3e50;
+        }
+        .footer-section.newsletter button {
             background: #e67e22;
             color: #fff;
             border: none;
-            padding: 1rem;
-            border-radius: 2rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
             cursor: pointer;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
-        .modal-content button:hover {
+        .footer-section.newsletter button:hover {
             background: #d35400;
+            transform: scale(1.05);
         }
-        .hero { 
-            position: relative; 
-            min-height: 80vh; 
-            background: url("images/zebra (2).jpg"); 
-            background-size: cover; 
-            background-position: center; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
+        .social-icons {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1rem;
+            justify-content: flex-start;
         }
-        .hero-text { 
-            text-align: center; 
-            padding: 3rem; 
-            background: rgba(0, 0, 0, 0.6); 
-            border-radius: 1rem; 
-            color: #fff; 
-            max-width: 90%; 
+        .social-icon {
+            font-size: 1.8rem;
+            color: #f1c40f;
+            transition: transform 0.3s ease, color 0.3s ease;
         }
-        .hero-text h1 { 
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 4rem); 
-            color: #f1c40f; 
-            text-shadow: 3px 3px 8px rgba(0,0,0,0.7); 
-            margin: 0; 
-            letter-spacing: 0.2rem; 
+        .social-icon:hover {
+            transform: scale(1.2) rotate(5deg);
+            color: #fff;
         }
-        .hero-text p { 
-            font-family: 'Open Sans', sans-serif;
-            font-size: clamp(1.25rem, 3vw, 1.75rem); 
-            text-shadow: 2px 2px 6px rgba(0,0,0,0.7); 
-            margin: 0.5rem 0 0; 
+        .footer-bottom {
+            border-top: 1px solid rgba(241, 90, 36, 0.3);
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.9rem;
         }
-        .content { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 5rem 1.5rem; 
+        .footer-bottom p {
+            margin: 0;
+            color: #bdc3c7;
         }
-        .story, .mission { 
-            background: #fff; 
-            padding: 2rem; 
-            border-radius: 1rem; 
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1); 
-            margin-bottom: 3rem; 
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .story h2, .mission h2 { 
-            font-family: 'Montserrat', sans-serif;
-            color: #e67e22; 
-            font-size: 2rem; 
-            margin: 0 0 1.5rem; 
-            text-align: center; 
-            text-transform: uppercase; 
-            letter-spacing: 0.1rem; 
+        @keyframes modalFade {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-        .story-segment, .mission-segment { 
-            display: flex; 
-            gap: 2rem; 
-            align-items: center; 
-            margin-bottom: 2rem; 
+        @keyframes flyIn {
+            0% { transform: translateY(-100vh); opacity: 0; }
+            60% { transform: translateY(20px); opacity: 1; }
+            100% { transform: translateY(0); opacity: 1; }
         }
-        .story-segment.reverse, .mission-segment.reverse { 
-            flex-direction: row-reverse; 
+        @keyframes flyOut {
+            0% { transform: translateY(0); opacity: 1; }
+            40% { transform: translateY(20px); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
         }
-        .story-segment .text, .mission-segment .text { 
-            flex: 1; 
-            font-family: 'Open Sans', sans-serif;
-            font-size: 1rem; 
+        @keyframes glowText {
+            0% { text-shadow: 3px 3px 10px rgba(255, 140, 0, 0.8); }
+            100% { text-shadow: 3px 3px 20px rgba(255, 140, 0, 1); }
         }
-        .story-segment .image-wrapper, .mission-segment .image-wrapper { 
-            flex: 1; 
-            max-width: 400px; 
-            height: 300px; 
-            border-radius: 1rem; 
-            overflow: hidden; 
-            border: 3px solid #e67e22; 
-            transition: transform 0.3s ease; 
+        @media (max-width: 1024px) {
+            .story-segment, .mission-segment {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .story-segment.reverse, .mission-segment.reverse {
+                flex-direction: column;
+            }
+            .story-segment .image-wrapper, .mission-segment .image-wrapper {
+                max-width: 100%;
+            }
         }
-        .story-segment .image-wrapper:hover, .mission-segment .image-wrapper:hover { 
-            transform: scale(1.05); 
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: rgba(241, 90, 36, 0.95);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 4rem 2rem;
+                z-index: 101;
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .nav-links a, .nav-links .dropdown-btn {
+                font-size: 1.25rem;
+                width: 100%;
+                text-align: left;
+            }
+            .dropdown-content {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                background: #d35400;
+            }
+            .logo img {
+                height: 60px;
+                max-width: 150px;
+            }
+            .hero-text h1 {
+                font-size: 36px;
+            }
+            .hero-text p {
+                font-size: 16px;
+            }
+            .content {
+                padding: 40px 15px;
+            }
+            .story h2, .mission h2 {
+                font-size: 28px;
+            }
+            .values {
+                grid-template-columns: 1fr;
+            }
+            .modal-content {
+                width: 95%;
+                padding: 1.25rem;
+                min-height: 400px;
+            }
+            .modal-content h2 {
+                font-size: 1.5rem;
+            }
+            .adventure-form {
+                gap: 1rem;
+            }
         }
-        .story-segment img, .mission-segment img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            display: block; 
-        }
-        .values { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 2rem; 
-        }
-        .value-card { 
-            background: #fff; 
-            padding: 1.5rem; 
-            border-radius: 1rem; 
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1); 
-            text-align: center; 
-            transition: transform 0.3s ease; 
-        }
-        .value-card:hover { 
-            transform: translateY(-5px); 
-        }
-        .value-card h3 { 
-            font-family: 'Montserrat', sans-serif;
-            color: #e67e22; 
-            font-size: 1.5rem; 
-            margin: 0 0 0.75rem; 
-        }
-        .value-card p { 
-            font-family: 'Open Sans', sans-serif;
-            font-size: 0.875rem; 
-            color: #7f8c8d; 
-            margin: 0; 
-        }
-        .back-to-top { 
-            position: fixed; 
-            bottom: 1.5rem; 
-            right: 1.5rem; 
-            background: #e67e22; 
-            color: #fff; 
-            border: none; 
-            padding: 1rem 1.25rem; 
-            border-radius: 50%; 
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem; 
-            cursor: pointer; 
-            opacity: 0; 
-            transition: opacity 0.3s ease; 
-            z-index: 100; 
-        }
-        .back-to-top.visible { opacity: 1; }
-        .back-to-top:hover { background: #d35400; }
-        footer { 
-            background: #2c3e50; 
-            color: #fff; 
-            padding: 4rem 2rem 2rem; 
-            text-align: center; 
-            position: relative; 
-            z-index: 1; 
-            animation: fadeInUp 0.8s ease forwards; 
-        }
-        .footer-content { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
-            gap: 2rem; 
-            max-width: 1400px; 
-            margin: 0 auto 2rem; 
-            text-align: left; 
-        }
-        .footer-section h3 { 
-            font-family: 'Montserrat', sans-serif;
-            color: #f1c40f; 
-            font-size: 1.5rem; 
-            margin-bottom: 1rem; 
-        }
-        .footer-section p { 
-            font-family: 'Open Sans', sans-serif;
-            font-size: 0.9rem; 
-            margin: 0.5rem 0; 
-        }
-        .footer-section a { 
-            font-family: 'Open Sans', sans-serif;
-            color: #f1c40f; 
-            text-decoration: none; 
-            transition: color 0.3s ease; 
-        }
-        .footer-section a:hover { 
-            color: #fff; 
-        }
-        .footer-section.links ul { 
-            list-style: none; 
-            padding: 0; 
-        }
-        .footer-section.links li { 
-            margin: 0.5rem 0; 
-        }
-        .footer-section.newsletter form { 
-            display: flex; 
-            gap: 0.5rem; 
-            margin-top: 1rem; 
-        }
-        .footer-section.newsletter input { 
-            font-family: 'Open Sans', sans-serif;
-            padding: 0.75rem; 
-            border: 2px solid #e67e22; 
-            border-radius: 0.5rem; 
-            flex: 1; 
-        }
-        .footer-section.newsletter button { 
-            font-family: 'Montserrat', sans-serif;
-            background: #e67e22; 
-            color: #fff; 
-            border: none; 
-            padding: 0.75rem 1.5rem; 
-            border-radius: 0.5rem; 
-            cursor: pointer; 
-            transition: background 0.3s ease; 
-        }
-        .footer-section.newsletter button:hover { 
-            background: #d35400; 
-        }
-        .footer-bottom { 
-            border-top: 1px solid #f1c40f; 
-            padding-top: 1rem; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            flex-wrap: wrap; 
-            gap: 1rem; 
-        }
-        .footer-bottom p { 
-            font-family: 'Open Sans', sans-serif;
-            margin: 0; 
-            font-size: 0.9rem; 
-        }
-        .social-icons { 
-            display: flex; 
-            gap: 1rem; 
-        }
-        .social-icon { 
-            font-family: 'Open Sans', sans-serif;
-            color: #f1c40f; 
-            font-size: 1.5rem; 
-            text-decoration: none; 
-            transition: transform 0.3s ease, color 0.3s ease; 
-        }
-        .social-icon:hover { 
-            transform: scale(1.2); 
-            color: #fff; 
-        }
-        @media (max-width: 768px) { 
-            nav { padding: 1rem 1.5rem; }
-            .logo { font-size: 1.5rem; }
-            .nav-links { margin: 0 1rem; font-size: 1rem; }
-            .hero-text { padding: 2rem; }
-            .content { padding: 3rem 1rem; }
-            .story, .mission { padding: 1.5rem; }
-            .story-segment, .mission-segment { flex-direction: column; gap: 1.5rem; }
-            .story-segment.reverse, .mission-segment.reverse { flex-direction: column; }
-            .story-segment .image-wrapper, .mission-segment .image-wrapper { max-width: 100%; }
-            .values { grid-template-columns: 1fr; }
+        @media (max-width: 480px) {
+            nav {
+                padding: 0.75rem 1rem;
+            }
+            .hamburger {
+                font-size: 1.5rem;
+            }
+            .hero-text h1 {
+                font-size: 28px;
+            }
+            .hero-text p {
+                font-size: 14px;
+            }
+            .story, .mission {
+                padding: 20px;
+            }
+            .story h2, .mission h2 {
+                font-size: 24px;
+            }
+            .modal-content {
+                padding: 1rem;
+                min-height: 350px;
+            }
+            .modal-content h2 {
+                font-size: 1.25rem;
+            }
+            .form-field input,
+            .form-field textarea {
+                padding: 0.6rem;
+                font-size: 0.85rem;
+            }
+            .form-actions {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .adventure-btn {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.85rem;
+                width: 100%;
+            }
+            .social-btn {
+                width: 40px;
+                height: 40px;
+            }
+            .social-btn svg {
+                width: 20px;
+                height: 20px;
+            }
         }
     </style>
 </head>
@@ -496,7 +738,7 @@ nav.scrolled {
             <div class="logo">
                 <a href="index.html"><img src="images/logo6.svg" alt="Tanzania Trek Logo"></a>
             </div>
-            <div class="nav-links">
+            <div class="nav-links" id="navLinks">
                 <div class="nav-item"><a href="index.html">Home</a></div>
                 <div class="dropdown">
                     <a href="tours.html" class="dropdown-btn">Tours</a>
@@ -520,10 +762,10 @@ nav.scrolled {
                     </div>
                 </div>
                 <div class="nav-item"><a href="about.html">About</a></div>
-                <div class="nav-item"><a href="Travel-guide.html">Travel-guide</a></div>
+                <div class="nav-item"><a href="Travel-guide.html">Travel Guide</a></div>
                 <div class="nav-item"><a href="contact.html">Contact</a></div>
             </div>
-            <button class="hamburger">☰</button>
+            <button class="hamburger" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false">☰</button>
         </nav>
         <div class="hero">
             <div class="hero-text">
@@ -534,29 +776,29 @@ nav.scrolled {
     </header>
     <div class="content">
         <div class="story">
-            <h2>Our Story: Born in Tanzania’s Wild Heart</h2>
+            <h2>Our Story: Rooted in Nature’s Pulse</h2>
             <div class="story-segment">
                 <div class="text">
-                    <p>I’m Jackx, the heartbeat of Tanzania Trek—a *Tanzania safari company* forged from a life untamed. I grew up on the Serengeti’s edge, barefoot in red dirt, chasing guinea fowl while elephant herds thundered past our mud hut. My cousins and I were bush rats—dodging trunks, hiding in tall grass, laughing as dust settled, all while my grandfather’s tales of Maasai warriors outsmarting lions lit up blood-red skies. Those stories shaped me, fueling a mission to share Tanzania’s raw soul through *authentic Tanzania adventures*.</p>
+                    <p>Tanzania Trek was born from a shared obsession with nature’s raw power—a *Tanzania safari company* sparked by a group of souls who couldn’t resist the wild’s call. It began in the Serengeti’s endless plains, where the earth trembles with the Migration’s thunder, and the sky burns gold at dusk. We were a ragtag crew—friends who’d spend nights under acacias, tracing constellations, mesmerized by lions’ roars echoing through the dark. That primal rhythm lit a fire to share Tanzania’s untamed beauty through *authentic Tanzania adventures*.</p>
                 </div>
                 <div class="image-wrapper">
-                    <img src="images/masai.jpg" loading="lazy" alt="Tanzania safari company Maasai village roots">
+                    <img src="images/masai.jpg" loading="lazy" alt="Tanzania safari company Serengeti origins">
                 </div>
             </div>
             <div class="story-segment reverse">
                 <div class="text">
-                    <p>School tried to cage me—three years in Dar es Salaam, wrestling IT circuits for a degree promising a cubicle life. But Tanzania’s wild pulse wouldn’t let go. I’d ditch class for Tarangire, mesmerized by baobabs older than time, their gnarled arms framing elephants in crimson mud. Zanzibar’s call was fierce too—nights in Stone Town’s maze, bartering fish, the air thick with salt and starlight. That’s when I knew: I’d build a *Tanzania safari company* to break free and show the world this land’s untamed heart.</p>
+                    <p>Our passion grew in Tarangire’s baobab forests, where ancient giants stand sentinel over elephant herds bathing in crimson mud. We’d hike silent trails, awed by Kilimanjaro’s snow-capped shadow piercing the horizon, then drift to Zanzibar’s shores, where turquoise waves whisper secrets of spice and salt. Nature wasn’t just a backdrop—it was our teacher, our muse, urging us to ditch city noise for the wild’s song. That’s when we vowed to craft a *Tanzania safari company* that honors the land’s fierce spirit.</p>
                 </div>
                 <div class="image-wrapper">
-                    <img src="images/rhino.jpg" loading="lazy" alt="Tanzania safari company Tarangire elephants">
+                    <img src="images/rhino.jpg" loading="lazy" alt="Tanzania safari company Tarangire baobabs">
                 </div>
             </div>
             <div class="story-segment">
                 <div class="text">
-                    <p>So I ditched the keyboard for trail maps, laced up dusty boots, and launched Tanzania Trek from pure grit. This isn’t a glossy agency—it’s me, unfiltered, with a crew who live Tanzania: Maasai trackers reading hoofprints like headlines, porters humming ancient tunes up sheer slopes, cooks turning campfire coals into feasts of ugali and nyama choma. Since 2020, we’ve braved crater winds, climbed till our lungs screamed, and haggled in Stone Town till dawn—crafting *custom Tanzania tours* that pulse with home.</p>
+                    <p>In 2020, we turned that vow into Tanzania Trek—built from sweat, dust, and a love for the wild that runs bone-deep. No suits, no scripts—just a team of locals who breathe Tanzania: trackers reading the bush like a book, porters hauling dreams up rugged slopes, cooks conjuring feasts under starlit skies. We’ve chased sunrises over Ngorongoro, camped where the wind howls free, and bartered in coastal markets till dawn—crafting *custom Tanzania tours* that pulse with nature’s heartbeat.</p>
                 </div>
                 <div class="image-wrapper">
-                    <img src="images/caar.jpg" loading="lazy" alt="Tanzania safari company Maasai tracker team">
+                    <img src="images/caar.jpg" loading="lazy" alt="Tanzania safari company local team">
                 </div>
             </div>
         </div>
@@ -607,44 +849,82 @@ nav.scrolled {
             </div>
         </div>
     </div>
-    <button class="back-to-top">↑ Top</button>
-    <div id="bookModal" class="modal">
+    <button class="back-to-top">↑</button>
+    <div id="bookModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()">×</span>
-            <h2>Book Your Tanzania Adventure</h2>
-            <form id="bookingForm">
-                <input type="text" id="fullName" placeholder="Full Name" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="text" id="tourName" placeholder="Itinerary Name" readonly value="Tarangire Blitz">
-                <input type="date" id="prefDate" placeholder="Preferred Date" required>
-                <textarea id="preferences" placeholder="Tell us your preferences (budget, group size, etc.)" rows="4"></textarea>
-                <button id="submitBtn">Submit Request</button>
+            <span class="close" onclick="closeModal()" aria-label="Close modal">✖</span>
+            <h2 id="modalTitle">Book Your Tanzania Adventure</h2>
+            <form id="bookingForm" class="adventure-form">
+                <div class="form-field">
+                    <input type="text" id="fullName" required aria-required="true" placeholder=" ">
+                    <label for="fullName">Your Name</label>
+                </div>
+                <div class="form-field">
+                    <input type="email" id="email" required aria-required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter a valid email" placeholder=" ">
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-field">
+                    <input type="tel" id="phone" required aria-required="true" pattern="\+?[0-9]{9,15}" title="Enter a valid phone number (9-15 digits)" placeholder=" ">
+                    <label for="phone">Phone</label>
+                </div>
+                <div class="form-field">
+                    <input type="text" id="tourName" readonly aria-readonly="true" placeholder=" ">
+                    <label for="tourName">Itinerary Name</label>
+                </div>
+                <div class="form-field">
+                    <input type="date" id="prefDate" required aria-required="true" placeholder=" ">
+                    <label for="prefDate">Preferred Date</label>
+                </div>
+                <div class="form-field">
+                    <input type="number" id="groupSize" min="1" required aria-required="true" placeholder=" ">
+                    <label for="groupSize">Group Size</label>
+                </div>
+                <div class="form-field">
+                    <textarea id="preferences" rows="3" aria-describedby="preferencesHint" placeholder=" "></textarea>
+                    <label for="preferences">Your Preferences</label>
+                    <small id="preferencesHint" class="sr-only">Optional: Tell us your adventure wishes!</small>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" id="submitBtn" class="adventure-btn">Submit Request</button>
+                    <a href="https://wa.me/255623474720" id="whatsappLink" class="social-btn whatsapp-btn" target="_blank">
+                        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.174.198-.347.223-.524.074-.173-.149-.757-.548-1.474-1.747-.716-1.198-1.193-2.148-1.342-2.347-.148-.198-.019-.347.136-.496.156-.149.698-.737.94-.986.242-.248.484-.496.67-.347.173.149 2.03 1.015 2.03 2.462 0 1.446-1.193 2.595-1.342 2.744-.149.149-2.074 3.213-5.06 4.407-2.986 1.193-2.595-.744-3.064-1.342-.471-.595-1.868-1.015-2.595-1.015-.727 0-1.015-.074-1.342.223-.322.297-1.193 1.342-1.193 2.595 0 1.252 1.015 2.347 1.193 2.595.173.248 2.074 3.957 5.655 5.803 3.58 1.845 6.645 1.446 7.668.595.996-.845 1.868-2.744 1.868-4.655 0-1.911-.845-3.064-1.015-3.361-.173-.297-.471-.446-.744-.446zM12 0C5.373 0 0 5.373 0 12c0 2.144.573 4.223 1.645 6.045L0 24l6.045-1.645C7.867 23.427 9.946 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+                    </a>
+                    <a href="mailto:info@tanzaniatrek.com" id="emailLink" class="social-btn email-btn">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2l-8 5-8-5h16zm-16 12V8l8 5 8-5v10H4z"/></svg>
+                    </a>
+                </div>
             </form>
         </div>
     </div>
     <footer>
         <div class="footer-content">
             <div class="footer-section about">
-                <h3>Tanzania Trek</h3>
+                <h3><span class="icon">🌍</span> Tanzania Trek</h3>
                 <p>A *trusted Tanzania safari company* crafting *authentic Tanzania adventures* since 2020—your journey starts here.</p>
+                <div class="social-icons">
+                    <a href="https://instagram.com/tanzaniatrek" target="_blank" class="social-icon">📷</a>
+                    <a href="https://twitter.com/tanztrek" target="_blank" class="social-icon">🐦</a>
+                    <a href="https://wa.me/255623474720" target="_blank" class="social-icon">💬</a>
+                </div>
             </div>
             <div class="footer-section links">
-                <h3>Quick Links</h3>
+                <h3><span class="icon">🔗</span> Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="tours.html">Tours</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="itinerary.html">Itineraries</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section contact">
-                <h3>Contact Us</h3>
-                <p>Email: <a href="/cdn-cgi/l/email-protection#e58c8b838aa5d18e8bd28d8681d9df8886cb868a88"><span class="__cf_email__" data-cfemail="f39a9d959cf3879a9f839c97909a8f899e90dd909c9e">[email protected]</span></a></p>
-                <p>Phone: <a href="https://wa.me/255623474720">+255 623 474 720</a></p>
-                <p>Office: Plot 45, Mbezi Beach, Dar es Salaam</p>
+                <h3><span class="icon">📍</span> Contact Us</h3>
+                <p><span class="icon">✉️</span> Email: <a href="mailto:info@tanzaniatrek.com">info@tanzaniatrek.com</a></p>
+                <p><span class="icon">📞</span> Phone: <a href="https://wa.me/255623474720">+255 623 474 720</a></p>
+                <p><span class="icon">🏢</span> Office: Plot 45, Mbezi Beach, Dar es Salaam</p>
             </div>
             <div class="footer-section newsletter">
-                <h3>Stay Updated</h3>
+                <h3><span class="icon">📬</span> Stay Updated</h3>
                 <p>Get the latest *Tanzania safari tour* tips and offers.</p>
                 <form id="newsletterForm">
                     <input type="email" placeholder="Your Email" required>
@@ -654,60 +934,96 @@ nav.scrolled {
         </div>
         <div class="footer-bottom">
             <p>© 2025 Tanzania Trek. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="https://instagram.com/tanzaniatrek" target="_blank" class="social-icon">📷</a>
-                <a href="https://twitter.com/tanztrek" target="_blank" class="social-icon">🐦</a>
-                <a href="https://wa.me/255623474720" target="_blank" class="social-icon">💬</a>
-            </div>
+            <p class="footer-tagline">Crafting Tanzania’s Wildest Adventures</p>
         </div>
     </footer>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
         const nav = document.querySelector('nav');
         const backToTop = document.querySelector('.back-to-top');
-        const navLinks = document.querySelector('.nav-links');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                nav.classList.add('scrolled');
-                backToTop.classList.add('visible');
-            } else {
-                nav.classList.remove('scrolled');
-                backToTop.classList.remove('visible');
-            }
+        const modal = document.getElementById('bookModal');
+        const closeBtn = modal.querySelector('.close');
+        const form = document.getElementById('bookingForm');
+        const tourNameInput = document.getElementById('tourName');
+        const submitBtn = document.getElementById('submitBtn');
+        const whatsappLink = document.getElementById('whatsappLink');
+        const emailLink = document.getElementById('emailLink');
+
+        hamburger.addEventListener('click', () => {
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('nav-open');
+            hamburger.textContent = isExpanded ? '☰' : '✖';
         });
+
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+            backToTop.classList.toggle('visible', window.scrollY > 100);
+        });
+
         backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-        function toggleMenu() {
-            navLinks.classList.toggle('active');
-        }
-        function openModal(tour) {
-            document.getElementById('bookModal').style.display = 'block';
-            document.getElementById('tourName').value = tour;
-        }
+
+        window.openModal = function(tour) {
+            tourNameInput.value = tour;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                modal.querySelector('.modal-content').focus();
+            }, 100);
+        };
+
         function closeModal() {
-            document.getElementById('bookModal').style.display = 'none';
+            modal.style.animation = 'flyOut 0.5s ease-in forwards';
+            setTimeout(() => {
+                modal.style.display = 'none';
+                modal.style.animation = 'flyIn 0.7s ease-out forwards';
+                document.body.style.overflow = 'auto';
+            }, 500);
         }
-        document.getElementById('submitBtn').addEventListener('click', (e) => {
-            const fullName = document.getElementById('fullName').value;
-            const email = document.getElementById('email').value;
-            const tourName = document.getElementById('tourName').value;
-            const prefDate = document.getElementById('prefDate').value;
-            const preferences = document.getElementById('preferences').value;
-            if (!fullName || !email || !prefDate) {
-                alert("Yo, fill in the blanks first!");
-                return;
-            }
-            const message = `Yo Tanzania Trek! I’m ${fullName}. Booking ${tourName} for ${prefDate}. Email: ${email}. Preferences: ${preferences}. Let’s roll!`;
-            window.open(`https://wa.me/255623474720?text=${encodeURIComponent(message)}`, '_blank');
-            alert('WhatsApp’s up! Send it to seal the deal.');
-            closeModal();
+
+        closeBtn.addEventListener('click', closeModal);
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            const whatsappMessage = `New Adventure Booking:%0AName: ${data.fullName}%0AItinerary: ${data.tourName}%0AEmail: ${data.email}%0APhone: ${data.phone}%0AStart Date: ${data.prefDate}%0AGroup Size: ${data.groupSize}%0APreferences: ${data.preferences || 'None'}`;
+            const emailSubject = `New Booking: ${data.tourName}`;
+            const emailBody = `Name: ${data.fullName}\nItinerary: ${data.tourName}\nEmail: ${data.email}\nPhone: ${data.phone}\nStart Date: ${data.prefDate}\nGroup Size: ${data.groupSize}\nPreferences: ${data.preferences || 'None'}`;
+
+            whatsappLink.href = `https://wa.me/255623474720?text=${encodeURIComponent(whatsappMessage)}`;
+            emailLink.href = `mailto:info@tanzaniatrek.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+
+            setTimeout(() => {
+                whatsappLink.click();
+                submitBtn.textContent = 'Request Sent!';
+                setTimeout(() => {
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Submit Request';
+                    closeModal();
+                }, 2000);
+            }, 1000);
+        });
+
+        document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thanks for subscribing! Stay tuned for Tanzania Trek updates.');
+            e.target.reset();
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9197e2c6483b6740',t:'MTc0MDgyNDA0OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
