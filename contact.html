@@ -66,8 +66,8 @@
             z-index: -1; 
         }
         nav {
-            background: rgba(0, 0, 0, 0.1); /* Ultra transparent */
-            backdrop-filter: blur(20px); /* Sharper blur for clarity */
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(20px);
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
@@ -78,7 +78,7 @@
             transition: all 0.3s ease;
         }
         nav.scrolled {
-            background: rgba(241, 90, 36, 0.7); /* Lighter orange on scroll */
+            background: rgba(241, 90, 36, 0.7);
             box-shadow: 0 0 20px rgba(241, 90, 36, 0.4);
         }
         .logo {
@@ -86,14 +86,11 @@
             align-items: center;
             transition: transform 0.3s ease, filter 0.3s ease;
         }
-        .logo a {
-            display: block; /* Fully clickable */
-            text-decoration: none;
-        }
+        .logo a { text-decoration: none; }
         .logo img {
-            height: 80px; /* Bigger logo—adjust if needed */
+            height: 80px;
             width: auto;
-            max-width: 200px; /* Wider cap for balance */
+            max-width: 200px;
             filter: drop-shadow(0 0 5px rgba(241, 196, 15, 0.7));
             transition: transform 0.3s ease;
         }
@@ -124,9 +121,7 @@
             background: rgba(241, 90, 36, 0.8);
             box-shadow: 0 0 10px rgba(241, 90, 36, 0.5);
         }
-        .dropdown {
-            position: relative;
-        }
+        .dropdown { position: relative; }
         .dropdown-content {
             display: none;
             position: absolute;
@@ -151,12 +146,8 @@
             font-size: 0.9rem;
             text-transform: none;
         }
-        .dropdown-content a:hover {
-            background: #d35400;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+        .dropdown-content a:hover { background: #d35400; }
+        .dropdown:hover .dropdown-content { display: block; }
         .hamburger {
             display: none;
             font-size: 1.5rem;
@@ -166,9 +157,7 @@
             cursor: pointer;
             transition: transform 0.3s ease;
         }
-        .hamburger:hover {
-            animation: bounce 0.5s infinite;
-        }
+        .hamburger:hover { animation: bounce 0.5s infinite; }
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-5px); }
@@ -176,7 +165,7 @@
         .hero {
             position: relative;
             min-height: 80vh;
-            background: url("images/zanzibar.jpg") center/cover no-repeat;
+            background: url("images/konde.jpg") center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -300,11 +289,17 @@
             border-radius: 10px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.2);
             position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, max-height 0.3s ease;
+            cursor: pointer;
         }
         .story-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .story-card.expanded {
+            max-height: 500px;
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
         }
         .story-card.left { text-align: right; }
         .story-card.right { text-align: left; }
@@ -331,17 +326,13 @@
             border: 2px solid #f1c40f;
             transition: transform 0.3s ease;
         }
-        .story-image:hover {
-            transform: scale(1.05);
-        }
+        .story-image:hover { transform: scale(1.05); }
         .story-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        .timeline-spacer {
-            position: relative;
-        }
+        .timeline-spacer { position: relative; }
         .timeline-dot {
             position: absolute;
             top: 50%;
@@ -411,6 +402,23 @@
             background: #d35400;
             transform: scale(1.05);
         }
+        .form-status {
+            display: block;
+            margin-top: 10px;
+            font-size: 16px;
+            text-align: center;
+        }
+        .form-status.success { color: #27ae60; }
+        .form-status.error { color: #c0392b; }
+        .form-status.loading::after {
+            content: 'Sending...';
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
         .contact-info p {
             font-family: 'Open Sans', sans-serif;
             font-size: 18px;
@@ -423,9 +431,7 @@
             font-weight: 600;
             transition: color 0.3s ease;
         }
-        .contact-info a:hover {
-            color: #f1c40f;
-        }
+        .contact-info a:hover { color: #f1c40f; }
         .map-section {
             margin-bottom: 60px;
         }
@@ -478,16 +484,12 @@
             text-decoration: none;
             transition: color 0.3s ease;
         }
-        .footer-section a:hover {
-            color: #fff;
-        }
+        .footer-section a:hover { color: #fff; }
         .footer-section.links ul {
             list-style: none;
             padding: 0;
         }
-        .footer-section.links li {
-            margin: 0.5rem 0;
-        }
+        .footer-section.links li { margin: 0.5rem 0; }
         .footer-section.newsletter form {
             display: flex;
             gap: 0.5rem;
@@ -510,9 +512,7 @@
             cursor: pointer;
             transition: background 0.3s ease;
         }
-        .footer-section.newsletter button:hover {
-            background: #d35400;
-        }
+        .footer-section.newsletter button:hover { background: #d35400; }
         .footer-bottom {
             border-top: 1px solid #f1c40f;
             padding-top: 1rem;
@@ -527,10 +527,7 @@
             margin: 0;
             font-size: 0.9rem;
         }
-        .social-icons {
-            display: flex;
-            gap: 1rem;
-        }
+        .social-icons { display: flex; gap: 1rem; }
         .social-icon {
             font-family: 'Open Sans', sans-serif;
             color: #f1c40f;
@@ -542,36 +539,82 @@
             transform: scale(1.2);
             color: #fff;
         }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .whatsapp-icon {
+            width: 60px;
+            height: 60px;
+            transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover .whatsapp-icon { transform: scale(1.2); }
+        .scroll-top {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background: #e67e22;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+        .scroll-top.visible { opacity: 1; }
+        .scroll-top:hover { background: #d35400; }
+
+        /* Enhanced Media Queries */
+        @media (max-width: 1024px) {
+            .nav-links { gap: 1rem; }
+            .hero-text h1 { font-size: 50px; }
+            .contact-details { grid-template-columns: 1fr; gap: 20px; }
+        }
         @media (max-width: 768px) {
-            nav { padding: 1rem 1.5rem; }
-            .logo img { height: 60px; max-width: 150px; }
+            nav { padding: 0.8rem 1rem; }
+            .logo img { height: 50px; max-width: 120px; }
             .nav-links {
                 display: none;
                 position: fixed;
                 top: 0;
                 right: 0;
-                width: 70%;
+                width: 80%;
                 height: 100%;
                 background: #e67e22;
                 flex-direction: column;
-                padding: 4rem 2rem;
+                padding: 3rem 1.5rem;
                 transform: translateX(100%);
                 transition: transform 0.3s ease;
             }
-            .nav-links.active {
-                display: flex;
-                transform: translateX(0);
-            }
+            .nav-links.active { display: flex; transform: translateX(0); }
             .hamburger { display: block; }
-            .hero-text h1 { font-size: 40px; }
-            .hero-text p { font-size: 18px; }
+            .hero-text h1 { font-size: 36px; }
+            .hero-text p { font-size: 16px; }
             .content { padding: 40px 15px; }
             .story-timeline { grid-template-columns: 1fr; gap: 20px; }
             .story-timeline::before { display: none; }
-            .story-card { text-align: center; }
+            .story-card { text-align: center; max-height: 300px; overflow: hidden; }
+            .story-card.expanded { max-height: none; }
             .timeline-dot { display: none; }
-            .contact-details { grid-template-columns: 1fr; }
-            .map-section iframe { height: 300px; }
+            .whatsapp-icon { width: 50px; height: 50px; }
+            .scroll-top { bottom: 70px; width: 40px; height: 40px; font-size: 20px; }
+        }
+        @media (max-width: 480px) {
+            .hero { min-height: 60vh; }
+            .hero-text { padding: 20px; }
+            .hero-text h1 { font-size: 28px; }
+            .hero-text p { font-size: 14px; }
+            .content { padding: 20px 10px; }
+            .contact-intro h2 { font-size: 24px; }
+            .story-header h2 { font-size: 36px; }
+            .contact-form h2, .contact-info h2 { font-size: 28px; }
+            .map-section iframe { height: 250px; }
         }
     </style>
 </head>
@@ -608,7 +651,7 @@
                 <div class="nav-item"><a href="Travel-guide.html">Travel-guide</a></div>
                 <div class="nav-item"><a href="contact.html">Contact</a></div>
             </div>
-            <button class="hamburger">☰</button>
+            <button class="hamburger" aria-label="Toggle Menu">☰</button>
         </nav>
         <div class="hero">
             <div class="hero-text">
@@ -628,7 +671,7 @@
                 <p>Nature’s Pulse Awaits—Book Your Adventure</p>
             </div>
             <div class="story-timeline">
-                <div class="story-card left">
+                <div class="story-card left" onclick="toggleExpand(this)">
                     <h3>Serengeti Thunder</h3>
                     <p>Wildebeest herds shake the earth—millions strong, a primal roar you’ll feel in your bones. This is *Tanzania safari* magic—book it with us.</p>
                     <div class="story-image">
@@ -638,14 +681,14 @@
                 <div class="timeline-spacer">
                     <div class="timeline-dot"></div>
                 </div>
-                <div class="story-card right">
+                <div class="story-card right" onclick="toggleExpand(this)">
                     <h3>Kilimanjaro’s Crown</h3>
                     <p>Africa’s peak pierces the sky—snow gleams under a savage sun. Climb it, live it—your *Tanzania adventure* starts with a call to us.</p>
                     <div class="story-image">
                         <img src="images/mlima.jpg" loading="lazy" alt="Contact Tanzania Trek Kilimanjaro summit">
                     </div>
                 </div>
-                <div class="story-card left">
+                <div class="story-card left" onclick="toggleExpand(this)">
                     <h3>Zanzibar’s Whisper</h3>
                     <p>Turquoise waves kiss coral reefs—dolphins dance, spices drift. This coastal soul fuels your *Tanzania beach tour*—reach out, let’s roll.</p>
                     <div class="story-image">
@@ -655,7 +698,7 @@
                 <div class="timeline-spacer">
                     <div class="timeline-dot"></div>
                 </div>
-                <div class="story-card right">
+                <div class="story-card right" onclick="toggleExpand(this)">
                     <h3>Your Wild Next</h3>
                     <p>Lions stalk, baobabs stand guard—nature’s raw symphony calls. *Contact Tanzania Trek* below—book now, chase the wild with us.</p>
                     <div class="story-image">
@@ -668,11 +711,12 @@
             <div class="contact-form">
                 <h2>Send Us a Message</h2>
                 <form id="contactForm">
-                    <input type="text" id="name" placeholder="Your Name" required>
-                    <input type="email" id="email" placeholder="Your Email" required>
-                    <input type="text" id="subject" placeholder="Subject" required>
-                    <textarea id="message" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send It</button>
+                    <input type="text" id="name" placeholder="Your Name" required aria-label="Your Name">
+                    <input type="email" id="email" placeholder="Your Email" required aria-label="Your Email">
+                    <input type="text" id="subject" placeholder="Subject" required aria-label="Subject">
+                    <textarea id="message" placeholder="Your Message" required aria-label="Your Message"></textarea>
+                    <button type="submit" id="submitBtn">Send It</button>
+                    <span class="form-status" id="formStatus"></span>
                 </form>
             </div>
             <div class="contact-info">
@@ -705,7 +749,7 @@
             </div>
             <div class="footer-section contact">
                 <h3>Contact Us</h3>
-                <p>Email: <a href="/cdn-cgi/l/email-protection#88e1e6eee7c8bce1e4b8e7e0e9bfb9eee0a6ebe7e5"><span class="__cf_email__" data-cfemail="b29b9c949df2869b9e829d9a93858d9a94dd909c9e">[email protected]</span></a></p>
+                <p>Email: <a href="mailto:info@tanzaniatrek.com">info@tanzaniatrek.com</a></p>
                 <p>Phone: <a href="https://wa.me/255623474720">+255 623 474 720</a></p>
                 <p>Office: Plot 45, Mbezi Beach, Dar es Salaam</p>
             </div>
@@ -713,7 +757,7 @@
                 <h3>Stay Updated</h3>
                 <p>Get the latest *Tanzania safari booking* updates.</p>
                 <form id="newsletterForm">
-                    <input type="email" placeholder="Your Email" required>
+                    <input type="email" placeholder="Your Email" required aria-label="Your Email">
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
@@ -721,13 +765,21 @@
         <div class="footer-bottom">
             <p>© 2025 Tanzania Trek. All rights reserved.</p>
             <div class="social-icons">
-                <a href="https://instagram.com/tanzaniatrek" target="_blank" class="social-icon">📷</a>
-                <a href="https://twitter.com/tanztrek" target="_blank" class="social-icon">🐦</a>
-                <a href="https://wa.me/255623474720" target="_blank" class="social-icon">💬</a>
+                <a href="https://instagram.com/tanzaniatrek" target="_blank" class="social-icon" aria-label="Instagram">📷</a>
+                <a href="https://twitter.com/tanztrek" target="_blank" class="social-icon" aria-label="Twitter">🐦</a>
+                <a href="https://wa.me/255623474720" target="_blank" class="social-icon" aria-label="WhatsApp">💬</a>
             </div>
         </div>
     </footer>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <div class="whatsapp-float">
+        <a href="https://wa.me/255623474720" target="_blank" aria-label="Chat with us on WhatsApp">
+            <img src="images/whatsapp-icon.png" alt="WhatsApp Chat" class="whatsapp-icon">
+        </a>
+    </div>
+    <button class="scroll-top" aria-label="Scroll to top">⬆</button>
+
+    <script>
+        // Nav Scroll Effect
         const nav = document.querySelector('nav');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
@@ -736,29 +788,71 @@
                 nav.classList.remove('scrolled');
             }
         });
-        function toggleMenu() {
+
+        // Hamburger Menu Toggle
+        document.querySelector('.hamburger').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Expandable Timeline Cards
+        function toggleExpand(card) {
+            if (window.innerWidth <= 768) {
+                card.classList.toggle('expanded');
+            }
         }
-        document.getElementById('contactForm').addEventListener('submit', (e) => {
+
+        // Dynamic Contact Form
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            if (!name || !email || !subject || !message) {
-                alert("Yo, fill in all the blanks!");
+            const form = e.target;
+            const status = document.getElementById('formStatus');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+
+            if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+                status.textContent = 'Please fill all fields!';
+                status.className = 'form-status error';
                 return;
             }
-            const mailto = `mailto:info@tanzaniatrek.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
-            window.location.href = mailto;
-            alert('Email’s ready—hit send to kick it off!');
-            e.target.reset();
+
+            status.textContent = '';
+            status.className = 'form-status loading';
+            submitBtn.disabled = true;
+
+            try {
+                await new Promise(resolve => setTimeout(resolve, 2000)); // Simulated delay
+                status.textContent = 'Message sent! We’ll get back to you soon.';
+                status.className = 'form-status success';
+                form.reset();
+            } catch (error) {
+                status.textContent = 'Oops! Something went wrong.';
+                status.className = 'form-status error';
+            } finally {
+                submitBtn.disabled = false;
+            }
         });
+
+        // Newsletter Form
         document.getElementById('newsletterForm').addEventListener('submit', (e) => {
             e.preventDefault();
             alert('Thanks for subscribing! Stay tuned for Tanzania Trek updates.');
             e.target.reset();
         });
+
+        // Scroll-to-Top Button
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9197e2c6483b6740',t:'MTc0MDgyNDA0OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
