@@ -192,6 +192,42 @@
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-5px); }
         }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 70%;
+                height: 100%;
+                background: #e67e22;
+                flex-direction: column;
+                padding: 4rem 2rem;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+            }
+            .nav-links.active {
+                display: flex;
+                transform: translateX(0);
+            }
+            .nav-links .nav-item, .nav-links .dropdown {
+                width: 100%;
+            }
+            .nav-links a, .nav-links .dropdown-btn {
+                font-size: 1.25rem;
+                padding: 1rem;
+                text-align: left;
+            }
+            .dropdown-content {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                background: #d35400;
+            }
+        }
         .hero { 
             position: relative; 
             min-height: 100vh; 
@@ -843,30 +879,6 @@
                 box-shadow: none; 
                 background: #d35400; 
             }
-            .hamburger { 
-                display: block; 
-            }
-            .cta-nav { 
-                width: 100%; 
-                text-align: center; 
-            }
-            .hero-text { padding: 2rem; }
-            .content { padding: 3rem 1rem; }
-            .section h2 { font-size: 2rem; }
-            .section { padding: 1.5rem; }
-            .tour-card { 
-                width: 100%; 
-                max-width: 400px; 
-            }
-            .why-tanzania, .stats, .testimonials, .tips-list, .top-picks, .faq-list { grid-template-columns: 1fr; }
-            .map-teaser iframe { height: 300px; }
-            .cta-section { padding: 2rem; }
-            .highlight-card { width: 300px; }
-            .image-break { height: 500px; margin: -4rem 0; }
-            .image-break .break-text { font-size: 3.5rem; }
-            .image-break .break-subtext { font-size: 1.5rem; margin-top: 4rem; }
-            .section-above, .section-below { padding: 1.5rem; margin: 1rem 0; }
-            .section:nth-child(2), .section:nth-child(4), .section:nth-child(6) { margin: 1rem 0; }
         }
         .footer-content { 
             display: grid; 
@@ -1005,7 +1017,7 @@
                 <div class="nav-item"><a href="contact.html">Contact</a></div>
                 <button class="cta-nav" onclick="openModal('')">Book Now</button>
             </div>
-            <button class="hamburger">☰</button>
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
         </nav>
         <div class="hero">
             <video autoplay muted loop>
@@ -1120,7 +1132,7 @@
                 <p>Home to the Great Migration, Big Five, and endless plains—experience nature’s raw power with a *Tanzania safari tour*.</p>
             </div>
             <div class="why-item">
-                <img src="images/suunset.jpg" loading="lazy" alt="Tanzania safari landscapes Serengeti sunset">
+                <img src="images/su sunset.jpg" loading="lazy" alt="Tanzania safari landscapes Serengeti sunset">
                 <h3>Stunning Landscapes</h3>
                 <p>From Kilimanjaro’s peaks to Ngorongoro’s crater, Tanzania’s vistas are a feast for the soul on every *safari adventure*.</p>
             </div>
@@ -1150,7 +1162,7 @@
                 <p>Live with warriors, herd goats, sip chai—immerse in Tanzania’s beating heart with a *safari tour*.</p>
             </div>
             <div class="pick-item">
-                <img src="images/balon safari.jpg" loading="lazy" alt="Balloon safari Tanzania Serengeti adventure">
+                <img src="images/balloon safari.jpg" loading="lazy" alt="Balloon safari Tanzania Serengeti adventure">
                 <h3>Balloon Safari</h3>
                 <p>Soar over the Serengeti at dawn—wildlife and plains from a new height on a *Tanzania safari*.</p>
             </div>
@@ -1225,7 +1237,7 @@
                     </div>
                 </div>
                 <div class="highlight-card">
-                    <img src="images/balon safari.jpg" loading="lazy" alt="Arusha coffee Tanzania safari highlands">
+                    <img src="images/balloon safari.jpg" loading="lazy" alt="Arusha coffee Tanzania safari highlands">
                     <div class="highlight-info">
                         <h3>Arusha Coffee</h3>
                         <p>Sip fresh brews amid lush highlands—Meru’s shadow in every cup on a *Tanzania safari tour*.</p>
@@ -1317,7 +1329,7 @@
             <a href="contact.html" class="cta-button">Get in Touch</a>
         </section>
     </div>
-    <button class="back-to-top">↑ Top</button>
+    <button class="back-to-top" onclick="scrollToTop()">↑ Top</button>
     <div id="bookModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">×</span>
@@ -1328,7 +1340,7 @@
                 <input type="text" id="tourName" placeholder="Itinerary Name">
                 <input type="date" id="prefDate" placeholder="Preferred Date" required>
                 <textarea id="preferences" placeholder="Tell us your preferences (budget, group size, etc.)" rows="4"></textarea>
-                <button id="submitBtn">Submit Request</button>
+                <button id="submitBtn" type="submit">Submit Request</button>
             </form>
         </div>
     </div>
@@ -1366,89 +1378,62 @@
             <p>© 2025 Tanzania Trek. All rights reserved.</p>
             <div class="social-icons">
                 <a href="https://instagram.com/tanzaniatrek" target="_blank" class="social-icon">📷</a>
-                <a href="https://twitter.com/tanztrek" target="_blank" class="social-icon">🐦</a>
+                <a href="https://twitter.com/tanztrek" target="_blank" class="social-icon">
                 <a href="https://wa.me/255623474720" target="_blank" class="social-icon">💬</a>
+                </div>
             </div>
-        </div>
-    </footer>
-   
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        const nav = document.querySelector('nav');
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const tourCards = document.querySelectorAll('.tour-card');
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        window.addEventListener('load', () => {
-            tourCards.forEach(card => {
-                card.classList.add('visible');
+        </footer>
+        <script>
+            const nav = document.querySelector('nav');
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+    
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
             });
-        });
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
+    
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
             });
-        });
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+    
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 });
             });
-        });
-
-        function openModal(tourName) {
-            const modal = document.getElementById('bookModal');
-            modal.style.display = 'block';
-            document.getElementById('tourName').value = tourName;
-            document.getElementById('planTripForm').addEventListener('input', updateLinks);
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('bookModal');
-            modal.style.display = 'none';
-        }
-
-        function updateLinks() {
-            const fullName = document.getElementById('fullName').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const tourName = document.getElementById('tourName').value;
-            const startDate = document.getElementById('startDate').value;
-            const groupSize = document.getElementById('groupSize').value;
-            const preferences = document.getElementById('preferences').value;
-
-            const whatsappMessage = `Hi Tanzania Trek! I’m ${fullName}, planning a trip. Tour: ${tourName}, Start Date: ${startDate}, Group Size: ${groupSize}. Preferences: ${preferences}.`;
-            const emailSubject = `Plan My Tanzania Tour - ${tourName}`;
-            const emailBody = `Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nTour: ${tourName}\nStart Date: ${startDate}\nGroup Size: ${groupSize}\nPreferences: ${preferences}`;
-
-            document.getElementById('whatsappLink').href = `https://wa.me/255623474720?text=${encodeURIComponent(whatsappMessage)}`;
-            document.getElementById('emailLink').href = `mailto:info@tanzaniatrek.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-        }
-
-        document.getElementById('planTripForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Request submitted! We’ll get back to you soon.');
-            closeModal();
-        });
-    </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9197c4c54f6aed8c',t:'MTc0MDgyMjgyMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-
-</body>
-</html>
+    
+            function openModal(tourName) {
+                const modal = document.getElementById('bookModal');
+                modal.style.display = 'block';
+                document.getElementById('tourName').value = tourName;
+            }
+    
+            function closeModal() {
+                const modal = document.getElementById('bookModal');
+                modal.style.display = 'none';
+            }
+    
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+    
+            document.getElementById('bookingForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Request submitted! We’ll get back to you soon.');
+                closeModal();
+            });
+    
+            document.querySelector('.back-to-top').addEventListener('click', scrollToTop);
+        </script>
+    </body>
+    </html>
