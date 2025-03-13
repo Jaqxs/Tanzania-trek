@@ -111,6 +111,7 @@
             color: #fff;
             cursor: pointer;
             transition: transform 0.3s ease;
+            z-index: 101;
         }
         .hamburger:hover {
             transform: scale(1.1);
@@ -179,13 +180,19 @@
             box-shadow: 0 0 15px rgba(241, 196, 15, 0.7);
         }
         @media (max-width: 768px) {
-            nav { padding: 0.75rem 1rem; }
+            nav { 
+                padding: 0.75rem 1rem; 
+                position: fixed;
+                width: 100%;
+                top: 0;
+                left: 0;
+            }
             .logo { font-size: 1.5rem; }
             .hamburger { display: block; }
             .nav-links {
                 position: fixed;
                 top: 0;
-                right: 0;
+                right: -100%;
                 width: 80%;
                 max-width: 300px;
                 height: 100vh;
@@ -193,14 +200,24 @@
                 flex-direction: column;
                 padding: 4rem 2rem;
                 z-index: 100;
-                transform: translateX(100%);
-                transition: transform 0.3s ease-in-out;
+                transition: right 0.3s ease-in-out;
                 border-left: 3px solid #f1c40f;
                 box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
                 overflow-y: auto;
             }
             .nav-links.active {
-                transform: translateX(0);
+                right: 0;
+            }
+            body.menu-open::after {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 99;
+                transition: opacity 0.3s ease;
             }
             .nav-links a, .nav-links .dropdown-btn {
                 font-size: 1.25rem;
@@ -341,7 +358,7 @@
         }
         .itinerary-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px  WORSTpx rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         .itinerary-card .image-wrapper {
             width: 100%;
@@ -845,7 +862,7 @@
                 </div>
                 <h2>Serengeti Express</h2>
                 <p class="description">A thrilling 3-day *Serengeti safari itinerary* chasing the Great Migration across golden plains with Maasai guides.</p>
-                <a href="serengeti-express.html" class="details-link" onclick="openModal('Serengeti Express'); return false;">View Details</a>
+                <a href="serengeti-express.html" class="details-link">View Details</a>
             </div>
             <div class="itinerary-card">
                 <div class="image-wrapper">
@@ -853,7 +870,7 @@
                 </div>
                 <h2>Kilimanjaro Classic</h2>
                 <p class="description">A 5-day *Kilimanjaro trek itinerary* via Machame Route—jungle trails to icy peaks with expert support.</p>
-                <a href="kilimanjaro-classic.html" class="details-link" onclick="openModal('Kilimanjaro Classic'); return false;">View Details</a>
+                <a href="kilimanjaro-classic.html" class="details-link">View Details</a>
             </div>
             <div class="itinerary-card">
                 <div class="image-wrapper">
@@ -861,15 +878,15 @@
                 </div>
                 <h2>Zanzibar Retreat</h2>
                 <p class="description">A 4-day *Zanzibar safari itinerary*—snorkel reefs, taste spices, and soak in coastal serenity.</p>
-                <a href="zanzibar-retreat.html" class="details-link" onclick="openModal('Zanzibar Retreat'); return false;">View Details</a>
+                <a href="zanzibar-retreat.html" class="details-link">View Details</a>
             </div>
             <div class="itinerary-card">
                 <div class="image-wrapper">
-                    <img src="images/olga-budko-bFmjyv5uiAU-unsplash.jpg" loading="lazy" alt="Ngorongoro Quick Tanzania safari itinerary">
+                    <img src="images/mufasa.jpg" loading="lazy" alt="Ngorongoro Quick Tanzania safari itinerary">
                 </div>
                 <h2>Ngorongoro Quick</h2>
                 <p class="description">A 2-day *Ngorongoro safari itinerary*—spot rhinos and lions in this volcanic wildlife haven.</p>
-                <a href="ngorongoro-quick.html" class="details-link" onclick="openModal('Ngorongoro Quick'); return false;">View Details</a>
+                <a href="ngorongoro-quick.html" class="details-link">View Details</a>
             </div>
             <div class="itinerary-card">
                 <div class="image-wrapper">
@@ -877,7 +894,7 @@
                 </div>
                 <h2>Tarangire Blitz</h2>
                 <p class="description">A 3-day *Tarangire safari itinerary* through elephant-filled plains and baobab landscapes.</p>
-                <a href="tarangire-blitz.html" class="details-link" onclick="openModal('Tarangire Blitz'); return false;">View Details</a>
+                <a href="tarangire-blitz.html" class="details-link">View Details</a>
             </div>
             <div class="itinerary-card">
                 <div class="image-wrapper">
@@ -885,7 +902,7 @@
                 </div>
                 <h2>Ruaha Explorer</h2>
                 <p class="description">A 5-day *Ruaha safari itinerary* into rugged wilderness—track sable antelopes and roam rivers.</p>
-                <a href="ruaha-explorer.html" class="details-link" onclick="openModal('Ruaha Explorer'); return false;">View Details</a>
+                <a href="ruaha-explorer.html" class="details-link">View Details</a>
             </div>
             <div class="itinerary-card">
                 <div class="image-wrapper">
@@ -893,7 +910,7 @@
                 </div>
                 <h2>Selous Journey</h2>
                 <p class="description">A 6-day *Selous safari itinerary*—boat safaris and walking treks through untouched bush.</p>
-                <a href="selous-journey.html" class="details-link" onclick="openModal('Selous Journey'); return false;">View Details</a>
+                <a href="selous-journey.html" class="details-link">View Details</a>
             </div>
             <div class="itinerary-card">
                 <div class="image-wrapper">
@@ -901,7 +918,7 @@
                 </div>
                 <h2>Arusha Getaway</h2>
                 <p class="description">A 3-day *Arusha safari itinerary*—coffee farms, crater hikes, and serene mountain air.</p>
-                <a href="arusha-getaway.html" class="details-link" onclick="openModal('Arusha Getaway'); return false;">View Details</a>
+                <a href="arusha-getaway.html" class="details-link">View Details</a>
             </div>
         </div>
         <div class="accommodations-overview">
@@ -1011,7 +1028,7 @@
             </div>
             <div class="footer-section contact">
                 <h3><span class="icon">📍</span> Get in Touch</h3>
-                <p><span class="icon">✉️</span> Email: <a href="mailto:info@tanzaniatrek.com">info@tanzaniatrek.com</a></p>
+                <p><span class="icon">✉️</span> Email: <a href="/cdn-cgi/l/email-protection#86afa8a0a9c6f2a7a8bca7a8afa7f2f4a3ada8a5a9ab"><span class="__cf_email__" data-cfemail="e28b8c848da296838c98838c8b839692858bc28f8381">[email&#160;protected]</span></a></p>
                 <p><span class="icon">📞</span> Phone: <a href="https://wa.me/255623474720">+255 623 474 720</a></p>
                 <p><span class="icon">🏢</span> Office: Plot 45, Mbezi Beach, Dar es Salaam</p>
             </div>
@@ -1029,7 +1046,7 @@
             <p class="footer-tagline">Crafting Tanzania’s Wildest Itineraries</p>
         </div>
     </footer>
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         const nav = document.querySelector('nav');
         const navLinks = document.querySelector('.nav-links');
         const hamburger = document.querySelector('.hamburger');
@@ -1040,16 +1057,12 @@
             backToTop.classList.toggle('visible', window.scrollY > 100);
         });
 
-        hamburger.addEventListener('click', () => {
-            if (navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                hamburger.textContent = '☰';
-                document.body.classList.remove('menu-open');
-            } else {
-                navLinks.classList.add('active');
-                hamburger.textContent = '✖';
-                document.body.classList.add('menu-open');
-            }
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isActive = navLinks.classList.contains('active');
+            navLinks.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+            hamburger.textContent = isActive ? '☰' : '✖';
         });
 
         document.addEventListener('click', (e) => {
@@ -1062,7 +1075,8 @@
             }
         });
 
-        const navItems = document.querySelectorAll('.nav-links a, .nav-links .cta-nav');
+        // Updated: Only close navbar for non-dropdown links
+        const navItems = document.querySelectorAll('.nav-links a:not(.dropdown-btn), .nav-links .cta-nav');
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 if (window.innerWidth <= 768) {
@@ -1130,5 +1144,5 @@
             e.target.reset();
         });
     </script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'91fa9c4d1884bf95',t:'MTc0MTg1OTI1My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
