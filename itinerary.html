@@ -7,7 +7,7 @@
     <meta name="description" content="Explore custom Tanzania safari itineraries—Serengeti, Kilimanjaro, Zanzibar & more. Plan your adventure with Tanzania Trek!">
     <meta name="keywords" content="Tanzania safari itineraries, custom Tanzania tours, Serengeti safari itinerary, Kilimanjaro trek itinerary, Tanzania Trek">
     <link rel="preload" href="images/giraffes.jpg" as="image">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&family=Poppins:wght@400;600;700&family=Adventure:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -60,6 +60,9 @@
             overflow-x: hidden;
             position: relative;
         }
+        body.menu-open {
+            overflow: hidden;
+        }
         body::before {
             content: '';
             position: fixed;
@@ -109,14 +112,13 @@
             cursor: pointer;
             transition: transform 0.3s ease;
         }
-        .hamburger:focus {
-            outline: 2px solid #f1c40f;
+        .hamburger:hover {
+            transform: scale(1.1);
         }
         .nav-links {
             display: flex;
             align-items: center;
             gap: 1.5rem;
-            transition: right 0.3s ease-in-out;
         }
         .nav-links a, .nav-links .dropdown-btn {
             font-family: 'Montserrat', sans-serif;
@@ -148,7 +150,6 @@
             top: 100%;
             left: 0;
             z-index: 10;
-            animation: slideDown 0.3s ease-out;
         }
         .dropdown:hover .dropdown-content {
             display: block;
@@ -176,6 +177,57 @@
         .cta-nav:hover {
             transform: scale(1.05);
             box-shadow: 0 0 15px rgba(241, 196, 15, 0.7);
+        }
+        @media (max-width: 768px) {
+            nav { padding: 0.75rem 1rem; }
+            .logo { font-size: 1.5rem; }
+            .hamburger { display: block; }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: rgba(241, 90, 36, 0.95);
+                flex-direction: column;
+                padding: 4rem 2rem;
+                z-index: 100;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+                border-left: 3px solid #f1c40f;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+                overflow-y: auto;
+            }
+            .nav-links.active {
+                transform: translateX(0);
+            }
+            .nav-links a, .nav-links .dropdown-btn {
+                font-size: 1.25rem;
+                padding: 1rem;
+                width: 100%;
+                text-align: left;
+            }
+            .dropdown-content {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                border-radius: 0;
+                display: none;
+                background: #d35400;
+                margin-left: 1rem;
+            }
+            .dropdown:hover .dropdown-content {
+                display: none;
+            }
+            .dropdown.open .dropdown-content {
+                display: block;
+            }
+            .cta-nav {
+                width: 80%;
+                margin: 1rem auto;
+                text-align: center;
+            }
         }
         .hero {
             position: relative;
@@ -289,7 +341,7 @@
         }
         .itinerary-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px  WORSTpx rgba(0,0,0,0.1);
         }
         .itinerary-card .image-wrapper {
             width: 100%;
@@ -502,189 +554,93 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.7);
             z-index: 200;
-            animation: modalFade 0.5s ease-in;
-            backdrop-filter: blur(5px);
             overflow-y: auto;
         }
         .modal-content {
-            background: linear-gradient(135deg, #1a2a44 0%, #ff8c00 100%);
-            border-radius: 25px;
-            box-shadow: 0 20px 50px rgba(255, 140, 0, 0.5);
+            background: #fff;
             margin: 5% auto;
             padding: 2rem;
             width: 90%;
-            max-width: 700px;
-            min-height: 500px;
-            max-height: 90vh;
-            overflow-y: auto;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: relative;
-            transform: translateY(-100vh);
-            animation: flyIn 0.7s ease-out forwards;
-            border: 2px solid #ff8c00;
+            max-height: 80vh;
+            overflow-y: auto;
         }
         .close {
-            position: absolute;
-            top: 15px;
+            position: sticky;
+            top: 10px;
             right: 15px;
             font-size: 2rem;
             cursor: pointer;
-            color: #fff;
-            background: rgba(255, 140, 0, 0.8);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s ease;
+            color: #2c3e50;
+            transition: color 0.3s ease;
+            float: right;
         }
-        .close:hover, .close:focus {
-            color: #1a2a44;
-            transform: rotate(180deg) scale(1.1);
-            background: #fff;
-            outline: none;
+        .close:hover {
+            color: #e67e22;
         }
         .modal-content h2 {
-            font-family: 'Adventure', sans-serif;
-            color: #fff;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-family: 'Montserrat', sans-serif;
+            color: #e67e22;
+            margin-bottom: 1.5rem;
+            font-size: 24px;
             text-align: center;
-            text-shadow: 3px 3px 10px rgba(255, 140, 0, 0.8);
-            animation: glowText 2s infinite alternate;
         }
-        .adventure-form {
+        .modal-content form {
             display: grid;
-            gap: 1.5rem;
+            gap: 1rem;
         }
-        .form-field {
+        .form-group {
             position: relative;
-            width: 100%;
         }
-        .form-field input,
-        .form-field textarea {
-            width: 100%;
-            padding: 1rem;
-            border: none;
-            border-radius: 12px;
-            font-size: 1rem;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.4s ease;
-            font-family: 'Poppins', sans-serif;
-            color: #1a2a44;
-        }
-        .form-field input:focus,
-        .form-field textarea:focus {
-            box-shadow: 0 0 20px rgba(255, 140, 0, 1);
-            transform: scale(1.02);
+        .modal-content label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 13px;
+            position: absolute;
+            top: -8px;
+            left: 12px;
             background: #fff;
+            padding: 0 5px;
+        }
+        .modal-content input, .modal-content textarea {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            padding: 0.8rem;
+            border: 1px solid #f1c40f;
+            border-radius: 5px;
+            font-size: 14px;
+            width: 100%;
+            transition: border-color 0.3s ease;
+        }
+        .modal-content input:focus, .modal-content textarea:focus {
+            border-color: #e67e22;
             outline: none;
         }
-        .form-field input:invalid:focus {
-            box-shadow: 0 0 20px rgba(231, 76, 60, 1);
-        }
-        .form-field textarea {
+        .modal-content textarea {
             resize: vertical;
             min-height: 80px;
         }
-        .form-field input[readonly] {
-            background: rgba(200, 200, 200, 0.8);
-            cursor: not-allowed;
-            color: #7f8c8d;
-        }
-        .form-field label {
-            position: absolute;
-            top: 50%;
-            left: 1rem;
-            transform: translateY(-50%);
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            color: #1a2a44;
-            font-size: 0.9rem;
-            pointer-events: none;
-            transition: all 0.3s ease;
-            background: linear-gradient(to top, transparent 50%, rgba(255, 255, 255, 0.9) 50%);
-            padding: 0 4px;
-        }
-        .form-field input:focus + label,
-        .form-field textarea:focus + label,
-        .form-field input:not(:placeholder-shown) + label,
-        .form-field textarea:not(:placeholder-shown) + label {
-            top: -8px;
-            left: 0.8rem;
-            font-size: 0.75rem;
-            color: #ff8c00;
-            text-shadow: 0 0 5px rgba(255, 140, 0, 0.8);
-        }
-        .form-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding-top: 1.5rem;
-        }
-        .adventure-btn,
-        .social-btn {
-            font-family: 'Adventure', sans-serif;
-            padding: 1rem 2rem;
-            border-radius: 40px;
-            cursor: pointer;
+        .modal-content button {
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            transition: all 0.4s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-        .adventure-btn {
-            background: linear-gradient(135deg, #ff8c00, #e67e22);
-            color: #fff;
+            background: #f1c40f;
+            color: #2c3e50;
             border: none;
+            padding: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
         }
-        .adventure-btn:hover,
-        .adventure-btn:focus {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 12px 25px rgba(255, 140, 0, 0.7);
-            outline: none;
-        }
-        .adventure-btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-        .social-btn {
-            width: 50px;
-            height: 50px;
-            padding: 0;
-            border-radius: 50%;
-            background: #fff;
-        }
-        .whatsapp-btn {
-            background: linear-gradient(135deg, #25D366, #20b858);
-        }
-        .email-btn {
-            background: linear-gradient(135deg, #f1c40f, #d4a60d);
-        }
-        .social-btn svg {
-            width: 25px;
-            height: 25px;
-            fill: #fff;
-            transition: transform 0.4s ease;
-        }
-        .social-btn:hover,
-        .social-btn:focus {
-            transform: scale(1.1) rotate(10deg);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-            outline: none;
+        .modal-content button:hover {
+            background: #d4a60d;
+            transform: scale(1.05);
         }
         footer {
             background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
@@ -791,160 +747,41 @@
             margin: 0;
             color: #bdc3c7;
         }
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes modalFade {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes flyIn {
-            0% { transform: translateY(-100vh); opacity: 0; }
-            60% { transform: translateY(20px); opacity: 1; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-        @keyframes flyOut {
-            0% { transform: translateY(0); opacity: 1; }
-            40% { transform: translateY(20px); opacity: 1; }
-            100% { transform: translateY(-100vh); opacity: 0; }
-        }
-        @keyframes glowText {
-            0% { text-shadow: 3px 3px 10px rgba(255, 140, 0, 0.8); }
-            100% { text-shadow: 3px 3px 20px rgba(255, 140, 0, 1); }
-        }
         @media (max-width: 1024px) {
             .itinerary-grid, .accommodations-grid, .featured-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .modal-content {
-                padding: 1.5rem;
-                min-height: 450px;
-            }
         }
         @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                max-width: 300px;
-                height: 100vh;
-                background: rgba(241, 90, 36, 0.95);
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 4rem 2rem;
-                z-index: 101;
-            }
-            .nav-links.active {
-                right: 0;
-            }
-            .nav-links a, .nav-links .dropdown-btn {
-                font-size: 1.25rem;
-                width: 100%;
-                text-align: left;
-            }
-            .dropdown-content {
-                position: static;
-                width: 100%;
-                box-shadow: none;
-                background: #d35400;
-            }
-            .hero-text h1 {
-                font-size: 36px;
-            }
-            .hero-text p {
-                font-size: 16px;
-            }
-            .content {
-                padding: 40px 15px;
-            }
+            .hero-text h1 { font-size: 36px; }
+            .hero-text p { font-size: 16px; }
+            .content { padding: 40px 15px; }
             .itinerary-grid, .accommodations-grid, .featured-grid {
                 grid-template-columns: 1fr;
             }
-            .itinerary-card .image-wrapper {
-                height: 200px;
-            }
+            .itinerary-card .image-wrapper { height: 200px; }
             .modal-content {
-                width: 95%;
-                padding: 1.25rem;
-                min-height: 400px;
+                padding: 1.5rem;
+                margin: 10% auto;
+                max-height: 85vh;
             }
-            .modal-content h2 {
-                font-size: 1.5rem;
+            .modal-content h2 { font-size: 20px; }
+            .modal-content input, .modal-content textarea {
+                padding: 0.7rem;
+                font-size: 13px;
             }
-            .adventure-form {
-                gap: 1rem;
-            }
-            .form-field input,
-            .form-field textarea {
+            .modal-content button {
                 padding: 0.8rem;
-                font-size: 0.9rem;
-            }
-            .form-field label {
-                font-size: 0.85rem;
-            }
-            .form-field input:focus + label,
-            .form-field textarea:focus + label,
-            .form-field input:not(:placeholder-shown) + label,
-            .form-field textarea:not(:placeholder-shown) + label {
-                top: -6px;
-                font-size: 0.7rem;
+                font-size: 14px;
             }
         }
         @media (max-width: 480px) {
-            nav {
-                padding: 0.75rem 1rem;
-            }
-            .logo {
-                font-size: 1.25rem;
-            }
-            .hamburger {
-                font-size: 1.5rem;
-            }
-            .hero-text h1 {
-                font-size: 28px;
-            }
-            .hero-text p {
-                font-size: 14px;
-            }
+            .logo { font-size: 1.25rem; }
+            .hamburger { font-size: 1.5rem; }
+            .hero-text h1 { font-size: 28px; }
+            .hero-text p { font-size: 14px; }
             .intro-text h2, .accommodations-overview h2, .quick-faqs h2, .featured-itineraries h2, .travel-tips h2 {
                 font-size: 28px;
-            }
-            .modal-content {
-                padding: 1rem;
-                min-height: 350px;
-            }
-            .modal-content h2 {
-                font-size: 1.25rem;
-            }
-            .form-field input,
-            .form-field textarea {
-                padding: 0.6rem;
-                font-size: 0.85rem;
-            }
-            .form-field label {
-                font-size: 0.8rem;
-            }
-            .form-actions {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            .adventure-btn {
-                padding: 0.7rem 1.2rem;
-                font-size: 0.85rem;
-                width: 100%;
-            }
-            .social-btn {
-                width: 40px;
-                height: 40px;
-            }
-            .social-btn svg {
-                width: 20px;
-                height: 20px;
             }
         }
     </style>
@@ -953,7 +790,7 @@
     <header>
         <nav>
             <div class="logo">Tanzania Trek</div>
-            <div class="nav-links" id="navLinks">
+            <div class="nav-links">
                 <div class="nav-item"><a href="index.html">Home</a></div>
                 <div class="dropdown">
                     <a href="tours.html" class="dropdown-btn">Tours</a>
@@ -979,9 +816,9 @@
                 <div class="nav-item"><a href="about.html">About</a></div>
                 <div class="nav-item"><a href="Travel-guide.html">Travel Guide</a></div>
                 <div class="nav-item"><a href="contact.html">Contact</a></div>
-                <button class="cta-nav" onclick="openModal('')">Book Now</button>
+                <button class="cta-nav" onclick="openModal('Custom Tanzania Itinerary')">Book Now</button>
             </div>
-            <button class="hamburger" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false">☰</button>
+            <button class="hamburger">☰</button>
         </nav>
         <div class="hero">
             <div class="hero-text">
@@ -1122,49 +959,32 @@
     </div>
     <button class="back-to-top">↑</button>
     <a href="https://wa.me/255623474720" class="whatsapp-chat" target="_blank">💬</a>
-    <div id="bookModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div id="bookModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()" aria-label="Close modal">✖</span>
-            <h2 id="modalTitle">Book Your Tanzania Itinerary</h2>
-            <form id="bookingForm" class="adventure-form">
-                <div class="form-field">
-                    <input type="text" id="fullName" required aria-required="true" placeholder=" ">
-                    <label for="fullName">Your Name</label>
+            <span class="close" onclick="closeModal()">×</span>
+            <h2>Book Your Tanzania Itinerary</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required>
                 </div>
-                <div class="form-field">
-                    <input type="email" id="email" required aria-required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter a valid email" placeholder=" ">
+                <div class="form-group">
                     <label for="email">Email</label>
+                    <input type="email" id="email" required>
                 </div>
-                <div class="form-field">
-                    <input type="tel" id="phone" required aria-required="true" pattern="\+?[0-9]{9,15}" title="Enter a valid phone number (9-15 digits)" placeholder=" ">
-                    <label for="phone">Phone</label>
+                <div class="form-group">
+                    <label for="tourName">Itinerary</label>
+                    <input type="text" id="tourName" value="Custom Tanzania Itinerary">
                 </div>
-                <div class="form-field">
-                    <input type="text" id="tourName" readonly aria-readonly="true" placeholder=" ">
-                    <label for="tourName">Itinerary Name</label>
-                </div>
-                <div class="form-field">
-                    <input type="date" id="prefDate" required aria-required="true" placeholder=" ">
+                <div class="form-group">
                     <label for="prefDate">Preferred Date</label>
+                    <input type="date" id="prefDate" required>
                 </div>
-                <div class="form-field">
-                    <input type="number" id="groupSize" min="1" required aria-required="true" placeholder=" ">
-                    <label for="groupSize">Group Size</label>
+                <div class="form-group">
+                    <label for="preferences">Preferences</label>
+                    <textarea id="preferences" placeholder="Tell us your preferences (budget, group size, etc.)" rows="3"></textarea>
                 </div>
-                <div class="form-field">
-                    <textarea id="preferences" rows="3" aria-describedby="preferencesHint" placeholder=" "></textarea>
-                    <label for="preferences">Your Preferences</label>
-                    <small id="preferencesHint" class="sr-only">Optional: Tell us your adventure wishes!</small>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" id="submitBtn" class="adventure-btn">Submit Request</button>
-                    <a href="https://wa.me/255623474720" id="whatsappLink" class="social-btn whatsapp-btn" target="_blank">
-                        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.174.198-.347.223-.524.074-.173-.149-.757-.548-1.474-1.747-.716-1.198-1.193-2.148-1.342-2.347-.148-.198-.019-.347.136-.496.156-.149.698-.737.94-.986.242-.248.484-.496.67-.347.173.149 2.03 1.015 2.03 2.462 0 1.446-1.193 2.595-1.342 2.744-.149.149-2.074 3.213-5.06 4.407-2.986 1.193-2.595-.744-3.064-1.342-.471-.595-1.868-1.015-2.595-1.015-.727 0-1.015-.074-1.342.223-.322.297-1.193 1.342-1.193 2.595 0 1.252 1.015 2.347 1.193 2.595.173.248 2.074 3.957 5.655 5.803 3.58 1.845 6.645 1.446 7.668.595.996-.845 1.868-2.744 1.868-4.655 0-1.911-.845-3.064-1.015-3.361-.173-.297-.471-.446-.744-.446zM12 0C5.373 0 0 5.373 0 12c0 2.144.573 4.223 1.645 6.045L0 24l6.045-1.645C7.867 23.427 9.946 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-                    </a>
-                    <a href="mailto:info@tanzaniatrek.com" id="emailLink" class="social-btn email-btn">
-                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2l-8 5-8-5h16zm-16 12V8l8 5 8-5v10H4z"/></svg>
-                    </a>
-                </div>
+                <button type="submit" id="submitBtn">Submit Request</button>
             </form>
         </div>
     </div>
@@ -1205,93 +1025,103 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="footer-logo">
-                <img src="images/Untitled design (4).png" loading="lazy" alt="Tanzania Trek logo" style="max-width: 120px;">
-            </div>
             <p>© 2025 Tanzania Trek. All rights reserved.</p>
             <p class="footer-tagline">Crafting Tanzania’s Wildest Itineraries</p>
         </div>
     </footer>
     <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
         const nav = document.querySelector('nav');
+        const navLinks = document.querySelector('.nav-links');
+        const hamburger = document.querySelector('.hamburger');
         const backToTop = document.querySelector('.back-to-top');
-        const modal = document.getElementById('bookModal');
-        const closeBtn = modal.querySelector('.close');
-        const form = document.getElementById('bookingForm');
-        const tourNameInput = document.getElementById('tourName');
-        const submitBtn = document.getElementById('submitBtn');
-        const whatsappLink = document.getElementById('whatsappLink');
-        const emailLink = document.getElementById('emailLink');
-
-        hamburger.addEventListener('click', () => {
-            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-            hamburger.setAttribute('aria-expanded', !isExpanded);
-            navLinks.classList.toggle('active');
-            document.body.classList.toggle('nav-open');
-            hamburger.textContent = isExpanded ? '☰' : '✖';
-        });
 
         window.addEventListener('scroll', () => {
             nav.classList.toggle('scrolled', window.scrollY > 50);
             backToTop.classList.toggle('visible', window.scrollY > 100);
         });
 
+        hamburger.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburger.textContent = '☰';
+                document.body.classList.remove('menu-open');
+            } else {
+                navLinks.classList.add('active');
+                hamburger.textContent = '✖';
+                document.body.classList.add('menu-open');
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+                if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                    hamburger.textContent = '☰';
+                    document.body.classList.remove('menu-open');
+                }
+            }
+        });
+
+        const navItems = document.querySelectorAll('.nav-links a, .nav-links .cta-nav');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    hamburger.textContent = '☰';
+                    document.body.classList.remove('menu-open');
+                }
+            });
+        });
+
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            const btn = dropdown.querySelector('.dropdown-btn');
+            btn.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const isOpen = dropdown.classList.contains('open');
+                    dropdowns.forEach(d => d.classList.remove('open'));
+                    if (!isOpen) {
+                        dropdown.classList.add('open');
+                    }
+                }
+            });
+        });
+
         backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        window.openModal = function(tour) {
-            tourNameInput.value = tour;
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-            setTimeout(() => {
-                modal.querySelector('.modal-content').focus();
-            }, 100);
-        };
-
-        function closeModal() {
-            modal.style.animation = 'flyOut 0.5s ease-in forwards';
-            setTimeout(() => {
-                modal.style.display = 'none';
-                modal.style.animation = 'flyIn 0.7s ease-out forwards';
-                document.body.style.overflow = 'auto';
-            }, 500);
+        function openModal(tour) {
+            document.getElementById('bookModal').style.display = 'block';
+            document.getElementById('tourName').value = tour || 'Custom Tanzania Itinerary';
+            document.body.classList.add('menu-open');
         }
 
-        closeBtn.addEventListener('click', closeModal);
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
-        });
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.style.display === 'block') closeModal();
-        });
+        function closeModal() {
+            document.getElementById('bookModal').style.display = 'none';
+            document.body.classList.remove('menu-open');
+            document.getElementById('bookingForm').reset();
+            document.getElementById('tourName').value = 'Custom Tanzania Itinerary';
+        }
 
-        form.addEventListener('submit', (e) => {
+        document.getElementById('bookingForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Submitting...';
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const tourName = document.getElementById('tourName').value;
+            const prefDate = document.getElementById('prefDate').value;
+            const preferences = document.getElementById('preferences').value.trim();
 
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-            const whatsappMessage = `New Itinerary Booking:%0AName: ${data.fullName}%0AItinerary: ${data.tourName}%0AEmail: ${data.email}%0APhone: ${data.phone}%0AStart Date: ${data.prefDate}%0AGroup Size: ${data.groupSize}%0APreferences: ${data.preferences || 'None'}`;
-            const emailSubject = `New Booking: ${data.tourName}`;
-            const emailBody = `Name: ${data.fullName}\nItinerary: ${data.tourName}\nEmail: ${data.email}\nPhone: ${data.phone}\nStart Date: ${data.prefDate}\nGroup Size: ${data.groupSize}\nPreferences: ${data.preferences || 'None'}`;
+            if (!fullName || !email || !prefDate) {
+                alert("Yo, fill in the blanks first!");
+                return;
+            }
 
-            whatsappLink.href = `https://wa.me/255623474720?text=${encodeURIComponent(whatsappMessage)}`;
-            emailLink.href = `mailto:info@tanzaniatrek.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-
-            setTimeout(() => {
-                whatsappLink.click();
-                submitBtn.textContent = 'Request Sent!';
-                setTimeout(() => {
-                    form.reset();
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Submit Request';
-                    closeModal();
-                }, 2000);
-            }, 1000);
+            const message = `Yo Tanzania Trek! I’m ${fullName}. Booking ${tourName} for ${prefDate}. Email: ${email}. Preferences: ${preferences}. Let’s roll!`;
+            window.open(`https://wa.me/255623474720?text=${encodeURIComponent(message)}`, '_blank');
+            alert('WhatsApp’s up! Send it to seal the deal.');
+            closeModal();
         });
 
         document.getElementById('newsletterForm').addEventListener('submit', (e) => {
