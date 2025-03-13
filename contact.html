@@ -98,13 +98,29 @@
             transform: rotate(5deg) scale(1.1);
             filter: drop-shadow(0 0 10px rgba(241, 196, 15, 0.9));
         }
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .hamburger:hover { animation: bounce 0.5s infinite; }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
         .nav-links {
             display: flex;
             align-items: center;
             gap: 1.5rem;
+            transition: transform 0.3s ease-in-out;
         }
         .nav-links a, .nav-links .dropdown-btn {
             font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             color: #fff;
             text-decoration: none;
             font-size: 1rem;
@@ -115,7 +131,7 @@
             border: none;
             cursor: pointer;
             text-transform: uppercase;
-            font-weight: 600;
+            display: block;
         }
         .nav-links a:hover, .nav-links .dropdown-btn:hover {
             background: rgba(241, 90, 36, 0.8);
@@ -134,10 +150,7 @@
             z-index: 1;
             animation: slideDown 0.3s ease-out;
         }
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        .dropdown-content.active { display: block; }
         .dropdown-content a {
             font-family: 'Open Sans', sans-serif;
             color: #fff;
@@ -145,22 +158,12 @@
             display: block;
             font-size: 0.9rem;
             text-transform: none;
+            transition: background 0.3s ease;
         }
         .dropdown-content a:hover { background: #d35400; }
-        .dropdown:hover .dropdown-content { display: block; }
-        .hamburger {
-            display: none;
-            font-size: 1.5rem;
-            color: #fff;
-            background: none;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        .hamburger:hover { animation: bounce 0.5s infinite; }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .hero {
             position: relative;
@@ -539,21 +542,9 @@
             transform: scale(1.2);
             color: #fff;
         }
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-        .whatsapp-icon {
-            width: 60px;
-            height: 60px;
-            transition: transform 0.3s ease;
-        }
-        .whatsapp-float:hover .whatsapp-icon { transform: scale(1.2); }
         .scroll-top {
             position: fixed;
-            bottom: 80px;
+            bottom: 20px;
             right: 20px;
             background: #e67e22;
             color: #fff;
@@ -579,21 +570,38 @@
         @media (max-width: 768px) {
             nav { padding: 0.8rem 1rem; }
             .logo img { height: 50px; max-width: 120px; }
+            .hamburger { display: block; }
             .nav-links {
-                display: none;
                 position: fixed;
                 top: 0;
-                right: 0;
+                right: -100%;
                 width: 80%;
-                height: 100%;
-                background: #e67e22;
+                max-width: 300px;
+                height: 100vh;
+                background: rgba(241, 90, 36, 0.95);
                 flex-direction: column;
+                align-items: flex-start;
                 padding: 3rem 1.5rem;
+                z-index: 101;
                 transform: translateX(100%);
-                transition: transform 0.3s ease;
             }
-            .nav-links.active { display: flex; transform: translateX(0); }
-            .hamburger { display: block; }
+            .nav-links.active {
+                right: 0;
+                transform: translateX(0);
+            }
+            .nav-links a, .nav-links .dropdown-btn {
+                font-size: 1.25rem;
+                width: 100%;
+                text-align: left;
+            }
+            .dropdown-content {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                background: #d35400;
+                display: none;
+            }
+            .dropdown-content.active { display: block; }
             .hero-text h1 { font-size: 36px; }
             .hero-text p { font-size: 16px; }
             .content { padding: 40px 15px; }
@@ -602,8 +610,7 @@
             .story-card { text-align: center; max-height: 300px; overflow: hidden; }
             .story-card.expanded { max-height: none; }
             .timeline-dot { display: none; }
-            .whatsapp-icon { width: 50px; height: 50px; }
-            .scroll-top { bottom: 70px; width: 40px; height: 40px; font-size: 20px; }
+            .scroll-top { bottom: 20px; width: 40px; height: 40px; font-size: 20px; }
         }
         @media (max-width: 480px) {
             .hero { min-height: 60vh; }
@@ -624,10 +631,10 @@
             <div class="logo">
                 <a href="index.html"><img src="images/logo3.svg" alt="Tanzania Trek Logo"></a>
             </div>
-            <div class="nav-links">
+            <div class="nav-links" id="navLinks">
                 <div class="nav-item"><a href="index.html">Home</a></div>
                 <div class="dropdown">
-                    <a href="tours.html" class="dropdown-btn">Tours</a>
+                    <button class="dropdown-btn">Tours</button>
                     <div class="dropdown-content">
                         <a href="tours.html#serengeti-details">Serengeti Safari</a>
                         <a href="tours.html#kilimanjaro-details">Kilimanjaro Quest</a>
@@ -635,7 +642,7 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="itinerary.html" class="dropdown-btn">Itineraries</a>
+                    <button class="dropdown-btn">Itineraries</button>
                     <div class="dropdown-content">
                         <a href="serengeti-express.html">Serengeti Express</a>
                         <a href="kilimanjaro-classic.html">Kilimanjaro Classic</a>
@@ -651,7 +658,7 @@
                 <div class="nav-item"><a href="Travel-guide.html">Travel-guide</a></div>
                 <div class="nav-item"><a href="contact.html">Contact</a></div>
             </div>
-            <button class="hamburger" aria-label="Toggle Menu">☰</button>
+            <button class="hamburger" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false">☰</button>
         </nav>
         <div class="hero">
             <div class="hero-text">
@@ -722,7 +729,7 @@
             <div class="contact-info">
                 <h2>Contact Info</h2>
                 <p><strong>Phone:</strong> <a href="https://wa.me/255623474720">+255 623 474 720</a> (WhatsApp Ready)</p>
-                <p><strong>Email:</strong> <a href="mailto:info@tanzaniatrek.com">info@tanzaniatrek.com</a></p>
+                <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#94fdfaf2fbd4e0f5faeef5fafdf5e0e6f1ffbaf7fbf9"><span class="__cf_email__" data-cfemail="620b0c040d2216030c18030c0b03161007094c010d0f">[email&#160;protected]</span></a></p>
                 <p><strong>Address:</strong> Plot 45, Mbezi Beach, Dar es Salaam, Tanzania</p>
                 <p><strong>Hours:</strong> Mon-Sat, 8 AM - 6 PM (EAT)</p>
             </div>
@@ -749,7 +756,7 @@
             </div>
             <div class="footer-section contact">
                 <h3>Contact Us</h3>
-                <p>Email: <a href="mailto:info@tanzaniatrek.com">info@tanzaniatrek.com</a></p>
+                <p>Email: <a href="/cdn-cgi/l/email-protection#6a03040c052a1e0b04100b04030b1e180f0144090507"><span class="__cf_email__" data-cfemail="2940474f46695d484753484740485d5b4c42074a4644">[email&#160;protected]</span></a></p>
                 <p>Phone: <a href="https://wa.me/255623474720">+255 623 474 720</a></p>
                 <p>Office: Plot 45, Mbezi Beach, Dar es Salaam</p>
             </div>
@@ -771,27 +778,59 @@
             </div>
         </div>
     </footer>
-    <div class="whatsapp-float">
-        <a href="https://wa.me/255623474720" target="_blank" aria-label="Chat with us on WhatsApp">
-            <img src="images/whatsapp-icon.png" alt="WhatsApp Chat" class="whatsapp-icon">
-        </a>
-    </div>
     <button class="scroll-top" aria-label="Scroll to top">⬆</button>
 
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
-        // Nav Scroll Effect
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
         const nav = document.querySelector('nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        // Hamburger toggle
+        hamburger.addEventListener('click', () => {
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('active');
+            hamburger.textContent = isExpanded ? '☰' : '✖';
+            document.body.classList.toggle('nav-open');
         });
 
-        // Hamburger Menu Toggle
-        document.querySelector('.hamburger').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
+        // Dropdown toggle on mobile
+        dropdowns.forEach(dropdown => {
+            const btn = dropdown.querySelector('.dropdown-btn');
+            const content = dropdown.querySelector('.dropdown-content');
+
+            btn.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    content.classList.toggle('active');
+                }
+            });
+        });
+
+        // Close mobile nav when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    hamburger.textContent = '☰';
+                    document.body.classList.remove('nav-open');
+                }
+            });
+        });
+
+        // Nav Scroll Effect
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 100);
+            scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
+        });
+
+        // Scroll-to-Top Button
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         // Expandable Timeline Cards
@@ -843,15 +882,6 @@
             e.preventDefault();
             alert('Thanks for subscribing! Stay tuned for Tanzania Trek updates.');
             e.target.reset();
-        });
-
-        // Scroll-to-Top Button
-        const scrollTopBtn = document.querySelector('.scroll-top');
-        window.addEventListener('scroll', () => {
-            scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
-        });
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>
