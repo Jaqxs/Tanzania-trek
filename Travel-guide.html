@@ -57,49 +57,54 @@
             background: #f5f3e7; 
             color: #333; 
             overflow-x: hidden; 
+            position: relative; 
+        }
+        body.menu-open {
+            overflow: hidden;
         }
         nav {
-            background: linear-gradient(135deg, rgba(46, 74, 46, 0.9), rgba(61, 104, 61, 0.9)); /* Cool earthy green */
-            padding: 0.8rem 1.5rem; /* Slimmer padding */
+            background: linear-gradient(135deg, rgba(46, 74, 46, 0.9), rgba(61, 104, 61, 0.9));
+            padding: 0.8rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-            border-bottom: 2px solid rgba(230, 184, 0, 0.3); /* Thin golden accent */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border-bottom: 2px solid rgba(230, 184, 0, 0.3);
+            transition: all 0.3s ease;
         }
         nav.scrolled {
-            background: linear-gradient(135deg, #2e4a2e, #3d683d); /* Darker green when scrolled */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
-            border-bottom: 2px solid #e6b800; /* Golden border */
+            background: linear-gradient(135deg, #2e4a2e, #3d683d);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid #e6b800;
         }
         .logo {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             color: #fff;
-            font-size: 1.8rem; /* Slightly smaller for balance */
+            font-size: 1.8rem;
             text-transform: uppercase;
             letter-spacing: 0.1rem;
             transition: transform 0.3s ease, text-shadow 0.3s ease;
         }
         .logo:hover {
             transform: scale(1.05);
-            text-shadow: 0 0 10px rgba(230, 184, 0, 0.8); /* Golden glow */
+            text-shadow: 0 0 10px rgba(230, 184, 0, 0.8);
         }
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 1rem; /* Reduced gap for compactness */
+            gap: 1rem;
         }
         .nav-links a, .nav-links .dropdown-btn {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             color: #fff;
             text-decoration: none;
-            font-size: 0.9rem; /* Smaller text */
-            padding: 0.5rem 1rem; /* Slimmer padding */
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
             border-radius: 25px;
             transition: all 0.3s ease;
             background: none;
@@ -108,7 +113,7 @@
             text-transform: uppercase;
         }
         .nav-links a:hover, .nav-links .dropdown-btn:hover {
-            background: rgba(230, 184, 0, 0.8); /* Golden hover */
+            background: rgba(230, 184, 0, 0.8);
             box-shadow: 0 0 8px rgba(230, 184, 0, 0.5);
         }
         .dropdown {
@@ -117,7 +122,7 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background: #2c3e50; /* Dark blue-gray for contrast */
+            background: #2c3e50;
             min-width: 160px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
             border-radius: 8px;
@@ -136,7 +141,7 @@
             transition: background 0.3s ease;
         }
         .dropdown-content a:hover {
-            background: #e6b800; /* Golden hover */
+            background: #e6b800;
         }
         .dropdown:hover .dropdown-content {
             display: block;
@@ -144,9 +149,9 @@
         .cta-nav {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            background: linear-gradient(45deg, #e6b800, #d49a00); /* Golden gradient */
+            background: linear-gradient(45deg, #e6b800, #d49a00);
             color: #2c3e50;
-            padding: 0.6rem 1.2rem; /* Slimmer */
+            padding: 0.6rem 1.2rem;
             border-radius: 20px;
             transition: all 0.3s ease;
             border: none;
@@ -159,38 +164,46 @@
         }
         .hamburger {
             display: none;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: #fff;
             background: none;
             border: none;
             cursor: pointer;
-            padding: 0.5rem;
+            z-index: 101;
+            transition: transform 0.3s ease;
         }
-        /* Mobile Menu Styling */
+        .hamburger:hover {
+            transform: scale(1.1);
+        }
         @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
+            nav { padding: 0.8rem 1rem; }
+            .logo { font-size: 1.5rem; }
+            .hamburger { display: block; }
             .nav-links {
-                display: none;
                 position: fixed;
-                top: 50px; /* Adjusted for slimmer nav */
-                left: 0;
-                width: 100%;
-                background: linear-gradient(135deg, #2e4a2e, #3d683d); /* Matching nav */
+                top: 0;
+                right: 0;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: linear-gradient(135deg, #2e4a2e, #3d683d);
                 flex-direction: column;
-                padding: 1rem 0;
-                z-index: 99;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+                padding: 4rem 2rem;
+                z-index: 100;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+                border-left: 3px solid #e6b800;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+                overflow-y: auto;
             }
-            .nav-links.open {
-                display: flex;
+            .nav-links.active {
+                transform: translateX(0);
             }
             .nav-links a, .nav-links .dropdown-btn {
                 font-size: 1.1rem;
-                padding: 0.8rem;
+                padding: 1rem;
                 width: 100%;
-                text-align: center;
+                text-align: left;
             }
             .dropdown-content {
                 position: static;
@@ -199,16 +212,18 @@
                 border-radius: 0;
                 display: none;
                 background: #2c3e50;
+                margin-left: 1rem;
             }
             .dropdown:hover .dropdown-content {
-                display: none; /* Disable hover on mobile */
+                display: none;
             }
             .dropdown.open .dropdown-content {
                 display: block;
             }
             .cta-nav {
                 width: 80%;
-                margin: 0.8rem auto;
+                margin: 1rem auto;
+                text-align: center;
             }
         }
         .hero { 
@@ -332,6 +347,9 @@
             left: 0; 
             font-size: 14px; 
         }
+        .guide-text ul li strong {
+            color: #2e4a2e;
+        }
         .pro-tip { 
             background: #e6b800; 
             color: #fff; 
@@ -426,6 +444,101 @@
         }
         .email-option:hover i { 
             color: #fff; 
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 200;
+            overflow-y: auto;
+        }
+        .modal-content {
+            background: #fff;
+            margin: 5% auto;
+            padding: 2rem;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        .close {
+            position: sticky;
+            top: 10px;
+            right: 15px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #2e4a2e;
+            transition: color 0.3s ease;
+            float: right;
+        }
+        .close:hover {
+            color: #e6b800;
+        }
+        .modal-content h2 {
+            font-family: 'Playfair Display', serif;
+            color: #2e4a2e;
+            margin-bottom: 1.5rem;
+            font-size: 24px;
+            text-align: center;
+        }
+        .modal-content form {
+            display: grid;
+            gap: 1rem;
+        }
+        .form-group {
+            position: relative;
+        }
+        .modal-content label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: #2e4a2e;
+            font-size: 13px;
+            position: absolute;
+            top: -8px;
+            left: 12px;
+            background: #fff;
+            padding: 0 5px;
+        }
+        .modal-content input, .modal-content textarea {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            padding: 0.8rem;
+            border: 1px solid #e6b800;
+            border-radius: 5px;
+            font-size: 14px;
+            width: 100%;
+            transition: border-color 0.3s ease;
+        }
+        .modal-content input:focus, .modal-content textarea:focus {
+            border-color: #2e4a2e;
+            outline: none;
+        }
+        .modal-content textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .modal-content button {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            background: #e6b800;
+            color: #2e4a2e;
+            border: none;
+            padding: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        .modal-content button:hover {
+            background: #d49a00;
+            transform: scale(1.05);
         }
         footer {
             background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
@@ -542,6 +655,20 @@
             .expert-section { padding: 40px 20px; }
             .expert-options { flex-direction: column; gap: 20px; }
             .expert-option { padding: 15px 30px; font-size: 16px; }
+            .modal-content {
+                padding: 1.5rem;
+                margin: 10% auto;
+                max-height: 85vh;
+            }
+            .modal-content h2 { font-size: 20px; }
+            .modal-content input, .modal-content textarea {
+                padding: 0.7rem;
+                font-size: 13px;
+            }
+            .modal-content button {
+                padding: 0.8rem;
+                font-size: 14px;
+            }
             footer { padding: 3rem 1rem 1.5rem; }
             .footer-content { grid-template-columns: 1fr; text-align: center; }
             .social-icons { justify-content: center; }
@@ -580,7 +707,7 @@
                 </div>
                 <div class="nav-item"><a href="about.html">About</a></div>
                 <div class="nav-item"><a href="contact.html">Contact</a></div>
-                <button class="cta-nav" onclick="openModal('')">Book Now</button>
+                <button class="cta-nav" onclick="openModal('Custom Tanzania Trip')">Book Now</button>
             </div>
             <button class="hamburger">☰</button>
         </nav>
@@ -682,6 +809,35 @@
             </div>
         </div>
     </div>
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h2>Book Your Tanzania Adventure</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="tourName">Itinerary</label>
+                    <input type="text" id="tourName" value="Custom Tanzania Trip">
+                </div>
+                <div class="form-group">
+                    <label for="prefDate">Preferred Date</label>
+                    <input type="date" id="prefDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="preferences">Preferences</label>
+                    <textarea id="preferences" placeholder="Tell us your preferences (budget, group size, etc.)" rows="3"></textarea>
+                </div>
+                <button type="submit" id="submitBtn">Submit Request</button>
+            </form>
+        </div>
+    </div>
     <footer>
         <div class="footer-content">
             <div class="footer-section about">
@@ -723,9 +879,11 @@
         </div>
     </footer>
     <script>
-        // Scroll effect for nav
+        const nav = document.querySelector('nav');
+        const navLinks = document.querySelector('.nav-links');
+        const hamburger = document.querySelector('.hamburger');
+
         window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
                 nav.classList.add('scrolled');
             } else {
@@ -733,37 +891,91 @@
             }
         });
 
-        // Newsletter form submission
-        document.getElementById('newsletterForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thanks for subscribing! Stay tuned for Tanzania Trek updates.');
-            e.target.reset();
-        });
-
-        // Hamburger menu toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
         hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('open');
-            hamburger.textContent = navLinks.classList.contains('open') ? '✖' : '☰';
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburger.textContent = '☰';
+                document.body.classList.remove('menu-open');
+            } else {
+                navLinks.classList.add('active');
+                hamburger.textContent = '✖';
+                document.body.classList.add('menu-open');
+            }
         });
 
-        // Dropdown toggle on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+                if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                    hamburger.textContent = '☰';
+                    document.body.classList.remove('menu-open');
+                }
+            }
+        });
+
+        const navItems = document.querySelectorAll('.nav-links a, .nav-links .cta-nav');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    hamburger.textContent = '☰';
+                    document.body.classList.remove('menu-open');
+                }
+            });
+        });
+
         const dropdowns = document.querySelectorAll('.dropdown');
         dropdowns.forEach(dropdown => {
             const btn = dropdown.querySelector('.dropdown-btn');
             btn.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
-                    dropdown.classList.toggle('open');
+                    const isOpen = dropdown.classList.contains('open');
+                    dropdowns.forEach(d => d.classList.remove('open'));
+                    if (!isOpen) {
+                        dropdown.classList.add('open');
+                    }
                 }
             });
         });
 
-        // Modal stub
         function openModal(tour) {
-            console.log('Opening modal for tour:', tour);
+            document.getElementById('bookModal').style.display = 'block';
+            document.getElementById('tourName').value = tour || 'Custom Tanzania Trip';
+            document.body.classList.add('menu-open');
         }
+
+        function closeModal() {
+            document.getElementById('bookModal').style.display = 'none';
+            document.body.classList.remove('menu-open');
+            document.getElementById('bookingForm').reset();
+            document.getElementById('tourName').value = 'Custom Tanzania Trip';
+        }
+
+        document.getElementById('bookingForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const tourName = document.getElementById('tourName').value;
+            const prefDate = document.getElementById('prefDate').value;
+            const preferences = document.getElementById('preferences').value.trim();
+
+            if (!fullName || !email || !prefDate) {
+                alert("Yo, fill in the blanks first!");
+                return;
+            }
+
+            const message = `Yo Tanzania Trek! I’m ${fullName}. Booking ${tourName} for ${prefDate}. Email: ${email}. Preferences: ${preferences}. Let’s roll!`;
+            window.open(`https://wa.me/255623474720?text=${encodeURIComponent(message)}`, '_blank');
+            alert('WhatsApp’s up! Send it to seal the deal.');
+            closeModal();
+        });
+
+        document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thanks for subscribing! Stay tuned for Tanzania Trek updates.');
+            e.target.reset();
+        });
     </script>
 </body>
 </html>
