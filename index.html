@@ -66,7 +66,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            transition: all 0.3s ease;
+            transition: background 0.3s ease;
         }
         nav.scrolled {
             background: rgba(241, 90, 36, 0.7);
@@ -96,6 +96,7 @@
             display: flex;
             align-items: center;
             gap: 1.5rem;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .nav-links a, .nav-links .dropdown-btn {
             font-family: 'Montserrat', sans-serif;
@@ -178,54 +179,98 @@
         }
         .hamburger {
             display: none;
-            font-size: 1.5rem;
-            color: #fff;
             background: none;
             border: none;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            padding: 0.5rem;
+            z-index: 110;
         }
-        .hamburger:hover {
-            animation: bounce 0.5s infinite;
+        .hamburger .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 5px 0;
+            transition: all 0.3s ease;
         }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 90;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+        .nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
         @media (max-width: 768px) {
             .hamburger {
                 display: block;
             }
             .nav-links {
-                display: none;
                 position: fixed;
                 top: 0;
                 right: 0;
-                width: 70%;
-                height: 100%;
+                width: 280px;
+                height: 100vh;
                 background: #e67e22;
                 flex-direction: column;
                 padding: 4rem 2rem;
                 transform: translateX(100%);
-                transition: transform 0.3s ease;
+                z-index: 100;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
             }
             .nav-links.active {
-                display: flex;
                 transform: translateX(0);
             }
-            .nav-links .nav-item, .nav-links .dropdown {
+            .nav-links .nav-item,
+            .nav-links .dropdown {
                 width: 100%;
             }
-            .nav-links a, .nav-links .dropdown-btn {
+            .nav-links a,
+            .nav-links .dropdown-btn {
                 font-size: 1.25rem;
                 padding: 1rem;
                 text-align: left;
+                display: block;
+                color: #fff;
+                transition: background 0.3s ease;
+            }
+            .nav-links a:hover,
+            .nav-links .dropdown-btn:hover {
+                background: rgba(255, 255, 255, 0.2);
             }
             .dropdown-content {
                 position: static;
                 width: 100%;
-                box-shadow: none;
                 background: #d35400;
+                box-shadow: none;
+                border-radius: 0;
+                padding-left: 1rem;
+            }
+            .dropdown-content a {
+                font-size: 1rem;
+                padding: 0.75rem 1rem;
+            }
+            .cta-nav {
+                width: 100%;
+                text-align: center;
+                margin-top: 1rem;
             }
         }
         .hero { 
@@ -336,73 +381,115 @@
             gap: 2rem; 
         }
         .tour-row { 
-            display: flex; 
-            flex-direction: row; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
             gap: 2rem; 
-            flex-wrap: wrap; 
             justify-content: center; 
         }
         .tour-card { 
-            background: #fff; 
-            border-radius: 1rem; 
-            overflow: hidden; 
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1); 
-            transition: transform 0.3s ease; 
             position: relative; 
-            width: 400px; 
-            min-height: 500px; 
+            height: 480px; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); 
+            transition: transform 0.4s ease, box-shadow 0.4s ease; 
+            background-size: cover; 
+            background-position: center; 
+        }
+        .tour-card::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0, 0, 0, 0.3); 
+            z-index: 1; 
+            transition: background 0.4s ease; 
         }
         .tour-card:hover { 
-            transform: scale(1.05); 
+            transform: scale(1.03); 
+            box-shadow: 0 15px 35px rgba(241, 90, 36, 0.3); 
         }
-        .tour-card img { 
-            width: 100%; 
-            height: 300px; 
-            object-fit: cover; 
+        .tour-card:hover::before { 
+            background: rgba(0, 0, 0, 0.2); 
         }
         .tour-card .tour-info { 
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
+            width: 100%; 
             padding: 1.5rem; 
+            color: #fff; 
+            z-index: 2; 
             display: flex; 
             flex-direction: column; 
             gap: 0.5rem; 
         }
         .tour-card h3 { 
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: #e67e22; 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 700; 
             font-size: 1.75rem; 
             margin: 0; 
+            text-transform: uppercase; 
+            letter-spacing: 0.05rem; 
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); 
         }
         .tour-card .tagline { 
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 400;
+            font-family: 'Open Sans', sans-serif; 
+            font-weight: 400; 
             font-size: 1rem; 
-            color: #7f8c8d; 
+            color: #f1c40f; 
             margin: 0; 
             font-style: italic; 
-        }
-        .tour-card .price { 
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 600;
-            color: #e67e22; 
-            font-size: 1.5rem; 
-            margin: 0.5rem 0; 
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); 
         }
         .tour-card .btn-explore { 
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            display: inline-block; 
-            background: #e67e22; 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 700; 
+            background: linear-gradient(45deg, #e67e22, #f1c40f); 
             color: #fff; 
-            padding: 0.75rem 1.5rem; 
-            border-radius: 2rem; 
+            padding: 0.8rem 1.6rem; 
+            border-radius: 25px; 
             border: none; 
-            transition: background 0.3s ease; 
-            align-self: flex-start; 
             cursor: pointer; 
+            text-transform: uppercase; 
+            position: relative; 
+            overflow: hidden; 
+            box-shadow: 0 4px 15px rgba(241, 90, 36, 0.4); 
+            display: flex; 
+            align-items: center; 
+            gap: 0.5rem; 
+            transition: all 0.3s ease; 
+            margin-top: 1rem; 
+        }
+        .tour-card .btn-explore .icon { 
+            font-size: 1.2rem; 
+            transition: transform 0.3s ease; 
+        }
+        .tour-card .btn-explore:hover .icon { 
+            transform: translateX(5px); 
         }
         .tour-card .btn-explore:hover { 
-            background: #d35400; 
+            background: linear-gradient(45deg, #d35400, #d4a60d); 
+            box-shadow: 0 6px 20px rgba(241, 90, 36, 0.6); 
+            transform: translateY(-2px); 
+        }
+        .tour-card .btn-explore::after { 
+            content: ''; 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            width: 0; 
+            height: 0; 
+            background: rgba(255, 255, 255, 0.3); 
+            border-radius: 50%; 
+            transform: translate(-50%, -50%); 
+            transition: width 0.5s ease, height 0.5s ease; 
+        }
+        .tour-card .btn-explore:hover::after { 
+            width: 200%; 
+            height: 200%; 
         }
         .image-break { 
             height: 800px; 
@@ -762,58 +849,108 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.8);
             z-index: 200;
+            backdrop-filter: blur(5px);
         }
         .modal-content {
-            background: #fff;
-            margin: 10% auto;
-            padding: 2rem;
+            background: linear-gradient(135deg, #2c3e50, #1a252f);
+            margin: 5% auto;
+            padding: 2.5rem;
             width: 90%;
-            max-width: 500px;
-            border-radius: 1rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(241, 90, 36, 0.5);
             position: relative;
+            overflow: hidden;
+            animation: modalPop 0.4s ease forwards;
+        }
+        @keyframes modalPop {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
         .close {
             position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 2rem;
+            top: 15px;
+            right: 25px;
+            font-size: 2.5rem;
             cursor: pointer;
-            color: #2c3e50;
+            color: #f1c40f;
+            transition: transform 0.3s ease;
+        }
+        .close:hover {
+            transform: rotate(90deg);
         }
         .modal-content h2 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            color: #e67e22;
+            color: #f1c40f;
+            font-size: 2rem;
             margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
         }
         .modal-content form {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.2rem;
         }
-        .modal-content input {
+        .modal-content input, .modal-content textarea {
             font-family: 'Open Sans', sans-serif;
             font-weight: 400;
-            padding: 0.75rem;
-            border: 2px solid #e67e22;
-            border-radius: 0.5rem;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .modal-content input:focus, .modal-content textarea:focus {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 10px rgba(241, 90, 36, 0.5);
+            outline: none;
+        }
+        .modal-content textarea {
+            resize: none;
+            height: 100px;
         }
         .modal-content button {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            background: #e67e22;
+            background: linear-gradient(45deg, #e67e22, #f1c40f);
             color: #fff;
             border: none;
             padding: 1rem;
-            border-radius: 2rem;
+            border-radius: 25px;
             cursor: pointer;
-            transition: background 0.3s ease;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(241, 90, 36, 0.4);
+            transition: all 0.3s ease;
         }
         .modal-content button:hover {
-            background: #d35400;
+            background: linear-gradient(45deg, #d35400, #d4a60d);
+            box-shadow: 0 8px 20px rgba(241, 90, 36, 0.6);
+            transform: translateY(-2px);
+        }
+        .modal-content button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+        .modal-content button:hover::after {
+            width: 200%;
+            height: 200%;
         }
         footer { 
             background: #2c3e50; 
@@ -844,41 +981,6 @@
         @keyframes slideIn { 
             0% { transform: translateX(100%); } 
             100% { transform: translateX(calc(-370px * 8)); } 
-        }
-        @media (max-width: 768px) { 
-            nav { padding: 1rem 1.5rem; }
-            .logo img { height: 60px; max-width: 150px; }
-            .nav-links { 
-                display: none; 
-                position: fixed; 
-                top: 0; 
-                right: 0; 
-                width: 70%; 
-                height: 100%; 
-                background: #e67e22; 
-                flex-direction: column; 
-                padding: 4rem 2rem; 
-                transform: translateX(100%); 
-                transition: transform 0.3s ease; 
-            }
-            .nav-links.active { 
-                display: flex; 
-                transform: translateX(0); 
-            }
-            .nav-links .nav-item, .nav-links .dropdown { 
-                width: 100%; 
-            }
-            .nav-links a, .nav-links .dropdown-btn { 
-                font-size: 1.25rem; 
-                padding: 1rem; 
-                text-align: left; 
-            }
-            .dropdown-content { 
-                position: static; 
-                width: 100%; 
-                box-shadow: none; 
-                background: #d35400; 
-            }
         }
         .footer-content { 
             display: grid; 
@@ -1013,12 +1115,17 @@
                     </div>
                 </div>
                 <div class="nav-item"><a href="about.html">About</a></div>
-                <div class="nav-item"><a href="Travel-guide.html">Travel-guide</a></div>
+                <div class="nav-item"><a hraef="Travel-guide.html">Travel-guide</a></div>
                 <div class="nav-item"><a href="contact.html">Contact</a></div>
                 <button class="cta-nav" onclick="openModal('')">Book Now</button>
             </div>
-            <button class="hamburger" onclick="toggleMenu()">☰</button>
+            <button class="hamburger" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </nav>
+        <div class="nav-overlay"></div>
         <div class="hero">
             <video autoplay muted loop>
                 <source src="images/safari.mp4" type="video/mp4" alt="Tanzania safari tour wildebeest migration video">
@@ -1038,76 +1145,76 @@
         <section class="section featured-tours">
             <h2>Featured Tanzania Safari Adventures</h2>
             <div class="tour-row">
-                <div class="tour-card">
-                    <img src="images/pori.jpg" loading="lazy" alt="Serengeti safari tour Tanzania Great Migration">
+                <div class="tour-card" style="background-image: url('images/pori.jpg');">
                     <div class="tour-info">
                         <h3>Serengeti Safari</h3>
                         <p class="tagline">3-Day Great Migration Chase</p>
-                        <div class="price">$800</div>
-                        <button class="btn-explore" onclick="openModal('Serengeti Safari')">Book Now</button>
+                        <button class="btn-explore" onclick="openModal('Serengeti Safari')">
+                            Book Now <span class="icon">✈️</span>
+                        </button>
                     </div>
                 </div>
-                <div class="tour-card">
-                    <img src="images/mlima.jpg" loading="lazy" alt="Kilimanjaro trek Tanzania summit adventure">
+                <div class="tour-card" style="background-image: url('images/kilimanjaro.jpg');">
                     <div class="tour-info">
                         <h3>Kilimanjaro Quest</h3>
                         <p class="tagline">5-Day Summit Adventure</p>
-                        <div class="price">$1,500</div>
-                        <button class="btn-explore" onclick="openModal('Kilimanjaro Quest')">Book Now</button>
+                        <button class="btn-explore" onclick="openModal('Kilimanjaro Quest')">
+                            Book Now <span class="icon">✈️</span>
+                        </button>
                     </div>
                 </div>
-                <div class="tour-card">
-                    <img src="images/zanzibar(2).jpg" loading="lazy" alt="Zanzibar safari tour Tanzania beach escape">
+                <div class="tour-card" style="background-image: url('images/zanzibar\ \(2\).jpg');">
                     <div class="tour-info">
                         <h3>Zanzibar Escape</h3>
                         <p class="tagline">4-Day Island Bliss</p>
-                        <div class="price">$600</div>
-                        <button class="btn-explore" onclick="openModal('Zanzibar Escape')">Book Now</button>
+                        <button class="btn-explore" onclick="openModal('Zanzibar Escape')">
+                            Book Now <span class="icon">✈️</span>
+                        </button>
                     </div>
                 </div>
-                <div class="tour-card">
-                    <img src="images/lion.jpg" loading="lazy" alt="Ngorongoro safari tour Tanzania crater wildlife">
+                <div class="tour-card" style="background-image: url('images/swala.jpg');">
                     <div class="tour-info">
                         <h3>Ngorongoro Expedition</h3>
                         <p class="tagline">2-Day Crater Wild</p>
-                        <div class="price">$500</div>
-                        <button class="btn-explore" onclick="openModal('Ngorongoro Expedition')">Book Now</button>
+                        <button class="btn-explore" onclick="openModal('Ngorongoro Expedition')">
+                            Book Now <span class="icon">✈️</span>
+                        </button>
                     </div>
                 </div>
-                <div class="tour-card">
-                    <img src="images/tembo2.jpg" loading="lazy" alt="Tarangire safari tour Tanzania elephant herds">
+                <div class="tour-card" style="background-image: url('images/tembo2.jpg');">
                     <div class="tour-info">
                         <h3>Tarangire & Manyara</h3>
                         <p class="tagline">4-Day Safari Duo</p>
-                        <div class="price">$900</div>
-                        <button class="btn-explore" onclick="openModal('Tarangire & Manyara')">Book Now</button>
+                        <button class="btn-explore" onclick="openModal('Tarangire & Manyara')">
+                            Book Now <span class="icon">✈️</span>
+                        </button>
                     </div>
                 </div>
-                <div class="tour-card">
-                    <img src="images/two giraffe.jpg" loading="lazy" alt="Ruaha safari tour Tanzania wilderness">
+                <div class="tour-card" style="background-image: url('images/two giraffe.jpg');">
                     <div class="tour-info">
                         <h3>Ruaha Wilderness</h3>
                         <p class="tagline">5-Day Remote Bush</p>
-                        <div class="price">$1,200</div>
-                        <button class="btn-explore" onclick="openModal('Ruaha Wilderness')">Book Now</button>
+                        <button class="btn-explore" onclick="openModal('Ruaha Wilderness')">
+                            Book Now <span class="icon">✈️</span>
+                        </button>
                     </div>
                 </div>
-                <div class="tour-card">
-                    <img src="images/konde.jpg" loading="lazy" alt="Selous safari tour Tanzania river adventure">
+                <div class="tour-card" style="background-image: url('images/konde.jpg');">
                     <div class="tour-info">
                         <h3>Selous Safari</h3>
                         <p class="tagline">4-Day River Wild</p>
-                        <div class="price">$950</div>
-                        <button class="btn-explore" onclick="openModal('Selous Safari')">Book Now</button>
+                        <button class="btn-explore" onclick="openModal('Selous Safari')">
+                            Book Now <span class="icon">✈️</span>
+                        </button>
                     </div>
                 </div>
-                <div class="tour-card">
-                    <img src="images/giraffes.jpg" loading="lazy" alt="Arusha safari tour Tanzania highlands">
+                <div class="tour-card" style="background-image: url('images/giraffes.jpg');">
                     <div class="tour-info">
                         <h3>Arusha Explorer</h3>
                         <p class="tagline">3-Day Highland Trek</p>
-                        <div class="price">$700</div>
-                        <button class="btn-explore" onclick="openModal('Arusha Explorer')">Book Now</button>
+                        <button class="btn-explore" onclick="openModal('Arusha Explorer')">
+                            Book Now <span class="icon">✈️</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -1132,12 +1239,12 @@
                 <p>Home to the Great Migration, Big Five, and endless plains—experience nature’s raw power with a *Tanzania safari tour*.</p>
             </div>
             <div class="why-item">
-                <img src="images/su sunset.jpg" loading="lazy" alt="Tanzania safari landscapes Serengeti sunset">
+                <img src="images/suunset.jpg" loading="lazy" alt="Tanzania safari landscapes Serengeti sunset">
                 <h3>Stunning Landscapes</h3>
                 <p>From Kilimanjaro’s peaks to Ngorongoro’s crater, Tanzania’s vistas are a feast for the soul on every *safari adventure*.</p>
             </div>
             <div class="why-item">
-                <img src="images/maasai.jpg" loading="lazy" alt="Tanzania safari culture Maasai village">
+                <img src="images/minazi.jpg" loading="lazy" alt="Tanzania safari culture Maasai village">
                 <h3>Rich Culture</h3>
                 <p>Connect with Maasai traditions and spice markets—a cultural heartbeat in every *Tanzania trek*.</p>
             </div>
@@ -1209,7 +1316,7 @@
                     </div>
                 </div>
                 <div class="highlight-card">
-                    <img src="images/wildlife.jpg" loading="lazy" alt="Ngorongoro crater lake Tanzania safari">
+                    <img src="images/tembo.jpg" loading="lazy" alt="Ngorongoro crater lake Tanzania safari">
                     <div class="highlight-info">
                         <h3>Crater Lake</h3>
                         <p>Spot flamingos and rhinos in Ngorongoro’s misty caldera—nature’s coliseum on a *safari tour*.</p>
@@ -1237,7 +1344,7 @@
                     </div>
                 </div>
                 <div class="highlight-card">
-                    <img src="images/balloon safari.jpg" loading="lazy" alt="Arusha coffee Tanzania safari highlands">
+                    <img src="images/balon safari.jpg" loading="lazy" alt="Arusha coffee Tanzania safari highlands">
                     <div class="highlight-info">
                         <h3>Arusha Coffee</h3>
                         <p>Sip fresh brews amid lush highlands—Meru’s shadow in every cup on a *Tanzania safari tour*.</p>
@@ -1333,14 +1440,14 @@
     <div id="bookModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">×</span>
-            <h2>Book Your Tanzania Safari Adventure</h2>
+            <h2>Book Your Tanzania Adventure</h2>
             <form id="bookingForm">
                 <input type="text" id="fullName" placeholder="Full Name" required>
                 <input type="email" id="email" placeholder="Email" required>
-                <input type="text" id="tourName" placeholder="Itinerary Name">
+                <input type="text" id="tourName" placeholder="Tour Name">
                 <input type="date" id="prefDate" placeholder="Preferred Date" required>
-                <textarea id="preferences" placeholder="Tell us your preferences (budget, group size, etc.)" rows="4"></textarea>
-                <button id="submitBtn" type="submit">Submit Request</button>
+                <textarea id="preferences" placeholder="Your Preferences (budget, group size, etc.)" rows="4"></textarea>
+                <button id="submitBtn" type="submit">Launch Adventure</button>
             </form>
         </div>
     </div>
@@ -1361,7 +1468,7 @@
             </div>
             <div class="footer-section contact">
                 <h3>Contact Us</h3>
-                <p>Email: <a href="mailto:info@tanzaniatrek.com">info@tanzaniatrek.com</a></p>
+                <p>Email: <a href="/cdn-cgi/l/email-protection#5c35323a331c283d32263d32353d282e3937723f3331"><span class="__cf_email__" data-cfemail="50797e767f5064717e6a717e79716462757b3e737f7d">[email protected]</span></a></p>
                 <p>Phone: <a href="https://wa.me/255623474720">+255 623 474 720</a></p>
                 <p>Office: Plot 45, Mbezi Beach, Dar es Salaam</p>
             </div>
@@ -1378,62 +1485,69 @@
             <p>© 2025 Tanzania Trek. All rights reserved.</p>
             <div class="social-icons">
                 <a href="https://instagram.com/tanzaniatrek" target="_blank" class="social-icon">📷</a>
-                <a href="https://twitter.com/tanztrek" target="_blank" class="social-icon">
+                <a href="https://twitter.com/tanztrek" target="_blank" class="social-icon">🐦</a>
                 <a href="https://wa.me/255623474720" target="_blank" class="social-icon">💬</a>
-                </div>
             </div>
-        </footer>
-        <script>
-            const nav = document.querySelector('nav');
-            const hamburger = document.querySelector('.hamburger');
+        </div>
+    </footer>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
-    
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 100) {
-                    nav.classList.add('scrolled');
-                } else {
-                    nav.classList.remove('scrolled');
-                }
-            });
-    
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-    
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-    
-            function openModal(tourName) {
-                const modal = document.getElementById('bookModal');
-                modal.style.display = 'block';
-                document.getElementById('tourName').value = tourName;
+            const hamburger = document.querySelector('.hamburger');
+            const overlay = document.querySelector('.nav-overlay');
+
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        document.querySelector('.hamburger').addEventListener('click', toggleMenu);
+        document.querySelector('.nav-overlay').addEventListener('click', toggleMenu);
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
             }
-    
-            function closeModal() {
-                const modal = document.getElementById('bookModal');
-                modal.style.display = 'none';
-            }
-    
-            function scrollToTop() {
-                window.scrollTo({
-                    top: 0,
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
-            }
-    
-            document.getElementById('bookingForm').addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Request submitted! We’ll get back to you soon.');
-                closeModal();
             });
-    
-            document.querySelector('.back-to-top').addEventListener('click', scrollToTop);
-        </script>
-    </body>
-    </html>
+        });
+
+        function openModal(tourName) {
+            const modal = document.getElementById('bookModal');
+            modal.style.display = 'block';
+            document.getElementById('tourName').value = tourName;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('bookModal');
+            modal.style.display = 'none';
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        document.getElementById('bookingForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Request submitted! We’ll get back to you soon.');
+            closeModal();
+        });
+
+        document.querySelector('.back-to-top').addEventListener('click', scrollToTop);
+    </script>
+</body>
+</html>
