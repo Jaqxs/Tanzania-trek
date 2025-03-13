@@ -27,6 +27,9 @@
             opacity: 0.05;
             z-index: -1;
         }
+        body.menu-open {
+            overflow: hidden;
+        }
         nav {
             background: rgba(241, 90, 36, 0.1);
             backdrop-filter: blur(10px);
@@ -145,19 +148,67 @@
         }
         .hamburger {
             display: none;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: #fff;
             background: none;
             border: none;
             cursor: pointer;
+            z-index: 101;
             transition: transform 0.3s ease;
         }
         .hamburger:hover {
-            animation: bounce 0.5s infinite;
+            transform: scale(1.1);
         }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .logo { font-size: 1.5rem; }
+            .hamburger { display: block; }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: #e67e22;
+                flex-direction: column;
+                padding: 4rem 2rem;
+                z-index: 100;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+                border-left: 3px solid #f1c40f;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+                overflow-y: auto;
+            }
+            .nav-links.active {
+                transform: translateX(0);
+            }
+            .nav-links a, .nav-links .dropdown-btn {
+                font-size: 1.25rem;
+                padding: 1rem;
+                width: 100%;
+                text-align: left;
+            }
+            .dropdown-content {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                border-radius: 0;
+                display: none;
+                background: #d35400;
+                margin-left: 1rem;
+            }
+            .dropdown:hover .dropdown-content {
+                display: none;
+            }
+            .dropdown.open .dropdown-content {
+                display: block;
+            }
+            .cta-nav {
+                width: 80%;
+                margin: 1rem auto;
+                text-align: center;
+            }
         }
         .hero {
             position: relative;
@@ -227,9 +278,6 @@
             font-size: 24px;
             margin: 20px 0 10px;
         }
-        .daily-schedule {
-            margin-bottom: 30px;
-        }
         .daily-schedule ul {
             list-style: none;
             padding: 0;
@@ -254,9 +302,6 @@
             font-weight: 700;
             color: #2c3e50;
         }
-        .accommodation-options {
-            margin-bottom: 30px;
-        }
         .accommodation-options ul {
             list-style: none;
             padding: 0;
@@ -272,9 +317,6 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             color: #2c3e50;
-        }
-        .inclusions {
-            margin-bottom: 30px;
         }
         .inclusions ul {
             list-style: none;
@@ -373,24 +415,32 @@
             height: 100%;
             background: rgba(0,0,0,0.7);
             z-index: 200;
+            overflow-y: auto;
         }
         .modal-content {
             background: #fff;
-            margin: 10% auto;
+            margin: 5% auto;
             padding: 2rem;
             width: 90%;
             max-width: 500px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
         }
         .close {
-            position: absolute;
+            position: sticky;
             top: 10px;
-            right: 20px;
+            right: 15px;
             font-size: 2rem;
             cursor: pointer;
             color: #2c3e50;
+            transition: color 0.3s ease;
+            float: right;
+        }
+        .close:hover {
+            color: #e67e22;
         }
         .modal-content h2 {
             font-family: 'Montserrat', sans-serif;
@@ -399,22 +449,43 @@
             margin-bottom: 1.5rem;
             font-size: 24px;
             text-transform: uppercase;
+            text-align: center;
         }
         .modal-content form {
-            display: flex;
-            flex-direction: column;
+            display: grid;
             gap: 1rem;
+        }
+        .form-group {
+            position: relative;
+        }
+        .modal-content label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 13px;
+            position: absolute;
+            top: -8px;
+            left: 12px;
+            background: #fff;
+            padding: 0 5px;
         }
         .modal-content input, .modal-content textarea {
             font-family: 'Open Sans', sans-serif;
             font-weight: 400;
-            padding: 0.75rem;
+            padding: 0.8rem;
             border: 1px solid #e67e22;
             border-radius: 5px;
             font-size: 14px;
+            width: 100%;
+            transition: border-color 0.3s ease;
+        }
+        .modal-content input:focus, .modal-content textarea:focus {
+            border-color: #f1c40f;
+            outline: none;
         }
         .modal-content textarea {
             resize: vertical;
+            min-height: 80px;
         }
         .modal-content button {
             font-family: 'Montserrat', sans-serif;
@@ -426,9 +497,11 @@
             border-radius: 25px;
             cursor: pointer;
             transition: all 0.3s ease;
+            margin-top: 1rem;
         }
         .modal-content button:hover {
             background: #d35400;
+            transform: scale(1.05);
         }
         footer {
             background: #2c3e50;
@@ -449,45 +522,25 @@
             color: #fff;
         }
         @media (max-width: 768px) {
-            nav { padding: 1rem 1.5rem; }
-            .logo { font-size: 1.5rem; }
-            .nav-links {
-                display: none;
-                position: fixed;
-                top: 0;
-                right: 0;
-                width: 70%;
-                height: 100%;
-                background: #e67e22;
-                flex-direction: column;
-                padding: 4rem 2rem;
-                transform: translateX(100%);
-                transition: transform 0.3s ease;
-            }
-            .nav-links.active {
-                display: flex;
-                transform: translateX(0);
-            }
-            .nav-links a, .nav-links .dropdown-btn {
-                font-size: 1.25rem;
-                padding: 1rem;
-                text-align: left;
-            }
-            .dropdown-content {
-                position: static;
-                width: 100%;
-                box-shadow: none;
-                background: #d35400;
-            }
-            .hamburger {
-                display: block;
-            }
-            .cta-nav {
-                width: 100%;
-                text-align: center;
-            }
             .hero-text h1 { font-size: 36px; }
             .hero-text p { font-size: 16px; }
+            .content { padding: 40px 15px; }
+            .itinerary-details { padding: 25px; }
+            .itinerary-details h2 { font-size: 28px; }
+            .modal-content {
+                padding: 1.5rem;
+                margin: 10% auto;
+                max-height: 85vh;
+            }
+            .modal-content h2 { font-size: 20px; }
+            .modal-content input, .modal-content textarea {
+                padding: 0.7rem;
+                font-size: 13px;
+            }
+            .modal-content button {
+                padding: 0.8rem;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -498,7 +551,7 @@
             <div class="nav-links">
                 <div class="nav-item"><a href="index.html">Home</a></div>
                 <div class="dropdown">
-                    <a href="tours.html" class="dropdown-btn">Tours</a>
+                    <button class="dropdown-btn">Tours</button>
                     <div class="dropdown-content">
                         <a href="tours.html#serengeti-details">Serengeti Safari</a>
                         <a href="tours.html#kilimanjaro-details">Kilimanjaro Quest</a>
@@ -506,7 +559,7 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="itinerary.html" class="dropdown-btn">Itineraries</a>
+                    <button class="dropdown-btn">Itineraries</button>
                     <div class="dropdown-content">
                         <a href="serengeti-express.html">Serengeti Express</a>
                         <a href="kilimanjaro-classic.html">Kilimanjaro Classic</a>
@@ -577,14 +630,29 @@
             <span class="close" onclick="closeModal()">×</span>
             <h2>Book Your Adventure</h2>
             <form id="bookingForm">
-                <input type="text" id="fullName" placeholder="Full Name" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="text" id="tourName" placeholder="Itinerary Name" readonly value="Tarangire Blitz">
-                <input type="date" id="prefDate" placeholder="Preferred Date" required>
-                <textarea id="preferences" placeholder="Tell us your preferences (budget, group size, etc.)" rows="4"></textarea>
-                <button id="submitBtn">Submit Request</button>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="tourName">Itinerary</label>
+                    <input type="text" id="tourName" readonly value="Selous Journey">
+                </div>
+                <div class="form-group">
+                    <label for="prefDate">Preferred Date</label>
+                    <input type="date" id="prefDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="preferences">Preferences</label>
+                    <textarea id="preferences" placeholder="Tell us your preferences (budget, group size, etc.)" rows="3"></textarea>
+                </div>
+                <button type="submit" id="submitBtn">Submit Request</button>
             </form>
-            </div>
+        </div>
     </div>
     <footer>
         <p>© 2025 Tanzania Trek. All rights reserved. | <a href="contact.html">Get in Touch</a> | Follow us on Instagram @TanzaniaTrek</p>
@@ -593,6 +661,7 @@
         const nav = document.querySelector('nav');
         const backToTop = document.querySelector('.back-to-top');
         const navLinks = document.querySelector('.nav-links');
+        const hamburger = document.querySelector('.hamburger');
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
@@ -608,38 +677,84 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        function toggleMenu() {
-            navLinks.classList.toggle('active');
-        }
+        hamburger.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburger.textContent = '☰';
+                document.body.classList.remove('menu-open');
+            } else {
+                navLinks.classList.add('active');
+                hamburger.textContent = '✖';
+                document.body.classList.add('menu-open');
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
+                if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                    hamburger.textContent = '☰';
+                    document.body.classList.remove('menu-open');
+                }
+            }
+        });
+
+        const navItems = document.querySelectorAll('.nav-links a, .nav-links .cta-nav');
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    hamburger.textContent = '☰';
+                    document.body.classList.remove('menu-open');
+                }
+            });
+        });
+
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            const btn = dropdown.querySelector('.dropdown-btn');
+            btn.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const isOpen = dropdown.classList.contains('open');
+                    dropdowns.forEach(d => d.classList.remove('open'));
+                    if (!isOpen) {
+                        dropdown.classList.add('open');
+                    }
+                }
+            });
+        });
 
         function openModal(tour) {
             document.getElementById('bookModal').style.display = 'block';
             document.getElementById('tourName').value = tour || 'Selous Journey';
+            document.body.classList.add('menu-open');
         }
 
         function closeModal() {
             document.getElementById('bookModal').style.display = 'none';
+            document.body.classList.remove('menu-open');
+            document.getElementById('bookingForm').reset();
         }
 
-        document.getElementById('submitBtn').addEventListener('click', (e) => {
-    const fullName = document.getElementById('fullName').value;
-    const email = document.getElementById('email').value;
-    const tourName = document.getElementById('tourName').value;
-    const prefDate = document.getElementById('prefDate').value;
-    const preferences = document.getElementById('preferences').value;
+        document.getElementById('bookingForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const tourName = document.getElementById('tourName').value;
+            const prefDate = document.getElementById('prefDate').value;
+            const preferences = document.getElementById('preferences').value.trim();
 
-    if (!fullName || !email || !prefDate) {
-        alert("Yo, fill in the blanks first!");
-        return;
-    }
+            if (!fullName || !email || !prefDate) {
+                alert("Yo, fill in the blanks first!");
+                return;
+            }
 
-    const message = `Yo Tanzania Trek! I’m ${fullName}. Booking ${tourName} for ${prefDate}. Email: ${email}. Preferences: ${preferences}. Let’s roll!`;
-    window.open(`https://wa.me/255623474720?text=${encodeURIComponent(message)}`, '_blank');
-
-    alert('WhatsApp’s up! Send it to seal the deal.');
-    closeModal();
-});
-
+            const message = `Yo Tanzania Trek! I’m ${fullName}. Booking ${tourName} for ${prefDate}. Email: ${email}. Preferences: ${preferences}. Let’s roll!`;
+            window.open(`https://wa.me/255623474720?text=${encodeURIComponent(message)}`, '_blank');
+            alert('WhatsApp’s up! Send it to seal the deal.');
+            closeModal();
+        });
     </script>
 </body>
 </html>
