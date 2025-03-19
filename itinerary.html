@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanzania Safari Itineraries | Tanzania Trek</title>
-    <meta name="description" content="Discover custom Tanzania safari itineraries—Serengeti, Kilimanjaro, Zanzibar & more. Plan your adventure with Tanzania Trek!">
-    <meta name="keywords" content="Tanzania safari itineraries, Serengeti safari, Kilimanjaro trek, Zanzibar getaway, Tanzania Trek">
+    <meta name="description"
+        content="Discover custom Tanzania safari itineraries—Serengeti, Kilimanjaro, Zanzibar & more. Plan your adventure with Tanzania Trek!">
+    <meta name="keywords"
+        content="Tanzania safari itineraries, Serengeti safari, Kilimanjaro trek, Zanzibar getaway, Tanzania Trek">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Tanzania Trek">
     <meta property="og:title" content="Tanzania Safari Itineraries | Tanzania Trek">
-    <meta property="og:description" content="Explore custom Tanzania safari itineraries—Serengeti, Kilimanjaro, Zanzibar & more with Tanzania Trek. Book now!">
+    <meta property="og:description"
+        content="Explore custom Tanzania safari itineraries—Serengeti, Kilimanjaro, Zanzibar & more with Tanzania Trek. Book now!">
     <meta property="og:image" content="images/giraffes.jpg">
     <meta property="og:url" content="https://www.tanzaniatrek.com/itinerary.html">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Tanzania Safari Itineraries | Tanzania Trek">
-    <meta name="twitter:description" content="Custom Tanzania safari itineraries—Serengeti, Kilimanjaro, Zanzibar & more. Plan with Tanzania Trek!">
+    <meta name="twitter:description"
+        content="Custom Tanzania safari itineraries—Serengeti, Kilimanjaro, Zanzibar & more. Plan with Tanzania Trek!">
     <meta name="twitter:image" content="images/giraffes.jpg">
     <link rel="canonical" href="https://www.tanzaniatrek.com/itinerary.html">
     <link rel="preload" href="images/giraffes.jpg" as="image">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script type="application/ld+json">
     {
@@ -64,6 +71,7 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
@@ -71,6 +79,7 @@
             color: #2c3e50;
             overflow-x: hidden;
         }
+
         body::before {
             content: '';
             position: fixed;
@@ -82,6 +91,7 @@
             opacity: 0.05;
             z-index: -1;
         }
+
         nav {
             background: rgba(241, 90, 36, 0.1);
             backdrop-filter: blur(10px);
@@ -95,92 +105,212 @@
             z-index: 100;
             transition: background 0.3s ease;
         }
+
         nav.scrolled {
             background: rgba(241, 90, 36, 0.95);
-            box-shadow: 0 0 15px rgba(241, 90, 36, 0.5);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
         }
+
         .logo {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             color: #fff;
             font-size: 1.5rem;
             text-transform: uppercase;
-            transition: transform 0.3s ease;
         }
-        .logo:hover {
-            transform: scale(1.05);
-        }
+
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            transition: all 0.3s ease;
+            gap: 1.5rem;
         }
-        .nav-links a, .nav-links .dropdown-btn {
+
+        .nav-item,
+        .dropdown {
+            position: relative;
+        }
+
+        .nav-links a,
+        .nav-links .dropdown-btn {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             color: #fff;
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            padding: 0.6rem 1rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
         }
-        .nav-links a:hover, .nav-links .dropdown-btn:hover {
-            background: #f1c40f;
-            color: #2c3e50;
+
+        .nav-links a:hover,
+        .nav-links .dropdown-btn:hover {
+            color: #f1c40f;
         }
-        .dropdown {
-            position: relative;
-        }
+
         .dropdown-content {
             display: none;
             position: absolute;
-            background: #2c3e50;
-            min-width: 180px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            border-radius: 10px;
+            background: #fff;
+            min-width: 220px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
             top: 100%;
             left: 0;
             z-index: 10;
-            animation: slideIn 0.3s ease;
         }
+
         .dropdown:hover .dropdown-content {
             display: block;
+            animation: slideIn 0.3s ease;
         }
+
         .dropdown-content a {
-            color: #fff;
-            padding: 0.6rem 1rem;
-            display: block;
-            font-size: 0.85rem;
-            transition: background 0.3s ease;
-        }
-        .dropdown-content a:hover {
-            background: #d35400;
-        }
-        .cta-nav {
-            background: linear-gradient(135deg, #f1c40f, #e67e22);
             color: #2c3e50;
-            padding: 0.6rem 1.2rem;
-            border-radius: 20px;
+            padding: 0.8rem 1.2rem;
+            display: block;
             font-size: 0.9rem;
             transition: all 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: #f1c40f;
+            color: #fff;
+        }
+
+        .cta-nav {
+            background: #f1c40f;
+            color: #2c3e50;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 700;
             border: none;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
+
         .cta-nav:hover {
+            background: #e67e22;
+            color: #fff;
             transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(241, 196, 15, 0.7);
         }
+
         .hamburger {
             display: none;
-            font-size: 1.5rem;
+            font-size: 2rem;
             background: none;
             border: none;
             color: #fff;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            z-index: 101;
         }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 300px;
+                height: 100vh;
+                background: #fff;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 4rem 1rem;
+                transition: left 0.4s ease-in-out;
+                box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+                z-index: 100;
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-item,
+            .dropdown {
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+
+            .nav-links a,
+            .nav-links .dropdown-btn {
+                color: #2c3e50;
+                font-size: 1.1rem;
+                padding: 1rem;
+                width: 100%;
+                display: block;
+                border-bottom: 1px solid #eee;
+            }
+
+            .nav-links a:hover,
+            .nav-links .dropdown-btn:hover {
+                background: #f7f1e3;
+                color: #e67e22;
+            }
+
+            .dropdown-content {
+                position: static;
+                width: 100%;
+                background: #f7f1e3;
+                box-shadow: none;
+                border-radius: 0;
+                display: none;
+                padding-left: 1rem;
+            }
+
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+
+            .dropdown-content a {
+                padding: 0.8rem 1rem;
+                font-size: 1rem;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .cta-nav {
+                width: 100%;
+                margin-top: 1rem;
+                padding: 1rem;
+                border-radius: 8px;
+                text-align: center;
+            }
+
+            body.overlay-active::after {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                z-index: 99;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                width: 260px;
+            }
+
+            .nav-links a,
+            .nav-links .dropdown-btn {
+                font-size: 1rem;
+                padding: 0.9rem;
+            }
+
+            .dropdown-content a {
+                font-size: 0.9rem;
+            }
+
+            .cta-nav {
+                font-size: 0.9rem;
+            }
+        }
+
         .hero {
             position: relative;
             min-height: 90vh;
@@ -191,6 +321,7 @@
             text-align: center;
             overflow: hidden;
         }
+
         .hero::before {
             content: '';
             position: absolute;
@@ -198,51 +329,64 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
             z-index: 1;
         }
+
         .hero-text {
             position: relative;
             z-index: 2;
             padding: 2rem;
             background: rgba(255, 255, 255, 0.85);
             border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
             animation: fadeInUp 1.2s ease;
         }
+
         .hero-text h1 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             font-size: 2.5rem;
             color: #e67e22;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
             margin-bottom: 0.8rem;
         }
+
         .hero-text p {
             font-size: 1.2rem;
             color: #2c3e50;
             font-weight: 600;
         }
+
         .content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 1rem;
         }
-        .intro-text, .accommodations-overview, .quick-faqs, .featured-itineraries {
+
+        .intro-text,
+        .accommodations-overview,
+        .quick-faqs,
+        .featured-itineraries {
             background: #fff;
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             margin-bottom: 2rem;
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.8s ease;
             text-align: center;
         }
-        .intro-text.visible, .accommodations-overview.visible, .quick-faqs.visible, .featured-itineraries.visible {
+
+        .intro-text.visible,
+        .accommodations-overview.visible,
+        .quick-faqs.visible,
+        .featured-itineraries.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
         h2 {
             font-family: 'Montserrat', sans-serif;
             color: #e67e22;
@@ -251,6 +395,7 @@
             text-transform: uppercase;
             position: relative;
         }
+
         h2::after {
             content: '';
             width: 40px;
@@ -261,33 +406,40 @@
             left: 50%;
             transform: translateX(-50%);
         }
+
         .intro-text p {
             font-size: 1rem;
             color: #555;
             max-width: 800px;
             margin: 0 auto;
         }
+
         .sustainability-text {
             text-align: center;
             margin-bottom: 2rem;
         }
+
         .sustainability-text p {
             font-size: 1rem;
             color: #e67e22;
             font-style: italic;
         }
+
         .sustainability-text a {
             color: #f1c40f;
             text-decoration: none;
             font-weight: 700;
         }
+
         .sustainability-text a:hover {
             text-decoration: underline;
         }
+
         .plan-trip-cta {
             text-align: center;
             margin-bottom: 3rem;
         }
+
         .plan-trip-btn {
             font-family: 'Montserrat', sans-serif;
             background: linear-gradient(135deg, #f1c40f, #e67e22);
@@ -302,10 +454,12 @@
             border: none;
             cursor: pointer;
         }
+
         .plan-trip-btn:hover {
             transform: scale(1.1);
             box-shadow: 0 0 15px rgba(241, 196, 15, 0.8);
         }
+
         .itinerary-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -313,18 +467,21 @@
             padding: 0 1rem;
             margin-bottom: 4rem;
         }
+
         .itinerary-card {
             position: relative;
-            min-height: 350px; /* Increased size */
+            min-height: 350px;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
+
         .itinerary-card:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 35px rgba(241, 90, 36, 0.5);
         }
+
         .itinerary-card .image-wrapper {
             position: absolute;
             top: 0;
@@ -333,41 +490,48 @@
             height: 100%;
             z-index: 1;
         }
+
         .itinerary-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.4s ease;
         }
+
         .itinerary-card:hover img {
             transform: scale(1.1);
         }
+
         .itinerary-card .content-wrapper {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
             padding: 1.5rem;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
             color: #fff;
             z-index: 2;
             transition: background 0.4s ease;
         }
+
         .itinerary-card:hover .content-wrapper {
             background: linear-gradient(to top, rgba(241, 90, 36, 0.9), rgba(241, 90, 36, 0));
         }
+
         .itinerary-card h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem; /* Larger text */
+            font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 0.8rem;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
+
         .itinerary-card p {
-            font-size: 1rem; /* Larger text */
+            font-size: 1rem;
             margin-bottom: 1rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
+
         .itinerary-card a {
             display: inline-block;
             background: linear-gradient(135deg, #f1c40f, #e67e22);
@@ -376,73 +540,87 @@
             border-radius: 25px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1rem; /* Larger text */
+            font-size: 1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
+
         .itinerary-card a:hover {
             transform: scale(1.1);
             box-shadow: 0 6px 20px rgba(241, 196, 15, 0.8);
         }
+
         .accommodations-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
             padding: 1rem 0;
         }
+
         .accommodation-option {
             padding: 1.5rem;
             background: #f9f9f9;
             border-radius: 10px;
         }
+
         .accommodation-option h3 {
             font-family: 'Montserrat', sans-serif;
             color: #f1c40f;
             font-size: 1.2rem;
             margin-bottom: 0.8rem;
         }
+
         .accommodation-option p {
             font-size: 0.9rem;
             color: #666;
         }
+
         .faq-item {
             margin-bottom: 1.5rem;
             text-align: left;
         }
+
         .faq-item h3 {
             font-family: 'Montserrat', sans-serif;
             color: #f1c40f;
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
         }
+
         .faq-item p {
             font-size: 0.9rem;
             color: #666;
         }
+
         .faq-item a {
             color: #e67e22;
             text-decoration: none;
             font-weight: 700;
         }
+
         .faq-item a:hover {
             text-decoration: underline;
         }
+
         .featured-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
             padding: 1rem 0;
         }
+
         .featured-card {
             background: #fff;
             padding: 1rem;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.4s ease;
         }
+
         .featured-card:hover {
             transform: scale(1.05);
         }
+
         .featured-card img {
             width: 100%;
             height: 150px;
@@ -450,21 +628,25 @@
             border-radius: 8px;
             margin-bottom: 0.8rem;
         }
+
         .featured-card h3 {
             font-family: 'Montserrat', sans-serif;
             color: #e67e22;
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
         }
+
         .featured-card a {
             color: #f1c40f;
             text-decoration: none;
             font-weight: 700;
             font-size: 0.9rem;
         }
+
         .featured-card a:hover {
             text-decoration: underline;
         }
+
         .modal {
             display: none;
             position: fixed;
@@ -472,10 +654,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.8);
+            background: rgba(0, 0, 0, 0.8);
             z-index: 200;
             overflow-y: auto;
         }
+
         .modal-content {
             background: #fff;
             margin: 5% auto;
@@ -483,10 +666,11 @@
             width: 90%;
             max-width: 500px;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             position: relative;
             animation: zoomIn 0.5s ease;
         }
+
         .close {
             position: absolute;
             top: 10px;
@@ -496,9 +680,11 @@
             color: #e67e22;
             transition: transform 0.3s ease;
         }
+
         .close:hover {
             transform: rotate(90deg);
         }
+
         .modal-content h2 {
             font-family: 'Montserrat', sans-serif;
             color: #e67e22;
@@ -506,13 +692,16 @@
             text-align: center;
             margin-bottom: 1.5rem;
         }
+
         .modal-content form {
             display: grid;
             gap: 1rem;
         }
+
         .form-group {
             position: relative;
         }
+
         .modal-content label {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
@@ -525,7 +714,10 @@
             padding: 0 5px;
             transition: all 0.3s ease;
         }
-        .modal-content input, .modal-content textarea, .modal-content select {
+
+        .modal-content input,
+        .modal-content textarea,
+        .modal-content select {
             font-family: 'Open Sans', sans-serif;
             padding: 0.8rem;
             border: 2px solid #f1c40f;
@@ -535,15 +727,20 @@
             transition: all 0.3s ease;
             background: #f9f9f9;
         }
-        .modal-content input:focus, .modal-content textarea:focus, .modal-content select:focus {
+
+        .modal-content input:focus,
+        .modal-content textarea:focus,
+        .modal-content select:focus {
             border-color: #e67e22;
             outline: none;
             box-shadow: 0 0 8px rgba(230, 126, 34, 0.5);
         }
+
         .modal-content textarea {
             resize: vertical;
             min-height: 100px;
         }
+
         .modal-content button {
             font-family: 'Montserrat', sans-serif;
             background: linear-gradient(135deg, #f1c40f, #e67e22);
@@ -558,6 +755,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .modal-content button::before {
             content: '';
             position: absolute;
@@ -565,16 +763,19 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: rgba(255,255,255,0.3);
+            background: rgba(255, 255, 255, 0.3);
             transition: all 0.4s ease;
         }
+
         .modal-content button:hover::before {
             left: 100%;
         }
+
         .modal-content button:hover {
             transform: scale(1.05);
             box-shadow: 0 0 15px rgba(241, 196, 15, 0.8);
         }
+
         .back-to-top {
             position: fixed;
             bottom: 20px;
@@ -590,30 +791,46 @@
             transition: opacity 0.3s ease, transform 0.3s ease;
             z-index: 100;
         }
+
         .back-to-top.visible {
             opacity: 1;
         }
+
         .back-to-top:hover {
             transform: scale(1.1);
             background: #d35400;
         }
+
         .whatsapp-chat {
             position: fixed;
             bottom: 20px;
             left: 20px;
             background: #25D366;
             color: #fff;
-            padding: 1rem;
+            padding: 1.2rem;
             border-radius: 50%;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
             z-index: 100;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
+
         .whatsapp-chat:hover {
-            transform: scale(1.1);
+            transform: scale(1.1) rotate(10deg);
             background: #20b858;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
+
+        .whatsapp-chat i {
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-chat:hover i {
+            transform: scale(1.1);
+        }
+
         footer {
             background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
             color: #fff;
@@ -622,6 +839,7 @@
             position: relative;
             z-index: 1;
         }
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -630,6 +848,7 @@
             margin: 0 auto 3rem;
             text-align: left;
         }
+
         .footer-section h3 {
             font-family: 'Montserrat', sans-serif;
             color: #f1c40f;
@@ -639,32 +858,39 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+
         .footer-section p {
             font-size: 0.95rem;
             line-height: 1.5;
             margin: 0.6rem 0;
             color: #ecf0f1;
         }
+
         .footer-section a {
             color: #f1c40f;
             text-decoration: none;
             transition: color 0.3s ease;
         }
+
         .footer-section a:hover {
             color: #fff;
         }
+
         .footer-section.links ul {
             list-style: none;
             padding: 0;
         }
+
         .footer-section.links li {
             margin: 0.8rem 0;
         }
+
         .footer-section.newsletter form {
             display: flex;
             gap: 0.8rem;
             margin-top: 1rem;
         }
+
         .footer-section.newsletter input {
             padding: 0.8rem;
             border: 2px solid #e67e22;
@@ -674,6 +900,7 @@
             background: #fff;
             color: #2c3e50;
         }
+
         .footer-section.newsletter button {
             background: #e67e22;
             color: #fff;
@@ -686,25 +913,30 @@
             text-transform: uppercase;
             transition: background 0.3s ease, transform 0.3s ease;
         }
+
         .footer-section.newsletter button:hover {
             background: #d35400;
             transform: scale(1.05);
         }
+
         .social-icons {
             display: flex;
             gap: 1.2rem;
             margin-top: 1rem;
             justify-content: flex-start;
         }
+
         .social-icon {
             font-size: 1.8rem;
             color: #f1c40f;
             transition: transform 0.3s ease, color 0.3s ease;
         }
+
         .social-icon:hover {
             transform: scale(1.2) rotate(5deg);
             color: #fff;
         }
+
         .footer-bottom {
             border-top: 1px solid rgba(241, 90, 36, 0.3);
             padding-top: 1.5rem;
@@ -715,82 +947,123 @@
             gap: 1rem;
             font-size: 0.9rem;
         }
+
         .footer-bottom p {
             margin: 0;
             color: #bdc3c7;
         }
+
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         @keyframes slideIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         @keyframes zoomIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
+
         @media (max-width: 768px) {
-            .hamburger { display: block; }
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 70%;
-                max-width: 300px;
-                height: 100vh;
-                background: rgba(241, 90, 36, 0.95);
-                flex-direction: column;
-                padding: 3rem 1rem;
-                z-index: 99;
-                transition: right 0.3s ease;
+            .hero-text h1 {
+                font-size: 1.8rem;
             }
-            .nav-links.active {
-                right: 0;
-            }
-            .nav-links a, .nav-links .dropdown-btn, .cta-nav {
+
+            .hero-text p {
                 font-size: 1rem;
-                padding: 0.8rem 1rem;
-                width: 100%;
-                text-align: center;
             }
-            .dropdown-content {
-                position: static;
-                width: 100%;
-                box-shadow: none;
-                border-radius: 0;
-                background: #d35400;
-                display: none;
+
+            .content {
+                padding: 2rem 1rem;
             }
-            .dropdown.active .dropdown-content {
-                display: block;
+
+            h2 {
+                font-size: 1.5rem;
             }
-            .dropdown:hover .dropdown-content {
-                display: none;
-            }
-            .hero-text h1 { font-size: 1.8rem; }
-            .hero-text p { font-size: 1rem; }
-            .content { padding: 2rem 1rem; }
-            h2 { font-size: 1.5rem; }
-            .itinerary-grid, .accommodations-grid, .featured-grid {
+
+            .itinerary-grid,
+            .accommodations-grid,
+            .featured-grid {
                 grid-template-columns: 1fr;
             }
-            .itinerary-card { min-height: 300px; }
-            .modal-content { padding: 1.5rem; max-width: 90%; }
+
+            .itinerary-card {
+                min-height: 300px;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+                max-width: 90%;
+            }
         }
+
         @media (max-width: 480px) {
-            .logo { font-size: 1.2rem; }
-            .hamburger { font-size: 1.2rem; }
-            .hero-text h1 { font-size: 1.5rem; }
-            .hero-text p { font-size: 0.9rem; }
-            h2 { font-size: 1.3rem; }
-            .itinerary-card h3 { font-size: 1.3rem; }
-            .itinerary-card p { font-size: 0.9rem; }
-            .itinerary-card a { font-size: 0.9rem; padding: 0.6rem 1.2rem; }
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .hamburger {
+                font-size: 1.8rem;
+            }
+
+            .hero-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-text p {
+                font-size: 0.9rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .itinerary-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .itinerary-card p {
+                font-size: 0.9rem;
+            }
+
+            .itinerary-card a {
+                font-size: 0.9rem;
+                padding: 0.6rem 1.2rem;
+            }
+
+            .whatsapp-chat {
+                padding: 1rem;
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <header>
         <nav>
@@ -835,7 +1108,9 @@
     <div class="content">
         <div class="intro-text">
             <h2>Unforgettable Tanzania Journeys</h2>
-            <p>Since 2020, Tanzania Trek has crafted custom safari itineraries—Serengeti’s wild plains, Kilimanjaro’s peaks, and Zanzibar’s shores. Choose a signature plan or let us tailor your dream Tanzania adventure with local expertise.</p>
+            <p>Since 2020, Tanzania Trek has crafted custom safari itineraries—Serengeti’s wild plains, Kilimanjaro’s
+                peaks, and Zanzibar’s shores. Choose a signature plan or let us tailor your dream Tanzania adventure
+                with local expertise.</p>
         </div>
         <div class="sustainability-text">
             <p>Travel responsibly—preserve Tanzania’s natural wonders. <a href="about.html">Our Commitment</a></p>
@@ -846,7 +1121,8 @@
         <div class="itinerary-grid">
             <div class="itinerary-card">
                 <div class="image-wrapper">
-                    <img src="images/serengeti.jpg" loading="lazy" alt="Classic Northern Circuit Tanzania safari itinerary">
+                    <img src="images/serengeti.jpg" loading="lazy"
+                        alt="Classic Northern Circuit Tanzania safari itinerary">
                 </div>
                 <div class="content-wrapper">
                     <h3>Classic Northern Circuit</h3>
@@ -886,7 +1162,8 @@
             </div>
             <div class="itinerary-card">
                 <div class="image-wrapper">
-                    <img src="images/antelopes.jpg" loading="lazy" alt="Southern Circuit Explorer Tanzania safari itinerary">
+                    <img src="images/antelopes.jpg" loading="lazy"
+                        alt="Southern Circuit Explorer Tanzania safari itinerary">
                 </div>
                 <div class="content-wrapper">
                     <h3>Southern Circuit Explorer</h3>
@@ -906,7 +1183,8 @@
             </div>
             <div class="itinerary-card">
                 <div class="image-wrapper">
-                    <img src="images/mountains.jpg" loading="lazy" alt="Kilimanjaro & Safari Adventure Tanzania itinerary">
+                    <img src="images/mountains.jpg" loading="lazy"
+                        alt="Kilimanjaro & Safari Adventure Tanzania itinerary">
                 </div>
                 <div class="content-wrapper">
                     <h3>Kilimanjaro & Safari Adventure</h3>
@@ -942,7 +1220,8 @@
             <h2>Itinerary FAQs</h2>
             <div class="faq-item">
                 <h3>When’s the best time for a safari?</h3>
-                <p>June to October (dry season) for safaris; December to March for Kilimanjaro. <a href="Travel-guide.html">More Tips</a></p>
+                <p>June to October (dry season) for safaris; December to March for Kilimanjaro. <a
+                        href="Travel-guide.html">More Tips</a></p>
             </div>
             <div class="faq-item">
                 <h3>Do I need a visa?</h3>
@@ -950,19 +1229,22 @@
             </div>
             <div class="faq-item">
                 <h3>What’s included?</h3>
-                <p>Lodging, meals, guides, park fees, transfers—varies by itinerary. <a href="contact.html">Ask Us</a></p>
+                <p>Lodging, meals, guides, park fees, transfers—varies by itinerary. <a href="contact.html">Ask Us</a>
+                </p>
             </div>
         </div>
         <div class="featured-itineraries">
             <h2>Featured Itineraries</h2>
             <div class="featured-grid">
                 <div class="featured-card">
-                    <img src="images/serengeti.jpg" loading="lazy" alt="Classic Northern Circuit Tanzania safari itinerary">
+                    <img src="images/serengeti.jpg" loading="lazy"
+                        alt="Classic Northern Circuit Tanzania safari itinerary">
                     <h3>Classic Northern Circuit</h3>
                     <a href="classic-northern-circuit.html">Explore Now</a>
                 </div>
                 <div class="featured-card">
-                    <img src="images/mountains.jpg" loading="lazy" alt="Kilimanjaro & Safari Adventure Tanzania itinerary">
+                    <img src="images/mountains.jpg" loading="lazy"
+                        alt="Kilimanjaro & Safari Adventure Tanzania itinerary">
                     <h3>Kilimanjaro & Safari</h3>
                     <a href="kilimanjaro-safari-adventure.html">Explore Now</a>
                 </div>
@@ -980,7 +1262,8 @@
         <div class="footer-content">
             <div class="footer-section about">
                 <h3><span class="icon">🌍</span> Tanzania Trek</h3>
-                <p>Explore Tanzania’s wild soul with *custom safari itineraries* crafted by locals since 2020—Serengeti to Zanzibar.</p>
+                <p>Explore Tanzania’s wild soul with *custom safari itineraries* crafted by locals since 2020—Serengeti
+                    to Zanzibar.</p>
                 <div class="social-icons">
                     <a href="https://instagram.com/tanzaniatrek" target="_blank" class="social-icon">📷</a>
                     <a href="https://twitter.com/tanztrek" target="_blank" class="social-icon">🐦</a>
@@ -999,7 +1282,8 @@
             </div>
             <div class="footer-section contact">
                 <h3><span class="icon">📍</span> Get in Touch</h3>
-                <p><span class="icon">✉️</span> Email: <a href="mailto:info@tanzaniatrek.com">info@tanzaniatrek.com</a></p>
+                <p><span class="icon">✉️</span> Email: <a href="mailto:info@tanzaniatrek.com">info@tanzaniatrek.com</a>
+                </p>
                 <p><span class="icon">📞</span> Phone: <a href="https://wa.me/255623474720">+255 623 474 720</a></p>
                 <p><span class="icon">🏢</span> Office: Plot 45, Mbezi Beach, Dar es Salaam</p>
             </div>
@@ -1091,7 +1375,8 @@
                     <label>Trip Type</label>
                     <div style="display: grid; gap: 0.5rem;">
                         <label><input type="checkbox" name="tripType" value="Safari"> Safari</label>
-                        <label><input type="checkbox" name="tripType" value="Kilimanjaro Climb"> Kilimanjaro Climb</label>
+                        <label><input type="checkbox" name="tripType" value="Kilimanjaro Climb"> Kilimanjaro
+                            Climb</label>
                         <label><input type="checkbox" name="tripType" value="Zanzibar Beach"> Zanzibar Beach</label>
                         <label><input type="checkbox" name="tripType" value="Cultural Tour"> Cultural Tour</label>
                     </div>
@@ -1124,26 +1409,26 @@
         const dropdowns = document.querySelectorAll('.dropdown');
         const body = document.body;
 
-        window.addEventListener('scroll', () => {
-            nav.classList.toggle('scrolled', window.scrollY > 50);
-            backToTop.classList.toggle('visible', window.scrollY > 100);
-        });
-
-        hamburger.addEventListener('click', () => {
+        function toggleMenu() {
             const isActive = navLinks.classList.toggle('active');
             hamburger.textContent = isActive ? '✖' : '☰';
-            body.style.overflow = isActive ? 'hidden' : 'auto';
+            body.classList.toggle('overlay-active', isActive);
             hamburger.setAttribute('aria-expanded', isActive);
+            if (!isActive) {
+                dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+            }
+        }
+
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
         });
 
         document.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768 && navLinks.classList.contains('active')) {
-                if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-                    navLinks.classList.remove('active');
-                    hamburger.textContent = '☰';
-                    body.style.overflow = 'auto';
-                    hamburger.setAttribute('aria-expanded', 'false');
-                }
+            if (navLinks.classList.contains('active') &&
+                !navLinks.contains(e.target) &&
+                !hamburger.contains(e.target)) {
+                toggleMenu();
             }
         });
 
@@ -1154,7 +1439,9 @@
                     e.preventDefault();
                     const isActive = dropdown.classList.toggle('active');
                     dropdowns.forEach(other => {
-                        if (other !== dropdown) other.classList.remove('active');
+                        if (other !== dropdown && isActive) {
+                            other.classList.remove('active');
+                        }
                     });
                 }
             });
@@ -1162,12 +1449,17 @@
 
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
-                navLinks.classList.remove('active');
-                hamburger.textContent = '☰';
-                body.style.overflow = 'auto';
-                hamburger.setAttribute('aria-expanded', 'false');
-                dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+                toggleMenu();
             }
+        });
+
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+            backToTop.classList.toggle('visible', window.scrollY > 100);
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         const sections = document.querySelectorAll('.intro-text, .accommodations-overview, .quick-faqs, .featured-itineraries');
@@ -1178,31 +1470,27 @@
         }, { threshold: 0.1 });
         sections.forEach(section => observer.observe(section));
 
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
         function openModal(tour) {
             document.getElementById('bookModal').style.display = 'block';
             document.getElementById('tourName').value = tour;
-            body.style.overflow = 'hidden';
+            body.classList.add('overlay-active');
         }
 
         function closeModal() {
             document.getElementById('bookModal').style.display = 'none';
             document.getElementById('bookingForm').reset();
-            body.style.overflow = 'auto';
+            body.classList.remove('overlay-active');
         }
 
         function openPlanModal() {
             document.getElementById('planModal').style.display = 'block';
-            body.style.overflow = 'hidden';
+            body.classList.add('overlay-active');
         }
 
         function closePlanModal() {
             document.getElementById('planModal').style.display = 'none';
             document.getElementById('planForm').reset();
-            body.style.overflow = 'auto';
+            body.classList.remove('overlay-active');
         }
 
         document.getElementById('bookingForm').addEventListener('submit', (e) => {
@@ -1258,4 +1546,5 @@
         });
     </script>
 </body>
+
 </html>
