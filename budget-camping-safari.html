@@ -32,6 +32,7 @@
             background: #f7f1e3;
             color: #2c3e50;
             overflow-x: hidden;
+            position: relative;
         }
         body::before {
             content: '';
@@ -45,8 +46,8 @@
             z-index: -1;
         }
         nav {
-            background: rgba(241, 90, 36, 0.1);
-            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, rgba(241, 90, 36, 0.9), rgba(44, 62, 80, 0.9));
+            backdrop-filter: blur(15px);
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
@@ -55,93 +56,125 @@
             top: 0;
             width: 100%;
             z-index: 100;
-            transition: background 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s ease;
         }
         nav.scrolled {
-            background: rgba(241, 90, 36, 0.95);
-            box-shadow: 0 0 15px rgba(241, 90, 36, 0.5);
+            background: linear-gradient(135deg, rgba(241, 90, 36, 1), rgba(44, 62, 80, 1));
+            box-shadow: 0 6px 20px rgba(241, 90, 36, 0.5);
         }
         .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo a {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             color: #fff;
             font-size: 1.5rem;
             text-transform: uppercase;
+            text-decoration: none;
             transition: transform 0.3s ease;
         }
-        .logo:hover {
+        .logo:hover a {
             transform: scale(1.05);
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            transition: all 0.3s ease;
-        }
-        .nav-links a, .nav-links .dropdown-btn {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            color: #fff;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        .nav-links a:hover, .nav-links .dropdown-btn:hover {
-            background: #f1c40f;
-            color: #2c3e50;
-        }
-        .dropdown {
-            position: relative;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background: #2c3e50;
-            min-width: 180px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            border-radius: 10px;
-            top: 100%;
-            left: 0;
-            z-index: 10;
-            animation: slideIn 0.3s ease;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .dropdown-content a {
-            color: #fff;
-            padding: 0.6rem 1rem;
-            display: block;
-            font-size: 0.85rem;
-            transition: background 0.3s ease;
-        }
-        .dropdown-content a:hover {
-            background: #d35400;
-        }
-        .cta-nav {
-            background: linear-gradient(135deg, #f1c40f, #e67e22);
-            color: #2c3e50;
-            padding: 0.6rem 1.2rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        .cta-nav:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(241, 196, 15, 0.7);
         }
         .hamburger {
             display: none;
-            font-size: 1.5rem;
+            font-size: 2rem;
             background: none;
             border: none;
             color: #fff;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            padding: 0.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .hamburger:hover {
+            transform: scale(1.1);
+            color: #f1c40f;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            transition: all 0.5s ease-in-out;
+        }
+        .nav-item, .dropdown {
+            position: relative;
+        }
+        .nav-links a, .nav-links .dropdown-btn {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            text-transform: uppercase;
+            display: block;
+        }
+        .nav-links a:hover, .nav-links .dropdown-btn:hover {
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            color: #2c3e50;
+            border-color: #fff;
+            box-shadow: 0 0 15px rgba(241, 196, 15, 0.7);
+            transform: translateY(-2px);
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: linear-gradient(135deg, #2c3e50, #1a252f);
+            min-width: 220px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            top: 100%;
+            left: 0;
+            z-index: 10;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .dropdown-content a {
+            font-family: 'Open Sans', sans-serif;
+            color: #fff;
+            padding: 0.8rem 1.2rem;
+            display: block;
+            font-size: 0.95rem;
+            text-transform: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .dropdown-content a:last-child { border-bottom: none; }
+        .dropdown-content a:hover {
+            background: #d35400;
+            color: #fff;
+            padding-left: 1.5rem;
+        }
+        .cta-nav {
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            color: #2c3e50;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .cta-nav:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(241, 196, 15, 0.7);
         }
         .hero {
             position: relative;
@@ -505,42 +538,91 @@
             to { opacity: 1; transform: scale(1); }
         }
         @media (max-width: 768px) {
-            .hamburger { display: block; }
+            nav {
+                padding: 0.8rem 1rem;
+            }
+            .hamburger {
+                display: block;
+                z-index: 1002;
+            }
             .nav-links {
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 70%;
-                max-width: 300px;
+                width: 280px;
                 height: 100vh;
-                background: rgba(241, 90, 36, 0.95);
+                background: linear-gradient(135deg, #2c3e50, #1a252f);
                 flex-direction: column;
-                padding: 3rem 1rem;
-                z-index: 99;
-                transition: right 0.3s ease;
+                align-items: flex-start;
+                padding: 80px 20px 20px;
+                z-index: 1001;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+                overflow-y: auto;
+                transition: right 0.3s ease-in-out;
             }
             .nav-links.active {
                 right: 0;
             }
-            .nav-links a, .nav-links .dropdown-btn, .cta-nav {
-                font-size: 1rem;
-                padding: 0.8rem 1rem;
+            .nav-item, .dropdown {
                 width: 100%;
-                text-align: center;
+            }
+            .nav-links a, .nav-links .dropdown-btn, .cta-nav {
+                width: 100%;
+                text-align: left;
+                padding: 1rem 1.5rem;
+                margin: 0.3rem 0;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 8px;
+                border: none;
+                font-size: 1.2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .nav-links .dropdown-btn::after {
+                content: '▼';
+                font-size: 0.8rem;
+                transition: transform 0.3s ease;
+            }
+            .nav-links .dropdown-btn.active::after {
+                transform: rotate(180deg);
+            }
+            .nav-links a:hover, .nav-links .dropdown-btn:hover, .cta-nav:hover {
+                background: rgba(241, 196, 15, 0.2);
+                color: #fff;
+                border: none;
+                transform: none;
             }
             .dropdown-content {
                 position: static;
                 width: 100%;
                 box-shadow: none;
-                border-radius: 0;
-                background: #d35400;
+                background: rgba(0, 0, 0, 0.2);
+                border-radius: 8px;
+                margin: 0.5rem 0 0.5rem 1rem;
                 display: none;
             }
-            .dropdown.active .dropdown-content {
+            .dropdown-content.active {
                 display: block;
             }
-            .dropdown:hover .dropdown-content {
-                display: none;
+            .nav-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 1000;
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s ease;
+            }
+            .nav-overlay.active {
+                opacity: 1;
+                pointer-events: auto;
+            }
+            body.nav-open {
+                overflow: hidden;
             }
             .hero-text h1 { font-size: 1.8rem; }
             .hero-text p { font-size: 1rem; }
@@ -551,22 +633,23 @@
             .modal-content { padding: 1.5rem; max-width: 90%; }
         }
         @media (max-width: 480px) {
-            .logo { font-size: 1.2rem; }
+            .logo a { font-size: 1.2rem; }
             .hamburger { font-size: 1.2rem; }
             .hero-text h1 { font-size: 1.5rem; }
             .hero-text p { font-size: 0.9rem; }
             h2 { font-size: 1.3rem; }
+            .nav-links { width: 260px; }
         }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo"><a href="index.html" style="color: #fff; text-decoration: none;">Tanzania Trek</a></div>
-            <div class="nav-links">
+            <div class="logo"><a href="index.html">Tanzania Trek</a></div>
+            <div class="nav-links" id="navLinks">
                 <div class="nav-item"><a href="index.html">Home</a></div>
                 <div class="dropdown">
-                    <a href="tours.html" class="dropdown-btn">Tours</a>
+                    <button class="dropdown-btn">Tours</button>
                     <div class="dropdown-content">
                         <a href="tours.html#serengeti-details">Serengeti Safari</a>
                         <a href="tours.html#kilimanjaro-details">Kilimanjaro Quest</a>
@@ -574,7 +657,7 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="itinerary.html" class="dropdown-btn">Itineraries</a>
+                    <button class="dropdown-btn">Itineraries</button>
                     <div class="dropdown-content">
                         <a href="classic-northern-circuit.html">Classic Northern Circuit</a>
                         <a href="luxury-serengeti-crater.html">Luxury Serengeti & Crater</a>
@@ -591,8 +674,9 @@
                 <div class="nav-item"><a href="contact.html">Contact</a></div>
                 <button class="cta-nav" onclick="openModal('Budget Camping Safari')">Book Now</button>
             </div>
-            <button class="hamburger">☰</button>
+            <button class="hamburger" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false">☰</button>
         </nav>
+        <div class="nav-overlay" id="navOverlay"></div>
         <div class="hero">
             <div class="hero-text">
                 <h1>Budget Camping Safari</h1>
@@ -679,7 +763,7 @@
             </div>
             <div class="footer-section">
                 <h3>Get in Touch</h3>
-                <p>Email: <a href="mailto:info@tanzaniatrek.com">info@tanzaniatrek.com</a><br>Phone: <a href="https://wa.me/255623474720">+255 623 474 720</a></p>
+                <p>Email: <a href="/cdn-cgi/l/email-protection#aa83848c85aa9e8b84908b84838b9e988f81c4898587"><span class="__cf_email__" data-cfemail="a1888f878ea195808f9b808f88809593848acf828e8c">[email&#160;protected]</span></a><br>Phone: <a href="https://wa.me/255623474720">+255 623 474 720</a></p>
                 <div class="social-icons">
                     <a href="https://instagram.com/tanzaniatrek" target="_blank"><i class="fab fa-instagram"></i></a>
                     <a href="https://twitter.com/tanztrek" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -724,40 +808,77 @@
             </form>
         </div>
     </div>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
-        // Navigation
         const nav = document.querySelector('nav');
-        const navLinks = document.querySelector('.nav-links');
+        const navLinks = document.querySelector('#navLinks');
         const hamburger = document.querySelector('.hamburger');
+        const navOverlay = document.querySelector('#navOverlay');
         const dropdowns = document.querySelectorAll('.dropdown');
-        const body = document.body;
 
-        window.addEventListener('scroll', () => {
-            nav.classList.toggle('scrolled', window.scrollY > 50);
-        });
-
+        // Hamburger toggle with overlay
         hamburger.addEventListener('click', () => {
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
             navLinks.classList.toggle('active');
-            hamburger.textContent = navLinks.classList.contains('active') ? '✖' : '☰';
-            body.classList.toggle('menu-open', navLinks.classList.contains('active'));
+            navOverlay.classList.toggle('active');
+            hamburger.textContent = isExpanded ? '☰' : '✖';
+            document.body.classList.toggle('nav-open');
         });
 
+        // Close nav when clicking overlay
+        navOverlay.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            navOverlay.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+            hamburger.textContent = '☰';
+            document.body.classList.remove('nav-open');
+            dropdowns.forEach(dropdown => {
+                dropdown.querySelector('.dropdown-content').classList.remove('active');
+                dropdown.querySelector('.dropdown-btn').classList.remove('active');
+            });
+        });
+
+        // Dropdown toggle
         dropdowns.forEach(dropdown => {
             const btn = dropdown.querySelector('.dropdown-btn');
+            const content = dropdown.querySelector('.dropdown-content');
             btn.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
-                    dropdown.classList.toggle('active');
+                    const isActive = content.classList.contains('active');
+                    dropdowns.forEach(other => {
+                        if (other !== dropdown) {
+                            other.querySelector('.dropdown-content').classList.remove('active');
+                            other.querySelector('.dropdown-btn').classList.remove('active');
+                        }
+                    });
+                    content.classList.toggle('active');
+                    btn.classList.toggle('active');
                 }
             });
         });
 
-        document.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768 && navLinks.classList.contains('active') && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-                navLinks.classList.remove('active');
-                hamburger.textContent = '☰';
-                body.classList.remove('menu-open');
-            }
+        // Close mobile nav when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    navOverlay.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    hamburger.textContent = '☰';
+                    document.body.classList.remove('nav-open');
+                    dropdowns.forEach(dropdown => {
+                        dropdown.querySelector('.dropdown-content').classList.remove('active');
+                        dropdown.querySelector('.dropdown-btn').classList.remove('active');
+                    });
+                }
+            });
+        });
+
+        // Nav Scroll Effect
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
         });
 
         // Scroll Animations
@@ -776,13 +897,13 @@
         function openModal(tour) {
             document.getElementById('bookModal').style.display = 'block';
             document.getElementById('tourName').value = tour;
-            body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
             document.getElementById('bookModal').style.display = 'none';
             document.getElementById('bookingForm').reset();
-            body.style.overflow = 'auto';
+            document.body.style.overflow = 'auto';
         }
 
         document.getElementById('bookingForm').addEventListener('submit', (e) => {
@@ -805,5 +926,6 @@
             closeModal();
         });
     </script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'922fa8ee4db75934',t:'MTc0MjQxNTUxNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
 </body>
 </html>
