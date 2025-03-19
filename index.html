@@ -1,40 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanzania Safari Itineraries | Tanzania Trek</title>
-    <meta name="description"
-        content="Discover custom Tanzania safari itineraries—Serengeti, Kilimanjaro, Zanzibar & more. Plan your adventure with Tanzania Trek!">
-    <meta name="keywords"
-        content="Tanzania safari itineraries, Serengeti safari, Kilimanjaro trek, Zanzibar getaway, Tanzania Trek">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Tanzania Trek">
-    <meta property="og:title" content="Tanzania Safari Itineraries | Tanzania Trek">
-    <meta property="og:description"
-        content="Explore custom Tanzania safari itineraries—Serengeti, Kilimanjaro, Zanzibar & more with Tanzania Trek. Book now!">
-    <meta property="og:image" content="images/giraffes.jpg">
-    <meta property="og:url" content="https://www.tanzaniatrek.com/itinerary.html">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tanzania Safari Itineraries | Tanzania Trek">
-    <meta name="twitter:description"
-        content="Custom Tanzania safari itineraries—Serengeti, Kilimanjaro, Zanzibar & more. Plan with Tanzania Trek!">
-    <meta name="twitter:image" content="images/giraffes.jpg">
-    <link rel="canonical" href="https://www.tanzaniatrek.com/itinerary.html">
-    <link rel="preload" href="images/giraffes.jpg" as="image">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&display=swap"
-        rel="stylesheet">
+    <title>Tanzania Trek | Safari Tours & Kilimanjaro Adventures</title>
+    <meta name="description" content="Discover Tanzania with custom safari tours—Serengeti, Kilimanjaro, Zanzibar. Book your adventure with Tanzania Trek today!">
+    <meta name="keywords" content="Tanzania safari tours, Kilimanjaro trek, custom Tanzania adventures, Serengeti safari, Tanzania Trek">
+    <link rel="preload" href="images/safari.mp4" as="video">
+    <link rel="preload" href="images/logo.png" as="image">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "TravelAgency",
         "name": "Tanzania Trek",
-        "description": "Custom Tanzania safari itineraries since 2020—Serengeti, Kilimanjaro, Zanzibar, and more.",
-        "url": "https://www.tanzaniatrek.com/itinerary.html",
+        "description": "Custom Tanzania safari tours and treks—Serengeti, Kilimanjaro, Zanzibar since 2020.",
+        "url": "https://tanzaniatrek.com",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Plot 45, Mbezi Beach",
@@ -43,55 +25,38 @@
         },
         "telephone": "+255623474720",
         "email": "info@tanzaniatrek.com",
-        "offers": [
-            {
-                "@type": "Offer",
-                "name": "Classic Northern Circuit",
-                "description": "7-day Tanzania safari itinerary across Serengeti, Ngorongoro, and Tarangire.",
-                "price": "2800",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock",
-                "url": "https://www.tanzaniatrek.com/classic-northern-circuit.html"
-            },
-            {
-                "@type": "Offer",
-                "name": "Honeymoon Safari & Zanzibar",
-                "description": "10-day romantic safari and beach escape in Serengeti and Zanzibar.",
-                "price": "5500",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock",
-                "url": "https://www.tanzaniatrek.com/honeymoon-safari-zanzibar.html"
-            }
-        ]
+        "offers": {
+            "@type": "Offer",
+            "name": "Tanzania Safari Tours",
+            "description": "Custom safari tours including Serengeti, Kilimanjaro, and Zanzibar adventures.",
+            "priceCurrency": "USD",
+            "price": "500",
+            "availability": "https://schema.org/InStock"
+        }
     }
     </script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Open Sans', sans-serif; 
+            font-weight: 400;
+            line-height: 1.6; 
+            background: #f7f1e3; 
+            color: #2c3e50; 
+            overflow-x: hidden; 
+            position: relative; 
         }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
-            background: #f7f1e3;
-            color: #2c3e50;
-            overflow-x: hidden;
+        body::before { 
+            content: ''; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: url("images/background1.jpg") center/cover no-repeat; 
+            opacity: 0.05; 
+            z-index: -1; 
         }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("images/background2.jpg") center/cover no-repeat;
-            opacity: 0.05;
-            z-index: -1;
-        }
-
         nav {
             background: rgba(241, 90, 36, 0.1);
             backdrop-filter: blur(10px);
@@ -105,95 +70,87 @@
             z-index: 100;
             transition: background 0.3s ease;
         }
-
         nav.scrolled {
             background: rgba(241, 90, 36, 0.95);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
         }
-
         .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            color: #fff;
-            font-size: 1.5rem;
-            text-transform: uppercase;
+            display: flex;
+            align-items: center;
         }
-
+        .logo a { text-decoration: none; }
+        .logo img {
+            height: 80px;
+            width: auto;
+            max-width: 200px;
+            filter: drop-shadow(0 0 5px rgba(241, 196, 15, 0.7));
+            transition: transform 0.5s ease, filter 0.3s ease;
+            animation: bounceIn 1s ease-out forwards;
+        }
+        .logo:hover img {
+            transform: rotate(10deg) scale(1.2);
+            filter: drop-shadow(0 0 15px rgba(241, 196, 15, 1));
+        }
         .nav-links {
             display: flex;
             align-items: center;
             gap: 1.5rem;
         }
-
-        .nav-item,
-        .dropdown {
-            position: relative;
-        }
-
-        .nav-links a,
-        .nav-links .dropdown-btn {
+        .nav-item, .dropdown { position: relative; }
+        .nav-links a, .nav-links .dropdown-btn {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
+            font-weight: 700;
             color: #fff;
             text-decoration: none;
-            padding: 0.6rem 1rem;
             font-size: 1rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
             transition: all 0.3s ease;
+            text-transform: uppercase;
         }
-
-        .nav-links a:hover,
-        .nav-links .dropdown-btn:hover {
-            color: #f1c40f;
+        .nav-links a:hover, .nav-links .dropdown-btn:hover {
+            background: rgba(241, 90, 36, 0.8);
+            box-shadow: 0 0 10px rgba(241, 90, 36, 0.5);
         }
-
         .dropdown-content {
             display: none;
             position: absolute;
-            background: #fff;
-            min-width: 220px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
+            background: #2c3e50;
+            min-width: 180px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border-radius: 10px;
             top: 100%;
             left: 0;
-            z-index: 10;
+            z-index: 1;
+            animation: slideDown 0.3s ease-out;
         }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-            animation: slideIn 0.3s ease;
-        }
-
+        .dropdown:hover .dropdown-content { display: block; }
         .dropdown-content a {
-            color: #2c3e50;
-            padding: 0.8rem 1.2rem;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            color: #fff;
+            padding: 0.75rem 1rem;
             display: block;
             font-size: 0.9rem;
-            transition: all 0.3s ease;
+            text-transform: none;
+            transition: background 0.3s ease;
         }
-
-        .dropdown-content a:hover {
-            background: #f1c40f;
-            color: #fff;
-        }
-
+        .dropdown-content a:hover { background: #d35400; }
         .cta-nav {
-            background: #f1c40f;
-            color: #2c3e50;
-            padding: 0.7rem 1.5rem;
-            border-radius: 25px;
-            font-size: 1rem;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
+            background: linear-gradient(45deg, #f1c40f, #e67e22);
+            color: #2c3e50;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
             border: none;
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
         .cta-nav:hover {
-            background: #e67e22;
-            color: #fff;
+            background: linear-gradient(45deg, #d4a60d, #d35400);
             transform: scale(1.05);
         }
-
         .hamburger {
             display: none;
             font-size: 2rem;
@@ -203,82 +160,51 @@
             cursor: pointer;
             z-index: 101;
         }
-
         @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
+            .hamburger { display: block; }
             .nav-links {
                 position: fixed;
                 top: 0;
                 left: -100%;
-                width: 300px;
+                width: 280px;
                 height: 100vh;
-                background: #fff;
+                background: #e67e22;
                 flex-direction: column;
                 align-items: flex-start;
                 padding: 4rem 1rem;
                 transition: left 0.4s ease-in-out;
-                box-shadow: 2px 0 15px rgba(0, 0, 0, 0.2);
+                box-shadow: 2px 0 15px rgba(0,0,0,0.2);
                 z-index: 100;
                 overflow-y: auto;
             }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-item,
-            .dropdown {
-                width: 100%;
-                margin: 0.5rem 0;
-            }
-
-            .nav-links a,
-            .nav-links .dropdown-btn {
-                color: #2c3e50;
-                font-size: 1.1rem;
+            .nav-links.active { left: 0; }
+            .nav-item, .dropdown { width: 100%; margin: 0.5rem 0; }
+            .nav-links a, .nav-links .dropdown-btn {
+                font-size: 1.25rem;
                 padding: 1rem;
-                width: 100%;
                 display: block;
-                border-bottom: 1px solid #eee;
+                color: #fff;
+                border-bottom: 1px solid rgba(255,255,255,0.2);
             }
-
-            .nav-links a:hover,
-            .nav-links .dropdown-btn:hover {
-                background: #f7f1e3;
-                color: #e67e22;
+            .nav-links a:hover, .nav-links .dropdown-btn:hover {
+                background: rgba(255,255,255,0.2);
             }
-
             .dropdown-content {
                 position: static;
                 width: 100%;
-                background: #f7f1e3;
+                background: #d35400;
                 box-shadow: none;
                 border-radius: 0;
                 display: none;
                 padding-left: 1rem;
             }
-
-            .dropdown.active .dropdown-content {
-                display: block;
-            }
-
-            .dropdown-content a {
-                padding: 0.8rem 1rem;
-                font-size: 1rem;
-                border-bottom: 1px solid #ddd;
-            }
-
+            .dropdown.active .dropdown-content { display: block; }
             .cta-nav {
                 width: 100%;
                 margin-top: 1rem;
                 padding: 1rem;
-                border-radius: 8px;
                 text-align: center;
             }
-
             body.overlay-active::after {
                 content: '';
                 position: fixed;
@@ -286,500 +212,366 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: rgba(0, 0, 0, 0.6);
+                background: rgba(0,0,0,0.6);
                 z-index: 99;
             }
         }
-
         @media (max-width: 480px) {
-            .nav-links {
-                width: 260px;
-            }
-
-            .nav-links a,
-            .nav-links .dropdown-btn {
-                font-size: 1rem;
-                padding: 0.9rem;
-            }
-
-            .dropdown-content a {
-                font-size: 0.9rem;
-            }
-
-            .cta-nav {
-                font-size: 0.9rem;
-            }
+            .nav-links { width: 260px; }
+            .nav-links a, .nav-links .dropdown-btn { font-size: 1rem; padding: 0.9rem; }
+            .dropdown-content a { font-size: 0.9rem; }
+            .cta-nav { font-size: 0.9rem; }
         }
-
-        .hero {
-            position: relative;
-            min-height: 90vh;
-            background: url("images/giraffes.jpg") center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
+        .hero { 
+            position: relative; 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            overflow: hidden; 
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
-            z-index: 1;
+        .hero video { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            z-index: -1; 
         }
-
-        .hero-text {
-            position: relative;
+        .hero-text { 
+            text-align: center; 
+            padding: 3rem; 
+            background: rgba(0, 0, 0, 0.6); 
+            border-radius: 1rem; 
+            color: #fff; 
+            max-width: 90%; 
             z-index: 2;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-            animation: fadeInUp 1.2s ease;
+            animation: zoomIn 1.5s ease-out forwards;
         }
-
-        .hero-text h1 {
+        .hero-text h1 { 
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 2.5rem;
-            color: #e67e22;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-            margin-bottom: 0.8rem;
-        }
-
-        .hero-text p {
-            font-size: 1.2rem;
-            color: #2c3e50;
-            font-weight: 600;
-        }
-
-        .content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 1rem;
-        }
-
-        .intro-text,
-        .accommodations-overview,
-        .quick-faqs,
-        .featured-itineraries {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
+            font-size: clamp(3rem, 8vw, 5rem); 
+            color: #f1c40f; 
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.7); 
+            margin: 0; 
+            letter-spacing: 0.25rem; 
+            animation: slideUp 1s ease-out 0.5s forwards;
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-            text-align: center;
         }
-
-        .intro-text.visible,
-        .accommodations-overview.visible,
-        .quick-faqs.visible,
-        .featured-itineraries.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .hero-text p { 
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: clamp(1.5rem, 4vw, 2rem); 
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.7); 
+            margin: 0.5rem 0 1.5rem; 
+            animation: slideUp 1s ease-out 0.7s forwards;
+            opacity: 0;
         }
-
-        h2 {
+        .hero-text .cta-button { 
             font-family: 'Montserrat', sans-serif;
-            color: #e67e22;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
+            font-weight: 700;
+            background: #e67e22; 
+            color: #fff; 
+            padding: 1rem 2rem; 
+            border-radius: 2rem; 
+            text-decoration: none; 
+            transition: background 0.3s ease, transform 0.3s ease; 
+            animation: bounce 1.5s infinite ease-in-out 1s;
+        }
+        .hero-text .cta-button:hover { 
+            background: #d35400; 
+            transform: scale(1.05); 
+        }
+        .content { 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            padding: 5rem 1.5rem; 
+            position: relative; 
+            z-index: 1; 
+        }
+        .section { 
+            margin-bottom: 5rem; 
+            text-align: center; 
+            background: #fff; 
+            padding: 2rem; 
+            border-radius: 1rem; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1); 
+            opacity: 0; 
+            transform: translateY(50px); 
+            transition: all 0.8s ease;
+        }
+        .section.visible { opacity: 1; transform: translateY(0); }
+        .section h2 { 
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #e67e22; 
+            font-size: 2.5rem; 
+            margin: 0 0 2rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.1rem; 
+        }
+        .intro p { font-size: 1.125rem; max-width: 800px; margin: 0 auto; }
+        .featured-tours .tour-row { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 2rem; 
+        }
+        .tour-card { 
+            position: relative; 
+            height: 480px; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); 
+            transition: transform 0.6s ease; 
+            background-size: cover; 
+            background-position: center; 
+        }
+        .tour-card:hover { 
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(241, 90, 36, 0.5);
+        }
+        .tour-card::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0, 0, 0, 0.3); 
+            z-index: 1; 
+            transition: background 0.4s ease; 
+        }
+        .tour-card:hover::before { background: rgba(0, 0, 0, 0.2); }
+        .tour-card .tour-info { 
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
+            width: 100%; 
+            padding: 1.5rem; 
+            color: #fff; 
+            z-index: 2; 
+        }
+        .tour-card h3 { 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 700; 
+            font-size: 1.75rem; 
+            text-transform: uppercase; 
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); 
+        }
+        .tour-card .tagline { 
+            font-size: 1rem; 
+            color: #f1c40f; 
+            font-style: italic; 
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); 
+        }
+        .tour-card .btn-explore { 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 700; 
+            background: linear-gradient(45deg, #e67e22, #f1c40f); 
+            color: #fff; 
+            padding: 0.8rem 1.6rem; 
+            border-radius: 25px; 
+            border: none; 
+            cursor: pointer; 
+            text-transform: uppercase; 
+            margin-top: 1rem; 
+            transition: all 0.3s ease; 
+        }
+        .tour-card .btn-explore:hover { 
+            background: linear-gradient(45deg, #d35400, #d4a60d); 
+            transform: translateY(-2px); 
+        }
+        .image-break { 
+            height: 800px; 
+            margin: -8rem 0; 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             position: relative;
         }
-
-        h2::after {
-            content: '';
-            width: 40px;
-            height: 3px;
-            background: #f1c40f;
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
+        .image-break .break-text {
+            font-family: 'Permanent Marker', sans-serif;
+            font-size: 6rem;
+            color: #fff;
+            text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+            animation: textGlow 2s infinite alternate;
         }
-
-        .intro-text p {
-            font-size: 1rem;
-            color: #555;
+        .image-break .break-subtext {
+            font-family: 'Permanent Marker', sans-serif;
+            font-size: 2.5rem;
+            color: #f1c40f;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            margin-top: 7rem;
+            animation: slideInLeft 1.5s ease-out forwards;
+        }
+        .section-above, .section-below {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        .section-above:hover, .section-below:hover { transform: translateY(-10px); }
+        .section-above h2, .section-below h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #e67e22;
+            font-size: 2.5rem;
+            margin: 0 0 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+        }
+        .section-above p, .section-below p {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: 1.125rem;
             max-width: 800px;
             margin: 0 auto;
         }
-
-        .sustainability-text {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .sustainability-text p {
-            font-size: 1rem;
-            color: #e67e22;
-            font-style: italic;
-        }
-
-        .sustainability-text a {
-            color: #f1c40f;
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        .sustainability-text a:hover {
-            text-decoration: underline;
-        }
-
-        .plan-trip-cta {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .plan-trip-btn {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, #f1c40f, #e67e22);
-            color: #2c3e50;
-            padding: 1rem 2rem;
-            border-radius: 25px;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: all 0.4s ease;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-        }
-
-        .plan-trip-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(241, 196, 15, 0.8);
-        }
-
-        .itinerary-grid {
+        .why-tanzania, .top-picks, .stats, .testimonials, .tips-list, .faq-list {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            padding: 0 1rem;
-            margin-bottom: 4rem;
         }
-
-        .itinerary-card {
-            position: relative;
-            min-height: 350px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .itinerary-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 35px rgba(241, 90, 36, 0.5);
-        }
-
-        .itinerary-card .image-wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .why-item, .pick-item { text-align: left; display: flex; flex-direction: column; gap: 1rem; }
+        .why-item img, .pick-item img {
             width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .itinerary-card img {
-            width: 100%;
-            height: 100%;
+            height: 180px;
             object-fit: cover;
-            transition: transform 0.4s ease;
+            border-radius: 0.75rem;
+            border: 2px solid #e67e22;
         }
-
-        .itinerary-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .itinerary-card .content-wrapper {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 1.5rem;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-            color: #fff;
-            z-index: 2;
-            transition: background 0.4s ease;
-        }
-
-        .itinerary-card:hover .content-wrapper {
-            background: linear-gradient(to top, rgba(241, 90, 36, 0.9), rgba(241, 90, 36, 0));
-        }
-
-        .itinerary-card h3 {
+        .why-item h3, .pick-item h3, .tip-item h3, .faq-item h3, .highlight-card h3 {
             font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #e67e22;
             font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.8rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            margin: 0 0 0.5rem;
         }
-
-        .itinerary-card p {
+        .why-item p, .pick-item p, .tip-item p, .faq-item p, .highlight-card p {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
             font-size: 1rem;
-            margin-bottom: 1rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-
-        .itinerary-card a {
-            display: inline-block;
-            background: linear-gradient(135deg, #f1c40f, #e67e22);
             color: #2c3e50;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            margin: 0;
         }
-
-        .itinerary-card a:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(241, 196, 15, 0.8);
+        .highlights-grid {
+            display: flex;
+            gap: 2rem;
+            width: max-content;
+            animation: slideIn 35s linear infinite;
         }
-
-        .accommodations-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            padding: 1rem 0;
-        }
-
-        .accommodation-option {
-            padding: 1.5rem;
-            background: #f9f9f9;
-            border-radius: 10px;
-        }
-
-        .accommodation-option h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: #f1c40f;
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .accommodation-option p {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .faq-item {
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        .faq-item h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: #f1c40f;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .faq-item p {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .faq-item a {
-            color: #e67e22;
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        .faq-item a:hover {
-            text-decoration: underline;
-        }
-
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            padding: 1rem 0;
-        }
-
-        .featured-card {
+        .highlights-grid:hover { animation-play-state: paused; }
+        .highlight-card {
+            width: 350px;
             background: #fff;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: transform 0.4s ease;
         }
-
-        .featured-card:hover {
-            transform: scale(1.05);
-        }
-
-        .featured-card img {
+        .highlight-card:hover { transform: scale(1.1) rotate(2deg); }
+        .highlight-card img {
             width: 100%;
-            height: 150px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 0.8rem;
         }
-
-        .featured-card h3 {
+        .highlight-card .highlight-info { padding: 1.5rem; }
+        .stat-item { text-align: center; }
+        .stat-item h3 {
             font-family: 'Montserrat', sans-serif;
-            color: #e67e22;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .featured-card a {
-            color: #f1c40f;
-            text-decoration: none;
             font-weight: 700;
-            font-size: 0.9rem;
-        }
-
-        .featured-card a:hover {
-            text-decoration: underline;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 200;
-            overflow-y: auto;
-        }
-
-        .modal-content {
-            background: #fff;
-            margin: 5% auto;
-            padding: 2rem;
-            width: 90%;
-            max-width: 500px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            position: relative;
-            animation: zoomIn 0.5s ease;
-        }
-
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 1.8rem;
-            cursor: pointer;
             color: #e67e22;
+            font-size: 2rem;
+            margin: 0 0 0.5rem;
+        }
+        .stat-item p {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            color: #7f8c8d;
+            margin: 0;
+        }
+        .map-teaser iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 1rem;
+            border: none;
+        }
+        .testimonial {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
-
-        .close:hover {
-            transform: rotate(90deg);
-        }
-
-        .modal-content h2 {
-            font-family: 'Montserrat', sans-serif;
-            color: #e67e22;
-            font-size: 1.8rem;
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .modal-content form {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .form-group {
-            position: relative;
-        }
-
-        .modal-content label {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            color: #2c3e50;
-            font-size: 0.9rem;
-            position: absolute;
-            top: -8px;
-            left: 12px;
-            background: #fff;
-            padding: 0 5px;
-            transition: all 0.3s ease;
-        }
-
-        .modal-content input,
-        .modal-content textarea,
-        .modal-content select {
+        .testimonial:hover { transform: translateY(-5px); }
+        .testimonial p {
             font-family: 'Open Sans', sans-serif;
-            padding: 0.8rem;
-            border: 2px solid #f1c40f;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            width: 100%;
-            transition: all 0.3s ease;
-            background: #f9f9f9;
-        }
-
-        .modal-content input:focus,
-        .modal-content textarea:focus,
-        .modal-content select:focus {
-            border-color: #e67e22;
-            outline: none;
-            box-shadow: 0 0 8px rgba(230, 126, 34, 0.5);
-        }
-
-        .modal-content textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .modal-content button {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, #f1c40f, #e67e22);
-            color: #2c3e50;
-            border: none;
-            padding: 1rem;
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 700;
+            font-weight: 400;
             font-size: 1rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            color: #2c3e50;
+            margin: 0 0 1rem;
+            font-style: italic;
         }
-
-        .modal-content button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.3);
-            transition: all 0.4s ease;
+        .testimonial cite {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            color: #e67e22;
+            font-size: 0.875rem;
+            font-style: normal;
         }
-
-        .modal-content button:hover::before {
-            left: 100%;
+        .cta-section {
+            background: #e67e22;
+            color: #fff;
+            padding: 3rem;
+            text-align: center;
+            border-radius: 1rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
         }
-
-        .modal-content button:hover {
+        .cta-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            font-size: 2.5rem;
+            margin: 0 0 1.5rem;
+        }
+        .cta-section p {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: 1.25rem;
+            margin: 0 0 2rem;
+        }
+        .cta-section .cta-button {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            background: #f1c40f;
+            color: #2c3e50;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .cta-section .cta-button:hover {
+            background: #d4a60d;
             transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(241, 196, 15, 0.8);
         }
-
         .back-to-top {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 1.5rem;
+            right: 1.5rem;
             background: #e67e22;
             color: #fff;
             border: none;
@@ -791,16 +583,8 @@
             transition: opacity 0.3s ease, transform 0.3s ease;
             z-index: 100;
         }
-
-        .back-to-top.visible {
-            opacity: 1;
-        }
-
-        .back-to-top:hover {
-            transform: scale(1.1);
-            background: #d35400;
-        }
-
+        .back-to-top.visible { opacity: 1; }
+        .back-to-top:hover { transform: scale(1.1); background: #d35400; }
         .whatsapp-chat {
             position: fixed;
             bottom: 20px;
@@ -813,261 +597,203 @@
             cursor: pointer;
             z-index: 100;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
-
         .whatsapp-chat:hover {
             transform: scale(1.1) rotate(10deg);
             background: #20b858;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
-
-        .whatsapp-chat i {
-            display: block;
+        .whatsapp-chat i { display: block; transition: transform 0.3s ease; }
+        .whatsapp-chat:hover i { transform: scale(1.1); }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 200;
+            overflow-y: auto;
+        }
+        .modal-content {
+            background: linear-gradient(135deg, #2c3e50, #1a252f);
+            margin: 5% auto;
+            padding: 2.5rem;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(241, 90, 36, 0.5);
+            position: relative;
+            animation: modalPop 0.4s ease forwards;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 2.5rem;
+            cursor: pointer;
+            color: #f1c40f;
             transition: transform 0.3s ease;
         }
-
-        .whatsapp-chat:hover i {
-            transform: scale(1.1);
+        .close:hover { transform: rotate(90deg); }
+        .modal-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #f1c40f;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
         }
-
-        footer {
-            background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+        .modal-content form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .modal-content input, .modal-content textarea {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
             color: #fff;
-            padding: 4rem 2rem 2rem;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .modal-content input:focus, .modal-content textarea:focus {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 10px rgba(241, 90, 36, 0.5);
+            outline: none;
+        }
+        .modal-content textarea { resize: none; height: 100px; }
+        .modal-content button {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            background: linear-gradient(45deg, #e67e22, #f1c40f);
+            color: #fff;
+            border: none;
+            padding: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+        .modal-content button:hover {
+            background: linear-gradient(45deg, #d35400, #d4a60d);
+            transform: translateY(-2px);
+        }
+        footer {
+            background: #2c3e50;
+            color: #fff;
+            padding: 3rem 1.5rem;
             text-align: center;
             position: relative;
             z-index: 1;
         }
-
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
             max-width: 1400px;
-            margin: 0 auto 3rem;
+            margin: 0 auto 2rem;
             text-align: left;
         }
-
         .footer-section h3 {
             font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             color: #f1c40f;
-            font-size: 1.6rem;
-            font-weight: 800;
-            margin-bottom: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
-
-        .footer-section p {
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin: 0.6rem 0;
-            color: #ecf0f1;
-        }
-
-        .footer-section a {
-            color: #f1c40f;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
+        .footer-section p, .footer-section a {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
             color: #fff;
         }
-
-        .footer-section.links ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-section.links li {
-            margin: 0.8rem 0;
-        }
-
+        .footer-section a { color: #f1c40f; text-decoration: none; transition: color 0.3s ease; }
+        .footer-section a:hover { color: #fff; }
+        .footer-section.links ul { list-style: none; padding: 0; }
+        .footer-section.links li { margin: 0.5rem 0; }
         .footer-section.newsletter form {
             display: flex;
-            gap: 0.8rem;
+            gap: 0.5rem;
             margin-top: 1rem;
         }
-
         .footer-section.newsletter input {
-            padding: 0.8rem;
+            padding: 0.75rem;
             border: 2px solid #e67e22;
-            border-radius: 25px;
+            border-radius: 0.5rem;
             flex: 1;
-            font-size: 0.9rem;
-            background: #fff;
-            color: #2c3e50;
         }
-
         .footer-section.newsletter button {
             background: #e67e22;
             color: #fff;
             border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
             cursor: pointer;
-            font-weight: 700;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            transition: background 0.3s ease, transform 0.3s ease;
+            transition: background 0.3s ease;
         }
-
-        .footer-section.newsletter button:hover {
-            background: #d35400;
-            transform: scale(1.05);
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 1.2rem;
-            margin-top: 1rem;
-            justify-content: flex-start;
-        }
-
-        .social-icon {
-            font-size: 1.8rem;
-            color: #f1c40f;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .social-icon:hover {
-            transform: scale(1.2) rotate(5deg);
-            color: #fff;
-        }
-
+        .footer-section.newsletter button:hover { background: #d35400; }
         .footer-bottom {
-            border-top: 1px solid rgba(241, 90, 36, 0.3);
-            padding-top: 1.5rem;
+            border-top: 1px solid #f1c40f;
+            padding-top: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
             gap: 1rem;
-            font-size: 0.9rem;
         }
-
-        .footer-bottom p {
-            margin: 0;
-            color: #bdc3c7;
+        .social-icons { display: flex; gap: 1rem; }
+        .social-icon {
+            color: #f1c40f;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
         }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes zoomIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
+        .social-icon:hover { transform: scale(1.2); color: #fff; }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes bounceIn { 0% { transform: scale(0.5); opacity: 0; } 60% { transform: scale(1.2); opacity: 1; } 100% { transform: scale(1); } }
+        @keyframes zoomIn { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes textGlow { 0% { text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.8); } 100% { text-shadow: 4px 4px 20px rgba(241, 90, 36, 0.9); } }
+        @keyframes slideInLeft { from { transform: translateX(-100px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        @keyframes slideIn { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-370px * 8)); } }
+        @keyframes modalPop { 0% { transform: scale(0.8); opacity: 0; } 70% { transform: scale(1.05); opacity: 1; } 100% { transform: scale(1); } }
         @media (max-width: 768px) {
-            .hero-text h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero-text p {
-                font-size: 1rem;
-            }
-
-            .content {
-                padding: 2rem 1rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            .itinerary-grid,
-            .accommodations-grid,
-            .featured-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .itinerary-card {
-                min-height: 300px;
-            }
-
-            .modal-content {
-                padding: 1.5rem;
-                max-width: 90%;
-            }
+            .content { padding: 3rem 1rem; }
+            .section h2, .section-above h2, .section-below h2 { font-size: 2rem; }
+            .tour-card { height: 400px; }
+            .tour-card h3 { font-size: 1.5rem; }
+            .image-break { height: 600px; }
+            .image-break .break-text { font-size: 4rem; }
+            .image-break .break-subtext { font-size: 2rem; margin-top: 5rem; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+            .footer-bottom { flex-direction: column; }
         }
-
         @media (max-width: 480px) {
-            .logo {
-                font-size: 1.2rem;
-            }
-
-            .hamburger {
-                font-size: 1.8rem;
-            }
-
-            .hero-text h1 {
-                font-size: 1.5rem;
-            }
-
-            .hero-text p {
-                font-size: 0.9rem;
-            }
-
-            h2 {
-                font-size: 1.3rem;
-            }
-
-            .itinerary-card h3 {
-                font-size: 1.3rem;
-            }
-
-            .itinerary-card p {
-                font-size: 0.9rem;
-            }
-
-            .itinerary-card a {
-                font-size: 0.9rem;
-                padding: 0.6rem 1.2rem;
-            }
-
-            .whatsapp-chat {
-                padding: 1rem;
-                font-size: 1.5rem;
-            }
+            .logo img { height: 60px; }
+            .hero-text { padding: 1.5rem; }
+            .hero-text h1 { font-size: clamp(2rem, 6vw, 3rem); }
+            .hero-text p { font-size: clamp(1rem, 3vw, 1.5rem); }
+            .tour-card .btn-explore { padding: 0.6rem 1.2rem; }
+            .whatsapp-chat { padding: 1rem; font-size: 1.5rem; }
+            .modal-content { padding: 1.5rem; margin: 10% auto; }
         }
     </style>
 </head>
-
 <body>
     <header>
         <nav>
-            <div class="logo"><a href="index.html" style="color: #fff; text-decoration: none;">Tanzania Trek</a></div>
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="Tanzania Trek Logo"></a>
+            </div>
             <div class="nav-links">
                 <div class="nav-item"><a href="index.html">Home</a></div>
                 <div class="dropdown">
@@ -1081,215 +807,343 @@
                 <div class="dropdown">
                     <a href="itinerary.html" class="dropdown-btn">Itineraries</a>
                     <div class="dropdown-content">
-                        <a href="classic-northern-circuit.html">Classic Northern Circuit</a>
-                        <a href="luxury-serengeti-crater.html">Luxury Serengeti & Crater</a>
-                        <a href="budget-camping-safari.html">Budget Camping Safari</a>
-                        <a href="family-safari-zanzibar.html">Family Safari & Zanzibar</a>
-                        <a href="southern-circuit-explorer.html">Southern Circuit Explorer</a>
-                        <a href="great-migration-safari.html">Great Migration Safari</a>
-                        <a href="kilimanjaro-safari-adventure.html">Kilimanjaro & Safari Adventure</a>
-                        <a href="honeymoon-safari-zanzibar.html">Honeymoon Safari & Zanzibar</a>
+                        <a href="serengeti-express.html">Serengeti Express</a>
+                        <a href="kilimanjaro-classic.html">Kilimanjaro Classic</a>
+                        <a href="zanzibar-retreat.html">Zanzibar Retreat</a>
+                        <a href="ngorongoro-quick.html">Ngorongoro Quick</a>
+                        <a href="tarangire-blitz.html">Tarangire Blitz</a>
+                        <a href="ruaha-explorer.html">Ruaha Explorer</a>
+                        <a href="selous-journey.html">Selous Journey</a>
+                        <a href="arusha-getaway.html">Arusha Getaway</a>
                     </div>
                 </div>
                 <div class="nav-item"><a href="about.html">About</a></div>
-                <div class="nav-item"><a href="Travel-guide.html">Travel Guide</a></div>
+                <div class="nav-item"><a href="Travel-guide.html">Travel-guide</a></div>
                 <div class="nav-item"><a href="contact.html">Contact</a></div>
-                <button class="cta-nav" onclick="openModal('Custom Tanzania Itinerary')">Book Now</button>
+                <button class="cta-nav" onclick="openModal('')">Book Now</button>
             </div>
             <button class="hamburger">☰</button>
         </nav>
         <div class="hero">
+            <video autoplay muted loop>
+                <source src="images/safari.mp4" type="video/mp4" alt="Tanzania safari tour wildebeest migration video">
+            </video>
             <div class="hero-text">
-                <h1>Custom Tanzania Safari Itineraries</h1>
-                <p>Your Adventure Awaits</p>
+                <h1>Tanzania Safari Tours & Treks</h1>
+                <p>Unleash Your Adventure in Africa’s Wild Heart</p>
+                <a href="tours.html" class="cta-button">Explore Tanzania Tours</a>
             </div>
         </div>
     </header>
     <div class="content">
-        <div class="intro-text">
-            <h2>Unforgettable Tanzania Journeys</h2>
-            <p>Since 2020, Tanzania Trek has crafted custom safari itineraries—Serengeti’s wild plains, Kilimanjaro’s
-                peaks, and Zanzibar’s shores. Choose a signature plan or let us tailor your dream Tanzania adventure
-                with local expertise.</p>
+        <section class="section intro">
+            <h2>Welcome to Tanzania Trek</h2>
+            <p>Embark on custom *Tanzania safari tours* with us—where raw wilderness meets authentic adventure. From *Serengeti safaris* to *Kilimanjaro treks* and Zanzibar’s spice-soaked shores, we’re your crew, rooted in Tanzania’s soul, delivering experiences that pulse with nature and culture. <a href="tours.html">Explore all Tanzania tours</a>.</p>
+        </section>
+        <section class="section featured-tours">
+            <h2>Featured Tanzania Safari Adventures</h2>
+            <div class="tour-row">
+                <div class="tour-card" style="background-image: url('images/pori.jpg');">
+                    <div class="tour-info">
+                        <h3>Serengeti Safari</h3>
+                        <p class="tagline">3-Day Great Migration Chase</p>
+                        <button class="btn-explore" onclick="openModal('Serengeti Safari')">Book Now</button>
+                    </div>
+                </div>
+                <div class="tour-card" style="background-image: url('images/kilimanjaro.jpg');">
+                    <div class="tour-info">
+                        <h3>Kilimanjaro Quest</h3>
+                        <p class="tagline">5-Day Summit Adventure</p>
+                        <button class="btn-explore" onclick="openModal('Kilimanjaro Quest')">Book Now</button>
+                    </div>
+                </div>
+                <div class="tour-card" style="background-image: url('images/zanzibar (2).jpg');">
+                    <div class="tour-info">
+                        <h3>Zanzibar Escape</h3>
+                        <p class="tagline">4-Day Island Bliss</p>
+                        <button class="btn-explore" onclick="openModal('Zanzibar Escape')">Book Now</button>
+                    </div>
+                </div>
+                <div class="tour-card" style="background-image: url('images/swala.jpg');">
+                    <div class="tour-info">
+                        <h3>Ngorongoro Expedition</h3>
+                        <p class="tagline">2-Day Crater Wild</p>
+                        <button class="btn-explore" onclick="openModal('Ngorongoro Expedition')">Book Now</button>
+                    </div>
+                </div>
+                <div class="tour-card" style="background-image: url('images/tembo2.jpg');">
+                    <div class="tour-info">
+                        <h3>Tarangire & Manyara</h3>
+                        <p class="tagline">4-Day Safari Duo</p>
+                        <button class="btn-explore" onclick="openModal('Tarangire & Manyara')">Book Now</button>
+                    </div>
+                </div>
+                <div class="tour-card" style="background-image: url('images/two giraffe.jpg');">
+                    <div class="tour-info">
+                        <h3>Ruaha Wilderness</h3>
+                        <p class="tagline">5-Day Remote Bush</p>
+                        <button class="btn-explore" onclick="openModal('Ruaha Wilderness')">Book Now</button>
+                    </div>
+                </div>
+                <div class="tour-card" style="background-image: url('images/konde.jpg');">
+                    <div class="tour-info">
+                        <h3>Selous Safari</h3>
+                        <p class="tagline">4-Day River Wild</p>
+                        <button class="btn-explore" onclick="openModal('Selous Safari')">Book Now</button>
+                    </div>
+                </div>
+                <div class="tour-card" style="background-image: url('images/giraffes.jpg');">
+                    <div class="tour-info">
+                        <h3>Arusha Explorer</h3>
+                        <p class="tagline">3-Day Highland Trek</p>
+                        <button class="btn-explore" onclick="openModal('Arusha Explorer')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="section-above">
+            <h2>Unmatched Wildlife</h2>
+            <p>Home to the Great Migration, Big Five, and endless plains—experience nature’s raw power with a *Tanzania safari tour*.</p>
         </div>
-        <div class="sustainability-text">
-            <p>Travel responsibly—preserve Tanzania’s natural wonders. <a href="about.html">Our Commitment</a></p>
+        <div class="image-break" style="background-image: url('images/background2.jpg');">
+            <span class="break-text">Wander</span>
+            <span class="break-subtext">Free</span>
         </div>
-        <div class="plan-trip-cta">
-            <button class="plan-trip-btn" onclick="openPlanModal()">Plan Your Custom Itinerary</button>
+        <div class="section-below">
+            <h2>Stunning Landscapes</h2>
+            <p>From Kilimanjaro’s peaks to Ngorongoro’s crater, Tanzania’s vistas are a feast for the soul on every *safari adventure*.</p>
         </div>
-        <div class="itinerary-grid">
-            <div class="itinerary-card">
-                <div class="image-wrapper">
-                    <img src="images/serengeti.jpg" loading="lazy"
-                        alt="Classic Northern Circuit Tanzania safari itinerary">
-                </div>
-                <div class="content-wrapper">
-                    <h3>Classic Northern Circuit</h3>
-                    <p>A 7-day safari across Serengeti, Ngorongoro, and Tarangire—wildlife and landscapes galore.</p>
-                    <a href="classic-northern-circuit.html">View Details</a>
-                </div>
+        <section class="section why-tanzania">
+            <h2>Why Choose Tanzania Safari Tours?</h2>
+            <div class="why-item">
+                <img src="images/simba.jpg" loading="lazy" alt="Tanzania safari wildlife Serengeti lion">
+                <h3>Unmatched Wildlife</h3>
+                <p>Home to the Great Migration, Big Five, and endless plains—experience nature’s raw power with a *Tanzania safari tour*.</p>
             </div>
-            <div class="itinerary-card">
-                <div class="image-wrapper">
-                    <img src="images/lio.jpg" loading="lazy" alt="Luxury Serengeti & Crater Tanzania safari itinerary">
-                </div>
-                <div class="content-wrapper">
-                    <h3>Luxury Serengeti & Crater</h3>
-                    <p>8 days of premium safari in Serengeti and Ngorongoro with top-tier lodges.</p>
-                    <a href="luxury-serengeti-crater.html">View Details</a>
-                </div>
+            <div class="why-item">
+                <img src="images/suunset.jpg" loading="lazy" alt="Tanzania safari landscapes Serengeti sunset">
+                <h3>Stunning Landscapes</h3>
+                <p>From Kilimanjaro’s peaks to Ngorongoro’s crater, Tanzania’s vistas are a feast for the soul on every *safari adventure*.</p>
             </div>
-            <div class="itinerary-card">
-                <div class="image-wrapper">
-                    <img src="images/leopard.jpg" loading="lazy" alt="Budget Camping Safari Tanzania itinerary">
-                </div>
-                <div class="content-wrapper">
-                    <h3>Budget Camping Safari</h3>
-                    <p>6-day affordable adventure through Serengeti and Ngorongoro under the stars.</p>
-                    <a href="budget-camping-safari.html">View Details</a>
-                </div>
+            <div class="why-item">
+                <img src="images/minazi.jpg" loading="lazy" alt="Tanzania safari culture Maasai village">
+                <h3>Rich Culture</h3>
+                <p>Connect with Maasai traditions and spice markets—a cultural heartbeat in every *Tanzania trek*.</p>
             </div>
-            <div class="itinerary-card">
-                <div class="image-wrapper">
-                    <img src="images/tembo.jpg" loading="lazy" alt="Family Safari & Zanzibar Tanzania itinerary">
-                </div>
-                <div class="content-wrapper">
-                    <h3>Family Safari & Zanzibar</h3>
-                    <p>9 days of kid-friendly safari and Zanzibar beach fun for the whole family.</p>
-                    <a href="family-safari-zanzibar.html">View Details</a>
-                </div>
-            </div>
-            <div class="itinerary-card">
-                <div class="image-wrapper">
-                    <img src="images/antelopes.jpg" loading="lazy"
-                        alt="Southern Circuit Explorer Tanzania safari itinerary">
-                </div>
-                <div class="content-wrapper">
-                    <h3>Southern Circuit Explorer</h3>
-                    <p>10-day off-the-beaten-path safari through Ruaha and Selous reserves.</p>
-                    <a href="southern-circuit-explorer.html">View Details</a>
-                </div>
-            </div>
-            <div class="itinerary-card">
-                <div class="image-wrapper">
-                    <img src="images/punda.jpg" loading="lazy" alt="Great Migration Safari Tanzania itinerary">
-                </div>
-                <div class="content-wrapper">
-                    <h3>Great Migration Safari</h3>
-                    <p>8-day chase of the wildebeest migration in Serengeti—nature’s grand show.</p>
-                    <a href="great-migration-safari.html">View Details</a>
-                </div>
-            </div>
-            <div class="itinerary-card">
-                <div class="image-wrapper">
-                    <img src="images/mountains.jpg" loading="lazy"
-                        alt="Kilimanjaro & Safari Adventure Tanzania itinerary">
-                </div>
-                <div class="content-wrapper">
-                    <h3>Kilimanjaro & Safari Adventure</h3>
-                    <p>10-day combo of Kilimanjaro climb and Serengeti safari thrills.</p>
-                    <a href="kilimanjaro-safari-adventure.html">View Details</a>
-                </div>
-            </div>
-            <div class="itinerary-card">
-                <div class="image-wrapper">
-                    <img src="images/Zanzibar.jpg" loading="lazy" alt="Honeymoon Safari & Zanzibar Tanzania itinerary">
-                </div>
-                <div class="content-wrapper">
-                    <h3>Honeymoon Safari & Zanzibar</h3>
-                    <p>10-day romantic escape with Serengeti safari and Zanzibar beaches.</p>
-                    <a href="honeymoon-safari-zanzibar.html">View Details</a>
-                </div>
-            </div>
+        </section>
+        <div class="section-above">
+            <h2>Maasai Village Stay</h2>
+            <p>Live with warriors, herd goats, sip chai—immerse in Tanzania’s beating heart with a *safari tour*.</p>
         </div>
-        <div class="accommodations-overview">
-            <h2>Your Stay Options</h2>
-            <div class="accommodations-grid">
-                <div class="accommodation-option">
-                    <h3>Luxury</h3>
-                    <p>Indulge in en-suite tents, private decks, and gourmet dining amidst Tanzania’s wild beauty.</p>
-                </div>
-                <div class="accommodation-option">
-                    <h3>Budget</h3>
-                    <p>Experience authentic camping or guesthouses with shared facilities and local charm.</p>
-                </div>
-            </div>
+        <div class="image-break" style="background-image: url('images/tembo.jpg');">
+            <span class="break-text">Roar</span>
+            <span class="break-subtext">Wild</span>
         </div>
-        <div class="quick-faqs">
-            <h2>Itinerary FAQs</h2>
-            <div class="faq-item">
-                <h3>When’s the best time for a safari?</h3>
-                <p>June to October (dry season) for safaris; December to March for Kilimanjaro. <a
-                        href="Travel-guide.html">More Tips</a></p>
-            </div>
-            <div class="faq-item">
-                <h3>Do I need a visa?</h3>
-                <p>Most need a visa—apply online or on arrival. <a href="Travel-guide.html">Details</a></p>
-            </div>
-            <div class="faq-item">
-                <h3>What’s included?</h3>
-                <p>Lodging, meals, guides, park fees, transfers—varies by itinerary. <a href="contact.html">Ask Us</a>
-                </p>
-            </div>
+        <div class="section-below">
+            <h2>Balloon Safari</h2>
+            <p>Soar over the Serengeti at dawn—wildlife and plains from a new height on a *Tanzania safari*.</p>
         </div>
-        <div class="featured-itineraries">
-            <h2>Featured Itineraries</h2>
-            <div class="featured-grid">
-                <div class="featured-card">
-                    <img src="images/serengeti.jpg" loading="lazy"
-                        alt="Classic Northern Circuit Tanzania safari itinerary">
-                    <h3>Classic Northern Circuit</h3>
-                    <a href="classic-northern-circuit.html">Explore Now</a>
+        <section class="section top-picks">
+            <h2>Top Tanzania Safari Experiences</h2>
+            <div class="pick-item">
+                <img src="images/child.jpg" loading="lazy" alt="Maasai village stay Tanzania safari culture">
+                <h3>Maasai Village Stay</h3>
+                <p>Live with warriors, herd goats, sip chai—immerse in Tanzania’s beating heart with a *safari tour*.</p>
+            </div>
+            <div class="pick-item">
+                <img src="images/balloon safari.jpg" loading="lazy" alt="Balloon safari Tanzania Serengeti adventure">
+                <h3>Balloon Safari</h3>
+                <p>Soar over the Serengeti at dawn—wildlife and plains from a new height on a *Tanzania safari*.</p>
+            </div>
+            <div class="pick-item">
+                <img src="images/usiku.jpg" loading="lazy" alt="Zanzibar spice tour Tanzania safari experience">
+                <h3>Zanzibar Spice Tour</h3>
+                <p>Taste cloves, cinnamon, and history—Zanzibar’s flavors come alive on a *Tanzania adventure*.</p>
+            </div>
+        </section>
+        <div class="section-above">
+            <h2>Great Migration</h2>
+            <p>Witness millions of wildebeest thunder across the Serengeti—a primal spectacle on a *Tanzania safari tour*.</p>
+        </div>
+        <div class="image-break" style="background-image: url('images/background2.jpg');">
+            <span class="break-text">Rise</span>
+            <span class="break-subtext">Peak</span>
+        </div>
+        <div class="section-below">
+            <h2>Summit Sunrise</h2>
+            <p>Watch dawn break over Africa from Kilimanjaro’s icy peak—unforgettable on a *Kilimanjaro trek*.</p>
+        </div>
+        <section class="section highlights">
+            <h2>Tanzania Safari Highlights</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <img src="images/mufasa.jpg" loading="lazy" alt="Great Migration Tanzania safari Serengeti">
+                    <div class="highlight-info">
+                        <h3>Great Migration</h3>
+                        <p>Witness millions of wildebeest thunder across the Serengeti—a primal spectacle on a *Tanzania safari tour*.</p>
+                    </div>
                 </div>
-                <div class="featured-card">
-                    <img src="images/mountains.jpg" loading="lazy"
-                        alt="Kilimanjaro & Safari Adventure Tanzania itinerary">
-                    <h3>Kilimanjaro & Safari</h3>
-                    <a href="kilimanjaro-safari-adventure.html">Explore Now</a>
+                <div class="highlight-card">
+                    <img src="images/mlima.jpg" loading="lazy" alt="Kilimanjaro summit sunrise Tanzania trek">
+                    <div class="highlight-info">
+                        <h3>Summit Sunrise</h3>
+                        <p>Watch dawn break over Africa from Kilimanjaro’s icy peak—unforgettable on a *Kilimanjaro trek*.</p>
+                    </div>
                 </div>
-                <div class="featured-card">
-                    <img src="images/zanzibar.jpg" loading="lazy" alt="Honeymoon Safari & Zanzibar Tanzania itinerary">
-                    <h3>Honeymoon Safari</h3>
-                    <a href="honeymoon-safari-zanzibar.html">Explore Now</a>
+                <div class="highlight-card">
+                    <img src="images/zanzibar (2).jpg" loading="lazy" alt="Snorkeling Zanzibar Tanzania safari tour">
+                    <div class="highlight-info">
+                        <h3>Snorkeling Zanzibar</h3>
+                        <p>Dive into turquoise waters, coral reefs alive with color—pure island bliss on a *Tanzania adventure*.</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img src="images/tembo.jpg" loading="lazy" alt="Ngorongoro crater lake Tanzania safari">
+                    <div class="highlight-info">
+                        <h3>Crater Lake</h3>
+                        <p>Spot flamingos and rhinos in Ngorongoro’s misty caldera—nature’s coliseum on a *safari tour*.</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img src="images/usiku.jpg" loading="lazy" alt="Tarangire baobab sunset Tanzania safari">
+                    <div class="highlight-info">
+                        <h3>Baobab Sunset</h3>
+                        <p>Catch the golden hour with elephants under Tarangire’s ancient trees—timeless on a *Tanzania safari*.</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img src="images/dhow.jpg" loading="lazy" alt="Ruaha river Tanzania safari wilderness">
+                    <div class="highlight-info">
+                        <h3>Ruaha River</h3>
+                        <p>Explore untamed bush along rushing waters—sable antelopes and lions roam free on a *safari adventure*.</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img src="images/lake birds.jpg" loading="lazy" alt="Selous boat ride Tanzania safari tour">
+                    <div class="highlight-info">
+                        <h3>Selous Boat Ride</h3>
+                        <p>Glide past hippos and crocs on a river safari—wilderness unbound on a *Tanzania trek*.</p>
+                    </div>
+                </div>
+                <div class="highlight-card">
+                    <img src="images/balon safari.jpg" loading="lazy" alt="Arusha coffee Tanzania safari highlands">
+                    <div class="highlight-info">
+                        <h3>Arusha Coffee</h3>
+                        <p>Sip fresh brews amid lush highlands—Meru’s shadow in every cup on a *Tanzania safari tour*.</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+        <section class="section travel-tips">
+            <h2>Tanzania Safari Travel Tips</h2>
+            <div class="tips-list">
+                <div class="tip-item">
+                    <h3>Pack Smart</h3>
+                    <p>Bring lightweight layers, sturdy boots, and a good camera—weather shifts fast on a *Tanzania safari*.</p>
+                </div>
+                <div class="tip-item">
+                    <h3>Stay Hydrated</h3>
+                    <p>High altitudes and heat demand water—carry a reusable bottle on every *Kilimanjaro trek* or *safari tour*.</p>
+                </div>
+                <div class="tip-item">
+                    <h3>Respect Wildlife</h3>
+                    <p>Keep your distance, follow guides—safety and conservation go hand in hand on a *Tanzania adventure*.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section faq">
+            <h2>Tanzania Safari Adventure FAQ</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>What’s the best time for a Tanzania safari?</h3>
+                    <p>June to October for dry season *Tanzania safaris*; January to March for clear *Kilimanjaro treks*.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do I need a visa for Tanzania?</h3>
+                    <p>Most travelers need a visa—apply online or on arrival for your *Tanzania safari tour*.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What fitness level is required?</h3>
+                    <p>*Serengeti safaris* are easy; *Kilimanjaro treks* need prep—moderate fitness gets you far.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is a Tanzania safari safe?</h3>
+                    <p>Yes, with expert guides—stick to the plan, and your *Tanzania adventure* is golden.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section stats">
+            <h2>Why Choose Tanzania Trek?</h2>
+            <div class="stat-item">
+                <h3>15+</h3>
+                <p>Years Exploring Tanzania</p>
+            </div>
+            <div class="stat-item">
+                <h3>2000+</h3>
+                <p>Adventurers Guided</p>
+            </div>
+            <div class="stat-item">
+                <h3>8</h3>
+                <p>Iconic Destinations</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Local Passion</p>
+            </div>
+        </section>
+        <section class="section map-teaser">
+            <h2>Discover Tanzania Safari Destinations</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1621442.592608589!2d34.888822!3d-6.792354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x184b51311cd11b09%3A0x7e14f5b7178e8ae5!2sTanzania!5e0!3m2!1sen!2sus!4v1677654321" allowfullscreen="" loading="lazy" title="Map of Tanzania safari destinations"></iframe>
+        </section>
+        <section class="section">
+            <h2>What Travelers Say About Tanzania Treks</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"Tanzania Trek turned my *safari tour* dream into reality—wildlife up close and guides who felt like family!"</p>
+                    <cite>– Sarah, USA</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"*Kilimanjaro trek* was tough, but their team made it magical. Best views of my life."</p>
+                    <cite>– Liam, UK</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"Ngorongoro blew me away—rhinos in the mist, and that campfire night was unreal on this *Tanzania safari*."</p>
+                    <cite>– Priya, India</cite>
+                </div>
+            </div>
+        </section>
+        <section class="section cta-section">
+            <h2>Ready for Your Tanzania Safari?</h2>
+            <p>Join us for a *custom Tanzania adventure* that’s raw, real, and unforgettable. Your *safari tour* story starts here.</p>
+            <a href="contact.html" class="cta-button">Get in Touch</a>
+        </section>
     </div>
     <button class="back-to-top">↑</button>
     <a href="https://wa.me/255623474720" class="whatsapp-chat" target="_blank"><i class="fab fa-whatsapp"></i></a>
     <footer>
         <div class="footer-content">
             <div class="footer-section about">
-                <h3><span class="icon">🌍</span> Tanzania Trek</h3>
-                <p>Explore Tanzania’s wild soul with *custom safari itineraries* crafted by locals since 2020—Serengeti
-                    to Zanzibar.</p>
-                <div class="social-icons">
-                    <a href="https://instagram.com/tanzaniatrek" target="_blank" class="social-icon">📷</a>
-                    <a href="https://twitter.com/tanztrek" target="_blank" class="social-icon">🐦</a>
-                    <a href="https://wa.me/255623474720" target="_blank" class="social-icon">💬</a>
-                </div>
+                <h3>Tanzania Trek</h3>
+                <p>Discover Tanzania’s wild heart with *custom safari tours* and *Kilimanjaro treks* crafted by locals who live it.</p>
             </div>
             <div class="footer-section links">
-                <h3><span class="icon">🔗</span> Quick Links</h3>
+                <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="tours.html">Tours</a></li>
-                    <li><a href="itinerary.html">Itineraries</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section contact">
-                <h3><span class="icon">📍</span> Get in Touch</h3>
-                <p><span class="icon">✉️</span> Email: <a href="mailto:info@tanzaniatrek.com">info@tanzaniatrek.com</a>
-                </p>
-                <p><span class="icon">📞</span> Phone: <a href="https://wa.me/255623474720">+255 623 474 720</a></p>
-                <p><span class="icon">🏢</span> Office: Plot 45, Mbezi Beach, Dar es Salaam</p>
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@tanzaniatrek.com">info@tanzaniatrek.com</a></p>
+                <p>Phone: <a href="https://wa.me/255623474720">+255 623 474 720</a></p>
+                <p>Office: Plot 45, Mbezi Beach, Dar es Salaam</p>
             </div>
             <div class="footer-section newsletter">
-                <h3><span class="icon">📬</span> Stay Connected</h3>
-                <p>Get exclusive *Tanzania itinerary* updates.</p>
+                <h3>Stay Updated</h3>
+                <p>Get the latest *Tanzania safari* tips and offers.</p>
                 <form id="newsletterForm">
                     <input type="email" placeholder="Your Email" required>
                     <button type="submit">Subscribe</button>
@@ -1298,106 +1152,24 @@
         </div>
         <div class="footer-bottom">
             <p>© 2025 Tanzania Trek. All rights reserved.</p>
-            <p class="footer-tagline">Crafting Tanzania’s Wildest Itineraries</p>
+            <div class="social-icons">
+                <a href="https://instagram.com/tanzaniatrek" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/tanztrek" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://wa.me/255623474720" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
         </div>
     </footer>
     <div id="bookModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">×</span>
-            <h2>Book Your Itinerary</h2>
+            <h2>Book Your Tanzania Adventure</h2>
             <form id="bookingForm">
-                <div class="form-group">
-                    <label for="fullName">Your Name</label>
-                    <input type="text" id="fullName" placeholder="e.g., John Doe" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="e.g., john@example.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="tourName">Itinerary</label>
-                    <input type="text" id="tourName" value="Custom Tanzania Itinerary" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="prefDate">Start Date</label>
-                    <input type="date" id="prefDate" required>
-                </div>
-                <div class="form-group">
-                    <label for="groupSize">Group Size</label>
-                    <input type="number" id="groupSize" min="1" placeholder="e.g., 2" required>
-                </div>
-                <div class="form-group">
-                    <label for="preferences">Preferences</label>
-                    <textarea id="preferences" placeholder="Budget, interests, etc."></textarea>
-                </div>
-                <button type="submit">Let’s Go!</button>
-            </form>
-        </div>
-    </div>
-    <div id="planModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closePlanModal()">×</span>
-            <h2>Plan Your Custom Itinerary</h2>
-            <form id="planForm">
-                <div class="form-group">
-                    <label for="planFullName">Your Name</label>
-                    <input type="text" id="planFullName" placeholder="e.g., John Doe" required>
-                </div>
-                <div class="form-group">
-                    <label for="planEmail">Email Address</label>
-                    <input type="email" id="planEmail" placeholder="e.g., john@example.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="planPhone">Phone (optional)</label>
-                    <input type="tel" id="planPhone" placeholder="e.g., +255 123 456 789">
-                </div>
-                <div class="form-group">
-                    <label for="planStartDate">Start Date</label>
-                    <input type="date" id="planStartDate" required>
-                </div>
-                <div class="form-group">
-                    <label for="planEndDate">End Date</label>
-                    <input type="date" id="planEndDate" required>
-                </div>
-                <div class="form-group">
-                    <label for="planTravelers">Travelers</label>
-                    <select id="planTravelers" required>
-                        <option value="" disabled selected>Select number</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6+">6+</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Trip Type</label>
-                    <div style="display: grid; gap: 0.5rem;">
-                        <label><input type="checkbox" name="tripType" value="Safari"> Safari</label>
-                        <label><input type="checkbox" name="tripType" value="Kilimanjaro Climb"> Kilimanjaro
-                            Climb</label>
-                        <label><input type="checkbox" name="tripType" value="Zanzibar Beach"> Zanzibar Beach</label>
-                        <label><input type="checkbox" name="tripType" value="Cultural Tour"> Cultural Tour</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="planDestinations">Destinations</label>
-                    <textarea id="planDestinations" placeholder="e.g., Serengeti, Zanzibar"></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Accommodation</label>
-                    <div style="display: grid; gap: 0.5rem;">
-                        <label><input type="radio" name="accommodation" value="Budget" required> Budget</label>
-                        <label><input type="radio" name="accommodation" value="Mid-Range"> Mid-Range</label>
-                        <label><input type="radio" name="accommodation" value="Luxury"> Luxury</label>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="planRequests">Special Requests</label>
-                    <textarea id="planRequests" placeholder="e.g., dietary needs"></textarea>
-                </div>
-                <button type="submit">Submit Plan</button>
+                <input type="text" id="fullName" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="text" id="tourName" placeholder="Tour Name">
+                <input type="date" id="prefDate" placeholder="Preferred Date" required>
+                <textarea id="preferences" placeholder="Your Preferences (budget, group size, etc.)" rows="4"></textarea>
+                <button id="submitBtn" type="submit">Launch Adventure</button>
             </form>
         </div>
     </div>
@@ -1425,8 +1197,8 @@
         });
 
         document.addEventListener('click', (e) => {
-            if (navLinks.classList.contains('active') &&
-                !navLinks.contains(e.target) &&
+            if (navLinks.classList.contains('active') && 
+                !navLinks.contains(e.target) && 
                 !hamburger.contains(e.target)) {
                 toggleMenu();
             }
@@ -1462,7 +1234,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        const sections = document.querySelectorAll('.intro-text, .accommodations-overview, .quick-faqs, .featured-itineraries');
+        const sections = document.querySelectorAll('.section');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -1470,9 +1242,9 @@
         }, { threshold: 0.1 });
         sections.forEach(section => observer.observe(section));
 
-        function openModal(tour) {
+        function openModal(tourName) {
             document.getElementById('bookModal').style.display = 'block';
-            document.getElementById('tourName').value = tour;
+            document.getElementById('tourName').value = tourName;
             body.classList.add('overlay-active');
         }
 
@@ -1482,69 +1254,30 @@
             body.classList.remove('overlay-active');
         }
 
-        function openPlanModal() {
-            document.getElementById('planModal').style.display = 'block';
-            body.classList.add('overlay-active');
-        }
-
-        function closePlanModal() {
-            document.getElementById('planModal').style.display = 'none';
-            document.getElementById('planForm').reset();
-            body.classList.remove('overlay-active');
-        }
-
         document.getElementById('bookingForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            const fullName = document.getElementById('fullName').value;
-            const email = document.getElementById('email').value;
-            const tourName = document.getElementById('tourName').value;
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const tourName = document.getElementById('tourName').value.trim();
             const prefDate = document.getElementById('prefDate').value;
-            const groupSize = document.getElementById('groupSize').value;
-            const preferences = document.getElementById('preferences').value;
+            const preferences = document.getElementById('preferences').value.trim();
 
-            if (!fullName || !email || !prefDate || !groupSize) {
-                alert("Please fill in all required fields!");
+            if (!fullName || !email || !prefDate) {
+                alert('Please fill in all required fields.');
                 return;
             }
 
-            const message = `Booking: ${tourName}\nName: ${fullName}\nEmail: ${email}\nDate: ${prefDate}\nGroup Size: ${groupSize}\nPreferences: ${preferences}`;
-            window.open(`https://wa.me/255623474720?text=${encodeURIComponent(message)}`, '_blank');
-            alert('Your request is on its way via WhatsApp!');
+            const whatsappMessage = `Hello Tanzania Trek! I'd like to book a tour.\n\nName: ${fullName}\nEmail: ${email}\nTour: ${tourName || 'Not specified'}\nPreferred Date: ${prefDate}\nPreferences: ${preferences || 'None'}`;
+            window.open(`https://wa.me/255623474720?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+            alert('Your booking request has been sent via WhatsApp!');
             closeModal();
-        });
-
-        document.getElementById('planForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const fullName = document.getElementById('planFullName').value;
-            const email = document.getElementById('planEmail').value;
-            const phone = document.getElementById('planPhone').value;
-            const startDate = document.getElementById('planStartDate').value;
-            const endDate = document.getElementById('planEndDate').value;
-            const travelers = document.getElementById('planTravelers').value;
-            const tripTypes = Array.from(document.querySelectorAll('input[name="tripType"]:checked'))
-                .map(input => input.value)
-                .join(', ');
-            const destinations = document.getElementById('planDestinations').value;
-            const accommodation = document.querySelector('input[name="accommodation"]:checked')?.value;
-            const requests = document.getElementById('planRequests').value;
-
-            if (!fullName || !email || !startDate || !endDate || !travelers || !accommodation) {
-                alert("Please fill in all required fields!");
-                return;
-            }
-
-            const message = `Custom Plan\nName: ${fullName}\nEmail: ${email}${phone ? `\nPhone: ${phone}` : ''}\nDates: ${startDate} to ${endDate}\nTravelers: ${travelers}\nTrip Type: ${tripTypes || 'Not specified'}\nDestinations: ${destinations || 'Open to suggestions'}\nAccommodation: ${accommodation}\nRequests: ${requests || 'None'}`;
-            window.open(`https://wa.me/255623474720?text=${encodeURIComponent(message)}`, '_blank');
-            alert('Your custom plan is on its way via WhatsApp!');
-            closePlanModal();
         });
 
         document.getElementById('newsletterForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Thanks for subscribing! Stay tuned for Tanzania Trek updates.');
+            alert('Thanks for subscribing! Stay tuned for updates.');
             e.target.reset();
         });
     </script>
 </body>
-
 </html>
