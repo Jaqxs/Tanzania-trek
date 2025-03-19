@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Migration Safari in Tanzania | Tanzania Trek</title>
+    <meta name="description" content="Witness the Great Migration on a 7-day safari through Serengeti and Ngorongoro with Tanzania Trek. A wildlife spectacle awaits!">
+    <meta name="keywords" content="Great Migration safari, Serengeti migration tour, Ngorongoro Crater safari, Tanzania wildlife, Tanzania Trek">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Tanzania Trek">
+    <meta property="og:title" content="Great Migration Safari in Tanzania | Tanzania Trek">
+    <meta property="og:description" content="Experience the Great Migration on a 7-day Tanzania safari through Serengeti and Ngorongoro with Tanzania Trek. Book your adventure now!">
+    <meta property="og:image" content="images/great-migration-hero.jpg">
+    <meta property="og:url" content="https://www.tanzaniatrek.com/great-migration-safari.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Great Migration Safari in Tanzania | Tanzania Trek">
+    <meta name="twitter:description" content="7-day safari to see the Great Migration in Serengeti and Ngorongoro Crater. Plan your trip with Tanzania Trek!">
+    <meta name="twitter:image" content="images/great-migration-hero.jpg">
+    <link rel="canonical" href="https://www.tanzaniatrek.com/great-migration-safari.html">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            background: #f7f1e3;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("images/background3.jpg") center/cover no-repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        nav {
+            background: rgba(241, 90, 36, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            transition: background 0.3s ease;
+        }
+        nav.scrolled {
+            background: rgba(241, 90, 36, 0.95);
+            box-shadow: 0 0 15px rgba(241, 90, 36, 0.5);
+        }
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            transition: transform 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+        .nav-links a, .nav-links .dropdown-btn {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .nav-links a:hover, .nav-links .dropdown-btn:hover {
+            background: #f1c40f;
+            color: #2c3e50;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #2c3e50;
+            min-width: 180px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            top: 100%;
+            left: 0;
+            z-index: 10;
+            animation: slideIn 0.3s ease;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            color: #fff;
+            padding: 0.6rem 1rem;
+            display: block;
+            font-size: 0.85rem;
+            transition: background 0.3s ease;
+        }
+        .dropdown-content a:hover {
+            background: #d35400;
+        }
+        .cta-nav {
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            color: #2c3e50;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-nav:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(241, 196, 15, 0.7);
+        }
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            background: url("images/great\ migration.jpg") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+            z-index: 1;
+        }
+        .hero-text {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            animation: fadeInUp 1.2s ease;
+        }
+        .hero-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            color: #e67e22;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            margin-bottom: 0.8rem;
+        }
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+        .intro-text, .itinerary-details, .cost-breakdown, .highlights {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        .intro-text.visible, .itinerary-details.visible, .cost-breakdown.visible, .highlights.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #e67e22;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            width: 40px;
+            height: 3px;
+            background: #f1c40f;
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+        }
+        .intro-text p, .cost-breakdown p {
+            font-size: 1rem;
+            color: #555;
+        }
+        .day-by-day {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .day {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .day:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+        .day h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #f1c40f;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        .day p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .cost-breakdown ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .cost-breakdown li {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 0.6rem;
+        }
+        .cost-breakdown li::before {
+            content: "✔ ";
+            color: #e67e22;
+        }
+        .highlights-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem 0;
+        }
+        .highlight-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.4s ease;
+        }
+        .highlight-card:hover {
+            transform: scale(1.05);
+        }
+        .highlight-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .highlight-card:hover img {
+            transform: scale(1.1);
+        }
+        .highlight-card .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            font-size: 0.9rem;
+            text-align: center;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+        }
+        .highlight-card:hover .caption {
+            transform: translateY(0);
+        }
+        .book-now-btn {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            color: #2c3e50;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .book-now-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.3);
+            transition: all 0.4s ease;
+        }
+        .book-now-btn:hover::before {
+            left: 100%;
+        }
+        .book-now-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(241, 196, 15, 0.8);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 200;
+            overflow-y: auto;
+        }
+        .modal-content {
+            background: #fff;
+            margin: 5% auto;
+            padding: 2rem;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            animation: zoomIn 0.5s ease;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #e67e22;
+            transition: transform 0.3s ease;
+        }
+        .close:hover {
+            transform: rotate(90deg);
+        }
+        .modal-content h2 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .modal-content form {
+            display: grid;
+            gap: 1rem;
+        }
+        .form-group {
+            position: relative;
+        }
+        .modal-content label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9rem;
+            position: absolute;
+            top: -8px;
+            left: 12px;
+            background: #fff;
+            padding: 0 5px;
+            transition: all 0.3s ease;
+        }
+        .modal-content input, .modal-content textarea {
+            font-family: 'Open Sans', sans-serif;
+            padding: 0.8rem;
+            border: 2px solid #f1c40f;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            width: 100%;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
+        }
+        .modal-content input:focus, .modal-content textarea:focus {
+            border-color: #e67e22;
+            outline: none;
+            box-shadow: 0 0 8px rgba(230, 126, 34, 0.5);
+        }
+        .modal-content textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .modal-content button {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            color: #2c3e50;
+            border: none;
+            padding: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .modal-content button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.3);
+            transition: all 0.4s ease;
+        }
+        .modal-content button:hover::before {
+            left: 100%;
+        }
+        .modal-content button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(241, 196, 15, 0.8);
+        }
+        footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+            color: #fff;
+            padding: 3rem 1rem;
+            text-align: center;
+            border-top: 3px solid #f1c40f;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+        }
+        .footer-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #f1c40f;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .footer-section p, .footer-section a {
+            font-size: 0.9rem;
+            color: #ecf0f1;
+            transition: color 0.3s ease;
+        }
+        .footer-section a:hover {
+            color: #f1c40f;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .social-icons a {
+            font-size: 1.5rem;
+            color: #f1c40f;
+            transition: transform 0.3s ease;
+        }
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(241, 90, 36, 0.3);
+            padding-top: 1rem;
+            font-size: 0.85rem;
+            color: #bdc3c7;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                max-width: 300px;
+                height: 100vh;
+                background: rgba(241, 90, 36, 0.95);
+                flex-direction: column;
+                padding: 3rem 1rem;
+                z-index: 99;
+                transition: right 0.3s ease;
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .nav-links a, .nav-links .dropdown-btn, .cta-nav {
+                font-size: 1rem;
+                padding: 0.8rem 1rem;
+                width: 100%;
+                text-align: center;
+            }
+            .dropdown-content {
+                position: static;
+                width: 100%;
+                box-shadow: none;
+                border-radius: 0;
+                background: #d35400;
+                display: none;
+            }
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+            .dropdown:hover .dropdown-content {
+                display: none;
+            }
+            .hero-text h1 { font-size: 1.8rem; }
+            .hero-text p { font-size: 1rem; }
+            .content { padding: 2rem 1rem; }
+            h2 { font-size: 1.5rem; }
+            .day h3 { font-size: 1.1rem; }
+            .highlights-gallery { grid-template-columns: 1fr; }
+            .modal-content { padding: 1.5rem; max-width: 90%; }
+        }
+        @media (max-width: 480px) {
+            .logo { font-size: 1.2rem; }
+            .hamburger { font-size: 1.2rem; }
+            .hero-text h1 { font-size: 1.5rem; }
+            .hero-text p { font-size: 0.9rem; }
+            h2 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html" style="color: #fff; text-decoration: none;">Tanzania Trek</a></div>
+            <div class="nav-links">
+                <div class="nav-item"><a href="index.html">Home</a></div>
+                <div class="dropdown">
+                    <a href="tours.html" class="dropdown-btn">Tours</a>
+                    <div class="dropdown-content">
+                        <a href="tours.html#serengeti-details">Serengeti Safari</a>
+                        <a href="tours.html#kilimanjaro-details">Kilimanjaro Quest</a>
+                        <a href="tours.html#zanzibar-details">Zanzibar Escape</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="itinerary.html" class="dropdown-btn">Itineraries</a>
+                    <div class="dropdown-content">
+                        <a href="classic-northern-circuit.html">Classic Northern Circuit</a>
+                        <a href="luxury-serengeti-crater.html">Luxury Serengeti & Crater</a>
+                        <a href="budget-camping-safari.html">Budget Camping Safari</a>
+                        <a href="family-safari-zanzibar.html">Family Safari & Zanzibar</a>
+                        <a href="southern-circuit-explorer.html">Southern Circuit Explorer</a>
+                        <a href="great-migration-safari.html">Great Migration Safari</a>
+                        <a href="kilimanjaro-safari-adventure.html">Kilimanjaro & Safari Adventure</a>
+                        <a href="honeymoon-safari-zanzibar.html">Honeymoon Safari & Zanzibar</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="about.html">About</a></div>
+                <div class="nav-item"><a href="Travel-guide.html">Travel Guide</a></div>
+                <div class="nav-item"><a href="contact.html">Contact</a></div>
+                <button class="cta-nav" onclick="openModal('Great Migration Safari')">Book Now</button>
+            </div>
+            <button class="hamburger">☰</button>
+        </nav>
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Great Migration Safari</h1>
+                <p>7 Days of Nature’s Grandest Show</p>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="intro-text">
+            <h2>About This Great Migration Safari</h2>
+            <p>Marvel at one of the world’s greatest natural wonders with a 7-day safari through Serengeti and Ngorongoro Crater. Timed for peak Great Migration action (July–October or January–March), this Tanzania Trek adventure brings you front-row to wildebeest herds and predators.</p>
+        </div>
+        <div class="itinerary-details">
+            <h2>Your Migration Safari Itinerary</h2>
+            <div class="day-by-day">
+                <div class="day">
+                    <h3>Day 1: Arrival in Arusha</h3>
+                    <p>Land at Kilimanjaro International Airport (JRO) and check into Arusha Planet Lodge. Meet your guide for a migration briefing.</p>
+                </div>
+                <div class="day">
+                    <h3>Day 2: Serengeti National Park</h3>
+                    <p>Drive 3.5 hours to Serengeti’s western corridor or northern plains (seasonal). Afternoon migration tracking. Stay at Migration Camp.</p>
+                </div>
+                <div class="day">
+                    <h3>Day 3: Migration in Action</h3>
+                    <p>Full-day game drive following wildebeest herds—river crossings possible. Overnight at Migration Camp.</p>
+                </div>
+                <div class="day">
+                    <h3>Day 4: Serengeti Exploration</h3>
+                    <p>Another full day chasing the migration—zebras, predators, and more. Optional balloon safari ($550). Third night at Migration Camp.</p>
+                </div>
+                <div class="day">
+                    <h3>Day 5: Ngorongoro Highlands</h3>
+                    <p>Drive 3 hours to Ngorongoro rim. Evening crater views and relaxation at Ngorongoro Serena Lodge.</p>
+                </div>
+                <div class="day">
+                    <h3>Day 6: Ngorongoro Crater</h3>
+                    <p>Descend into the crater for a 6-hour game drive—rhinos and flamingos included. Second night at Ngorongoro Serena Lodge.</p>
+                </div>
+                <div class="day">
+                    <h3>Day 7: Departure</h3>
+                    <p>Return to Arusha (4 hours) with an optional market stop. Transfer to JRO, carrying migration memories.</p>
+                </div>
+            </div>
+        </div>
+        <div class="cost-breakdown">
+            <h2>Cost Breakdown for Migration Safari</h2>
+            <p><strong>Total Price:</strong> $3,000–$3,500 per person (double occupancy)</p>
+            <ul>
+                <li>Includes: Lodging, meals, park fees, guide, 4x4 vehicle, transfers</li>
+                <li>Excludes: International flights, visa ($50-$100), tips, balloon safari, insurance</li>
+            </ul>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="#" class="book-now-btn" onclick="openModal('Great Migration Safari')">Secure Your Spot</a>
+            </div>
+        </div>
+        <div class="highlights">
+            <h2>Great Migration Highlights</h2>
+            <div class="highlights-gallery">
+                <div class="highlight-card">
+                    <img src="images/nyumbu.jpg" alt="Wildebeest migration">
+                    <div class="caption">Wildebeest Herd on the Move</div>
+                </div>
+                <div class="highlight-card">
+                    <img src="images/great migration.jpg" alt="River crossing in Serengeti">
+                    <div class="caption">Dramatic River Crossing</div>
+                </div>
+                <div class="highlight-card">
+                    <img src="images/survival.jpg" alt="Predators during migration">
+                    <div class="caption">Predators in Action</div>
+                </div>
+                <div class="highlight-card">
+                    <img src="images/Ngorongoro-eminent-safaris.jpg" alt="Ngorongoro Crater view">
+                    <div class="caption">Ngorongoro Crater Beauty</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Tanzania Trek</h3>
+                <p>Crafting unforgettable Tanzania adventures since 2020. From Serengeti safaris to Zanzibar escapes, we’ve got your wild side covered.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="index.html">Home</a> | <a href="tours.html">Tours</a> | <a href="itinerary.html">Itineraries</a> | <a href="about.html">About</a> | <a href="contact.html">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Get in Touch</h3>
+                <p>Email: <a href="mailto:info@tanzaniatrek.com">info@tanzaniatrek.com</a><br>Phone: <a href="https://wa.me/255623474720">+255 623 474 720</a></p>
+                <div class="social-icons">
+                    <a href="https://instagram.com/tanzaniatrek" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/tanztrek" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://wa.me/255623474720" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Tanzania Trek. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h2>Book Your Migration Safari</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="fullName">Your Name</label>
+                    <input type="text" id="fullName" placeholder="e.g., John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="e.g., john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="tourName">Safari</label>
+                    <input type="text" id="tourName" value="Great Migration Safari" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="prefDate">Start Date</label>
+                    <input type="date" id="prefDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="groupSize">Group Size</label>
+                    <input type="number" id="groupSize" min="1" placeholder="e.g., 2" required>
+                </div>
+                <div class="form-group">
+                    <label for="preferences">Preferences</label>
+                    <textarea id="preferences" placeholder="Preferred migration season, special requests, etc."></textarea>
+                </div>
+                <button type="submit">Let’s Go!</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Navigation
+        const nav = document.querySelector('nav');
+        const navLinks = document.querySelector('.nav-links');
+        const hamburger = document.querySelector('.hamburger');
+        const dropdowns = document.querySelectorAll('.dropdown');
+        const body = document.body;
+
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.textContent = navLinks.classList.contains('active') ? '✖' : '☰';
+            body.classList.toggle('menu-open', navLinks.classList.contains('active'));
+        });
+
+        dropdowns.forEach(dropdown => {
+            const btn = dropdown.querySelector('.dropdown-btn');
+            btn.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && navLinks.classList.contains('active') && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                navLinks.classList.remove('active');
+                hamburger.textContent = '☰';
+                body.classList.remove('menu-open');
+            }
+        });
+
+        // Scroll Animations
+        const sections = document.querySelectorAll('.intro-text, .itinerary-details, .cost-breakdown, .highlights');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => observer.observe(section));
+
+        // Modal
+        function openModal(tour) {
+            document.getElementById('bookModal').style.display = 'block';
+            document.getElementById('tourName').value = tour;
+            body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('bookModal').style.display = 'none';
+            document.getElementById('bookingForm').reset();
+            body.style.overflow = 'auto';
+        }
+
+        document.getElementById('bookingForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const tourName = document.getElementById('tourName').value;
+            const prefDate = document.getElementById('prefDate').value;
+            const groupSize = document.getElementById('groupSize').value;
+            const preferences = document.getElementById('preferences').value;
+
+            if (!fullName || !email || !prefDate || !groupSize) {
+                alert("Please fill in all required fields!");
+                return;
+            }
+
+            const message = `Safari Booking: ${tourName}\nName: ${fullName}\nEmail: ${email}\nDate: ${prefDate}\nGroup Size: ${groupSize}\nPreferences: ${preferences}`;
+            window.open(`https://wa.me/255623474720?text=${encodeURIComponent(message)}`, '_blank');
+            alert('Your safari request is on its way via WhatsApp!');
+            closeModal();
+        });
+    </script>
+</body>
+</html>
