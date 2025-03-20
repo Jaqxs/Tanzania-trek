@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selous Game Reserve Safaris | Tanzania Trek</title>
+    <meta name="description" content="Discover Selous Game Reserve with Tanzania Trek—custom safaris in a vast wilderness with riverboat adventures and untamed wildlife. Book your journey today!">
+    <meta name="keywords" content="Selous safaris, Nyerere National Park, riverboat safaris, Tanzania Trek, wildlife adventures">
+    <link rel="preload" href="images/selous-hero.jpg" as="image">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "Tanzania Trek",
+        "description": "Custom Selous Game Reserve safaris—wild rivers and untamed beauty.",
+        "url": "https://www.tanzaniatrek.com/selous.html",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Plot 45, Mbezi Beach",
+            "addressLocality": "Dar es Salaam",
+            "addressCountry": "TZ"
+        },
+        "telephone": "+255623474720",
+        "email": "info@tanzaniatrek.com"
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #f7f1e3;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('images/selous.jpg') center/cover no-repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        nav {
+            background: rgba(241, 90, 36, 0.95);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        }
+        .logo { font-family: 'Montserrat', sans-serif; font-weight: 700; color: #fff; font-size: 1.5rem; text-transform: uppercase; }
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links a { color: #fff; font-weight: 600; text-decoration: none; padding: 0.6rem 1rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: #f1c40f; }
+        .hamburger { display: none; font-size: 2rem; background: none; border: none; color: #fff; cursor: pointer; }
+
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            background: url('images/swala.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(241, 90, 36, 0.7));
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease;
+        }
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            color: #e67e22;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1.5rem;
+        }
+        .hero-content p {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        .content {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        .overview, .highlights, .wildlife, .gallery, .travel-tips, .featured-itineraries {
+            background: #fff;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 4rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        .overview.visible, .highlights.visible, .wildlife.visible, .gallery.visible, .travel-tips.visible, .featured-itineraries.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #e67e22;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 5px;
+            background: #f1c40f;
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .overview p, .highlights p, .wildlife p, .travel-tips p { font-size: 1.2rem; color: #555; max-width: 900px; margin: 0 auto; line-height: 1.8; }
+        .highlights-grid, .wildlife-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        .highlight-card, .wildlife-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .highlight-card:hover, .wildlife-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 10px 25px rgba(241, 90, 36, 0.3);
+        }
+        .highlight-card h3, .wildlife-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #f1c40f;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .highlight-card p, .wildlife-card p { font-size: 1rem; color: #666; }
+        .wildlife-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: transform 0.4s ease;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item::after {
+            content: attr(data-caption);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 0.9rem;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover::after { opacity: 1; }
+        .travel-tips ul {
+            list-style: none;
+            text-align: left;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+        .travel-tips li {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+        .travel-tips li::before {
+            content: '➔';
+            color: #e67e22;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            padding: 1rem 0;
+        }
+        .featured-card {
+            position: relative;
+            min-height: 350px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .featured-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(241, 90, 36, 0.5);
+        }
+        .featured-card:nth-child(1) { background-image: url('images/lake-tagalala.jpg'); }
+        .featured-card:nth-child(2) { background-image: url('images/lioness.jpg'); }
+        .featured-card:nth-child(3) { background-image: url('images/lake\ birds.jpg'); }
+        .featured-card .content-wrapper {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+            color: #fff;
+            transition: background 0.4s ease;
+        }
+        .featured-card:hover .content-wrapper {
+            background: linear-gradient(to top, rgba(241, 90, 36, 0.9), rgba(241, 90, 36, 0));
+        }
+        .featured-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .featured-card p { font-size: 1.1rem; margin-bottom: 1.5rem; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); }
+        .featured-card a {
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            color: #2c3e50;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .featured-card a:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(241, 196, 15, 0.8); }
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            color: #2c3e50;
+            padding: 1.2rem 2.5rem;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            margin-top: 2.5rem;
+        }
+        .cta-btn:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(241, 196, 15, 0.8); }
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero { min-height: 70vh; }
+            .highlights-grid, .wildlife-grid, .gallery-grid, .featured-grid { grid-template-columns: 1fr; }
+            .gallery-item img { height: 200px; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="index.html" style="color: #fff; text-decoration: none;">Tanzania Trek</a></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="tours.html">Tours</a>
+            <a href="itinerary.html">Itineraries</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <button class="hamburger">☰</button>
+    </nav>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Selous Game Reserve Safaris</h1>
+            <p>Untamed Wilderness Meets River Adventures</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="overview">
+            <h2>Discover Selous Game Reserve</h2>
+            <p>The Selous Game Reserve, now part of Nyerere National Park, spans over 50,000 square kilometers, making it one of Africa’s largest protected areas. This remote southern Tanzanian wilderness is crisscrossed by the Rufiji River and teeming with wildlife, from elephants to rare wild dogs. With Tanzania Trek, your custom safari combines game drives, walking safaris, and riverboat trips for an off-the-beaten-path adventure.</p>
+        </div>
+        <div class="highlights">
+            <h2>Selous Highlights</h2>
+            <p>Experience the raw beauty of Selous—here’s what sets it apart.</p>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <h3>Riverboat Safaris</h3>
+                    <p>Cruise the Rufiji River, spotting hippos, crocs, and birds from the water.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Wild Dog Sightings</h3>
+                    <p>Track Africa’s elusive wild dogs, thriving in Selous’ vast expanse.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Remote Wilderness</h3>
+                    <p>Escape the crowds in this untouched paradise—pure, unspoiled nature.</p>
+                </div>
+            </div>
+        </div>
+        <div class="wildlife">
+            <h2>Wildlife of Selous</h2>
+            <p>Selous is a haven for some of Africa’s most iconic and rare species.</p>
+            <div class="wildlife-grid">
+                <div class="wildlife-card">
+                    <img src="images/elephant sunset.jpg" alt="Elephant in Selous">
+                    <h3>Elephants</h3>
+                    <p>Encounter large herds roaming the bush and bathing in the river.</p>
+                </div>
+                <div class="wildlife-card">
+                    <img src="images/lake.jpg" alt="Wild Dog in Selous">
+                    <h3>Wild Dogs</h3>
+                    <p>Spot these endangered predators hunting in tight-knit packs.</p>
+                </div>
+                <div class="wildlife-card">
+                    <img src="images/hippo.jpg" alt="Hippo in Selous">
+                    <h3>Hippos</h3>
+                    <p>Watch these river giants lounging along the Rufiji’s banks.</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery">
+            <h2>Selous in Pictures</h2>
+            <p>Immerse yourself in Selous’ wild allure through these stunning visuals.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-caption="Rufiji River">
+                    <img src="images/lake birds.jpg" alt="Rufiji River">
+                </div>
+                <div class="gallery-item" data-caption="Lion Pride">
+                    <img src="images/simbaaa.jpg" alt="Lion Pride">
+                </div>
+                <div class="gallery-item" data-caption="Riverboat View">
+                    <img src="images/boat-safaris.jpg" alt="Riverboat View">
+                </div>
+                <div class="gallery-item" data-caption="Bush Sunset">
+                    <img src="images/suunset.jpg" alt="Bush Sunset">
+                </div>
+            </div>
+        </div>
+        <div class="travel-tips">
+            <h2>Travel Tips for Selous</h2>
+            <p>Prepare for your Selous adventure with these expert tips from Tanzania Trek.</p>
+            <ul>
+                <li><strong>Best Time to Visit:</strong> June to October for dry conditions and prime wildlife viewing.</li>
+                <li><strong>What to Pack:</strong> Lightweight clothing, binoculars, and a waterproof bag for boat trips.</li>
+                <li><strong>Travel Logistics:</strong> Fly from Dar es Salaam or Zanzibar for easier access to this remote reserve.</li>
+                <li><strong>Stay Flexible:</strong> Combine driving, walking, and boating for the full Selous experience.</li>
+            </ul>
+        </div>
+        <div class="featured-itineraries">
+            <h2>Featured Selous Itineraries</h2>
+            <p>Venture into Selous with these expertly crafted safari experiences.</p>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div class="content-wrapper">
+                        <h3>Selous & Ruaha</h3>
+                        <p>7-day southern circuit safari blending Selous with Ruaha’s rugged wilds.</p>
+                        <a href="selous-ruaha.html">View Details</a>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="content-wrapper">
+                        <h3>Selous River Adventure</h3>
+                        <p>5-day journey with riverboat safaris and bush camping—pure wilderness.</p>
+                        <a href="selous-river-adventure.html">View Details</a>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="content-wrapper">
+                        <h3>Selous Explorer</h3>
+                        <p>4-day escape into Selous’ heart—game drives and walking safaris.</p>
+                        <a href="selous-explorer.html">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <a href="itinerary.html" class="cta-btn">Explore All Itineraries</a>
+        </div>
+    </div>
+    <script>
+        const sections = document.querySelectorAll('.overview, .highlights, .wildlife, .gallery, .travel-tips, .featured-itineraries');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => observer.observe(section));
+    </script>
+</body>
+</html>

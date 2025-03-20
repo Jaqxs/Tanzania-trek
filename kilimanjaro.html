@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kilimanjaro Climbing Adventures | Tanzania Trek</title>
+    <meta name="description" content="Conquer Mount Kilimanjaro with Tanzania Trek—custom climbing adventures to Africa’s highest peak. Summit Uhuru Peak and embrace the challenge today!">
+    <meta name="keywords" content="Kilimanjaro climbing, Mount Kilimanjaro tours, Uhuru Peak, Tanzania Trek, adventure travel">
+    <link rel="preload" href="images/kilimanjaro-hero.jpg" as="image">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "Tanzania Trek",
+        "description": "Custom Kilimanjaro climbing adventures—summit Africa’s highest peak.",
+        "url": "https://www.tanzaniatrek.com/kilimanjaro.html",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Plot 45, Mbezi Beach",
+            "addressLocality": "Dar es Salaam",
+            "addressCountry": "TZ"
+        },
+        "telephone": "+255623474720",
+        "email": "info@tanzaniatrek.com"
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #f7f1e3;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('images/background3.jpg') center/cover no-repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        nav {
+            background: rgba(241, 90, 36, 0.95);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        }
+        .logo { font-family: 'Montserrat', sans-serif; font-weight: 700; color: #fff; font-size: 1.5rem; text-transform: uppercase; }
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links a { color: #fff; font-weight: 600; text-decoration: none; padding: 0.6rem 1rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: #f1c40f; }
+        .hamburger { display: none; font-size: 2rem; background: none; border: none; color: #fff; cursor: pointer; }
+
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            background: url('images/mlima.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(241, 90, 36, 0.7));
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease;
+        }
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            color: #e67e22;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1.5rem;
+        }
+        .hero-content p {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        .content {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        .overview, .highlights, .wildlife, .gallery, .travel-tips, .featured-itineraries {
+            background: #fff;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 4rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        .overview.visible, .highlights.visible, .wildlife.visible, .gallery.visible, .travel-tips.visible, .featured-itineraries.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #e67e22;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 5px;
+            background: #f1c40f;
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .overview p, .highlights p, .wildlife p, .travel-tips p { font-size: 1.2rem; color: #555; max-width: 900px; margin: 0 auto; line-height: 1.8; }
+        .highlights-grid, .wildlife-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        .highlight-card, .wildlife-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .highlight-card:hover, .wildlife-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 10px 25px rgba(241, 90, 36, 0.3);
+        }
+        .highlight-card h3, .wildlife-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #f1c40f;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .highlight-card p, .wildlife-card p { font-size: 1rem; color: #666; }
+        .wildlife-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: transform 0.4s ease;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item::after {
+            content: attr(data-caption);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 0.9rem;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover::after { opacity: 1; }
+        .travel-tips ul {
+            list-style: none;
+            text-align: left;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+        .travel-tips li {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+        .travel-tips li::before {
+            content: '➔';
+            color: #e67e22;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            padding: 1rem 0;
+        }
+        .featured-card {
+            position: relative;
+            min-height: 350px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .featured-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(241, 90, 36, 0.5);
+        }
+        .featured-card:nth-child(1) { background-image: url('images/mlima.jpg'); }
+        .featured-card:nth-child(2) { background-image: url('images/route.jpg'); }
+        .featured-card:nth-child(3) { background-image: url('images/route2.jpg'); }
+        .featured-card .content-wrapper {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+            color: #fff;
+            transition: background 0.4s ease;
+        }
+        .featured-card:hover .content-wrapper {
+            background: linear-gradient(to top, rgba(241, 90, 36, 0.9), rgba(241, 90, 36, 0));
+        }
+        .featured-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .featured-card p { font-size: 1.1rem; margin-bottom: 1.5rem; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); }
+        .featured-card a {
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            color: #2c3e50;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .featured-card a:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(241, 196, 15, 0.8); }
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            color: #2c3e50;
+            padding: 1.2rem 2.5rem;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            margin-top: 2.5rem;
+        }
+        .cta-btn:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(241, 196, 15, 0.8); }
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero { min-height: 70vh; }
+            .highlights-grid, .wildlife-grid, .gallery-grid, .featured-grid { grid-template-columns: 1fr; }
+            .gallery-item img { height: 200px; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="index.html" style="color: #fff; text-decoration: none;">Tanzania Trek</a></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="tours.html">Tours</a>
+            <a href="itinerary.html">Itineraries</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <button class="hamburger">☰</button>
+    </nav>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Kilimanjaro Climbing Adventures</h1>
+            <p>Reach the Roof of Africa</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="overview">
+            <h2>Discover Kilimanjaro</h2>
+            <p>Mount Kilimanjaro, Africa’s highest peak at 5,895 meters, is a beacon for adventurers worldwide. This dormant volcano, crowned with snow despite its equatorial location, offers a climb through five distinct ecological zones—from lush rainforests to alpine deserts and the icy summit of Uhuru Peak. With Tanzania Trek, your custom Kilimanjaro adventure blends challenge, breathtaking views, and cultural encounters with the Chagga people.</p>
+        </div>
+        <div class="highlights">
+            <h2>Kilimanjaro Highlights</h2>
+            <p>Prepare to conquer the mountain and uncover its wonders—here’s what makes Kilimanjaro unforgettable.</p>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <h3>Uhuru Peak Summit</h3>
+                    <p>Stand atop Africa’s highest point, surrounded by glaciers and panoramic vistas—an achievement of a lifetime.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Five Climate Zones</h3>
+                    <p>Journey through rainforest, moorland, alpine desert, and arctic summit—all in one epic climb.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Stargazing at Altitude</h3>
+                    <p>Camp under a sky ablaze with stars, a celestial reward after a day’s ascent.</p>
+                </div>
+            </div>
+        </div>
+        <div class="wildlife">
+            <h2>Wildlife & Flora of Kilimanjaro</h2>
+            <p>Kilimanjaro’s slopes teem with unique biodiversity—here’s a taste of what you’ll encounter.</p>
+            <div class="wildlife-grid">
+                <div class="wildlife-card">
+                    <img src="images/nyaniii.jpg" alt="Colobus Monkey on Kilimanjaro">
+                    <h3>Colobus Monkeys</h3>
+                    <p>Spot these striking black-and-white primates swinging through the rainforest canopy.</p>
+                </div>
+                <div class="wildlife-card">
+                    <img src="images/giant-groundsel.jpg" alt="Giant Groundsel on Kilimanjaro">
+                    <h3>Giant Groundsel</h3>
+                    <p>Marvel at these prehistoric-looking plants thriving in the high-altitude moorlands.</p>
+                </div>
+                <div class="wildlife-card">
+                    <img src="images/bluemonkey.jpg" alt="Blue Monkey on Kilimanjaro">
+                    <h3>Blue Monkeys</h3>
+                    <p>Watch these agile creatures dart through the trees in the lower forest zones.</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery">
+            <h2>Kilimanjaro in Pictures</h2>
+            <p>Capture the majesty of Kilimanjaro through these stunning visuals.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-caption="Uhuru Peak Sunrise">
+                    <img src="images/kili-summit.jpg" alt="Uhuru Peak Sunrise">
+                </div>
+                <div class="gallery-item" data-caption="Rainforest Trail">
+                    <img src="images/Arusha forest.jpg" alt="Rainforest Trail">
+                </div>
+                <div class="gallery-item" data-caption="Stella Point">
+                    <img src="images/route.jpg" alt="Stella Point">
+                </div>
+                <div class="gallery-item" data-caption="Moorland Views">
+                    <img src="images/route2.jpg" alt="Moorland Views">
+                </div>
+            </div>
+        </div>
+        <div class="travel-tips">
+            <h2>Travel Tips for Kilimanjaro</h2>
+            <p>Prepare for your climb with these expert tips from Tanzania Trek.</p>
+            <ul>
+                <li><strong>Best Time to Climb:</strong> January to March or June to October for dry weather and clear views.</li>
+                <li><strong>Training:</strong> Build stamina with hiking and cardio—Kilimanjaro demands physical readiness.</li>
+                <li><strong>Gear Essentials:</strong> Layered clothing, trekking poles, and a sturdy backpack are must-haves.</li>
+                <li><strong>Altitude Awareness:</strong> Acclimatize properly—our guides prioritize your safety.</li>
+            </ul>
+        </div>
+        <div class="featured-itineraries">
+            <h2>Featured Kilimanjaro Itineraries</h2>
+            <p>Choose your path to the summit with these expertly crafted adventures.</p>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div class="content-wrapper">
+                        <h3>Machame Route</h3>
+                        <p>7-day trek dubbed the “Whiskey Route”—scenic, challenging, and rewarding.</p>
+                        <a href="machame-route.html">View Details</a>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="content-wrapper">
+                        <h3>Marangu Route</h3>
+                        <p>6-day climb with hut accommodations—the “Coca-Cola Route” for a gentler ascent.</p>
+                        <a href="marangu-route.html">View Details</a>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="content-wrapper">
+                        <h3>Lemosho Route</h3>
+                        <p>8-day journey with stunning vistas and higher success rates—perfect for adventurers.</p>
+                        <a href="lemosho-route.html">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <a href="itinerary.html" class="cta-btn">Explore All Itineraries</a>
+        </div>
+    </div>
+    <script>
+        const sections = document.querySelectorAll('.overview, .highlights, .wildlife, .gallery, .travel-tips, .featured-itineraries');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => observer.observe(section));
+    </script>
+</body>
+</html>

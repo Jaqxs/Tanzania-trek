@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arusha National Park Tours | Tanzania Trek</title>
+    <meta name="description" content="Explore Arusha National Park with Tanzania Trek—custom tours featuring Mount Meru, wildlife, and scenic lakes. Book your adventure today!">
+    <meta name="keywords" content="Arusha National Park tours, Mount Meru, giraffes, Tanzania Trek, safari adventures">
+    <link rel="preload" href="images/arusha-hero.jpg" as="image">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "Tanzania Trek",
+        "description": "Custom Arusha National Park tours—Mount Meru and wildlife wonders.",
+        "url": "https://www.tanzaniatrek.com/arusha.html",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Plot 45, Mbezi Beach",
+            "addressLocality": "Dar es Salaam",
+            "addressCountry": "TZ"
+        },
+        "telephone": "+255623474720",
+        "email": "info@tanzaniatrek.com"
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #f7f1e3;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('images/background3.jpg') center/cover no-repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        nav {
+            background: rgba(241, 90, 36, 0.95);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        }
+        .logo { font-family: 'Montserrat', sans-serif; font-weight: 700; color: #fff; font-size: 1.5rem; text-transform: uppercase; }
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links a { color: #fff; font-weight: 600; text-decoration: none; padding: 0.6rem 1rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: #f1c40f; }
+        .hamburger { display: none; font-size: 2rem; background: none; border: none; color: #fff; cursor: pointer; }
+
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            background: url('images/swala.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(241, 90, 36, 0.7));
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease;
+        }
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            color: #e67e22;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1.5rem;
+        }
+        .hero-content p {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        .content {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        .overview, .highlights, .wildlife, .gallery, .travel-tips, .featured-itineraries {
+            background: #fff;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 4rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        .overview.visible, .highlights.visible, .wildlife.visible, .gallery.visible, .travel-tips.visible, .featured-itineraries.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #e67e22;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 5px;
+            background: #f1c40f;
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .overview p, .highlights p, .wildlife p, .travel-tips p { font-size: 1.2rem; color: #555; max-width: 900px; margin: 0 auto; line-height: 1.8; }
+        .highlights-grid, .wildlife-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        .highlight-card, .wildlife-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .highlight-card:hover, .wildlife-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 10px 25px rgba(241, 90, 36, 0.3);
+        }
+        .highlight-card h3, .wildlife-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #f1c40f;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .highlight-card p, .wildlife-card p { font-size: 1rem; color: #666; }
+        .wildlife-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: transform 0.4s ease;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item::after {
+            content: attr(data-caption);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 0.9rem;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover::after { opacity: 1; }
+        .travel-tips ul {
+            list-style: none;
+            text-align: left;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+        .travel-tips li {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+        .travel-tips li::before {
+            content: '➔';
+            color: #e67e22;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            padding: 1rem 0;
+        }
+        .featured-card {
+            position: relative;
+            min-height: 350px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .featured-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(241, 90, 36, 0.5);
+        }
+        .featured-card:nth-child(1) { background-image: url('images/arusha-meru.jpg'); }
+        .featured-card:nth-child(2) { background-image: url('images/arusha-giraffes.jpg'); }
+        .featured-card:nth-child(3) { background-image: url('images/arusha-lakes.jpg'); }
+        .featured-card .content-wrapper {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+            color: #fff;
+            transition: background 0.4s ease;
+        }
+        .featured-card:hover .content-wrapper {
+            background: linear-gradient(to top, rgba(241, 90, 36, 0.9), rgba(241, 90, 36, 0));
+        }
+        .featured-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .featured-card p { font-size: 1.1rem; margin-bottom: 1.5rem; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); }
+        .featured-card a {
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            color: #2c3e50;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .featured-card a:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(241, 196, 15, 0.8); }
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            color: #2c3e50;
+            padding: 1.2rem 2.5rem;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            margin-top: 2.5rem;
+        }
+        .cta-btn:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(241, 196, 15, 0.8); }
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero { min-height: 70vh; }
+            .highlights-grid, .wildlife-grid, .gallery-grid, .featured-grid { grid-template-columns: 1fr; }
+            .gallery-item img { height: 200px; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="index.html" style="color: #fff; text-decoration: none;">Tanzania Trek</a></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="tours.html">Tours</a>
+            <a href="itinerary.html">Itineraries</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <button class="hamburger">☰</button>
+    </nav>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Arusha National Park Tours</h1>
+            <p>A Tapestry of Mountains and Wildlife</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="overview">
+            <h2>Discover Arusha National Park</h2>
+            <p>Arusha National Park, a 137-square-kilometer sanctuary near Arusha city, is a mosaic of lush forests, rolling hills, and shimmering lakes, all dwarfed by the majestic Mount Meru. Often overshadowed by its famous neighbors, this park offers intimate wildlife encounters and stunning scenery. With Tanzania Trek, your custom tour explores this hidden gem, from giraffe-filled plains to the serene Momella Lakes.</p>
+        </div>
+        <div class="highlights">
+            <h2>Arusha Highlights</h2>
+            <p>Uncover the park’s diverse charms—here’s what awaits you.</p>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <h3>Mount Meru</h3>
+                    <p>Admire Tanzania’s second-highest peak, a stunning backdrop and climber’s challenge.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Momella Lakes</h3>
+                    <p>Marvel at these alkaline lakes, home to flamingos and framed by rolling hills.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Giraffe Spotting</h3>
+                    <p>Watch these gentle giants roam the grasslands—an Arusha specialty.</p>
+                </div>
+            </div>
+        </div>
+        <div class="wildlife">
+            <h2>Wildlife of Arusha</h2>
+            <p>Arusha’s varied habitats host a rich array of creatures—meet its stars.</p>
+            <div class="wildlife-grid">
+                <div class="wildlife-card">
+                    <img src="images/giraffes.jpg" alt="Giraffe in Arusha">
+                    <h3>Giraffes</h3>
+                    <p>See these towering beauties stride gracefully across the open plains.</p>
+                </div>
+                <div class="wildlife-card">
+                    <img src="images/blue monkey.jpg" alt="Colobus Monkey in Arusha">
+                    <h3>Colobus Monkeys</h3>
+                    <p>Spot these striking black-and-white primates in the forest canopy.</p>
+                </div>
+                <div class="wildlife-card">
+                    <img src="images/lake-tagalala.jpg" alt="Flamingo in Arusha">
+                    <h3>Flamingos</h3>
+                    <p>Admire flocks of flamingos wading in the Momella Lakes’ shallow waters.</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery">
+            <h2>Arusha in Pictures</h2>
+            <p>Capture the park’s serene beauty through these vivid images.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-caption="Mount Meru Vista">
+                    <img src="images/mlima.jpg" alt="Mount Meru Vista">
+                </div>
+                <div class="gallery-item" data-caption="Momella Lakes">
+                    <img src="images/lake.jpg" alt="Momella Lakes">
+                </div>
+                <div class="gallery-item" data-caption="Giraffe Plains">
+                    <img src="images/two giraffe.jpg" alt="Giraffe Plains">
+                </div>
+                <div class="gallery-item" data-caption="Forest Trail">
+                    <img src="images/forest.jpg" alt="Forest Trail">
+                </div>
+            </div>
+        </div>
+        <div class="travel-tips">
+            <h2>Travel Tips for Arusha</h2>
+            <p>Make the most of your Arusha adventure with these tips from Tanzania Trek.</p>
+            <ul>
+                <li><strong>Best Time to Visit:</strong> June to October for dry weather and clear Meru views.</li>
+                <li><strong>What to Pack:</strong> Binoculars, layered clothing, and sturdy shoes for walking safaris.</li>
+                <li><strong>Explore on Foot:</strong> Take a guided walking safari for a closer connection to nature.</li>
+                <li><strong>Day Trip Friendly:</strong> Arusha’s proximity to the city makes it perfect for short visits.</li>
+            </ul>
+        </div>
+        <div class="featured-itineraries">
+            <h2>Featured Arusha Itineraries</h2>
+            <p>Journey through Arusha’s landscapes with these tailored experiences.</p>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div class="content-wrapper">
+                        <h3>Arusha & Manyara</h3>
+                        <p>4-day tour pairing Arusha’s scenery with Manyara’s tree-climbing lions.</p>
+                        <a href="arusha-manyara.html">View Details</a>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="content-wrapper">
+                        <h3>Mount Meru Trek</h3>
+                        <p>5-day climb of Meru with park exploration—a hiker’s delight.</p>
+                        <a href="mount-meru-trek.html">View Details</a>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="content-wrapper">
+                        <h3>Arusha Day Safari</h3>
+                        <p>1-day escape into the park’s wildlife and lakes—short but sweet.</p>
+                        <a href="arusha-day-safari.html">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <a href="itinerary.html" class="cta-btn">Explore All Itineraries</a>
+        </div>
+    </div>
+    <script>
+        const sections = document.querySelectorAll('.overview, .highlights, .wildlife, .gallery, .travel-tips, .featured-itineraries');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => observer.observe(section));
+    </script>
+</body>
+</html>

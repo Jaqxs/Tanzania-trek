@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarangire Safari Tours | Tanzania Trek</title>
+    <meta name="description" content="Discover Tarangire National Park with Tanzania Trek—custom safaris featuring elephant herds, baobab landscapes, and untamed beauty. Book your adventure today!">
+    <meta name="keywords" content="Tarangire safaris, elephant herds, baobab trees, Tanzania Trek, wildlife tours">
+    <link rel="preload" href="images/tarangire-hero.jpg" as="image">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "Tanzania Trek",
+        "description": "Custom Tarangire safaris—elephants, baobabs, and wild serenity.",
+        "url": "https://www.tanzaniatrek.com/tarangire.html",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Plot 45, Mbezi Beach",
+            "addressLocality": "Dar es Salaam",
+            "addressCountry": "TZ"
+        },
+        "telephone": "+255623474720",
+        "email": "info@tanzaniatrek.com"
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #f7f1e3;
+            color: #2c3e50;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('images/background2.jpg') center/cover no-repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        nav {
+            background: rgba(241, 90, 36, 0.95);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+        }
+        .logo { font-family: 'Montserrat', sans-serif; font-weight: 700; color: #fff; font-size: 1.5rem; text-transform: uppercase; }
+        .nav-links { display: flex; gap: 1.5rem; }
+        .nav-links a { color: #fff; font-weight: 600; text-decoration: none; padding: 0.6rem 1rem; transition: all 0.3s ease; }
+        .nav-links a:hover { color: #f1c40f; }
+        .hamburger { display: none; font-size: 2rem; background: none; border: none; color: #fff; cursor: pointer; }
+
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            background: url('images/antelopes.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(241, 90, 36, 0.7));
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease;
+        }
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            color: #e67e22;
+            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1.5rem;
+        }
+        .hero-content p {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        .content {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        .overview, .highlights, .wildlife, .gallery, .travel-tips, .featured-itineraries {
+            background: #fff;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 4rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        .overview.visible, .highlights.visible, .wildlife.visible, .gallery.visible, .travel-tips.visible, .featured-itineraries.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #e67e22;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 5px;
+            background: #f1c40f;
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .overview p, .highlights p, .wildlife p, .travel-tips p { font-size: 1.2rem; color: #555; max-width: 900px; margin: 0 auto; line-height: 1.8; }
+        .highlights-grid, .wildlife-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+        .highlight-card, .wildlife-card {
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .highlight-card:hover, .wildlife-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 10px 25px rgba(241, 90, 36, 0.3);
+        }
+        .highlight-card h3, .wildlife-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #f1c40f;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .highlight-card p, .wildlife-card p { font-size: 1rem; color: #666; }
+        .wildlife-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: transform 0.4s ease;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-item::after {
+            content: attr(data-caption);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            font-size: 0.9rem;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover::after { opacity: 1; }
+        .travel-tips ul {
+            list-style: none;
+            text-align: left;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+        .travel-tips li {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+        .travel-tips li::before {
+            content: '➔';
+            color: #e67e22;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            padding: 1rem 0;
+        }
+        .featured-card {
+            position: relative;
+            min-height: 350px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .featured-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(241, 90, 36, 0.5);
+        }
+        .featured-card:nth-child(1) { background-image: url('images/elephants.jpg'); }
+        .featured-card:nth-child(2) { background-image: url('images/baobab.jpg'); }
+        .featured-card:nth-child(3) { background-image: url('images/suunset.jpg'); }
+        .featured-card .content-wrapper {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+            color: #fff;
+            transition: background 0.4s ease;
+        }
+        .featured-card:hover .content-wrapper {
+            background: linear-gradient(to top, rgba(241, 90, 36, 0.9), rgba(241, 90, 36, 0));
+        }
+        .featured-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .featured-card p { font-size: 1.1rem; margin-bottom: 1.5rem; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); }
+        .featured-card a {
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            color: #2c3e50;
+            padding: 0.9rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .featured-card a:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(241, 196, 15, 0.8); }
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            color: #2c3e50;
+            padding: 1.2rem 2.5rem;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            margin-top: 2.5rem;
+        }
+        .cta-btn:hover { transform: scale(1.1); box-shadow: 0 0 20px rgba(241, 196, 15, 0.8); }
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .hero { min-height: 70vh; }
+            .highlights-grid, .wildlife-grid, .gallery-grid, .featured-grid { grid-template-columns: 1fr; }
+            .gallery-item img { height: 200px; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="index.html" style="color: #fff; text-decoration: none;">Tanzania Trek</a></div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="tours.html">Tours</a>
+            <a href="itinerary.html">Itineraries</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <button class="hamburger">☰</button>
+    </nav>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Tarangire Safari Tours</h1>
+            <p>Where Elephants Roam and Baobabs Stand Tall</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="overview">
+            <h2>Discover Tarangire</h2>
+            <p>Tarangire National Park, spanning 2,850 square kilometers, is a hidden gem in Tanzania’s northern circuit. Famous for its massive elephant herds, ancient baobab trees, and the life-giving Tarangire River, this park offers a quieter, yet equally thrilling safari experience. With Tanzania Trek, your custom journey reveals Tarangire’s untamed landscapes and abundant wildlife, from lions in the treetops to birds in the sky.</p>
+        </div>
+        <div class="highlights">
+            <h2>Tarangire Highlights</h2>
+            <p>Immerse yourself in Tarangire’s unique charm—here’s what awaits.</p>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <h3>Elephant Paradise</h3>
+                    <p>Witness hundreds of elephants roaming freely—Tarangire is their kingdom.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Baobab Landscapes</h3>
+                    <p>Marvel at the iconic “upside-down trees” dotting the savannah—a photographer’s delight.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Tree-Climbing Lions</h3>
+                    <p>Spot these rare felines lounging in acacias—a quirky Tarangire specialty.</p>
+                </div>
+            </div>
+        </div>
+        <div class="wildlife">
+            <h2>Wildlife of Tarangire</h2>
+            <p>Tarangire teems with diversity—over 500 bird species and countless mammals thrive here.</p>
+            <div class="wildlife-grid">
+                <div class="wildlife-card">
+                    <img src="images/elephant sunset.jpg" alt="Elephant in Tarangire">
+                    <h3>Elephants</h3>
+                    <p>See majestic herds bathing in the river or dusting themselves with red soil.</p>
+                </div>
+                <div class="wildlife-card">
+                    <img src="images/giraffes.jpg" alt="Giraffe in Tarangire">
+                    <h3>Giraffes</h3>
+                    <p>Watch these graceful giants stretch for acacia leaves against baobab backdrops.</p>
+                </div>
+                <div class="wildlife-card">
+                    <img src="images/bird.jpg" alt="Ostrich in Tarangire">
+                    <h3>Ostriches</h3>
+                    <p>Catch these speedy birds strutting across the plains—a striking sight.</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery">
+            <h2>Tarangire in Pictures</h2>
+            <p>Feast your eyes on Tarangire’s rugged beauty and wildlife wonders.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-caption="Elephant Herd">
+                    <img src="images/elephantss.jpg" alt="Elephant Herd">
+                </div>
+                <div class="gallery-item" data-caption="Baobab Sunset">
+                    <img src="images/tall tree.jpg" alt="Baobab Sunset">
+                </div>
+                <div class="gallery-item" data-caption="Tarangire River">
+                    <img src="images/rhino.jpg" alt="Tarangire River">
+                </div>
+                <div class="gallery-item" data-caption="Savannah Plains">
+                    <img src="images/pori.jpg" alt="Savannah Plains">
+                </div>
+            </div>
+        </div>
+        <div class="travel-tips">
+            <h2>Travel Tips for Tarangire</h2>
+            <p>Maximize your Tarangire safari with these insider tips from Tanzania Trek.</p>
+            <ul>
+                <li><strong>Best Time to Visit:</strong> June to October for the dry season, when animals gather at the river.</li>
+                <li><strong>What to Pack:</strong> Binoculars, sunscreen, and a hat—perfect for open savannah exploration.</li>
+                <li><strong>Safari Timing:</strong> Early mornings or late afternoons for cooler weather and active wildlife.</li>
+                <li><strong>Stay Alert:</strong> Elephants can be close—follow your guide’s advice for safety.</li>
+            </ul>
+        </div>
+        <div class="featured-itineraries">
+            <h2>Featured Tarangire Itineraries</h2>
+            <p>Journey into Tarangire’s wild heart with these tailored safari experiences.</p>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div class="content-wrapper">
+                        <h3>Tarangire & Ngorongoro</h3>
+                        <p>5-day safari combining Tarangire’s elephants with Ngorongoro’s crater wonders.</p>
+                        <a href="tarangire-ngorongoro.html">View Details</a>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="content-wrapper">
+                        <h3>Classic Northern Circuit</h3>
+                        <p>7-day adventure through Tarangire, Serengeti, and Ngorongoro—wildlife galore.</p>
+                        <a href="classic-northern-circuit.html">View Details</a>
+                    </div>
+                </div>
+                <div class="featured-card">
+                    <div class="content-wrapper">
+                        <h3>Tarangire Explorer</h3>
+                        <p>4-day deep dive into Tarangire’s landscapes and wildlife—a compact escape.</p>
+                        <a href="tarangire-explorer.html">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <a href="itinerary.html" class="cta-btn">Explore All Itineraries</a>
+        </div>
+    </div>
+    <script>
+        const sections = document.querySelectorAll('.overview, .highlights, .wildlife, .gallery, .travel-tips, .featured-itineraries');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => observer.observe(section));
+    </script>
+</body>
+</html>
