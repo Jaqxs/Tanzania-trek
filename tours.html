@@ -108,12 +108,13 @@
         }
         .hamburger {
             display: none;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             background: none;
             border: none;
             color: #fff;
             cursor: pointer;
             z-index: 1001;
+            padding: 0.5rem;
         }
         .hamburger:focus {
             outline: 2px solid #f1c40f;
@@ -138,22 +139,42 @@
             color: #2c3e50;
             outline: none;
         }
+        .nav-search-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
         .nav-search {
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 2rem 0.5rem 1rem;
             border-radius: 20px;
             border: none;
             font-size: 1rem;
             background: rgba(255, 255, 255, 0.2);
             color: #fff;
             width: 150px;
-            transition: width 0.3s ease;
+            transition: width 0.3s ease, background 0.3s ease;
         }
         .nav-search:focus {
             width: 200px;
+            background: rgba(255, 255, 255, 0.3);
             outline: none;
         }
         .nav-search::placeholder {
             color: #ddd;
+        }
+        .nav-search-clear {
+            position: absolute;
+            right: 0.5rem;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            display: none;
+            padding: 0;
+        }
+        .nav-search-clear.visible {
+            display: block;
         }
         .nav-overlay {
             display: none;
@@ -399,7 +420,7 @@
         .tour-card .price-btn {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: Vecchio center;
             gap: 10px;
             padding-top: 10px;
         }
@@ -684,15 +705,6 @@
             background: linear-gradient(135deg, #e67e22, #f1c40f);
             outline: none;
         }
-        @keyframes bounceIn {
-            0% { transform: scale(0.8); opacity: 0; }
-            60% { transform: scale(1.05); opacity: 1; }
-            100% { transform: scale(1); }
-        }
-        .experience-card {
-            animation: bounceIn 0.6s ease-out forwards;
-            animation-delay: calc(var(--order) * 0.1s);
-        }
 
         /* Testimonials */
         .testimonials {
@@ -746,7 +758,7 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(241, 90, 36, 0.5);
             overflow-y: auto;
-            max-height: 85vh;
+            max-height: 90vh;
         }
         .modal-content::before {
             content: '';
@@ -828,6 +840,7 @@
             font-family: 'Poppins', sans-serif;
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
             box-sizing: border-box;
+            -webkit-appearance: none;
         }
         .form-field input:focus, .form-field textarea:focus {
             border-color: #f1c40f;
@@ -847,7 +860,7 @@
             font-family: 'Montserrat', sans-serif;
             padding: 0.75rem 2rem;
             border-radius: 25px;
-            background: linear-gradient(135deg, #f1c40f, #e67e22);
+            background: linear-gradient(135deg, #25D366, #128C7E);
             color: #fff;
             border: none;
             font-weight: 700;
@@ -855,17 +868,25 @@
             text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(241, 196, 15, 0.5);
+            box-shadow: 0 2px 8px rgba(37, 211, 102, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            width: 100%;
+            justify-content: center;
         }
         .adventure-btn:hover, .adventure-btn:focus {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(241, 90, 36, 0.7);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.7);
             outline: none;
         }
         .adventure-btn:disabled {
             background: #ccc;
             cursor: not-allowed;
             box-shadow: none;
+        }
+        .adventure-btn i {
+            font-size: 1.2rem;
         }
 
         /* Footer */
@@ -878,7 +899,7 @@
             z-index: 1;
         }
         .footer-content {
-            display: flex;
+            display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2.5rem;
             max-width: 1400px;
@@ -993,40 +1014,81 @@
             .nav-links {
                 position: fixed;
                 top: 0;
-                right: -250px;
-                width: 250px;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
                 height: 100vh;
-                background: rgba(241, 90, 36, 0.95);
+                background: rgba(241, 90, 36, 0.98);
                 flex-direction: column;
                 align-items: flex-start;
                 padding: 4rem 1.5rem;
                 z-index: 1000;
                 transition: right 0.4s ease-in-out;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
             }
             .nav-links.active {
                 right: 0;
             }
             .nav-links a {
-                font-size: 1rem;
+                font-size: 1.2rem;
                 width: 100%;
-                padding: 0.75rem;
+                padding: 1rem;
+                border-radius: 10px;
+                margin-bottom: 0.5rem;
+            }
+            .nav-search-container {
+                width: 100%;
             }
             .nav-search {
                 width: 100%;
-                margin-top: 0.75rem;
+                margin-top: 1rem;
+                font-size: 1rem;
+                padding: 0.75rem 2.5rem 0.75rem 1rem;
+            }
+            .nav-search:focus {
+                width: 100%;
             }
             body.nav-open {
                 overflow: hidden;
-            }
-            .filter-bar {
-                flex-direction: column;
-                gap: 10px;
             }
             .tours-grid {
                 grid-template-columns: 1fr;
             }
             .tour-card {
                 min-height: 400px;
+            }
+            .hero-text h2 {
+                font-size: 1.75rem;
+            }
+            .hero-text p {
+                font-size: 0.9rem;
+            }
+            .modal-content {
+                width: 95%;
+                padding: 10px;
+                max-height: 85vh;
+            }
+            .modal-content h2 {
+                font-size: 1.5rem;
+            }
+            .adventure-form {
+                padding: 0.75rem;
+                gap: 0.75rem;
+            }
+            .form-field input, .form-field textarea {
+                padding: 0.75rem;
+                font-size: 1rem;
+            }
+            .close {
+                top: 5px;
+                right: 5px;
+                width: 35px;
+                height: 35px;
+                font-size: 1.75rem;
+            }
+            .adventure-btn {
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
             }
         }
         @media (max-width: 480px) {
@@ -1053,34 +1115,35 @@
                 bottom: 80px;
                 font-size: 0.8rem;
             }
+            .nav-search {
+                font-size: 0.9rem;
+            }
             .modal-content {
-                width: 95%;
-                max-width: 400px;
-                margin: 10px auto;
-                padding: 10px;
-                max-height: 90vh;
+                width: 98%;
+                margin: 5px auto;
+                padding: 8px;
             }
             .modal-content h2 {
-                font-size: 1.5rem;
+                font-size: 1.25rem;
             }
             .adventure-form {
-                padding: 0.75rem;
-                gap: 0.75rem;
+                gap: 0.5rem;
+            }
+            .form-field label {
+                font-size: 0.85rem;
             }
             .form-field input, .form-field textarea {
-                padding: 0.5rem;
+                padding: 0.6rem;
+                font-size: 0.9rem;
+            }
+            .adventure-btn {
+                padding: 0.6rem 1rem;
                 font-size: 0.9rem;
             }
             .close {
-                top: 5px;
-                right: 5px;
-                width: 25px;
-                height: 25px;
-                font-size: 1.25rem;
-            }
-            .adventure-btn {
-                padding: 0.5rem 1.5rem;
-                font-size: 0.9rem;
+                width: 30px;
+                height: 30px;
+                font-size: 1.5rem;
             }
             .experience-card {
                 height: 300px;
@@ -1094,6 +1157,12 @@
             .exp-details-btn, .exp-back-content p {
                 font-size: 0.75rem;
             }
+            .intro-text h2, .destinations-header h2, .testimonials h2, .whats-next h2, .experience-header h2 {
+                font-size: 1.5rem;
+            }
+            .footer-section h3 {
+                font-size: 1.4rem;
+            }
         }
     </style>
 </head>
@@ -1106,7 +1175,10 @@
             <div class="nav-item"><a href="itinerary.html">Itineraries</a></div>
             <div class="nav-item"><a href="about.html">About</a></div>
             <div class="nav-item"><a href="contact.html">Contact</a></div>
-            <input type="text" class="nav-search" placeholder="Find your tour" aria-label="Search tours">
+            <div class="nav-search-container">
+                <input type="text" class="nav-search" id="navSearch" placeholder="Find your tour" aria-label="Search tours">
+                <button class="nav-search-clear" id="clearSearch" aria-label="Clear search">×</button>
+            </div>
         </div>
         <button class="hamburger" aria-label="Toggle navigation" aria-controls="navLinks" aria-expanded="false">
             <span class="hamburger-icon">☰</span>
@@ -1555,108 +1627,108 @@
                     <div class="experience-card-front" style="background-image: url('images/photography.jpg');">
                         <div class="experience-info">
                             <h3>Photography Tour</h3>
-                            <p class="exp-tagline">Capture the Wild</p>
-                            <button class="exp-details-btn">Discover More</button>
+                            <p class="exp-tagline">Capture the Wild
+                                <p class="exp-tagline">Capture the Wild</p>
+                                <button class="exp-details-btn">Discover More</button>
+                            </div>
+                        </div>
+                        <div class="experience-card-back">
+                            <div class="exp-back-content">
+                                <h3>Photography Tour</h3>
+                                <p>Guided shoots for stunning wildlife pics.</p>
+                                <a href="#photography-details" class="exp-book-btn" onclick="openModal('Photography Tour')">Book Now</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="experience-card-back">
-                        <div class="exp-back-content">
-                            <h3>Photography Tour</h3>
-                            <p>Perfect shots with expert guides.</p>
-                            <a href="#photography-details" class="exp-book-btn" onclick="openModal('Photography Tour')">Book Now</a>
+                </div>
+                <div class="experience-card" data-experience="adventure">
+                    <div class="experience-card-inner">
+                        <div class="experience-card-front" style="background-image: url('images/balon safari.jpg');">
+                            <div class="experience-info">
+                                <h3>Adrenaline Rush</h3>
+                                <p class="exp-tagline">Thrills in the Wild</p>
+                                <button class="exp-details-btn">Discover More</button>
+                            </div>
+                        </div>
+                        <div class="experience-card-back">
+                            <div class="exp-back-content">
+                                <h3>Adrenaline Rush</h3>
+                                <p>Hot air balloon rides and rugged treks.</p>
+                                <a href="#adventure-details" class="exp-book-btn" onclick="openModal('Adrenaline Rush')">Book Now</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="experience-card" data-experience="adventure">
-                <div class="experience-card-inner">
-                    <div class="experience-card-front" style="background-image: url('images/adventure.jpg');">
-                        <div class="experience-info">
-                            <h3>Adrenaline Rush</h3>
-                            <p class="exp-tagline">Thrills in the Wild</p>
-                            <button class="exp-details-btn">Discover More</button>
-                        </div>
-                    </div>
-                    <div class="experience-card-back">
-                        <div class="exp-back-content">
-                            <h3>Adrenaline Rush</h3>
-                            <p>Hiking, biking, and more.</p>
-                            <a href="#adventure-details" class="exp-book-btn" onclick="openModal('Adrenaline Rush')">Book Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="testimonials">
-            <h2>What Adventurers Say About Our Tanzania Tours</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p>"The *Serengeti safari tour* was unreal—our Maasai guide knew every trail. Best trip ever!"</p>
-                    <p class="author">— Sarah K., USA</p>
-                </div>
-                <div class="testimonial-card">
-                    <p>"Kilimanjaro via Machame was tough but worth it—summit sunrise was pure magic."</p>
-                    <p class="author">— James R., UK</p>
-                </div>
-                <div class="testimonial-card">
-                    <p>"Zanzibar’s beaches were paradise after our safari—perfectly planned!"</p>
-                    <p class="author">— Priya M., India</p>
-                </div>
-                <div class="testimonial-card">
+    
+            <div class="testimonials">
+                <h2>What Travelers Say</h2>
+                <div class="testimonial-grid">
                     <div class="testimonial-card">
-                        <p>"Ngorongoro Crater blew us away—wildlife everywhere and stunning views!"</p>
-                        <p class="author">— Carlos V., Spain</p>
+                        <p>"The Serengeti Safari was a dream—saw the Big Five and slept under the stars!"</p>
+                        <p class="author">— Sarah M., USA</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Kilimanjaro Quest pushed me to my limits. Worth every step for that sunrise."</p>
+                        <p class="author">— James T., UK</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Zanzibar Escape was pure bliss—snorkeling and spices made it unforgettable."</p>
+                        <p class="author">— Priya R., India</p>
                     </div>
                 </div>
             </div>
     
             <div class="whats-next">
                 <h2>What’s Next for Your Tanzania Adventure?</h2>
-                <p>Ready to craft your *Tanzania safari tour* or *Kilimanjaro trek tour*? Contact us or dive into <a href="itinerary.html">our itineraries</a> to start planning.</p>
-                <button class="whats-next-cta" onclick="openModal('Custom Adventure')">Build Your Trip</button>
+                <p>Ready to chase migrations, conquer peaks, or relax on pristine beaches? <a href="itinerary.html">Explore itineraries</a> or hit the button below to start planning your custom *Tanzania safari tour* today!</p>
+                <a href="contact.html" class="whats-next-cta">Plan My Trip</a>
+            </div>
+    
+            <div id="bookingModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()" aria-label="Close modal">×</span>
+                    <h2 id="modalTitle">Book Your Adventure</h2>
+                    <form id="adventureForm" class="adventure-form" onsubmit="submitBooking(event)">
+                        <div class="form-field">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email">
+                        </div>
+                        <div class="form-field">
+                            <label for="tour">Selected Tour</label>
+                            <input type="text" id="tour" name="tour" readonly>
+                        </div>
+                        <div class="form-field">
+                            <label for="date">Preferred Start Date</label>
+                            <input type="date" id="date" name="date" required min="2025-03-21">
+                        </div>
+                        <div class="form-field">
+                            <label for="guests">Number of Guests</label>
+                            <input type="number" id="guests" name="guests" min="1" required placeholder="Enter number of guests">
+                        </div>
+                        <div class="form-field">
+                            <label for="message">Additional Requests</label>
+                            <textarea id="message" name="message" placeholder="Any special requests?"></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="adventure-btn">
+                                <i class="fab fa-whatsapp"></i> Book via WhatsApp
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     
-        <!-- Modal -->
-        <div id="adventureModal" class="modal">
-            <div class="modal-content">
-                <span class="close" aria-label="Close modal">×</span>
-                <h2 id="modalTitle">Book Your Adventure</h2>
-                <form class="adventure-form" action="/submit-adventure" method="POST">
-                    <div class="form-field">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
-                    </div>
-                    <div class="form-field">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true">
-                    </div>
-                    <div class="form-field">
-                        <label for="tour">Selected Tour</label>
-                        <input type="text" id="tour" name="tour" readonly>
-                    </div>
-                    <div class="form-field">
-                        <label for="date">Preferred Date</label>
-                        <input type="date" id="date" name="date" required aria-required="true">
-                    </div>
-                    <div class="form-field">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your adventure..." rows="4"></textarea>
-                    </div>
-                    <div class="form-actions">
-                        <button type="submit" class="adventure-btn">Submit Request</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    
-        <!-- Footer -->
         <footer>
             <div class="footer-content">
                 <div class="footer-section about">
                     <h3>About Tanzania Trek</h3>
-                    <p>Since 2020, we’ve crafted *custom Tanzania safari tours* blending adventure, culture, and sustainability. From Serengeti to Kilimanjaro, your journey starts here.</p>
+                    <p>Since 2020, we’ve crafted custom *Tanzania safari tours* blending adventure, culture, and sustainability. From Serengeti to Zanzibar, your journey starts here.</p>
                 </div>
                 <div class="footer-section links">
                     <h3>Quick Links</h3>
@@ -1664,33 +1736,33 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="tours.html">Tours</a></li>
                         <li><a href="itinerary.html">Itineraries</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section contact">
                     <h3>Contact Us</h3>
                     <p><i class="fas fa-map-marker-alt"></i> Plot 45, Mbezi Beach, Dar es Salaam, TZ</p>
-                    <p><i class="fas fa-phone"></i> +255 623 474 720</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+255623474720">+255 62 347 4720</a></p>
                     <p><i class="fas fa-envelope"></i> <a href="mailto:info@tanzaniatrek.com">info@tanzaniatrek.com</a></p>
                     <div class="social-icons">
                         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="footer-section newsletter">
                     <h3>Stay Updated</h3>
-                    <p>Get the latest *Tanzania safari tour* deals and tips.</p>
-                    <form action="/subscribe" method="POST">
-                        <input type="email" placeholder="Your Email" required aria-label="Email for newsletter">
+                    <p>Get the latest *Tanzania tour* deals and tips!</p>
+                    <form>
+                        <input type="email" placeholder="Your email" aria-label="Email for newsletter">
                         <button type="submit">Subscribe</button>
                     </form>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Tanzania Trek. All rights reserved.</p>
+                <p>© 2025 Tanzania Trek. All rights reserved.</p>
                 <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
             </div>
         </footer>
@@ -1700,127 +1772,143 @@
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
             const navOverlay = document.querySelector('.nav-overlay');
-            const body = document.body;
     
             hamburger.addEventListener('click', () => {
                 const isOpen = navLinks.classList.toggle('active');
                 navOverlay.classList.toggle('active');
-                body.classList.toggle('nav-open');
+                document.body.classList.toggle('nav-open');
                 hamburger.setAttribute('aria-expanded', isOpen);
-                hamburger.querySelector('.hamburger-icon').textContent = isOpen ? '✖' : '☰';
+                hamburger.innerHTML = isOpen ? '<span class="hamburger-icon">×</span>' : '<span class="hamburger-icon">☰</span>';
             });
     
             navOverlay.addEventListener('click', () => {
-                closeNav();
-            });
-    
-            function closeNav() {
                 navLinks.classList.remove('active');
                 navOverlay.classList.remove('active');
-                body.classList.remove('nav-open');
+                document.body.classList.remove('nav-open');
                 hamburger.setAttribute('aria-expanded', 'false');
-                hamburger.querySelector('.hamburger-icon').textContent = '☰';
-            }
-    
-            // Close nav on link click (mobile)
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (window.innerWidth <= 768) {
-                        closeNav();
-                    }
-                });
+                hamburger.innerHTML = '<span class="hamburger-icon">☰</span>';
             });
     
-            // Scroll Effect for Nav
+            // Scroll Effect for Navbar
             window.addEventListener('scroll', () => {
                 const nav = document.querySelector('nav');
                 nav.classList.toggle('scrolled', window.scrollY > 50);
             });
     
-            // Filter Tours
-            const filterBtns = document.querySelectorAll('.filter-btn');
+            // Search Functionality
+            const searchInput = document.getElementById('navSearch');
+            const clearSearch = document.getElementById('clearSearch');
             const tourCards = document.querySelectorAll('.tour-card');
     
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
+            searchInput.addEventListener('input', () => {
+                const searchTerm = searchInput.value.trim().toLowerCase();
+                clearSearch.classList.toggle('visible', searchTerm.length > 0);
     
-                    const filter = btn.getAttribute('data-filter');
-                    const value = btn.getAttribute('data-value');
+                tourCards.forEach(card => {
+                    const title = card.querySelector('h2').textContent.toLowerCase();
+                    const tagline = card.querySelector('.tagline').textContent.toLowerCase();
+                    const highlight = card.querySelector('.highlight').textContent.toLowerCase();
+    
+                    if (title.includes(searchTerm) || tagline.includes(searchTerm) || highlight.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+    
+            clearSearch.addEventListener('click', () => {
+                searchInput.value = '';
+                clearSearch.classList.remove('visible');
+                tourCards.forEach(card => card.style.display = 'block');
+            });
+    
+            // Filter Tours
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+    
+                    const filter = button.getAttribute('data-filter');
+                    const value = button.getAttribute('data-value');
     
                     tourCards.forEach(card => {
-                        card.style.display = 'block';
-                        if (filter === 'all') return;
-    
                         const duration = card.getAttribute('data-duration');
                         const difficulty = card.getAttribute('data-difficulty');
                         const price = parseInt(card.getAttribute('data-price'));
     
-                        if (filter === 'duration') {
-                            const days = value === '2-3' ? ['2', '3'] : ['4', '5', '6'];
-                            card.style.display = days.includes(duration) ? 'block' : 'none';
-                        } else if (filter === 'difficulty') {
-                            card.style.display = difficulty === value ? 'block' : 'none';
-                        } else if (filter === 'price') {
-                            card.style.display = price <= 1000 ? 'block' : 'none';
+                        if (filter === 'all') {
+                            card.style.display = 'block';
+                        } else if (filter === 'duration' && value === '2-3' && (duration === '2' || duration === '3')) {
+                            card.style.display = 'block';
+                        } else if (filter === 'duration' && value === '4-6' && (duration === '4' || duration === '5' || duration === '6')) {
+                            card.style.display = 'block';
+                        } else if (filter === 'difficulty' && difficulty === value) {
+                            card.style.display = 'block';
+                        } else if (filter === 'price' && value === 'low' && price <= 1000) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
                         }
                     });
                 });
             });
     
             // Flip Cards
-            document.querySelectorAll('.tour-card, .experience-card').forEach(card => {
+            const flipCards = document.querySelectorAll('.tour-card, .experience-card');
+            flipCards.forEach(card => {
                 card.addEventListener('click', (e) => {
-                    if (!e.target.closest('.btn-book') && !e.target.closest('.highlights-btn') && !e.target.closest('.exp-details-btn') && !e.target.closest('.exp-book-btn')) {
+                    if (!e.target.closest('.btn-book') && !e.target.closest('.highlights-btn') && !e.target.closest('.exp-book-btn') && !e.target.closest('.exp-details-btn')) {
                         card.classList.toggle('flipped');
                     }
                 });
             });
     
-            // Modal Functionality
-            const modal = document.getElementById('adventureModal');
+            // Modal Handling
+            const modal = document.getElementById('bookingModal');
             const modalTitle = document.getElementById('modalTitle');
             const tourInput = document.getElementById('tour');
-            const closeBtn = document.querySelector('.close');
     
             function openModal(tourName) {
                 modal.style.display = 'block';
+                modal.style.animation = 'flyIn 0.5s ease-out forwards';
                 modalTitle.textContent = `Book Your ${tourName}`;
                 tourInput.value = tourName;
-                modal.classList.remove('flyOut');
-                modal.classList.add('flyIn');
                 document.body.style.overflow = 'hidden';
             }
     
-            closeBtn.addEventListener('click', () => {
-                modal.classList.remove('flyIn');
-                modal.classList.add('flyOut');
+            function closeModal() {
+                modal.style.animation = 'flyOut 0.5s ease-out forwards';
                 setTimeout(() => {
                     modal.style.display = 'none';
-                    modal.classList.remove('flyOut');
                     document.body.style.overflow = 'auto';
-                }, 300);
-            });
+                }, 500);
+            }
     
+            document.querySelector('.close').addEventListener('click', closeModal);
             window.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    closeBtn.click();
-                }
+                if (e.target === modal) closeModal();
             });
     
-            // Animation on Scroll
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animation = 'flyIn 0.6s ease-out forwards';
-                    }
-                });
-            }, { threshold: 0.1 });
+            // WhatsApp Booking Submission
+            function submitBooking(event) {
+                event.preventDefault();
+                const form = document.getElementById('adventureForm');
+                const name = form.name.value;
+                const email = form.email.value;
+                const tour = form.tour.value;
+                const date = form.date.value;
+                const guests = form.guests.value;
+                const message = form.message.value;
     
-            document.querySelectorAll('.tour-card, .destination-card, .experience-card, .testimonial-card').forEach(card => {
-                observer.observe(card);
-            });
+                const whatsappMessage = `Booking Request:%0AName: ${name}%0AEmail: ${email}%0ATour: ${tour}%0AStart Date: ${date}%0AGuests: ${guests}%0AAdditional Requests: ${message || 'None'}`;
+                const whatsappURL = `https://wa.me/+255623474720?text=${encodeURIComponent(whatsappMessage)}`;
+    
+                window.open(whatsappURL, '_blank');
+                closeModal();
+                form.reset();
+            }
         </script>
     </body>
     </html>
