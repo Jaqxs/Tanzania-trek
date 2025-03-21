@@ -268,6 +268,7 @@
             transition: all 0.3s ease;
             cursor: pointer;
             display: inline-block;
+            text-decoration: none;
         }
         .plan-trip-btn:hover, .plan-trip-btn:focus, .whats-next-cta:hover, .whats-next-cta:focus {
             background: #e67e22;
@@ -420,7 +421,7 @@
         .tour-card .price-btn {
             display: flex;
             justify-content: space-between;
-            align-items: Vecchio center;
+            align-items: center;
             gap: 10px;
             padding-top: 10px;
         }
@@ -1507,18 +1508,20 @@
                     <p>Elephant herds and baobab trees—classic *Tanzania safari tour* beauty.</p>
                     <a href="tarangire.html" class="explore-btn">Explore</a>
                 </div>
+            </div>
             <div class="destination-card">
-                    <div class="dest-info">
-                        <h3>selous</h3>
-                        <p>Arusha rich forest and nature *Tanzania trek tour* for adventurers.</p>
-                        <a href="seolus.html" class="explore-btn">Explore</a>
-                    </div>
-             <div class="destination-card">
-                        <div class="dest-info">
-                            <h3>Arusha</h3>
-                            <p>Wonderful elephants and lake around with beutifull nature *Tanzania trek tour* for adventurers.</p>
-                            <a href="arusha.html" class="explore-btn">Explore</a>
-                        </div>
+                <div class="dest-info">
+                    <h3>Selous</h3>
+                    <p>Arusha rich forest and nature *Tanzania trek tour* for adventurers.</p>
+                    <a href="selous.html" class="explore-btn">Explore</a>
+                </div>
+            </div>
+            <div class="destination-card">
+                <div class="dest-info">
+                    <h3>Arusha</h3>
+                    <p>Wonderful elephants and lake around with beautiful nature *Tanzania trek tour* for adventurers.</p>
+                    <a href="arusha.html" class="explore-btn">Explore</a>
+                </div>
             </div>
         </div>
 
@@ -1583,7 +1586,7 @@
             </div>
             <div class="experience-card" data-experience="birding">
                 <div class="experience-card-inner">
-                    <div class="experience-card-front" style="background-image: url('images/balon\ safari.jpg');">
+                    <div class="experience-card-front" style="background-image: url('images/balon safari.jpg');">
                         <div class="experience-info">
                             <h3>Birding Adventure</h3>
                             <p class="exp-tagline">Wings Over Tanzania</p>
@@ -1610,318 +1613,245 @@
                     </div>
                     <div class="experience-card-back">
                         <div class="exp-back-content">
+                        </div>
+                    </div>
+                    <div class="experience-card-back">
+                        <div class="exp-back-content">
                             <h3>Luxury Safari</h3>
-                            <p>5-star lodges and exclusive views.</p>
+                            <p>Indulge in 5-star lodges and exclusive safaris.</p>
                             <a href="#luxury-details" class="exp-book-btn" onclick="openModal('Luxury Safari')">Book Now</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="experience-card" data-experience="family">
-                <div class="experience-card-inner">
-                    <div class="experience-card-front" style="background-image: url('images/punda.jpg');">
-                        <div class="experience-info">
-                            <h3>Family Safari</h3>
-                            <p class="exp-tagline">Fun for All Ages</p>
-                            <button class="exp-details-btn">Discover More</button>
-                        </div>
-                    </div>
-                    <div class="experience-card-back">
-                        <div class="exp-back-content">
-                            <h3>Family Safari</h3>
-                            <p>Kid-friendly wildlife adventures.</p>
-                            <a href="#family-details" class="exp-book-btn" onclick="openModal('Family Safari')">Book Now</a>
-                        </div>
-                    </div>
+        </div>
+
+        <div class="testimonials">
+            <h2>What Our Adventurers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"The Serengeti Safari was a dream—saw the Migration up close! Tanzania Trek made it seamless."</p>
+                    <p class="author">— Sarah M., USA</p>
                 </div>
-            </div>
-            <div class="experience-card" data-experience="photography">
-                <div class="experience-card-inner">
-                    <div class="experience-card-front" style="background-image: url('images/nyani.jpg');">
-                        <div class="experience-info">
-                            <h3>Photography Tour</h3>
-                            <p class="exp-tagline">Capture the Wild
-                                <p class="exp-tagline">Capture the Wild</p>
-                                <button class="exp-details-btn">Discover More</button>
-                            </div>
-                        </div>
-                        <div class="experience-card-back">
-                            <div class="exp-back-content">
-                                <h3>Photography Tour</h3>
-                                <p>Guided shoots for stunning wildlife pics.</p>
-                                <a href="#photography-details" class="exp-book-btn" onclick="openModal('Photography Tour')">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="testimonial-card">
+                    <p>"Kilimanjaro via Machame was tough but worth it. Guides were incredible!"</p>
+                    <p class="author">— James R., UK</p>
                 </div>
-                <div class="experience-card" data-experience="adventure">
-                    <div class="experience-card-inner">
-                        <div class="experience-card-front" style="background-image: url('images/balon safari.jpg');">
-                            <div class="experience-info">
-                                <h3>Adrenaline Rush</h3>
-                                <p class="exp-tagline">Thrills in the Wild</p>
-                                <button class="exp-details-btn">Discover More</button>
-                            </div>
-                        </div>
-                        <div class="experience-card-back">
-                            <div class="exp-back-content">
-                                <h3>Adrenaline Rush</h3>
-                                <p>Hot air balloon rides and rugged treks.</p>
-                                <a href="#adventure-details" class="exp-book-btn" onclick="openModal('Adrenaline Rush')">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="testimonials">
-                <h2>What Travelers Say</h2>
-                <div class="testimonial-grid">
-                    <div class="testimonial-card">
-                        <p>"The Serengeti Safari was a dream—saw the Big Five and slept under the stars!"</p>
-                        <p class="author">— Sarah M., USA</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Kilimanjaro Quest pushed me to my limits. Worth every step for that sunrise."</p>
-                        <p class="author">— James T., UK</p>
-                    </div>
-                    <div class="testimonial-card">
-                        <p>"Zanzibar Escape was pure bliss—snorkeling and spices made it unforgettable."</p>
-                        <p class="author">— Priya R., India</p>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="whats-next">
-                <h2>What’s Next for Your Tanzania Adventure?</h2>
-                <p>Ready to chase migrations, conquer peaks, or relax on pristine beaches? <a href="itinerary.html">Explore itineraries</a> or hit the button below to start planning your custom *Tanzania safari tour* today!</p>
-                <a href="contact.html" class="whats-next-cta">Plan My Trip</a>
-            </div>
-    
-            <div id="bookingModal" class="modal">
-                <div class="modal-content">
-                    <span class="close" onclick="closeModal()" aria-label="Close modal">×</span>
-                    <h2 id="modalTitle">Book Your Adventure</h2>
-                    <form id="adventureForm" class="adventure-form" onsubmit="submitBooking(event)">
-                        <div class="form-field">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                        </div>
-                        <div class="form-field">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required placeholder="Enter your email">
-                        </div>
-                        <div class="form-field">
-                            <label for="tour">Selected Tour</label>
-                            <input type="text" id="tour" name="tour" readonly>
-                        </div>
-                        <div class="form-field">
-                            <label for="date">Preferred Start Date</label>
-                            <input type="date" id="date" name="date" required min="2025-03-21">
-                        </div>
-                        <div class="form-field">
-                            <label for="guests">Number of Guests</label>
-                            <input type="number" id="guests" name="guests" min="1" required placeholder="Enter number of guests">
-                        </div>
-                        <div class="form-field">
-                            <label for="message">Additional Requests</label>
-                            <textarea id="message" name="message" placeholder="Any special requests?"></textarea>
-                        </div>
-                        <div class="form-actions">
-                            <button type="submit" class="adventure-btn">
-                                <i class="fab fa-whatsapp"></i> Book via WhatsApp
-                            </button>
-                        </div>
-                    </form>
+                <div class="testimonial-card">
+                    <p>"Zanzibar’s beaches were paradise after our safari. Perfectly planned trip."</p>
+                    <p class="author">— Priya K., India</p>
                 </div>
             </div>
         </div>
-    
-        <footer>
-            <div class="footer-content">
-                <div class="footer-section about">
-                    <h3>About Tanzania Trek</h3>
-                    <p>Since 2020, we’ve crafted custom *Tanzania safari tours* blending adventure, culture, and sustainability. From Serengeti to Zanzibar, your journey starts here.</p>
+
+        <div class="whats-next">
+            <h2>What’s Next for Your Tanzania Safari Tour?</h2>
+            <p>Ready to craft your *custom Tanzania safari tour*? Explore <a href="itinerary.html">itineraries</a>, connect with our team, and let’s make your adventure unforgettable.</p>
+            <a href="contact.html" class="whats-next-cta">Start Planning</a>
+        </div>
+    </div>
+
+    <div class="modal" id="adventureModal">
+        <div class="modal-content">
+            <span class="close" aria-label="Close modal">&times;</span>
+            <h2 id="modalTitle">Book Your Adventure</h2>
+            <form class="adventure-form" id="adventureForm" action="mailto:info@tanzaniatrek.com" method="post" enctype="text/plain">
+                <div class="form-field">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
                 </div>
-                <div class="footer-section links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="tours.html">Tours</a></li>
-                        <li><a href="itinerary.html">Itineraries</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
+                <div class="form-field">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true">
                 </div>
-                <div class="footer-section contact">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Plot 45, Mbezi Beach, Dar es Salaam, TZ</p>
-                    <p><i class="fas fa-phone"></i> <a href="tel:+255623474720">+255 62 347 4720</a></p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:info@tanzaniatrek.com">info@tanzaniatrek.com</a></p>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                    </div>
+                <div class="form-field">
+                    <label for="tour">Tour Name</label>
+                    <input type="text" id="tour" name="tour" placeholder="e.g., Serengeti Safari" required aria-required="true">
                 </div>
-                <div class="footer-section newsletter">
-                    <h3>Stay Updated</h3>
-                    <p>Get the latest *Tanzania tour* deals and tips!</p>
-                    <form>
-                        <input type="email" placeholder="Your email" aria-label="Email for newsletter">
-                        <button type="submit">Subscribe</button>
-                    </form>
+                <div class="form-field">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" name="date" required aria-required="true">
+                </div>
+                <div class="form-field">
+                    <label for="message">Additional Requests</label>
+                    <textarea id="message" name="message" placeholder="Tell us more..." aria-label="Additional requests"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="adventure-btn">
+                        <i class="fas fa-paper-plane"></i> Send Request
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Tanzania Trek</h3>
+                <p>Since 2020, we’ve crafted *custom Tanzania safari tours* to Serengeti, Kilimanjaro, Zanzibar, and beyond. Sustainable travel is our promise.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="itinerary.html">Itineraries</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Plot 45, Mbezi Beach, Dar es Salaam, Tanzania</p>
+                <p><i class="fas fa-phone"></i> +255 623 474 720</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:info@tanzaniatrek.com">info@tanzaniatrek.com</a></p>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
+                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter social-icon"></i></a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>© 2025 Tanzania Trek. All rights reserved.</p>
-                <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            <div class="footer-section newsletter">
+                <h3>Stay Updated</h3>
+                <p>Get the latest *Tanzania safari tour* deals and tips.</p>
+                <form action="#" method="post">
+                    <input type="email" placeholder="Your Email" aria-label="Email for newsletter" required>
+                    <button type="submit">Subscribe</button>
+                </form>
             </div>
-        </footer>
-    
-        <script>
-            // Navigation Toggle
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            const navOverlay = document.querySelector('.nav-overlay');
-    
-            hamburger.addEventListener('click', () => {
-                const isOpen = navLinks.classList.toggle('active');
-                navOverlay.classList.toggle('active');
-                document.body.classList.toggle('nav-open');
-                hamburger.setAttribute('aria-expanded', isOpen);
-                hamburger.innerHTML = isOpen ? '<span class="hamburger-icon">×</span>' : '<span class="hamburger-icon">☰</span>';
-            });
-    
-            navOverlay.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                navOverlay.classList.remove('active');
-                document.body.classList.remove('nav-open');
-                hamburger.setAttribute('aria-expanded', 'false');
-                hamburger.innerHTML = '<span class="hamburger-icon">☰</span>';
-            });
-    
-            // Scroll Effect for Navbar
-            window.addEventListener('scroll', () => {
-                const nav = document.querySelector('nav');
-                nav.classList.toggle('scrolled', window.scrollY > 50);
-            });
-    
-            // Search Functionality
-            const searchInput = document.getElementById('navSearch');
-            const clearSearch = document.getElementById('clearSearch');
-            const tourCards = document.querySelectorAll('.tour-card');
-    
-            searchInput.addEventListener('input', () => {
-                const searchTerm = searchInput.value.trim().toLowerCase();
-                clearSearch.classList.toggle('visible', searchTerm.length > 0);
-    
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Tanzania Trek. All rights reserved.</p>
+            <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('#navLinks');
+        const navOverlay = document.querySelector('#navOverlay');
+        const body = document.body;
+
+        hamburger.addEventListener('click', () => {
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
+            navLinks.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            body.classList.toggle('nav-open');
+        });
+
+        navOverlay.addEventListener('click', () => {
+            hamburger.setAttribute('aria-expanded', 'false');
+            navLinks.classList.remove('active');
+            navOverlay.classList.remove('active');
+            body.classList.remove('nav-open');
+        });
+
+        // Sticky Nav on Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Search Bar Clear Button
+        const searchInput = document.querySelector('#navSearch');
+        const clearBtn = document.querySelector('#clearSearch');
+
+        searchInput.addEventListener('input', () => {
+            clearBtn.classList.toggle('visible', searchInput.value.length > 0);
+        });
+
+        clearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            clearBtn.classList.remove('visible');
+            searchInput.focus();
+        });
+
+        // Filter Tours
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const tourCards = document.querySelectorAll('.tour-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.dataset.filter;
+                const value = button.dataset.value;
+
                 tourCards.forEach(card => {
-                    const title = card.querySelector('h2').textContent.toLowerCase();
-                    const tagline = card.querySelector('.tagline').textContent.toLowerCase();
-                    const highlight = card.querySelector('.highlight').textContent.toLowerCase();
-    
-                    if (title.includes(searchTerm) || tagline.includes(searchTerm) || highlight.includes(searchTerm)) {
+                    if (filter === 'all') {
                         card.style.display = 'block';
                     } else {
-                        card.style.display = 'none';
+                        const cardValue = card.dataset[filter];
+                        card.style.display = (cardValue === value || (filter === 'price' && parseInt(cardValue) <= 1000)) ? 'block' : 'none';
                     }
                 });
             });
-    
-            clearSearch.addEventListener('click', () => {
-                searchInput.value = '';
-                clearSearch.classList.remove('visible');
-                tourCards.forEach(card => card.style.display = 'block');
+        });
+
+        // Card Flip on Click
+        tourCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                if (!e.target.closest('.highlights-btn') && !e.target.closest('.btn-book')) {
+                    card.classList.toggle('flipped');
+                }
             });
-    
-            // Filter Tours
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-    
-                    const filter = button.getAttribute('data-filter');
-                    const value = button.getAttribute('data-value');
-    
-                    tourCards.forEach(card => {
-                        const duration = card.getAttribute('data-duration');
-                        const difficulty = card.getAttribute('data-difficulty');
-                        const price = parseInt(card.getAttribute('data-price'));
-    
-                        if (filter === 'all') {
-                            card.style.display = 'block';
-                        } else if (filter === 'duration' && value === '2-3' && (duration === '2' || duration === '3')) {
-                            card.style.display = 'block';
-                        } else if (filter === 'duration' && value === '4-6' && (duration === '4' || duration === '5' || duration === '6')) {
-                            card.style.display = 'block';
-                        } else if (filter === 'difficulty' && difficulty === value) {
-                            card.style.display = 'block';
-                        } else if (filter === 'price' && value === 'low' && price <= 1000) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
+        });
+
+        const experienceCards = document.querySelectorAll('.experience-card');
+        experienceCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                if (!e.target.closest('.exp-details-btn') && !e.target.closest('.exp-book-btn')) {
+                    card.classList.toggle('flipped');
+                }
             });
-    
-            // Flip Cards
-            const flipCards = document.querySelectorAll('.tour-card, .experience-card');
-            flipCards.forEach(card => {
-                card.addEventListener('click', (e) => {
-                    if (!e.target.closest('.btn-book') && !e.target.closest('.highlights-btn') && !e.target.closest('.exp-book-btn') && !e.target.closest('.exp-details-btn')) {
-                        card.classList.toggle('flipped');
-                    }
-                });
-            });
-    
-            // Modal Handling
-            const modal = document.getElementById('bookingModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const tourInput = document.getElementById('tour');
-    
-            function openModal(tourName) {
-                modal.style.display = 'block';
-                modal.style.animation = 'flyIn 0.5s ease-out forwards';
-                modalTitle.textContent = `Book Your ${tourName}`;
-                tourInput.value = tourName;
-                document.body.style.overflow = 'hidden';
-            }
-    
-            function closeModal() {
-                modal.style.animation = 'flyOut 0.5s ease-out forwards';
-                setTimeout(() => {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }, 500);
-            }
-    
-            document.querySelector('.close').addEventListener('click', closeModal);
-            window.addEventListener('click', (e) => {
-                if (e.target === modal) closeModal();
-            });
-    
-            // WhatsApp Booking Submission
-            function submitBooking(event) {
-                event.preventDefault();
-                const form = document.getElementById('adventureForm');
-                const name = form.name.value;
-                const email = form.email.value;
-                const tour = form.tour.value;
-                const date = form.date.value;
-                const guests = form.guests.value;
-                const message = form.message.value;
-    
-                const whatsappMessage = `Booking Request:%0AName: ${name}%0AEmail: ${email}%0ATour: ${tour}%0AStart Date: ${date}%0AGuests: ${guests}%0AAdditional Requests: ${message || 'None'}`;
-                const whatsappURL = `https://wa.me/+255623474720?text=${encodeURIComponent(whatsappMessage)}`;
-    
-                window.open(whatsappURL, '_blank');
-                closeModal();
-                form.reset();
-            }
-        </script>
-    </body>
-    </html>
+        });
+
+        // Modal Functionality
+        const modal = document.querySelector('#adventureModal');
+        const modalTitle = document.querySelector('#modalTitle');
+        const tourInput = document.querySelector('#tour');
+        const closeModalBtn = document.querySelector('.close');
+
+        function openModal(tourName) {
+            modalTitle.textContent = `Book Your ${tourName}`;
+            tourInput.value = tourName;
+            modal.style.display = 'block';
+            modal.classList.remove('fly-out');
+            modal.classList.add('fly-in');
+            body.style.overflow = 'hidden';
+        }
+
+        closeModalBtn.addEventListener('click', closeModal);
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        function closeModal() {
+            modal.classList.remove('fly-in');
+            modal.classList.add('fly-out');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                modal.classList.remove('fly-out');
+                body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        // Form Submission Handler
+        const form = document.querySelector('#adventureForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you! Your request has been sent. We’ll contact you soon.');
+            form.reset();
+            closeModal();
+        });
+
+        // Animation Classes
+        modal.classList.add('fly-in-animation');
+        modal.classList.add('fly-out-animation');
+    </script>
+</body>
+</html>
