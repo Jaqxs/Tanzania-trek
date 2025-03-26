@@ -268,7 +268,6 @@
             transition: all 0.3s ease;
             cursor: pointer;
             display: inline-block;
-            text-decoration: none;
         }
         .plan-trip-btn:hover, .plan-trip-btn:focus, .whats-next-cta:hover, .whats-next-cta:focus {
             background: #e67e22;
@@ -333,49 +332,14 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            transition: transform 0.6s ease;
-            transform-style: preserve-3d;
         }
-        .tour-card.flipped .tour-card-inner {
-            transform: rotateY(180deg);
-        }
-        .tour-card-front, .tour-card-back {
+        .tour-card-front {
             position: absolute;
             width: 100%;
             height: 100%;
-            backface-visibility: hidden;
             border-radius: 15px;
             overflow: hidden;
         }
-        .tour-card-front {
-            z-index: 1;
-        }
-        .tour-card-back {
-            background: linear-gradient(135deg, #ff6f61, #2c3e50);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transform: rotateY(180deg);
-            text-align: center;
-            padding: 20px;
-            z-index: 2;
-        }
-        .tour-card-back p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-        }
-        .tour-card:nth-child(1) .tour-card-inner { background-image: url('images/tiger.jpg'); }
-        .tour-card:nth-child(2) .tour-card-inner { background-image: url('images/mlima.jpg'); }
-        .tour-card:nth-child(3) .tour-card-inner { background-image: url('images/simba.jpg'); }
-        .tour-card:nth-child(4) .tour-card-inner { background-image: url('images/bird.jpg'); }
-        .tour-card:nth-child(5) .tour-card-inner { background-image: url('images/pori.jpg'); }
-        .tour-card:nth-child(6) .tour-card-inner { background-image: url('images/rhino.jpg'); }
-        .tour-card:nth-child(7) .tour-card-inner { background-image: url('images/tembo2.jpg'); }
-        .tour-card:nth-child(8) .tour-card-inner { background-image: url('images/punda.jpg'); }
         .tour-card .tour-info {
             position: absolute;
             bottom: 0;
@@ -596,7 +560,6 @@
             position: relative;
             width: 100%;
             height: 350px;
-            perspective: 1000px;
             cursor: pointer;
             transition: transform 0.5s ease, box-shadow 0.3s ease;
         }
@@ -608,48 +571,18 @@
             position: relative;
             width: 100%;
             height: 100%;
-            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-            transform-style: preserve-3d;
         }
-        .experience-card.flipped .experience-card-inner {
-            transform: rotateY(180deg);
-        }
-        .experience-card-front, .experience-card-back {
+        .experience-card-front {
             position: absolute;
             width: 100%;
             height: 100%;
-            backface-visibility: hidden;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        .experience-card-front {
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: flex-end;
-        }
-        .experience-card-back {
-            background: linear-gradient(135deg, #e67e22, #2c3e50);
-            transform: rotateY(180deg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .exp-back-content {
-            text-align: center;
-            color: #fff;
-            padding: 20px;
-        }
-        .exp-back-content h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-        .exp-back-content p {
-            font-size: 0.875rem;
-            margin-bottom: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         .experience-info {
             width: 100%;
@@ -690,22 +623,6 @@
             background: #e67e22;
             color: #fff;
             transform: scale(1.1);
-            outline: none;
-        }
-        .exp-book-btn {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, #f1c40f, #e67e22);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.875rem;
-            transition: all 0.3s ease;
-        }
-        .exp-book-btn:hover, .exp-book-btn:focus {
-            transform: scale(1.1);
-            background: linear-gradient(135deg, #e67e22, #f1c40f);
             outline: none;
         }
 
@@ -1156,7 +1073,7 @@
             .exp-tagline {
                 font-size: 0.7rem;
             }
-            .exp-details-btn, .exp-back-content p {
+            .exp-details-btn {
                 font-size: 0.75rem;
             }
             .intro-text h2, .destinations-header h2, .testimonials h2, .whats-next h2, .experience-header h2 {
@@ -1219,8 +1136,8 @@
         </div>
 
         <div class="tours-grid">
-            <div id="serengeti-details" class="tour-card" data-duration="3" data-difficulty="easy" data-price="800">
-                <div class="tour-card-inner">
+            <div id="serengeti-details" class="tour-card" data-duration="3" data-difficulty="easy" data-price="800" data-link="serengeti-express.html">
+                <div class="tour-card-inner" style="background-image: url('images/tiger.jpg');">
                     <div class="tour-card-front">
                         <div class="tour-info">
                             <h2>Serengeti Safari</h2>
@@ -1238,20 +1155,17 @@
                                         <li>Spot the Big Five</li>
                                     </ul>
                                 </div>
-                                <a href="#serengeti-details" class="btn-book" onclick="openModal('Serengeti Safari')">
+                                <a href="#serengeti-details" class="btn-book" onclick="openModal('Serengeti Safari'); event.stopPropagation();">
                                     <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 0-2 2v2h4V4a2 2 0 0 0-2-2zm6 4h-2v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V6H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/></svg>
                                     Book Now
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="tour-card-back">
-                        <p>Chase the Migration!</p>
-                    </div>
                 </div>
             </div>
-            <div class="tour-card" data-duration="5" data-difficulty="moderate" data-price="1500">
-                <div class="tour-card-inner">
+            <div class="tour-card" data-duration="5" data-difficulty="moderate" data-price="1500" data-link="kilimanjaro-classic.html">
+                <div class="tour-card-inner" style="background-image: url('images/mlima.jpg');">
                     <div class="tour-card-front">
                         <div class="tour-info">
                             <h2>Kilimanjaro Quest</h2>
@@ -1269,20 +1183,17 @@
                                         <li>Stunning alpine views</li>
                                     </ul>
                                 </div>
-                                <a href="#kilimanjaro-details" class="btn-book" onclick="openModal('Kilimanjaro Quest')">
+                                <a href="#kilimanjaro-details" class="btn-book" onclick="openModal('Kilimanjaro Quest'); event.stopPropagation();">
                                     <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 0-2 2v2h4V4a2 2 0 0 0-2-2zm6 4h-2v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V6H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/></svg>
                                     Book Now
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="tour-card-back">
-                        <p>Conquer the Roof of Africa!</p>
-                    </div>
                 </div>
             </div>
-            <div class="tour-card" data-duration="3" data-difficulty="easy" data-price="900">
-                <div class="tour-card-inner">
+            <div class="tour-card" data-duration="3" data-difficulty="easy" data-price="900" data-link="ngorongoro-quick.html">
+                <div class="tour-card-inner" style="background-image: url('images/simba.jpg');">
                     <div class="tour-card-front">
                         <div class="tour-info">
                             <h2>Ngorongoro Crater</h2>
@@ -1300,20 +1211,17 @@
                                         <li>Maasai village visit</li>
                                     </ul>
                                 </div>
-                                <a href="#ngorongoro-details" class="btn-book" onclick="openModal('Ngorongoro Crater')">
+                                <a href="#ngorongoro-details" class="btn-book" onclick="openModal('Ngorongoro Crater'); event.stopPropagation();">
                                     <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 0-2 2v2h4V4a2 2 0 0 0-2-2zm6 4h-2v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V6H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/></svg>
                                     Book Now
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="tour-card-back">
-                        <p>Dive into the Crater!</p>
-                    </div>
                 </div>
             </div>
-            <div class="tour-card" data-duration="2" data-difficulty="easy" data-price="600">
-                <div class="tour-card-inner">
+            <div class="tour-card" data-duration="2" data-difficulty="easy" data-price="600" data-link="zanzibar-retreat.html">
+                <div class="tour-card-inner" style="background-image: url('images/bird.jpg');">
                     <div class="tour-card-front">
                         <div class="tour-info">
                             <h2>Zanzibar Escape</h2>
@@ -1331,20 +1239,17 @@
                                         <li>Spice tour</li>
                                     </ul>
                                 </div>
-                                <a href="#zanzibar-details" class="btn-book" onclick="openModal('Zanzibar Escape')">
+                                <a href="#zanzibar-details" class="btn-book" onclick="openModal('Zanzibar Escape'); event.stopPropagation();">
                                     <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 0-2 2v2h4V4a2 2 0 0 0-2-2zm6 4h-2v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V6H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/></svg>
                                     Book Now
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="tour-card-back">
-                        <p>Relax in Paradise!</p>
-                    </div>
                 </div>
             </div>
-            <div class="tour-card" data-duration="4" data-difficulty="moderate" data-price="1200">
-                <div class="tour-card-inner">
+            <div class="tour-card" data-duration="4" data-difficulty="moderate" data-price="1200" data-link="serengeti-express.html">
+                <div class="tour-card-inner" style="background-image: url('images/pori.jpg');">
                     <div class="tour-card-front">
                         <div class="tour-info">
                             <h2>Serengeti & Crater</h2>
@@ -1362,20 +1267,17 @@
                                         <li>Luxury camping</li>
                                     </ul>
                                 </div>
-                                <a href="#serengeti-crater-details" class="btn-book" onclick="openModal('Serengeti & Crater')">
+                                <a href="#serengeti-crater-details" class="btn-book" onclick="openModal('Serengeti & Crater'); event.stopPropagation();">
                                     <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 0-2 2v2h4V4a2 2 0 0 0-2-2zm6 4h-2v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V6H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/></svg>
                                     Book Now
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="tour-card-back">
-                        <p>Best of Both Worlds!</p>
-                    </div>
                 </div>
             </div>
-            <div class="tour-card" data-duration="6" data-difficulty="hard" data-price="1800">
-                <div class="tour-card-inner">
+            <div class="tour-card" data-duration="6" data-difficulty="hard" data-price="1800" data-link="kilimanjaro-classic.html">
+                <div class="tour-card-inner" style="background-image: url('images/rhino.jpg');">
                     <div class="tour-card-front">
                         <div class="tour-info">
                             <h2>Kilimanjaro Lemosho</h2>
@@ -1393,20 +1295,17 @@
                                         <li>Summit success</li>
                                     </ul>
                                 </div>
-                                <a href="#lemosho-details" class="btn-book" onclick="openModal('Kilimanjaro Lemosho')">
+                                <a href="#lemosho-details" class="btn-book" onclick="openModal('Kilimanjaro Lemosho'); event.stopPropagation();">
                                     <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 0-2 2v2h4V4a2 2 0 0 0-2-2zm6 4h-2v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V6H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/></svg>
                                     Book Now
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="tour-card-back">
-                        <p>Ultimate Summit Challenge!</p>
-                    </div>
                 </div>
             </div>
-            <div class="tour-card" data-duration="3" data-difficulty="easy" data-price="700">
-                <div class="tour-card-inner">
+            <div class="tour-card" data-duration="3" data-difficulty="easy" data-price="700" data-link="tarangire-blitz.html">
+                <div class="tour-card-inner" style="background-image: url('images/tembo2.jpg');">
                     <div class="tour-card-front">
                         <div class="tour-info">
                             <h2>Tarangire Safari</h2>
@@ -1424,20 +1323,17 @@
                                         <li>Birdwatching haven</li>
                                     </ul>
                                 </div>
-                                <a href="#tarangire-details" class="btn-book" onclick="openModal('Tarangire Safari')">
+                                <a href="#tarangire-details" class="btn-book" onclick="openModal('Tarangire Safari'); event.stopPropagation();">
                                     <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 0-2 2v2h4V4a2 2 0 0 0-2-2zm6 4h-2v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V6H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/></svg>
                                     Book Now
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="tour-card-back">
-                        <p>Elephant Paradise!</p>
-                    </div>
                 </div>
             </div>
-            <div class="tour-card" data-duration="4" data-difficulty="moderate" data-price="1100">
-                <div class="tour-card-inner">
+            <div class="tour-card" data-duration="4" data-difficulty="moderate" data-price="1100" data-link="selous-journey.html">
+                <div class="tour-card-inner" style="background-image: url('images/punda.jpg');">
                     <div class="tour-card-front">
                         <div class="tour-info">
                             <h2>Selous Game Reserve</h2>
@@ -1455,15 +1351,12 @@
                                         <li>Exclusive wildlife</li>
                                     </ul>
                                 </div>
-                                <a href="#selous-details" class="btn-book" onclick="openModal('Selous Game Reserve')">
+                                <a href="#selous-details" class="btn-book" onclick="openModal('Selous Game Reserve'); event.stopPropagation();">
                                     <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 0-2 2v2h4V4a2 2 0 0 0-2-2zm6 4h-2v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V6H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/></svg>
                                     Book Now
                                 </a>
                             </div>
                         </div>
-                    </div>
-                    <div class="tour-card-back">
-                        <p>Untamed Wilderness!</p>
                     </div>
                 </div>
             </div>
@@ -1511,14 +1404,14 @@
             </div>
             <div class="destination-card">
                 <div class="dest-info">
-                    <h3>Arusha</h3>
+                    <h3>Selous</h3>
                     <p>Arusha rich forest and nature *Tanzania trek tour* for adventurers.</p>
                     <a href="selous.html" class="explore-btn">Explore</a>
                 </div>
             </div>
             <div class="destination-card">
                 <div class="dest-info">
-                    <h3>Selous</h3>
+                    <h3>Arusha</h3>
                     <p>Wonderful elephants and lake around with beautiful nature *Tanzania trek tour* for adventurers.</p>
                     <a href="arusha.html" class="explore-btn">Explore</a>
                 </div>
@@ -1530,96 +1423,90 @@
         </div>
 
         <div class="experience-grid">
-            <div class="experience-card" data-experience="honeymoon">
+            <div class="experience-card" data-experience="honeymoon" data-link="honeymoon-safari-zanzibar.html">
                 <div class="experience-card-inner">
                     <div class="experience-card-front" style="background-image: url('images/tembo2.jpg');">
                         <div class="experience-info">
                             <h3>Honeymoon Bliss</h3>
                             <p class="exp-tagline">Romantic Escape in Paradise</p>
-                            <button class="exp-details-btn">Discover More</button>
-                        </div>
-                    </div>
-                    <div class="experience-card-back">
-                        <div class="exp-back-content">
-                            <h3>Honeymoon Bliss</h3>
-                            <p>Private safari and beach retreat for two.</p>
-                            <a href="#honeymoon-details" class="exp-book-btn" onclick="openModal('Honeymoon Bliss')">Book Now</a>
+                            <button class="exp-details-btn" onclick="event.stopPropagation();">Discover More</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="experience-card" data-experience="culture">
+            <div class="experience-card" data-experience="culture" data-link="southern-circuit-explorer.html">
                 <div class="experience-card-inner">
                     <div class="experience-card-front" style="background-image: url('images/masai.jpg');">
                         <div class="experience-info">
                             <h3>Cultural Immersion</h3>
                             <p class="exp-tagline">Live the Maasai Way</p>
-                            <button class="exp-details-btn">Discover More</button>
-                        </div>
-                    </div>
-                    <div class="experience-card-back">
-                        <div class="exp-back-content">
-                            <h3>Cultural Immersion</h3>
-                            <p>Stay with Maasai and learn traditions.</p>
-                            <a href="#culture-details" class="exp-book-btn" onclick="openModal('Cultural Immersion')">Book Now</a>
+                            <button class="exp-details-btn" onclick="event.stopPropagation();">Discover More</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="experience-card" data-experience="wildlife">
+            <div class="experience-card" data-experience="wildlife" data-link="classic-northern-circuit.html">
                 <div class="experience-card-inner">
                     <div class="experience-card-front" style="background-image: url('images/simba.jpg');">
                         <div class="experience-info">
                             <h3>Big Five Safari</h3>
                             <p class="exp-tagline">Track Africa’s Giants</p>
-                            <button class="exp-details-btn">Discover More</button>
-                        </div>
-                    </div>
-                    <div class="experience-card-back">
-                        <div class="exp-back-content">
-                            <h3>Big Five Safari</h3>
-                            <p>Spot lion, leopard, elephant, and more.</p>
-                            <a href="#bigfive-details" class="exp-book-btn" onclick="openModal('Big Five Safari')">Book Now</a>
+                            <button class="exp-details-btn" onclick="event.stopPropagation();">Discover More</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="experience-card" data-experience="birding">
+            <div class="experience-card" data-experience="birding" data-link="serengeti.html">
                 <div class="experience-card-inner">
-                    <div class="experience-card-front" style="background-image: url('images/balon safari.jpg');">
+                    <div class="experience-card-front" style="background-image: url('images/balon\ safari.jpg');">
                         <div class="experience-info">
                             <h3>Birding Adventure</h3>
                             <p class="exp-tagline">Wings Over Tanzania</p>
-                            <button class="exp-details-btn">Discover More</button>
-                        </div>
-                    </div>
-                    <div class="experience-card-back">
-                        <div class="exp-back-content">
-                            <h3>Birding Adventure</h3>
-                            <p>Discover 1,000+ bird species.</p>
-                            <a href="#birding-details" class="exp-book-btn" onclick="openModal('Birding Adventure')">Book Now</a>
+                            <button class="exp-details-btn" onclick="event.stopPropagation();">Discover More</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="experience-card" data-experience="luxury">
+            <div class="experience-card" data-experience="luxury" data-link="Luxury-serengeti-crater.html">
                 <div class="experience-card-inner">
                     <div class="experience-card-front" style="background-image: url('images/bird.jpg');">
                         <div class="experience-info">
                             <h3>Luxury Safari</h3>
                             <p class="exp-tagline">Wilderness in Style</p>
-                            <button class="exp-details-btn">Discover More</button>
+                            <button class="exp-details-btn" onclick="event.stopPropagation();">Discover More</button>
                         </div>
                     </div>
-                    <div class="experience-card-back">
-                        <div class="exp-back-content">
+                </div>
+            </div>
+            <div class="experience-card" data-experience="family" data-link="family-safari-zanzibar.html">
+                <div class="experience-card-inner">
+                    <div class="experience-card-front" style="background-image: url('images/punda.jpg');">
+                        <div class="experience-info">
+                            <h3>Family Safari</h3>
+                            <p class="exp-tagline">Fun for All Ages</p>
+                            <button class="exp-details-btn" onclick="event.stopPropagation();">Discover More</button>
                         </div>
                     </div>
-                    <div class="experience-card-back">
-                        <div class="exp-back-content">
-                            <h3>Luxury Safari</h3>
-                            <p>Indulge in 5-star lodges and exclusive safaris.</p>
-                            <a href="#luxury-details" class="exp-book-btn" onclick="openModal('Luxury Safari')">Book Now</a>
+                </div>
+            </div>
+            <div class="experience-card" data-experience="photography" data-link="Luxury-serengeti-crater.html">
+                <div class="experience-card-inner">
+                    <div class="experience-card-front" style="background-image: url('images/nyani.jpg');">
+                        <div class="experience-info">
+                            <h3>Photography Tour</h3>
+                            <p class="exp-tagline">Capture the Wild</p>
+                            <button class="exp-details-btn" onclick="event.stopPropagation();">Discover More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="experience-card" data-experience="adventure" data-link="budget-camping-safari.html">
+                <div class="experience-card-inner">
+                    <div class="experience-card-front" style="background-image: url('images/balon safari.jpg');">
+                        <div class="experience-info">
+                            <h3>Adrenaline Rush</h3>
+                            <p class="exp-tagline">Thrills in the Wild</p>
+                            <button class="exp-details-btn" onclick="event.stopPropagation();">Discover More</button>
                         </div>
                     </div>
                 </div>
@@ -1627,69 +1514,75 @@
         </div>
 
         <div class="testimonials">
-            <h2>What Our Adventurers Say</h2>
+            <h2>What Travelers Say</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <p>"The Serengeti Safari was a dream—saw the Migration up close! Tanzania Trek made it seamless."</p>
-                    <p class="author">— Sarah M., USA</p>
+                    <p>"The Serengeti Safari was a dream—saw the Big Five and slept under the stars!"</p>
+                    <p class="author">— David M., USA</p>
                 </div>
                 <div class="testimonial-card">
-                    <p>"Kilimanjaro via Machame was tough but worth it. Guides were incredible!"</p>
-                    <p class="author">— James R., UK</p>
+                    <p>"Kilimanjaro Quest pushed me to my limits. Worth every step for that sunrise."</p>
+                    <p class="author">— Peter m., UK</p>
                 </div>
                 <div class="testimonial-card">
-                    <p>"Zanzibar’s beaches were paradise after our safari. Perfectly planned trip."</p>
-                    <p class="author">— Priya K., India</p>
+                    <p>"Zanzibar Escape was pure bliss—snorkeling and spices made it unforgettable."</p>
+                    <p class="author">— Priya R., India</p>
                 </div>
             </div>
         </div>
 
         <div class="whats-next">
-            <h2>What’s Next for Your Tanzania Safari Tour?</h2>
-            <p>Ready to craft your *custom Tanzania safari tour*? Explore <a href="itinerary.html">itineraries</a>, connect with our team, and let’s make your adventure unforgettable.</p>
-            <a href="contact.html" class="whats-next-cta">Start Planning</a>
+            <h2>What’s Next for Your Tanzania Adventure?</h2>
+            <p>Ready to chase migrations, conquer peaks, or relax on pristine beaches? <a href="itinerary.html">Explore itineraries</a> or hit the button below to start planning your custom *Tanzania safari tour* today!</p>
+            <a href="contact.html" class="whats-next-cta">Plan My Trip</a>
         </div>
-    </div>
 
-    <div class="modal" id="adventureModal">
-        <div class="modal-content">
-            <span class="close" aria-label="Close modal">&times;</span>
-            <h2 id="modalTitle">Book Your Adventure</h2>
-            <form class="adventure-form" id="adventureForm" action="mailto:info@tanzaniatrek.com" method="post" enctype="text/plain">
-                <div class="form-field">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true">
-                </div>
-                <div class="form-field">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required aria-required="true">
-                </div>
-                <div class="form-field">
-                    <label for="tour">Tour Name</label>
-                    <input type="text" id="tour" name="tour" placeholder="e.g., Serengeti Safari" required aria-required="true">
-                </div>
-                <div class="form-field">
-                    <label for="date">Preferred Date</label>
-                    <input type="date" id="date" name="date" required aria-required="true">
-                </div>
-                <div class="form-field">
-                    <label for="message">Additional Requests</label>
-                    <textarea id="message" name="message" placeholder="Tell us more..." aria-label="Additional requests"></textarea>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="adventure-btn">
-                        <i class="fas fa-paper-plane"></i> Send Request
-                    </button>
-                </div>
-            </form>
+        <div id="bookingModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()" aria-label="Close modal">×</span>
+                <h2 id="modalTitle">Book Your Adventure</h2>
+                <form id="adventureForm" class="adventure-form" onsubmit="submitBooking(event)">
+                    <div class="form-field">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-field">
+                        <label for="tour">Selected Tour</label>
+                        <input type="text" id="tour" name="tour" readonly>
+                    </div>
+                    <div class="form-field">
+                        <label for="date">Preferred Start Date</label>
+                        <input type="date" id="date" name="date" required min="2025-03-21">
+                    </div>
+                    <div class="form-field">
+                        <label for="guests">Number of Guests</label>
+                        <input type="number" id="guests" name="guests" min="1" required placeholder="Enter number of guests">
+                    </div>
+                    <div class="form-field">
+                        <label for="message">Additional Requests</label>
+                        <textarea id="message" name="message" placeholder="Any special requests or questions?"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="adventure-btn">
+                            <i class="fab fa-whatsapp"></i> Book via WhatsApp
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
     <footer>
         <div class="footer-content">
             <div class="footer-section about">
-                <h3>About Tanzania Trek</h3>
-                <p>Since 2020, we’ve crafted *custom Tanzania safari tours* to Serengeti, Kilimanjaro, Zanzibar, and beyond. Sustainable travel is our promise.</p>
+                <h3>Tanzania Trek</h3>
+                <p>Since 2020, crafting custom *Tanzania safari tours*—Serengeti migrations, Kilimanjaro treks, and Zanzibar escapes.</p>
+                <p>Email: <a href="mailto:info@tanzaniatrek.com">info@tanzaniatrek.com</a></p>
+                <p>Phone: <a href="tel:+255623474720">+255 623 474 720</a></p>
             </div>
             <div class="footer-section links">
                 <h3>Quick Links</h3>
@@ -1701,75 +1594,70 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-section contact">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Plot 45, Mbezi Beach, Dar es Salaam, Tanzania</p>
-                <p><i class="fas fa-phone"></i> +255 623 474 720</p>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:info@tanzaniatrek.com">info@tanzaniatrek.com</a></p>
-                <div class="social-icons">
-                    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f social-icon"></i></a>
-                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram social-icon"></i></a>
-                    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter social-icon"></i></a>
-                </div>
-            </div>
             <div class="footer-section newsletter">
                 <h3>Stay Updated</h3>
-                <p>Get the latest *Tanzania safari tour* deals and tips.</p>
-                <form action="#" method="post">
-                    <input type="email" placeholder="Your Email" aria-label="Email for newsletter" required>
+                <p>Get the latest *Tanzania tour* deals and tips.</p>
+                <form>
+                    <input type="email" placeholder="Your email" required>
                     <button type="submit">Subscribe</button>
                 </form>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 Tanzania Trek. All rights reserved.</p>
-            <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            <p>Designed with <span style="color: #e67e22;">♥</span> in Tanzania</p>
         </div>
     </footer>
 
     <script>
-        // Navigation Toggle
+        // Navigation
         const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('#navLinks');
-        const navOverlay = document.querySelector('#navOverlay');
+        const navLinks = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
         const body = document.body;
 
         hamburger.addEventListener('click', () => {
-            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-            hamburger.setAttribute('aria-expanded', !isExpanded);
-            navLinks.classList.toggle('active');
+            const isOpen = navLinks.classList.toggle('active');
             navOverlay.classList.toggle('active');
             body.classList.toggle('nav-open');
+            hamburger.setAttribute('aria-expanded', isOpen);
+            hamburger.querySelector('.hamburger-icon').textContent = isOpen ? '✖' : '☰';
         });
 
         navOverlay.addEventListener('click', () => {
-            hamburger.setAttribute('aria-expanded', 'false');
             navLinks.classList.remove('active');
             navOverlay.classList.remove('active');
             body.classList.remove('nav-open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            hamburger.querySelector('.hamburger-icon').textContent = '☰';
         });
 
-        // Sticky Nav on Scroll
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             nav.classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Search Bar Clear Button
-        const searchInput = document.querySelector('#navSearch');
-        const clearBtn = document.querySelector('#clearSearch');
+        // Search functionality
+        const searchInput = document.getElementById('navSearch');
+        const clearSearch = document.getElementById('clearSearch');
 
         searchInput.addEventListener('input', () => {
-            clearBtn.classList.toggle('visible', searchInput.value.length > 0);
+            clearSearch.classList.toggle('visible', searchInput.value.length > 0);
         });
 
-        clearBtn.addEventListener('click', () => {
+        clearSearch.addEventListener('click', () => {
             searchInput.value = '';
-            clearBtn.classList.remove('visible');
+            clearSearch.classList.remove('visible');
             searchInput.focus();
         });
 
-        // Filter Tours
+        // Filter functionality
         const filterButtons = document.querySelectorAll('.filter-btn');
         const tourCards = document.querySelectorAll('.tour-card');
 
@@ -1778,80 +1666,94 @@
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
 
-                const filter = button.dataset.filter;
-                const value = button.dataset.value;
+                const filter = button.getAttribute('data-filter');
+                const value = button.getAttribute('data-value');
 
                 tourCards.forEach(card => {
                     if (filter === 'all') {
                         card.style.display = 'block';
                     } else {
-                        const cardValue = card.dataset[filter];
-                        card.style.display = (cardValue === value || (filter === 'price' && parseInt(cardValue) <= 1000)) ? 'block' : 'none';
+                        const cardValue = card.getAttribute(`data-${filter}`);
+                        card.style.display = (cardValue === value) ? 'block' : 'none';
                     }
                 });
             });
         });
 
-        // Card Flip on Click
+        // Tour card redirect
         tourCards.forEach(card => {
             card.addEventListener('click', (e) => {
+                const link = card.getAttribute('data-link');
                 if (!e.target.closest('.highlights-btn') && !e.target.closest('.btn-book')) {
-                    card.classList.toggle('flipped');
+                    window.location.href = link;
                 }
             });
         });
 
+        // Experience card redirect
         const experienceCards = document.querySelectorAll('.experience-card');
         experienceCards.forEach(card => {
             card.addEventListener('click', (e) => {
-                if (!e.target.closest('.exp-details-btn') && !e.target.closest('.exp-book-btn')) {
-                    card.classList.toggle('flipped');
+                const link = card.getAttribute('data-link');
+                if (!e.target.closest('.exp-details-btn')) {
+                    window.location.href = link;
                 }
             });
         });
 
-        // Modal Functionality
-        const modal = document.querySelector('#adventureModal');
-        const modalTitle = document.querySelector('#modalTitle');
-        const tourInput = document.querySelector('#tour');
-        const closeModalBtn = document.querySelector('.close');
-
+        // Modal functionality
         function openModal(tourName) {
-            modalTitle.textContent = `Book Your ${tourName}`;
+            const modal = document.getElementById('bookingModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const tourInput = document.getElementById('tour');
+            modalTitle.textContent = `Book Your ${tourName} Adventure`;
             tourInput.value = tourName;
             modal.style.display = 'block';
-            modal.classList.remove('fly-out');
             modal.classList.add('fly-in');
-            body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
         }
 
-        closeModalBtn.addEventListener('click', closeModal);
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
-        });
-
         function closeModal() {
+            const modal = document.getElementById('bookingModal');
             modal.classList.remove('fly-in');
             modal.classList.add('fly-out');
             setTimeout(() => {
                 modal.style.display = 'none';
                 modal.classList.remove('fly-out');
-                body.style.overflow = 'auto';
+                document.body.style.overflow = 'auto';
             }, 300);
         }
 
-        // Form Submission Handler
-        const form = document.querySelector('#adventureForm');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you! Your request has been sent. We’ll contact you soon.');
-            form.reset();
+        function submitBooking(event) {
+            event.preventDefault();
+            const form = document.getElementById('adventureForm');
+            const formData = new FormData(form);
+            const message = `Booking Request:%0AName: ${formData.get('name')}%0AEmail: ${formData.get('email')}%0ATour: ${formData.get('tour')}%0ADate: ${formData.get('date')}%0AGuests: ${formData.get('guests')}%0AMessage: ${formData.get('message') || 'None'}`;
+            const whatsappUrl = `https://wa.me/255623474720?text=${message}`;
+            window.open(whatsappUrl, '_blank');
             closeModal();
+            form.reset();
+        }
+
+        document.querySelector('.close').addEventListener('click', closeModal);
+        window.addEventListener('click', (e) => {
+            if (e.target === document.getElementById('bookingModal')) {
+                closeModal();
+            }
         });
 
-        // Animation Classes
-        modal.classList.add('fly-in-animation');
-        modal.classList.add('fly-out-animation');
+        // Add fly-in animation styles
+        const styleSheet = document.styleSheets[0];
+        styleSheet.insertRule(`
+            .fly-in {
+                animation: flyIn 0.3s ease-out forwards;
+            }
+        `, styleSheet.cssRules.length);
+        styleSheet.insertRule(`
+            .fly-out {
+                animation: flyOut 0.3s ease-in forwards;
+            }
+        `, styleSheet.cssRules.length);
     </script>
 </body>
 </html>
