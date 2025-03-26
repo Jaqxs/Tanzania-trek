@@ -327,8 +327,10 @@
             transition: transform 0.6s ease; 
             background-size: cover; 
             background-position: center; 
+            cursor: pointer; 
+            display: none; /* Initially hidden */
         }
-        .tour-card.hidden { display: none; }
+        .tour-card.visible { display: block; } /* Visible class to show items */
         .tour-card:hover { 
             transform: scale(1.05);
             box-shadow: 0 20px 40px rgba(241, 90, 36, 0.5);
@@ -385,29 +387,28 @@
             transform: translateY(-2px); 
         }
         .load-more-btn {
-            display: block;
-            margin: 2rem auto 0;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            background: linear-gradient(45deg, #e67e22, #f1c40f);
+            background: #e67e22;
             color: #fff;
             padding: 1rem 2rem;
             border-radius: 25px;
             border: none;
             cursor: pointer;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
+            margin: 2rem auto;
+            display: block;
+            transition: background 0.3s ease, transform 0.3s ease;
         }
         .load-more-btn:hover {
-            background: linear-gradient(45deg, #d35400, #d4a60d);
+            background: #d35400;
             transform: scale(1.05);
         }
         .image-break {
-            height: 900px;
-            margin: -8rem 0;
+            height: 700px; /* Reduced from 900px */
+            margin: -6rem 0; /* Adjusted margin */
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Parallax effect */
+            background-attachment: fixed; /* For parallax effect */
             position: relative;
             overflow: hidden;
             display: flex;
@@ -415,7 +416,6 @@
             align-items: center;
             justify-content: center;
             z-index: 1;
-            animation: pulseGlow 6s infinite ease-in-out;
         }
         .image-break::before {
             content: '';
@@ -442,16 +442,15 @@
         }
         .image-break .particle {
             position: absolute;
-            width: 6px;
-            height: 6px;
-            background: rgba(241, 196, 15, 0.9);
+            width: 4px;
+            height: 4px;
+            background: rgba(241, 196, 15, 0.7);
             border-radius: 50%;
-            animation: drift 8s infinite ease-in-out, glowPulse 2s infinite alternate;
+            animation: drift 8s infinite ease-in-out;
             opacity: 0;
-            box-shadow: 0 0 10px rgba(241, 196, 15, 0.7);
         }
         .image-break:hover .particle {
-            opacity: 1;
+            opacity: 0.8;
         }
         .image-break .break-text,
         .image-break .break-subtext {
@@ -468,14 +467,14 @@
             font-weight: 700;
             letter-spacing: 0.5rem;
             transform: scale(1);
-            animation: carveIn 2s ease-out forwards, float 4s infinite ease-in-out;
+            animation: carveIn 2s ease-out forwards;
         }
         .image-break .break-subtext {
             font-size: 3.5rem;
             color: #f1c40f;
-            margin-top: 10rem;
+            margin-top: 8rem; /* Adjusted from 10rem */
             transform: scale(1);
-            animation: carveInSub 2s ease-out 0.5s forwards, floatSub 4s infinite ease-in-out 0.5s;
+            animation: carveInSub 2s ease-out 0.5s forwards;
         }
         .image-break:hover .break-text {
             transform: scale(1.1) translateY(-20px);
@@ -493,6 +492,8 @@
             margin: 2rem 0;
             transition: transform 0.3s ease;
             text-align: center;
+            position: relative;
+            z-index: 2; /* Ensures sections stay above parallax background */
         }
         .section-above:hover, .section-below:hover { transform: translateY(-10px); }
         .section-above h2, .section-below h2 {
@@ -562,8 +563,9 @@
             opacity: 0;
             transform: translateY(30px);
             animation: cardFadeIn 0.8s ease forwards;
+            display: none; /* Initially hidden */
         }
-        .highlight-card.hidden { display: none; }
+        .highlight-card.visible { display: block; } /* Visible class to show items */
         .highlight-card:hover {
             transform: scale(1.05) translateY(-10px);
             box-shadow: 0 15px 30px rgba(241, 90, 36, 0.5);
@@ -870,25 +872,6 @@
             80% { opacity: 0.8; } 
             100% { transform: translate(var(--x), var(--y)); opacity: 0; } 
         }
-        @keyframes glowPulse {
-            0% { box-shadow: 0 0 5px rgba(241, 196, 15, 0.5); }
-            100% { box-shadow: 0 0 15px rgba(241, 196, 15, 1); }
-        }
-        @keyframes pulseGlow {
-            0% { filter: brightness(1) contrast(1); }
-            50% { filter: brightness(1.1) contrast(1.2); }
-            100% { filter: brightness(1) contrast(1); }
-        }
-        @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0); }
-        }
-        @keyframes floatSub {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
         @keyframes cardFadeIn { to { opacity: 1; transform: translateY(0); } }
         @keyframes modalPop { 0% { transform: scale(0.8); opacity: 0; } 70% { transform: scale(1.05); opacity: 1; } 100% { transform: scale(1); } }
         @media (max-width: 768px) {
@@ -897,8 +880,9 @@
             .tour-card { height: 400px; }
             .tour-card h3 { font-size: 1.5rem; }
             .image-break {
-                height: 600px;
-                background-attachment: scroll; /* Disable parallax on mobile */
+                height: 500px; /* Reduced from 600px */
+                background-attachment: scroll; /* Disable fixed for mobile parallax */
+                margin: -4rem 0; /* Adjusted for mobile */
             }
             .image-break .break-text { font-size: 5rem; }
             .image-break .break-subtext { font-size: 2.5rem; margin-top: 6rem; }
@@ -922,7 +906,10 @@
             .hero-text h1 { font-size: clamp(2rem, 6vw, 3rem); }
             .hero-text p { font-size: clamp(1rem, 3vw, 1.5rem); }
             .tour-card .btn-explore { padding: 0.6rem 1.2rem; }
-            .image-break { height: 500px; }
+            .image-break { 
+                height: 400px; /* Reduced from 500px */
+                margin: -3rem 0; /* Adjusted for smaller screens */
+            }
             .image-break .break-text { font-size: 3.5rem; }
             .image-break .break-subtext { font-size: 1.8rem; margin-top: 4rem; }
             .image-break .particle { width: 2px; height: 2px; }
@@ -966,7 +953,7 @@
                 </div>
                 <div class="nav-item"><a href="about.html">About</a></div>
                 <div class="nav-item"><a href="Travel-guide.html">Travel Guide</a></div>
-                <div class="nav-item"><a href="Worldwide-shipping.html">Contact</a></div>
+                <div class="nav-item"><a href="contact.html">Contact</a></div>
                 <button class="cta-nav" onclick="openModal('Custom Tanzania Itinerary')">Book Now</button>
             </div>
             <button class="hamburger">☰</button>
@@ -990,56 +977,56 @@
         <section class="section featured-tours">
             <h2>Featured Tanzania Safari Adventures</h2>
             <div class="tour-row">
-                <div class="tour-card" style="background-image: url('images/pori.jpg');">
+                <div class="tour-card visible" style="background-image: url('images/pori.jpg');" data-link="serengeti-express.html">
                     <div class="tour-info">
                         <h3>Serengeti Safari</h3>
                         <p class="tagline">3-Day Great Migration Chase</p>
                         <button class="btn-explore" onclick="openModal('Serengeti Safari')">Book Now</button>
                     </div>
                 </div>
-                <div class="tour-card" style="background-image: url('images/kilimanjaro.jpg');">
+                <div class="tour-card visible" style="background-image: url('images/kilimanjaro.jpg');" data-link="kilimanjaro-classic.html">
                     <div class="tour-info">
                         <h3>Kilimanjaro Quest</h3>
                         <p class="tagline">5-Day Summit Adventure</p>
                         <button class="btn-explore" onclick="openModal('Kilimanjaro Quest')">Book Now</button>
                     </div>
                 </div>
-                <div class="tour-card" style="background-image: url('images/zanzibar (2).jpg');">
+                <div class="tour-card visible" style="background-image: url('images/zanzibar (2).jpg');" data-link="zanzibar-retreat.html">
                     <div class="tour-info">
                         <h3>Zanzibar Escape</h3>
                         <p class="tagline">4-Day Island Bliss</p>
                         <button class="btn-explore" onclick="openModal('Zanzibar Escape')">Book Now</button>
                     </div>
                 </div>
-                <div class="tour-card" style="background-image: url('images/swala.jpg');">
+                <div class="tour-card visible" style="background-image: url('images/swala.jpg');" data-link="ngorongoro-quick.html">
                     <div class="tour-info">
                         <h3>Ngorongoro Expedition</h3>
                         <p class="tagline">2-Day Crater Wild</p>
                         <button class="btn-explore" onclick="openModal('Ngorongoro Expedition')">Book Now</button>
                     </div>
                 </div>
-                <div class="tour-card hidden" style="background-image: url('images/tembo2.jpg');">
+                <div class="tour-card" style="background-image: url('images/tembo2.jpg');" data-link="tarangire-blitz.html">
                     <div class="tour-info">
                         <h3>Tarangire & Manyara</h3>
                         <p class="tagline">4-Day Safari Duo</p>
                         <button class="btn-explore" onclick="openModal('Tarangire & Manyara')">Book Now</button>
                     </div>
                 </div>
-                <div class="tour-card hidden" style="background-image: url('images/two giraffe.jpg');">
+                <div class="tour-card" style="background-image: url('images/two giraffe.jpg');" data-link="ruaha-explorer.html">
                     <div class="tour-info">
                         <h3>Ruaha Wilderness</h3>
                         <p class="tagline">5-Day Remote Bush</p>
                         <button class="btn-explore" onclick="openModal('Ruaha Wilderness')">Book Now</button>
                     </div>
                 </div>
-                <div class="tour-card hidden" style="background-image: url('images/konde.jpg');">
+                <div class="tour-card" style="background-image: url('images/konde.jpg');" data-link="selous-journey.html">
                     <div class="tour-info">
                         <h3>Selous Safari</h3>
                         <p class="tagline">4-Day River Wild</p>
                         <button class="btn-explore" onclick="openModal('Selous Safari')">Book Now</button>
                     </div>
                 </div>
-                <div class="tour-card hidden" style="background-image: url('images/giraffes.jpg');">
+                <div class="tour-card" style="background-image: url('images/giraffes.jpg');" data-link="arusha-gateway.html">
                     <div class="tour-info">
                         <h3>Arusha Explorer</h3>
                         <p class="tagline">3-Day Highland Trek</p>
@@ -1047,13 +1034,13 @@
                     </div>
                 </div>
             </div>
-            <button class="load-more-btn" onclick="loadMoreTours()">Load More</button>
+            <button class="load-more-btn" id="loadMoreTours">Load More</button>
         </section>
         <div class="section-above">
             <h2>Unmatched Wildlife</h2>
             <p>Home to the Great Migration, Big Five, and endless plains—experience nature’s raw power with a *Tanzania safari tour*.</p>
         </div>
-        <div class="image-break" style="background-image: url('images/great migration.jpg');">
+        <div class="image-break" style="background-image: url('images/lioness.jpg');">
             <div class="particle-layer">
                 <div class="particle" style="--x: 100px; --y: 200px;"></div>
                 <div class="particle" style="--x: -50px; --y: 300px; animation-delay: 1s;"></div>
@@ -1090,7 +1077,7 @@
             <h2>Maasai Village Stay</h2>
             <p>Live with warriors, herd goats, sip chai—immerse in Tanzania’s beating heart with a *safari tour*.</p>
         </div>
-        <div class="image-break" style="background-image: url('images/cultural.jpg');">
+        <div class="image-break" style="background-image: url('images/village\ masai.jpg');">
             <div class="particle-layer">
                 <div class="particle" style="--x: 120px; --y: 250px;"></div>
                 <div class="particle" style="--x: -80px; --y: 350px; animation-delay: 1s;"></div>
@@ -1127,7 +1114,7 @@
             <h2>Great Migration</h2>
             <p>Witness millions of wildebeest thunder across the Serengeti—a primal spectacle on a *Tanzania safari tour*.</p>
         </div>
-        <div class="image-break" style="background-image: url('images/background2.jpg');">
+        <div class="image-break" style="background-image: url('images/great\ migration.jpg');">
             <div class="particle-layer">
                 <div class="particle" style="--x: 150px; --y: 180px;"></div>
                 <div class="particle" style="--x: -60px; --y: 320px; animation-delay: 1s;"></div>
@@ -1145,56 +1132,56 @@
         <section class="section highlights">
             <h2>Tanzania Safari Highlights</h2>
             <div class="highlights-grid">
-                <div class="highlight-card">
+                <div class="highlight-card visible">
                     <img src="images/mufasa.jpg" loading="lazy" alt="Great Migration Tanzania safari Serengeti">
                     <div class="highlight-info">
                         <h3>Great Migration</h3>
                         <p>Witness millions of wildebeest thunder across the Serengeti—a primal spectacle on a *Tanzania safari tour*.</p>
                     </div>
                 </div>
-                <div class="highlight-card">
+                <div class="highlight-card visible">
                     <img src="images/mlima.jpg" loading="lazy" alt="Kilimanjaro summit sunrise Tanzania trek">
                     <div class="highlight-info">
                         <h3>Summit Sunrise</h3>
                         <p>Watch dawn break over Africa from Kilimanjaro’s icy peak—unforgettable on a *Kilimanjaro trek*.</p>
                     </div>
                 </div>
-                <div class="highlight-card">
+                <div class="highlight-card visible">
                     <img src="images/zanzibar (2).jpg" loading="lazy" alt="Snorkeling Zanzibar Tanzania safari tour">
                     <div class="highlight-info">
                         <h3>Snorkeling Zanzibar</h3>
                         <p>Dive into turquoise waters, coral reefs alive with color—pure island bliss on a *Tanzania adventure*.</p>
                     </div>
                 </div>
-                <div class="highlight-card">
+                <div class="highlight-card visible">
                     <img src="images/tembo.jpg" loading="lazy" alt="Ngorongoro crater lake Tanzania safari">
                     <div class="highlight-info">
                         <h3>Crater Lake</h3>
                         <p>Spot flamingos and rhinos in Ngorongoro’s misty caldera—nature’s coliseum on a *safari tour*.</p>
                     </div>
                 </div>
-                <div class="highlight-card hidden">
+                <div class="highlight-card">
                     <img src="images/usiku.jpg" loading="lazy" alt="Tarangire baobab sunset Tanzania safari">
                     <div class="highlight-info">
                         <h3>Baobab Sunset</h3>
                         <p>Catch the golden hour with elephants under Tarangire’s ancient trees—timeless on a *Tanzania safari*.</p>
                     </div>
                 </div>
-                <div class="highlight-card hidden">
+                <div class="highlight-card">
                     <img src="images/dhow.jpg" loading="lazy" alt="Ruaha river Tanzania safari wilderness">
                     <div class="highlight-info">
                         <h3>Ruaha River</h3>
                         <p>Explore untamed bush along rushing waters—sable antelopes and lions roam free on a *safari adventure*.</p>
                     </div>
                 </div>
-                <div class="highlight-card hidden">
+                <div class="highlight-card">
                     <img src="images/lake birds.jpg" loading="lazy" alt="Selous boat ride Tanzania safari tour">
                     <div class="highlight-info">
                         <h3>Selous Boat Ride</h3>
                         <p>Glide past hippos and crocs on a river safari—wilderness unbound on a *Tanzania trek*.</p>
                     </div>
                 </div>
-                <div class="highlight-card hidden">
+                <div class="highlight-card">
                     <img src="images/balon safari.jpg" loading="lazy" alt="Arusha coffee Tanzania safari highlands">
                     <div class="highlight-info">
                         <h3>Arusha Coffee</h3>
@@ -1202,7 +1189,7 @@
                     </div>
                 </div>
             </div>
-            <button class="load-more-btn" onclick="loadMoreHighlights()">Load More</button>
+            <button class="load-more-btn" id="loadMoreHighlights">Load More</button>
         </section>
         <section class="section travel-tips">
             <h2>Tanzania Safari Travel Tips</h2>
@@ -1307,13 +1294,13 @@
             </div>
             <div class="footer-section contact">
                 <h3>Contact Us</h3>
-                <p>Email: <a href="mailto:info@tanzaniatrek.com">info@tanzaniatrek.com</a></p>
+                <p>Email: <a href="/cdn-cgi/l/email-protection#b6dfd8d0d9f6c2d7d8ccd7d8dfd7c2c4d3dd98d5d9db"><span class="__cf_email__" data-cfemail="88e1e6eee7c8fce9e6f2e9e6e1e9fcfaede3a6ebe7e5">[email&#160;protected]</span></a></p>
                 <p>Phone: <a href="https://wa.me/255623474720">+255 623 474 720</a></p>
                 <p>Office: Plot 45, Mbezi Beach, Dar es Salaam</p>
             </div>
             <div class="footer-section newsletter">
                 <h3>Stay Updated</h3>
-                <p>Get the latest *Tanzania Safari* tips and offers.</p>
+                <p>Get the latest *Tanzania safari* tips and offers.</p>
                 <form id="newsletterForm">
                     <input type="email" placeholder="Your Email" required>
                     <button type="submit">Subscribe</button>
@@ -1343,6 +1330,7 @@
             </form>
         </div>
     </div>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
         const nav = document.querySelector('nav');
         const navLinks = document.querySelector('.nav-links');
@@ -1449,17 +1437,60 @@
             e.target.reset();
         });
 
-        function loadMoreTours() {
-            const hiddenCards = document.querySelectorAll('.tour-card.hidden');
-            hiddenCards.forEach(card => card.classList.remove('hidden'));
-            document.querySelector('.featured-tours .load-more-btn').style.display = 'none';
+        // Tour card redirect functionality
+        const tourCards = document.querySelectorAll('.tour-card');
+        tourCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                if (!e.target.closest('.btn-explore')) {
+                    const link = card.getAttribute('data-link');
+                    if (link) {
+                        window.location.href = link;
+                    }
+                }
+            });
+        });
+
+        // Load More functionality for tours
+        const loadMoreToursBtn = document.getElementById('loadMoreTours');
+        const tourCardsAll = document.querySelectorAll('.tour-card');
+        let toursVisible = 4;
+
+        if (tourCardsAll.length <= toursVisible) {
+            loadMoreToursBtn.style.display = 'none';
         }
 
-        function loadMoreHighlights() {
-            const hiddenHighlights = document.querySelectorAll('.highlight-card.hidden');
-            hiddenHighlights.forEach(card => card.classList.remove('hidden'));
-            document.querySelector('.highlights .load-more-btn').style.display = 'none';
+        loadMoreToursBtn.addEventListener('click', () => {
+            tourCardsAll.forEach((card, index) => {
+                if (index < toursVisible + 4) {
+                    card.classList.add('visible');
+                }
+            });
+            toursVisible += 4;
+            if (toursVisible >= tourCardsAll.length) {
+                loadMoreToursBtn.style.display = 'none';
+            }
+        });
+
+        // Load More functionality for highlights
+        const loadMoreHighlightsBtn = document.getElementById('loadMoreHighlights');
+        const highlightCardsAll = document.querySelectorAll('.highlight-card');
+        let highlightsVisible = 4;
+
+        if (highlightCardsAll.length <= highlightsVisible) {
+            loadMoreHighlightsBtn.style.display = 'none';
         }
+
+        loadMoreHighlightsBtn.addEventListener('click', () => {
+            highlightCardsAll.forEach((card, index) => {
+                if (index < highlightsVisible + 4) {
+                    card.classList.add('visible');
+                }
+            });
+            highlightsVisible += 4;
+            if (highlightsVisible >= highlightCardsAll.length) {
+                loadMoreHighlightsBtn.style.display = 'none';
+            }
+        });
 
         // Optional: Add roar sound on hover (uncomment and provide audio file)
         /*
@@ -1472,5 +1503,7 @@
         });
         */
     </script>
+<script>(function(){function c(){document.querySelectorAll('.image-break').forEach(el => {el.style.backgroundPositionY = `${window.scrollY * 0.5}px`;});}window.addEventListener('scroll', c);c();})();
+</script>
 </body>
 </html>
