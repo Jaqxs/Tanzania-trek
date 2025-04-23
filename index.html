@@ -6,7 +6,7 @@
     <title>Tanzania Trek | Safari Tours & Kilimanjaro Adventures</title>
     <meta name="description" content="Discover Tanzania with custom safari tours—Serengeti, Kilimanjaro, Zanzibar. Book your adventure with Tanzania Trek today!">
     <meta name="keywords" content="Tanzania safari tours, Kilimanjaro trek, custom Tanzania adventures, Serengeti safari, Tanzania Trek">
-    <link rel="preload" href="images/safari.mp4" as="video">
+    <link rel="preload" href="images/wanyama.mp4" as="video">
     <link rel="preload" href="images/logo.png" as="image">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -404,13 +404,13 @@
             transform: scale(1.05);
         }
         .image-break {
-            height: 700px; /* Reduced from 900px */
-            margin: -6rem 0; /* Adjusted margin */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* For parallax effect */
+            height: 100vh; /* Full viewport height for maximum impact */
+            margin: 0; /* No margin to ensure proper alignment */
+            background-size: cover; /* Cover the container */
+            background-position: center center; /* Center position */
+            background-repeat: no-repeat; /* Prevent image duplication */
+            background-attachment: fixed; /* Fixed background for true parallax */
             position: relative;
-            overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -486,16 +486,27 @@
         }
         .section-above, .section-below {
             background: #fff;
-            padding: 2rem;
+            padding: 4rem;
             border-radius: 1rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            margin: 2rem 0;
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin: 0;
             text-align: center;
             position: relative;
-            z-index: 2; /* Ensures sections stay above parallax background */
+            z-index: 5; /* Higher z-index to ensure sections stay above parallax background */
         }
-        .section-above:hover, .section-below:hover { transform: translateY(-10px); }
+        
+        /* Position the sections to create overlap with image breaks */
+        .section-above {
+            margin-bottom: -4rem; /* Push down into the image-break */
+        }
+        
+        .section-below {
+            margin-top: -4rem; /* Pull up into the image-break */
+        }
+        .section-above:hover, .section-below:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
         .section-above h2, .section-below h2 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
@@ -880,9 +891,18 @@
             .tour-card { height: 400px; }
             .tour-card h3 { font-size: 1.5rem; }
             .image-break {
-                height: 500px; /* Reduced from 600px */
-                background-attachment: scroll; /* Disable fixed for mobile parallax */
-                margin: -4rem 0; /* Adjusted for mobile */
+                height: 80vh; /* Slightly shorter on tablets */
+                background-attachment: fixed !important; /* Keep fixed for parallax effect */
+                background-position: center center !important; /* Force center position */
+                background-size: cover !important; /* Ensure full coverage */
+            }
+            
+            .section-above {
+                margin-bottom: -3rem; /* Slightly less overlap on tablets */
+            }
+            
+            .section-below {
+                margin-top: -3rem; /* Slightly less overlap on tablets */
             }
             .image-break .break-text { font-size: 5rem; }
             .image-break .break-subtext { font-size: 2.5rem; margin-top: 6rem; }
@@ -907,8 +927,20 @@
             .hero-text p { font-size: clamp(1rem, 3vw, 1.5rem); }
             .tour-card .btn-explore { padding: 0.6rem 1.2rem; }
             .image-break { 
-                height: 400px; /* Reduced from 500px */
-                margin: -3rem 0; /* Adjusted for smaller screens */
+                height: 70vh; /* Shorter on mobile */
+                background-attachment: fixed !important; /* Keep fixed for parallax effect */
+                background-position: center center !important; /* Force center position */
+                background-size: cover !important; /* Ensure full coverage */
+            }
+            
+            .section-above {
+                margin-bottom: -2rem; /* Less overlap on mobile */
+                padding: 2rem;
+            }
+            
+            .section-below {
+                margin-top: -2rem; /* Less overlap on mobile */
+                padding: 2rem;
             }
             .image-break .break-text { font-size: 3.5rem; }
             .image-break .break-subtext { font-size: 1.8rem; margin-top: 4rem; }
@@ -1077,7 +1109,7 @@
             <h2>Maasai Village Stay</h2>
             <p>Live with warriors, herd goats, sip chai—immerse in Tanzania’s beating heart with a *safari tour*.</p>
         </div>
-        <div class="image-break" style="background-image: url('images/village\ masai.jpg');">
+        <div class="image-break" style="background-image: url('images/village%20masai.jpg');">
             <div class="particle-layer">
                 <div class="particle" style="--x: 120px; --y: 250px;"></div>
                 <div class="particle" style="--x: -80px; --y: 350px; animation-delay: 1s;"></div>
@@ -1114,7 +1146,7 @@
             <h2>Great Migration</h2>
             <p>Witness millions of wildebeest thunder across the Serengeti—a primal spectacle on a *Tanzania safari tour*.</p>
         </div>
-        <div class="image-break" style="background-image: url('images/great\ migration.jpg');">
+        <div class="image-break" style="background-image: url('images/great%20migration.jpg');">
             <div class="particle-layer">
                 <div class="particle" style="--x: 150px; --y: 180px;"></div>
                 <div class="particle" style="--x: -60px; --y: 320px; animation-delay: 1s;"></div>
@@ -1503,7 +1535,9 @@
         });
         */
     </script>
-<script>(function(){function c(){document.querySelectorAll('.image-break').forEach(el => {el.style.backgroundPositionY = `${window.scrollY * 0.5}px`;});}window.addEventListener('scroll', c);c();})();
+<script>
+// No custom JavaScript needed - using CSS background-attachment: fixed
+// This creates a true parallax effect where content scrolls over fixed backgrounds
 </script>
 </body>
 </html>
