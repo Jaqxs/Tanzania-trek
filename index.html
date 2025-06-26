@@ -6,7 +6,7 @@
     <title>Tanzania Trek | Safari Tours & Kilimanjaro Adventures</title>
     <meta name="description" content="Discover Tanzania with custom safari tours—Serengeti, Kilimanjaro, Zanzibar. Book your adventure with Tanzania Trek today!">
     <meta name="keywords" content="Tanzania safari tours, Kilimanjaro trek, custom Tanzania adventures, Serengeti safari, Tanzania Trek">
-    <link rel="preload" href="images/wanyama.mp4" as="video">
+    <link rel="preload" href="images/safari.mp4" as="video">
     <link rel="preload" href="images/logo.png" as="image">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Montserrat:wght@500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -295,11 +295,11 @@
             margin-bottom: 5rem; 
             text-align: center; 
             background: #fff; 
-            padding: 2rem; 
+            padding: 2rem; a
             border-radius: 1rem; 
             box-shadow: 0 5px 20px rgba(0,0,0,0.1); 
-            opacity: 0; 
-            transform: translateY(50px); 
+            opacity: 1; /* Changed from 0 to 1 to ensure visibility */
+            transform: translateY(0); /* Changed from 50px to 0 to ensure proper positioning */
             transition: all 0.8s ease;
         }
         .section.visible { opacity: 1; transform: translateY(0); }
@@ -328,7 +328,7 @@
             background-size: cover; 
             background-position: center; 
             cursor: pointer; 
-            display: none; /* Initially hidden */
+            display: block; /* Changed from none to block to ensure visibility */
         }
         .tour-card.visible { display: block; } /* Visible class to show items */
         .tour-card:hover { 
@@ -483,6 +483,95 @@
         .image-break:hover .break-subtext {
             transform: scale(1.05) translateY(-10px);
             text-shadow: 0 0 20px rgba(241, 90, 36, 1), 0 0 40px rgba(241, 196, 15, 1), 0 5px 15px rgba(0, 0, 0, 0.8);
+        }
+        
+        /* Image break background images */
+        .image-break.lioness {
+            background-image: url('images/lioness.jpg');
+        }
+        .image-break.masai-village {
+            background-image: url('images/village%20masai.jpg');
+        }
+        .image-break.great-migration {
+            background-image: url('images/great%20migration.jpg');
+        }
+        
+        /* Particle positioning for lioness section */
+        .image-break.lioness .particle:nth-child(1) {
+            --x: 100px;
+            --y: 200px;
+        }
+        .image-break.lioness .particle:nth-child(2) {
+            --x: -50px;
+            --y: 300px;
+            animation-delay: 1s;
+        }
+        .image-break.lioness .particle:nth-child(3) {
+            --x: 200px;
+            --y: -100px;
+            animation-delay: 2s;
+        }
+        .image-break.lioness .particle:nth-child(4) {
+            --x: -150px;
+            --y: -50px;
+            animation-delay: 3s;
+        }
+        .image-break.lioness .particle:nth-child(5) {
+            --x: 300px;
+            --y: 150px;
+            animation-delay: 4s;
+        }
+        
+        /* Particle positioning for masai village section */
+        .image-break.masai-village .particle:nth-child(1) {
+            --x: 120px;
+            --y: 250px;
+        }
+        .image-break.masai-village .particle:nth-child(2) {
+            --x: -80px;
+            --y: 350px;
+            animation-delay: 1s;
+        }
+        .image-break.masai-village .particle:nth-child(3) {
+            --x: 250px;
+            --y: -80px;
+            animation-delay: 2s;
+        }
+        .image-break.masai-village .particle:nth-child(4) {
+            --x: -100px;
+            --y: -30px;
+            animation-delay: 3s;
+        }
+        .image-break.masai-village .particle:nth-child(5) {
+            --x: 350px;
+            --y: 200px;
+            animation-delay: 4s;
+        }
+        
+        /* Particle positioning for great migration section */
+        .image-break.great-migration .particle:nth-child(1) {
+            --x: 150px;
+            --y: 180px;
+        }
+        .image-break.great-migration .particle:nth-child(2) {
+            --x: -60px;
+            --y: 320px;
+            animation-delay: 1s;
+        }
+        .image-break.great-migration .particle:nth-child(3) {
+            --x: 280px;
+            --y: -120px;
+            animation-delay: 2s;
+        }
+        .image-break.great-migration .particle:nth-child(4) {
+            --x: -130px;
+            --y: -70px;
+            animation-delay: 3s;
+        }
+        .image-break.great-migration .particle:nth-child(5) {
+            --x: 320px;
+            --y: 140px;
+            animation-delay: 4s;
         }
         .section-above, .section-below {
             background: #fff;
@@ -1072,13 +1161,13 @@
             <h2>Unmatched Wildlife</h2>
             <p>Home to the Great Migration, Big Five, and endless plains—experience nature’s raw power with a *Tanzania safari tour*.</p>
         </div>
-        <div class="image-break" style="background-image: url('images/lioness.jpg');">
+        <div class="image-break lioness">
             <div class="particle-layer">
-                <div class="particle" style="--x: 100px; --y: 200px;"></div>
-                <div class="particle" style="--x: -50px; --y: 300px; animation-delay: 1s;"></div>
-                <div class="particle" style="--x: 200px; --y: -100px; animation-delay: 2s;"></div>
-                <div class="particle" style="--x: -150px; --y: -50px; animation-delay: 3s;"></div>
-                <div class="particle" style="--x: 300px; --y: 150px; animation-delay: 4s;"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
             </div>
             <span class="break-text">Wander</span>
             <span class="break-subtext">Free</span>
@@ -1109,13 +1198,13 @@
             <h2>Maasai Village Stay</h2>
             <p>Live with warriors, herd goats, sip chai—immerse in Tanzania’s beating heart with a *safari tour*.</p>
         </div>
-        <div class="image-break" style="background-image: url('images/village%20masai.jpg');">
+        <div class="image-break masai-village">
             <div class="particle-layer">
-                <div class="particle" style="--x: 120px; --y: 250px;"></div>
-                <div class="particle" style="--x: -80px; --y: 350px; animation-delay: 1s;"></div>
-                <div class="particle" style="--x: 250px; --y: -80px; animation-delay: 2s;"></div>
-                <div class="particle" style="--x: -100px; --y: -30px; animation-delay: 3s;"></div>
-                <div class="particle" style="--x: 350px; --y: 200px; animation-delay: 4s;"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
             </div>
             <span class="break-text">Roar</span>
             <span class="break-subtext">Wild</span>
@@ -1142,17 +1231,40 @@
                 <p>Taste cloves, cinnamon, and history—Zanzibar’s flavors come alive on a *Tanzania adventure*.</p>
             </div>
         </section>
+
+        <div class="section-below">
+            <h2>Stunning Landscapes</h2>
+            <p>From Kilimanjaro&rsquo;s peaks to Ngorongoro&rsquo;s crater, Tanzania&rsquo;s vistas are a feast for the soul on every <em>safari adventure</em>.</p>
+        </div>
+        <section class="section why-tanzania">
+            <h2>Why Choose Tanzania Safari Tours?</h2>
+            <div class="why-item">
+                <img src="images/simba.jpg" loading="lazy" alt="Tanzania safari wildlife Serengeti lion">
+                <h3>Unmatched Wildlife</h3>
+                <p>Home to the Great Migration, Big Five, and endless plains&mdash;experience nature&rsquo;s raw power with a <em>Tanzania safari tour</em>.</p>
+            </div>
+            <div class="why-item">
+                <img src="images/maasai.jpg" loading="lazy" alt="Tanzania safari culture Maasai village">
+                <h3>Rich Culture</h3>
+                <p>Connect with Maasai traditions and spice markets—a cultural heartbeat in every <em>Tanzania trek</em>.</p>
+            </div>
+            <div class="why-item">
+                <img src="images/child.jpg" loading="lazy" alt="Maasai village stay Tanzania safari culture">
+                <h3>Maasai Village Stay</h3>
+                <p>Live with warriors, herd goats, sip chai—immerse in Tanzania’s beating heart with a <em>safari tour</em>.</p>
+            </div>
+        </section>
         <div class="section-above">
             <h2>Great Migration</h2>
             <p>Witness millions of wildebeest thunder across the Serengeti—a primal spectacle on a *Tanzania safari tour*.</p>
         </div>
-        <div class="image-break" style="background-image: url('images/great%20migration.jpg');">
+        <div class="image-break great-migration">
             <div class="particle-layer">
-                <div class="particle" style="--x: 150px; --y: 180px;"></div>
-                <div class="particle" style="--x: -60px; --y: 320px; animation-delay: 1s;"></div>
-                <div class="particle" style="--x: 280px; --y: -120px; animation-delay: 2s;"></div>
-                <div class="particle" style="--x: -130px; --y: -70px; animation-delay: 3s;"></div>
-                <div class="particle" style="--x: 320px; --y: 140px; animation-delay: 4s;"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
             </div>
             <span class="break-text">Rise</span>
             <span class="break-subtext">Peak</span>
@@ -1308,7 +1420,7 @@
         </section>
     </div>
     <button class="back-to-top">↑</button>
-    <a href="https://wa.me/255623474720" class="whatsapp-chat" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/255672650330" class="whatsapp-chat" target="_blank"><i class="fab fa-whatsapp"></i></a>
     <footer>
         <div class="footer-content">
             <div class="footer-section about">
@@ -1326,9 +1438,9 @@
             </div>
             <div class="footer-section contact">
                 <h3>Contact Us</h3>
-                <p>Email: <a href="/cdn-cgi/l/email-protection#b6dfd8d0d9f6c2d7d8ccd7d8dfd7c2c4d3dd98d5d9db"><span class="__cf_email__" data-cfemail="88e1e6eee7c8fce9e6f2e9e6e1e9fcfaede3a6ebe7e5">[email&#160;protected]</span></a></p>
-                <p>Phone: <a href="https://wa.me/255623474720">+255 623 474 720</a></p>
-                <p>Office: Plot 45, Mbezi Beach, Dar es Salaam</p>
+                <p>Email: <a href="/cdn-cgi/l/email-protection#b6dfd8d0d9f6c2d7d8ccd7d8dfd7c2c4d3dd98d5d9db"><span class="__cf_email__" data-cfemail="88e1e6eee7c8fce9e6f2e9e6e1e9fcfaede3a6ebe7e5">info@tanzaniatrek.com</span></a></p>
+                <p>Phone: <a href="https://wa.me/255672650330">+255672650330</a></p>
+                <p>Office: Arusha </p>
             </div>
             <div class="footer-section newsletter">
                 <h3>Stay Updated</h3>
@@ -1344,7 +1456,7 @@
             <div class="social-icons">
                 <a href="https://instagram.com/tanzaniatrek" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
                 <a href="https://twitter.com/tanztrek" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="https://wa.me/255623474720" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://wa.me/255672650330" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
     </footer>
@@ -1458,7 +1570,7 @@
             }
 
             const whatsappMessage = `Hello Tanzania Trek! I'd like to book a tour.\n\nName: ${fullName}\nEmail: ${email}\nTour: ${tourName || 'Not specified'}\nPreferred Date: ${prefDate}\nPreferences: ${preferences || 'None'}`;
-            window.open(`https://wa.me/255623474720?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+            window.open(`https://wa.me/255672650330?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
             alert('Your booking request has been sent via WhatsApp!');
             closeModal();
         });
